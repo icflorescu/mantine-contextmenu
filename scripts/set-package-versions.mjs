@@ -11,6 +11,6 @@ if (!/^\d+\.\d+\.\d+$/.test(newVersion)) {
   console.error("Version doesn't match semver pattern. Aborting.");
 }
 execSync(`yarn version --no-git-tag-version --new-version ${newVersion}`);
-execSync(`yarn workspace mantine-datatable version --no-git-tag-version --new-version ${newVersion}`);
-execSync(`yarn workspace mantine-datatable-docs version --no-git-tag-version --new-version ${newVersion}`);
+execSync(`yarn workspace mantine-contextmenu version --no-git-tag-version --new-version ${newVersion}`);
+execSync(`yarn workspace mantine-contextmenu-docs version --no-git-tag-version --new-version ${newVersion}`);
 process.exit(0);
