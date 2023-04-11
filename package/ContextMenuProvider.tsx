@@ -21,12 +21,12 @@ export function ContextMenuProvider({
     setData(null);
   };
 
-  const showContextMenu: ShowContextMenuFunction = (items, options) => (e) => {
+  const showContextMenu: ShowContextMenuFunction = (content, options) => (e) => {
     e.preventDefault();
     setData({
       x: e.clientX,
       y: e.clientY,
-      items,
+      content,
       zIndex: options?.zIndex || zIndex,
       shadow: options?.shadow || shadow,
       borderRadius: options?.borderRadius || borderRadius,

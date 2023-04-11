@@ -3,7 +3,7 @@ import { useClickOutside, useElementSize, useMergedRef, useWindowEvent } from '@
 import { MouseEventHandler } from 'react';
 import ContextMenuDivider from './ContextMenuDivider';
 import ContextMenuItem from './ContextMenuItem';
-import { ContextMenuItemOptions, ContextMenuOptions } from './types';
+import type { ContextMenuContent, ContextMenuOptions } from './types';
 import { humanize } from './utils';
 
 const useStyles = createStyles((theme) => ({
@@ -18,7 +18,7 @@ const useStyles = createStyles((theme) => ({
 export type ContextMenuInstanceOptions = {
   x: number;
   y: number;
-  items: ContextMenuItemOptions[];
+  content: ContextMenuContent;
 };
 
 type ContextMenuProps = ContextMenuOptions &
@@ -26,7 +26,7 @@ type ContextMenuProps = ContextMenuOptions &
     onHide: () => void;
   };
 
-export function ContextMenu({ x, y, items, zIndex, shadow, borderRadius, onHide }: ContextMenuProps) {
+export function ContextMenu({ x, y, content, zIndex, shadow, borderRadius, onHide }: ContextMenuProps) {
   useWindowEvent('resize', onHide);
   useWindowEvent('scroll', onHide);
 
@@ -68,13 +68,20 @@ export function ContextMenu({ x, y, items, zIndex, shadow, borderRadius, onHide 
             : windowWidth - mdSpacing - (x - width - mdSpacing < 0 ? width + mdSpacing : x),
       }}
     >
-      {items.map(({ key, onClick, title, ...otherOptions }) =>
-        onClick ? (
-          <ContextMenuItem key={key} title={title ?? humanize(key)} onClick={handleClick(onClick)} {...otherOptions} />
-        ) : (
-          <ContextMenuDivider key={key} />
-        )
-      )}
+      {Array.isArray(content)
+        ? content.map(({ key, onClick, title, ...otherOptions }) =>
+            onClick ? (
+              <ContextMenuItem
+                key={key}
+                title={title ?? humanize(key)}
+                onClick={handleClick(onClick)}
+                {...otherOptions}
+              />
+            ) : (
+              <ContextMenuDivider key={key} />
+            )
+          )
+        : content(onHide)}
     </Paper>
   );
 }
