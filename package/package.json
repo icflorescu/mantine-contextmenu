@@ -1,0 +1,57 @@
+{
+  "name": "mantine-contextmenu",
+  "version": "1.0.0",
+  "description": "ContextMenu for Mantine UI",
+  "keywords": [
+    "ui",
+    "mantine",
+    "datatable",
+    "datagrid",
+    "async",
+    "sorting",
+    "pagination",
+    "context menu",
+    "react",
+    "typescript"
+  ],
+  "repository": "icflorescu/mantine-contextmenu",
+  "homepage": "https://icflorescu.github.io/mantine-contextmenu/",
+  "bugs": {
+    "url": "https://github.com/icflorescu/mantine-contextmenu/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Ionut-Cristian Florescu",
+    "email": "ionut.florescu@gmail.com",
+    "url": "https://github.com/icflorescu"
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "dev": "rm -rf dist",
+    "build": "rm -rf dist && NODE_NO_WARNINGS=1 node build.mjs && tsc --emitDeclarationOnly",
+    "postbuild": "cp -f ../LICENSE LICENSE && cp -f ../README.md README.md",
+    "lint": "eslint . --ext=.ts,.tsx && tsc --noEmit"
+  },
+  "devDependencies": {
+    "@mantine/core": "^6.0.6",
+    "@mantine/hooks": "^6.0.6",
+    "@tabler/icons-react": "^2.14.0",
+    "@types/react": "^18.0.33",
+    "@types/react-dom": "^18.0.11",
+    "esbuild": "^0.17.15",
+    "react": "^18.2.0",
+    "typescript": "^5.0.4"
+  },
+  "peerDependencies": {
+    "@mantine/core": "^6.0.5",
+    "@mantine/hooks": "^6.0.5",
+    "react": "^18.2.0"
+  }
+}

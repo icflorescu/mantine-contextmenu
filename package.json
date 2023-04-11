@@ -1,0 +1,35 @@
+{
+  "name": "mantine-contextmenu-turborepo",
+  "version": "1.0.0",
+  "description": "This is a monorepo; see package/package.json for more info",
+  "private": true,
+  "workspaces": [
+    "docs",
+    "package"
+  ],
+  "scripts": {
+    "set-package-versions": "NODE_NO_WARNINGS=1 node scripts/set-package-versions.mjs",
+    "build": "turbo run build --no-daemon",
+    "dev": "turbo run dev --parallel --no-daemon",
+    "start": "npx serve docs/out",
+    "lint": "turbo run lint --no-daemon",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "test": "turbo run test",
+    "test:watch": "turbo run test:watch"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.57.1",
+    "@typescript-eslint/parser": "^5.57.1",
+    "eslint": "^8.38.0",
+    "eslint-config-next": "^13.3.0",
+    "eslint-config-prettier": "^8.8.0",
+    "prettier": "^2.8.7",
+    "turbo": "^1.8.8",
+    "typescript": "^5.0.4"
+  },
+  "engines": {
+    "npm": ">=8.13.2",
+    "node": ">=16.16.0"
+  },
+  "packageManager": "yarn@1.22.19"
+}
