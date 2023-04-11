@@ -15,7 +15,7 @@ A "dark-theme aware" **context-menu** for your Mantine UI applications.
 
 ## Full documentation and examples
 
-Visit [icflorescu.github.io/mantine-contextmenu](https://icflorescu.github.io/mantine-contextmenu/) to view the full documentation and learn how to use it by browsing a comprehensive list of examples.
+Visit [icflorescu.github.io/mantine-contextmenu](https://icflorescu.github.io/mantine-contextmenu/) to view the full documentation and learn how to use it by browsing the list of usage examples.
 
 ## Quickstart
 
@@ -42,10 +42,40 @@ function App() {
 }
 ```
 
-Use the `useContextMenu` hook in your code:
+Use it in your code:
 
-```ts
-// @todo add example here...
+```tsx
+import { IconCopy, IconDownload } from '@tabler/icons-react';
+import { useContextMenu } from 'mantine-contextmenu';
+import Picture from '~/components/Picture';
+import { copyImageToClipboard, downloadImage, unsplashImages } from '~/lib/image';
+
+export default function GettingStartedExample() {
+  const showContextMenu = useContextMenu();
+
+  const image = unsplashImages[0];
+  const { src } = image.file;
+
+  return (
+    <Picture
+      image={image}
+      onContextMenu={showContextMenu([
+        {
+          key: 'copy',
+          icon: <IconCopy size={16} />,
+          title: 'Copy to clipboard',
+          onClick: () => copyImageToClipboard(src),
+        },
+        {
+          key: 'download',
+          icon: <IconDownload size={16} />,
+          title: 'Download to your computer',
+          onClick: () => downloadImage(src),
+        },
+      ])}
+    />
+  );
+}
 ```
 
 Have a look at the available [type definitions](https://icflorescu.github.io/mantine-contextmenu/type-definitions) and make sure to browse the list of [usage examples](https://icflorescu.github.io/mantine-contextmenu/examples/basic-usage).
