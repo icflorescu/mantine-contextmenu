@@ -58,11 +58,17 @@ export default function Picture({
 }) {
   const { cx, classes } = useStyles();
   return (
-    <Box
-      className={cx(classes.root, { [classes.flipHorizontal]: flipHorizontal, [classes.flipVertical]: flipVertical })}
-      onContextMenu={onContextMenu}
-    >
-      <Image className={classes.image} src={src} alt={`Picture by ${name} | Mantine ContextMenu`} fill priority />
+    <Box className={classes.root} onContextMenu={onContextMenu}>
+      <Image
+        className={cx(classes.image, {
+          [classes.flipHorizontal]: flipHorizontal,
+          [classes.flipVertical]: flipVertical,
+        })}
+        src={src}
+        alt={`Picture by ${name} | Mantine ContextMenu`}
+        fill
+        priority
+      />
       <div className={classes.attribution}>
         <Text className={classes.attributionText}>
           Picture by <ExternalLink to={`https://unsplash.com/@${profile}`}>{name}</ExternalLink>

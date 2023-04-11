@@ -67,11 +67,14 @@ export type ContextMenuItemOptions = {
     }
 );
 
+export type ContextMenuContent = ContextMenuItemOptions[] | ((close: () => void) => JSX.Element);
+
 export type ShowContextMenuFunction = (
   /**
-   * Context menu items
+   * Context menu content - either an array of context menu items
+   * or a function that accepts a close callback and returns context menu content
    */
-  items: ContextMenuItemOptions[],
+  content: ContextMenuContent,
 
   /**
    * Context menu options (overrides provider options)
