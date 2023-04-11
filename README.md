@@ -11,7 +11,7 @@
 
 A "dark-theme aware" **context-menu** for your Mantine UI applications.
 
-<!-- [![Mantine ContextMenu](https://user-images.githubusercontent.com/581999/231230506-3278ea99-dfb3-4edc-ad67-d47f1626a298.png)](https://icflorescu.github.io/mantine-contextmenu/) -->
+[![Mantine ContextMenu](https://user-images.githubusercontent.com/581999/231230506-3278ea99-dfb3-4edc-ad67-d47f1626a298.png)](https://icflorescu.github.io/mantine-contextmenu/)
 
 ## Full documentation and examples
 
