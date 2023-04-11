@@ -1,6 +1,5 @@
 import { ColorScheme, ColorSchemeProvider, MantineProvider } from '@mantine/core';
 import { useHotkeys, useLocalStorage } from '@mantine/hooks';
-import { ModalsProvider } from '@mantine/modals';
 import { Notifications } from '@mantine/notifications';
 import { ContextMenuProvider } from 'mantine-contextmenu';
 import { AppProps } from 'next/app';
@@ -72,13 +71,11 @@ export default function _App(props: AppProps) {
           }}
         >
           <Notifications />
-          <ModalsProvider>
-            <AppWrapper>
-              <ContextMenuProvider>
-                <Component {...pageProps} />
-              </ContextMenuProvider>
-            </AppWrapper>
-          </ModalsProvider>
+          <AppWrapper>
+            <ContextMenuProvider>
+              <Component {...pageProps} />
+            </ContextMenuProvider>
+          </AppWrapper>
         </MantineProvider>
       </ColorSchemeProvider>
     </>

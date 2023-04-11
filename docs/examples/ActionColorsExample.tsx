@@ -1,5 +1,4 @@
-import { Text } from '@mantine/core';
-import { modals } from '@mantine/modals';
+import { notifications } from '@mantine/notifications';
 import { IconCopy, IconDownload, IconTrash } from '@tabler/icons-react';
 import { useContextMenu } from 'mantine-contextmenu';
 import Picture from '~/components/Picture';
@@ -12,9 +11,10 @@ export default function ActionColorsExample() {
   const image = unsplashImages[5];
   const { src } = image.file;
   const handleDelete = () => {
-    modals.open({
+    notifications.show({
+      color: 'red',
       title: 'Can’t do that',
-      children: <Text>You know you can’t delete an image from the Internet, right?</Text>,
+      message: 'You know you can’t delete an image from the Internet, right?',
     });
   };
   // example-resume
