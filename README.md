@@ -9,7 +9,7 @@
 [![Downloads][downloads-image]][npm-url]
 [![Language][language-image]][repo-url]
 
-A "dark-theme aware" **context-menu** for your Mantine UI applications.
+A "dark-theme aware" **context-menu** for your Mantine UI applications, built by the creator of [Mantine DataTable](https://icflorescu.github.io/mantine-datatable/).
 
 [![Mantine ContextMenu](https://user-images.githubusercontent.com/581999/231230506-3278ea99-dfb3-4edc-ad67-d47f1626a298.png)](https://icflorescu.github.io/mantine-contextmenu/)
 
