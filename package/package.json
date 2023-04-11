@@ -1,18 +1,16 @@
 {
   "name": "mantine-contextmenu",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "ContextMenu for Mantine UI",
   "keywords": [
     "ui",
     "mantine",
-    "datatable",
-    "datagrid",
-    "async",
-    "sorting",
-    "pagination",
+    "context-menu",
     "context menu",
     "react",
-    "typescript"
+    "typescript",
+    "javascript",
+    "front-end"
   ],
   "repository": "icflorescu/mantine-contextmenu",
   "homepage": "https://icflorescu.github.io/mantine-contextmenu/",
