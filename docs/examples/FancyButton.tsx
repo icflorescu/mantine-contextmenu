@@ -4,7 +4,7 @@ import type { ReactNode } from 'react';
 const useStyles = createStyles((theme) => ({
   root: {
     width: '50%',
-    height: 55,
+    height: 60,
     padding: 0,
     border: 0,
     borderRadius: 0,
