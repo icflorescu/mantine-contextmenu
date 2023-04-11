@@ -42,7 +42,7 @@ function App() {
 }
 ```
 
-Use the hook in your code:
+Use the `useContextMenu` hook in your code:
 
 ```ts
 // @todo add example here...
