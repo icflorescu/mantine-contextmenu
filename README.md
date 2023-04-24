@@ -80,6 +80,10 @@ export default function GettingStartedExample() {
 
 Have a look at the available [type definitions](https://icflorescu.github.io/mantine-contextmenu/type-definitions) and make sure to browse the list of [usage examples](https://icflorescu.github.io/mantine-contextmenu/examples/basic-usage).
 
+## Other useful resources
+
+💡 [Mantine DataTable](https://icflorescu.github.io/mantine-datatable/) - A "dark-theme aware" **data-table** for your Mantine UI applications, built by the creator of Mantine ContextMenu.
+
 ## Code contributors
 
 [![Contributors list](https://contrib.rocks/image?repo=icflorescu/mantine-contextmenu)](https://github.com/icflorescu/mantine-contextmenu/graphs/contributors)
