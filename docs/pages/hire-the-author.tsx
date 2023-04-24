@@ -3,7 +3,7 @@ import ExternalLink from '~/components/ExternalLink';
 import PageNavigation from '~/components/PageNavigation';
 import PageText from '~/components/PageText';
 import PageTitle from '~/components/PageTitle';
-import { AUTHOR_LINK } from '~/config';
+import { AUTHOR_LINK, MANTINE_DATATABLE_LINK } from '~/config';
 
 const PATH = 'hire-the-author';
 
@@ -12,7 +12,7 @@ const useStyles = createStyles((theme) => ({
     [`@media (min-width: ${theme.breakpoints.xs})`]: {
       display: 'flex',
       gap: theme.spacing.xl,
-      alignItems: 'center',
+      alignItems: 'flex-start',
     },
     [`@media (min-width: ${theme.breakpoints.md})`]: {
       alignItems: 'end',
@@ -24,6 +24,7 @@ const useStyles = createStyles((theme) => ({
     display: 'block',
     borderRadius: theme.radius.sm,
     [`@media (min-width: ${theme.breakpoints.xs})`]: {
+      marginTop: '1.8em',
       width: 160,
     },
   },
@@ -59,11 +60,18 @@ export default function Page() {
           <Text>
             I’m Ionut-Cristian Florescu, a full-stack developer from Bucharest, Romania, EU, with more than 20 years of
             experience in building commercial web applications and open-source projects.
-            <br />
-            Mantine ContextMenu is one of my dearest open-source projects.
           </Text>
         </div>
       </div>
+      <PageText>
+        <ExternalLink to={MANTINE_DATATABLE_LINK}>Mantine DataTable</ExternalLink>, one of my dearest open-source
+        projects, was much appreciated by the community partially due to its rather unique row context-menu
+        functionality since its early days.
+      </PageText>
+      <PageText>
+        That’s why I decided to package the functionality into a separate component so you can use it anywhere in your
+        app.
+      </PageText>
       <PageText>
         You can learn more about what I do by visiting my profiles on{' '}
         <ExternalLink to={AUTHOR_LINK}>GitHub</ExternalLink>{' '}

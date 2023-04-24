@@ -3,6 +3,7 @@ import {
   AUTHOR_LINK,
   FOOTER_HEIGHT_ABOVE_NAVBAR_BREAKPOINT,
   FOOTER_HEIGHT_BELOW_NAVBAR_BREAKPOINT,
+  MANTINE_DATATABLE_LINK,
   NAVBAR_BREAKPOINT,
   NAVBAR_WIDTH,
   REPO_LINK,
@@ -62,7 +63,8 @@ export default function AppFooter() {
         <img src={`https://img.shields.io/npm/l/mantine-contextmenu.svg?style=${badgeStyle}`} alt="MIT License" />
       </ExternalLink>
       <Text size="sm" align="center">
-        Built by <ExternalLink to={AUTHOR_LINK}>Ionut-Cristian Florescu</ExternalLink>.
+        Built by <ExternalLink to={AUTHOR_LINK}>Ionut-Cristian Florescu</ExternalLink>,<br />
+        the author of <ExternalLink to={MANTINE_DATATABLE_LINK}>Mantine DataTable</ExternalLink>.
         <br />
         Please <ExternalLink to={SPONSOR_LINK}>sponsor my work</ExternalLink> if you find it useful.
       </Text>
