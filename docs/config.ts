@@ -10,13 +10,14 @@ export const SEO_CREATOR = '@icflorescu';
 
 export const HEADER_HEIGHT = 56;
 export const FOOTER_HEIGHT_BELOW_NAVBAR_BREAKPOINT = 164;
-export const FOOTER_HEIGHT_ABOVE_NAVBAR_BREAKPOINT = 64;
+export const FOOTER_HEIGHT_ABOVE_NAVBAR_BREAKPOINT = 92;
 export const NAVBAR_WIDTH = 300;
 export const NAVBAR_BREAKPOINT = 'md';
 
 export const AUTHOR_LINK = 'https://github.com/icflorescu';
 export const REPO_LINK = 'https://github.com/icflorescu/mantine-contextmenu';
 export const SPONSOR_LINK = 'https://github.com/sponsors/icflorescu';
+export const MANTINE_DATATABLE_LINK = 'https://github.com/icflorescu/mantine-datatable';
 
 export const PAGES: ({ external?: true; title: string; color?: MantineColor; description?: string } & (
   | {

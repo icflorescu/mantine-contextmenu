@@ -7,7 +7,7 @@ import PageNavigation from '~/components/PageNavigation';
 import PageSubtitle from '~/components/PageSubtitle';
 import PageText from '~/components/PageText';
 import PageTitle from '~/components/PageTitle';
-import { AUTHOR_LINK, REPO_LINK } from '~/config';
+import { AUTHOR_LINK, MANTINE_DATATABLE_LINK, REPO_LINK } from '~/config';
 
 const PATH = 'contribute-and-support';
 
@@ -29,7 +29,8 @@ export default function Page() {
     <Container>
       <PageTitle of={PATH} />
       <PageText>
-        I’ve dedicated a sizeable amount of my own free time to build this project because:
+        I’ve dedicated a sizeable amount of my own free time to build this project and{' '}
+        <ExternalLink to={MANTINE_DATATABLE_LINK}>Mantine DataTable</ExternalLink> because:
         <ul>
           <li>
             I think <ExternalLink to="https://mantine.dev/">Mantine</ExternalLink> is currently the best React UI
@@ -83,9 +84,11 @@ export default function Page() {
       </Box>
       <PageSubtitle value="Sponsoring" />
       <PageText>
-        As mentioned above, I’ve dedicated a sizeable amount of my own free time to build this project. Its maintenance
-        requires a constant effort. So, if you find <Code>Mantine DataTable</Code> useful and you want to support its
-        development, you can do so by{' '}
+        As mentioned above, I’ve dedicated my own free time to build this project,{' '}
+        <ExternalLink to={MANTINE_DATATABLE_LINK}>Mantine DataTable</ExternalLink> and other{' '}
+        <ExternalLink to={AUTHOR_LINK}>open-source projects</ExternalLink>. I did it out of passion, but their
+        maintenance requires a constant effort and passion alone doesn’t pay the bills. So, if you find{' '}
+        <Code>Mantine ContextMenu</Code> useful and you want to support its development, you can do so by{' '}
         <ExternalLink to="https://github.com/sponsors/icflorescu">sponsoring my work</ExternalLink>.
       </PageText>
       <PageSubtitle value="Other means of support" />
