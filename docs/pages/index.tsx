@@ -9,6 +9,7 @@ import { getFirstExamplePagePath } from '~/lib/page';
 const useStyles = createStyles((theme) => ({
   root: {
     maxWidth: 640,
+    margin: '0 auto',
   },
   title: {
     marginBottom: '.75em',
