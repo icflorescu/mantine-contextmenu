@@ -28,7 +28,7 @@ export default function Page({ code }: InferGetStaticPropsType<typeof getStaticP
     <Container>
       <PageTitle of={PATH} />
       <PageText>
-        If you&apos;re using Next.js, Vite, Create React App, Remix or Gatsby, make sure to have a look at{' '}
+        If you’re using Next.js, Vite, Create React App, Remix or Gatsby, make sure to have a look at{' '}
         <ExternalLink to="https://mantine.dev/pages/getting-started/">Getting started with Mantine</ExternalLink> page.
       </PageText>
       <PageText>

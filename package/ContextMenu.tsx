@@ -1,10 +1,12 @@
-import { Paper, createStyles, px } from '@mantine/core';
+import { Paper, createStyles, packSx, px } from '@mantine/core';
 import { useClickOutside, useElementSize, useMergedRef, useWindowEvent } from '@mantine/hooks';
-import { MouseEventHandler } from 'react';
+import { CSSProperties, MouseEventHandler } from 'react';
 import ContextMenuDivider from './ContextMenuDivider';
 import ContextMenuItem from './ContextMenuItem';
 import type { ContextMenuContent, ContextMenuOptions } from './types';
 import { humanize } from './utils';
+
+const EMPTY_OBJECT = {};
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -26,7 +28,20 @@ type ContextMenuProps = ContextMenuOptions &
     onHide: () => void;
   };
 
-export function ContextMenu({ x, y, content, zIndex, shadow, borderRadius, onHide }: ContextMenuProps) {
+export function ContextMenu({
+  x,
+  y,
+  content,
+  zIndex,
+  shadow,
+  borderRadius,
+  onHide,
+  className,
+  style,
+  sx,
+  classNames,
+  styles,
+}: ContextMenuProps) {
   useWindowEvent('resize', onHide);
   useWindowEvent('scroll', onHide);
 
@@ -38,47 +53,57 @@ export function ContextMenu({ x, y, content, zIndex, shadow, borderRadius, onHid
   let windowHeight = 0;
   if (typeof window !== 'undefined') ({ innerWidth: windowWidth, innerHeight: windowHeight } = window);
 
-  const {
-    classes,
-    theme: { dir, spacing },
-  } = useStyles();
-
-  const mdSpacing = px(spacing.md);
-
   const handleClick: (onClick: MouseEventHandler<HTMLButtonElement>) => MouseEventHandler<HTMLButtonElement> =
     (onClick) => (e) => {
       onHide();
       onClick(e);
     };
 
+  const { cx, classes, theme } = useStyles();
+  const { dir, spacing } = theme;
+  const styleProperties = typeof styles === 'function' ? styles(theme, EMPTY_OBJECT, EMPTY_OBJECT) : styles;
+  const mdSpacing = px(spacing.md);
+
   return (
     <Paper
       ref={ref}
       shadow={shadow}
       radius={borderRadius}
-      className={classes.root}
-      sx={{
-        zIndex,
-        top: y + height + mdSpacing > windowHeight ? windowHeight - height - mdSpacing : y,
-        left:
-          dir === 'ltr'
-            ? x + width + mdSpacing > windowWidth
-              ? windowWidth - width - mdSpacing
-              : x
-            : windowWidth - mdSpacing - (x - width - mdSpacing < 0 ? width + mdSpacing : x),
-      }}
+      className={cx(classes.root, className, classNames?.root)}
+      style={{ ...styleProperties?.root, ...style } as CSSProperties}
+      sx={[
+        {
+          zIndex,
+          top: y + height + mdSpacing > windowHeight ? windowHeight - height - mdSpacing : y,
+          left:
+            dir === 'ltr'
+              ? x + width + mdSpacing > windowWidth
+                ? windowWidth - width - mdSpacing
+                : x
+              : windowWidth - mdSpacing - (x - width - mdSpacing < 0 ? width + mdSpacing : x),
+        },
+        ...packSx(sx),
+      ]}
     >
       {Array.isArray(content)
-        ? content.map(({ key, onClick, title, ...otherOptions }) =>
+        ? content.map(({ key, className, sx, style, onClick, title, ...otherOptions }) =>
             onClick ? (
               <ContextMenuItem
                 key={key}
+                className={cx(classNames?.item, className)}
+                sx={sx}
+                style={{ ...styleProperties?.item, ...style } as CSSProperties}
                 title={title ?? humanize(key)}
                 onClick={handleClick(onClick)}
                 {...otherOptions}
               />
             ) : (
-              <ContextMenuDivider key={key} />
+              <ContextMenuDivider
+                key={key}
+                className={cx(classNames?.divider, className)}
+                sx={sx}
+                style={{ ...styleProperties?.divider, ...style } as CSSProperties}
+              />
             )
           )
         : content(onHide)}

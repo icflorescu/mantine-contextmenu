@@ -30,6 +30,11 @@ export function ContextMenuProvider({
       zIndex: options?.zIndex || zIndex,
       shadow: options?.shadow || shadow,
       borderRadius: options?.borderRadius || borderRadius,
+      className: options?.className,
+      style: options?.style,
+      sx: options?.sx,
+      classNames: options?.classNames,
+      styles: options?.styles,
     });
   };
 
