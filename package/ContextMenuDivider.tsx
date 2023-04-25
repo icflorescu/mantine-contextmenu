@@ -1,4 +1,5 @@
-import { createStyles } from '@mantine/core';
+import { Box, createStyles, type Sx } from '@mantine/core';
+import type { CSSProperties } from 'react';
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -7,7 +8,13 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export default function ContextMenuDivider() {
-  const { classes } = useStyles();
-  return <div className={classes.root} />;
+type ContextMenuDividerProps = {
+  className: string;
+  sx: Sx | (Sx | undefined)[] | undefined;
+  style: CSSProperties;
+};
+
+export default function ContextMenuDivider({ className, sx, style }: ContextMenuDividerProps) {
+  const { cx, classes } = useStyles();
+  return <Box className={cx(classes.root, className)} sx={sx} style={style} />;
 }

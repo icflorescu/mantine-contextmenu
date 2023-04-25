@@ -1,5 +1,5 @@
-import type { MantineColor, MantineNumberSize, MantineShadow } from '@mantine/core';
-import type { MouseEventHandler, ReactNode } from 'react';
+import type { ClassNames, MantineColor, MantineNumberSize, MantineShadow, Styles, Sx } from '@mantine/core';
+import type { CSSProperties, MouseEventHandler, ReactNode } from 'react';
 
 export type ContextMenuOptions = {
   /**
@@ -19,6 +19,34 @@ export type ContextMenuOptions = {
    * @default 'xs'
    */
   borderRadius?: MantineNumberSize;
+
+  /**
+   * Context menu container className
+   */
+  className?: string;
+
+  /**
+   * Context menu container style
+   */
+  style?: CSSProperties;
+
+  /**
+   * Context menu container sx
+   * @see https://mantine.dev/styles/sx/
+   */
+  sx?: Sx | (Sx | undefined)[];
+
+  /**
+   * Context menu elements classNames; an object with `root`, `item` and `divider` keys and class names as values
+   * @see https://mantine.dev/styles/styles-api/
+   */
+  classNames?: ClassNames<'root' | 'item' | 'divider'>;
+
+  /**
+   * Context menu styles; can be an object with `root`, `item` and `divider` keys and `CSSProperties` as values,
+   * or a function that accepts the current theme and returns a styles object
+   */
+  styles?: Styles<'root' | 'item' | 'divider', CSSProperties>;
 };
 
 export type ContextMenuProviderProps = ContextMenuOptions & {
@@ -27,9 +55,23 @@ export type ContextMenuProviderProps = ContextMenuOptions & {
 
 export type ContextMenuItemOptions = {
   /**
-   * Unique key of the context menu item
+   * Unique key of the context menu item or divider
    */
   key: string;
+  /**
+   * Context menu item or divider className
+   */
+  className?: string;
+
+  /**
+   * Context menu item or divider sx
+   * @see https://mantine.dev/styles/sx/
+   */
+  sx?: Sx | (Sx | undefined)[];
+  /**
+   * Context menu item or divider style
+   */
+  style?: CSSProperties;
 } & (
   | {
       /**

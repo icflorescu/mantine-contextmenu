@@ -43,15 +43,17 @@ const useStyles = createStyles((theme, { color }: { color?: MantineColor }) => {
 });
 
 export default function ContextMenuItem({
+  className,
+  style,
   icon,
   title,
   color,
   disabled,
   onClick,
 }: WithRequiredProperty<Omit<ContextMenuItemOptions, 'key'>, 'title' | 'onClick'>) {
-  const { classes } = useStyles({ color });
+  const { cx, classes } = useStyles({ color });
   return (
-    <UnstyledButton className={classes.root} disabled={disabled} onClick={onClick}>
+    <UnstyledButton className={cx(classes.root, className)} style={style} disabled={disabled} onClick={onClick}>
       {icon && <Box className={classes.icon}>{icon}</Box>}
       <Text className={classes.title} size="sm">
         {title}

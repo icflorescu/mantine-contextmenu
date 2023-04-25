@@ -81,6 +81,11 @@ export const PAGES: ({ external?: true; title: string; color?: MantineColor; des
         title: 'Custom content',
         description: 'Example: Condiguring Mantine ContextMenu to show custom content',
       },
+      {
+        path: 'styling',
+        title: 'Styling',
+        description: 'Example: Styling Mantine ContextMenu',
+      },
     ],
   },
   {
