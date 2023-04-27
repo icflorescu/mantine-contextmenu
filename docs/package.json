@@ -1,6 +1,6 @@
 {
   "name": "mantine-contextmenu-docs",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Docs website for mantine-contextmenu; see ../package/package.json for more info",
   "private": true,
   "scripts": {
@@ -28,7 +28,7 @@
   "devDependencies": {
     "@types/lodash": "^4.14.194",
     "@types/mixpanel-browser": "^2.38.1",
-    "@types/node": "^18.16.0",
+    "@types/node": "^18.16.1",
     "@types/react": "^18.2.0",
     "mixpanel-browser": "^2.46.0",
     "typescript": "^5.0.4"
