@@ -84,6 +84,7 @@ export default function _App(props: AppProps) {
           <Notifications />
           <AppWrapper>
             <ContextMenuProvider>
+              {/* @ts-expect-error 'Component' cannot be used as a JSX component. */}
               <Component {...pageProps} />
             </ContextMenuProvider>
           </AppWrapper>
