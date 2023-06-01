@@ -1,6 +1,6 @@
 {
   "name": "mantine-contextmenu",
-  "version": "1.2.11",
+  "version": "1.2.12",
   "description": "ContextMenu for Mantine UI",
   "keywords": [
     "ui",
@@ -44,8 +44,8 @@
     "lint": "eslint . --ext=.ts,.tsx && tsc --noEmit"
   },
   "devDependencies": {
-    "@mantine/core": "^6.0.11",
-    "@mantine/hooks": "^6.0.11",
+    "@mantine/core": "^6.0.13",
+    "@mantine/hooks": "^6.0.13",
     "@tabler/icons-react": "^2.20.0",
     "@types/react": "^18.2.7",
     "@types/react-dom": "^18.2.4",
@@ -54,8 +54,8 @@
     "typescript": "^5.0.4"
   },
   "peerDependencies": {
-    "@mantine/core": "^6.0.11",
-    "@mantine/hooks": "^6.0.11",
+    "@mantine/core": "^6.0.13",
+    "@mantine/hooks": "^6.0.13",
     "react": "^18.2.0"
   }
 }
