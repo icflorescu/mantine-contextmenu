@@ -8,7 +8,7 @@ import { getFirstExamplePagePath } from '~/lib/page';
 const useStyles = createStyles((theme) => ({
   root: {
     margin: '2em 0 0',
-    '@media (min-width: 586px)': {
+    '@media (min-width: 600px)': {
       gap: theme.spacing.xl,
       margin: '3em 0 1em',
     },
@@ -18,7 +18,7 @@ const useStyles = createStyles((theme) => ({
     '@media (min-width: 420px)': {
       width: `calc(50% - ${theme.spacing.md} / 2)`,
     },
-    '@media (min-width: 586px)': {
+    '@media (min-width: 600px)': {
       width: 'auto',
     },
   },
@@ -29,7 +29,7 @@ const useStyles = createStyles((theme) => ({
     '@media (min-width: 420px)': {
       width: '100%',
     },
-    '@media (min-width: 586px)': {
+    '@media (min-width: 600px)': {
       width: 'initial',
     },
   },

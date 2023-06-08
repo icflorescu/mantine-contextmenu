@@ -16,6 +16,7 @@ export const NAVBAR_BREAKPOINT = 'md';
 
 export const AUTHOR_LINK = 'https://github.com/icflorescu';
 export const REPO_LINK = 'https://github.com/icflorescu/mantine-contextmenu';
+export const NPM_LINK = 'https://www.npmjs.com/package/mantine-contextmenu';
 export const SPONSOR_LINK = 'https://github.com/sponsors/icflorescu';
 export const MANTINE_DATATABLE_LINK = 'https://icflorescu.github.io/mantine-datatable/';
 
