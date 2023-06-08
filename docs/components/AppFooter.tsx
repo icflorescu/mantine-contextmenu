@@ -6,6 +6,7 @@ import {
   MANTINE_DATATABLE_LINK,
   NAVBAR_BREAKPOINT,
   NAVBAR_WIDTH,
+  NPM_LINK,
   REPO_LINK,
   SPONSOR_LINK,
 } from '~/config';
@@ -75,7 +76,7 @@ export default function AppFooter() {
             alt="GitHub Stars"
           />
         </ExternalLink>
-        <ExternalLink to={'https://npmjs.org/package/mantine-contextmenu'}>
+        <ExternalLink to={NPM_LINK}>
           <img src={`https://img.shields.io/npm/dm/mantine-contextmenu.svg?style=${badgeStyle}`} alt="NPM Downloads" />
         </ExternalLink>
       </Group>

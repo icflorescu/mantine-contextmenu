@@ -37,11 +37,11 @@ export default function HomePageTitle() {
   const { classes } = useStyles();
   return (
     <Title className={classes.root} order={2}>
-      A context menu
+      The <span className={classes.gradientText}>context menu</span>
       <br />
       for your Mantine
       <br />
-      <span className={classes.gradientText}>applications.</span>
+      applications
     </Title>
   );
 }
