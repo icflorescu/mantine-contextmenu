@@ -11,10 +11,10 @@ const useStyles = createStyles((theme) => ({
     gap: theme.spacing.xs,
   },
   iconInsideHeader: {
-    '@media (min-width: 330px)': {
+    '@media (min-width: 340px)': {
       display: 'none',
     },
-    '@media (min-width: 370px)': {
+    '@media (min-width: 380px)': {
       display: 'inherit',
     },
   },
@@ -24,7 +24,7 @@ const useStyles = createStyles((theme) => ({
   },
   titleInsideHeader: {
     display: 'none',
-    '@media (min-width: 330px)': {
+    '@media (min-width: 340px)': {
       display: 'block',
     },
   },
@@ -36,7 +36,7 @@ const useStyles = createStyles((theme) => ({
   },
   versionInsideHeader: {
     display: 'none',
-    '@media (min-width: 420px)': {
+    '@media (min-width: 440px)': {
       display: 'inherit',
     },
   },
