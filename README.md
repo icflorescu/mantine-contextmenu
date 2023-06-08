@@ -9,7 +9,7 @@
 [![Downloads][downloads-image]][npm-url]
 [![Language][language-image]][repo-url]
 
-A "dark-theme aware" **context-menu** for your Mantine UI applications, built by the creator of [Mantine DataTable](https://icflorescu.github.io/mantine-datatable/).
+The "dark-theme aware" **context-menu** for your Mantine UI applications, built by the creator of [Mantine DataTable](https://icflorescu.github.io/mantine-datatable/).
 
 [![Mantine ContextMenu](https://user-images.githubusercontent.com/581999/231230506-3278ea99-dfb3-4edc-ad67-d47f1626a298.png)](https://icflorescu.github.io/mantine-contextmenu/)
 
@@ -24,6 +24,8 @@ Install the package and its dependencies:
 ```sh
 npm i @mantine/core @mantine/hooks @emotion/react mantine-contextmenu
 ```
+
+If you're using Next.js, Vite, CRA, Remix or Gatsby, you might need to install additional dependencies. Please refer to Mantine's [getting started page](https://mantine.dev/pages/getting-started/) for more details.
 
 Wrap your application in the `ContextMenuProvider` components:
 
@@ -42,7 +44,7 @@ function App() {
 }
 ```
 
-Use it in your code:
+Use the hook-generated function in your code:
 
 ```tsx
 import { IconCopy, IconDownload } from '@tabler/icons-react';
@@ -78,11 +80,11 @@ export default function GettingStartedExample() {
 }
 ```
 
-Have a look at the available [type definitions](https://icflorescu.github.io/mantine-contextmenu/type-definitions) and make sure to browse the list of [usage examples](https://icflorescu.github.io/mantine-contextmenu/examples/basic-usage).
+Make sure to browse the list of [usage examples](https://icflorescu.github.io/mantine-contextmenu/examples/basic-usage) to learn how to unleash the full power of Mantine ContextMenu.
 
 ## Other useful resources
 
-💡 [Mantine DataTable](https://icflorescu.github.io/mantine-datatable/) - A "dark-theme aware" **data-table** for your Mantine UI applications, built by the creator of Mantine ContextMenu.
+💡 [Mantine DataTable](https://icflorescu.github.io/mantine-datatable/) - The "dark-theme aware" **data-table component** for your Mantine UI applications, built by the creator of Mantine ContextMenu.
 
 ## Code contributors
 
