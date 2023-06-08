@@ -1,7 +1,7 @@
 {
   "name": "mantine-contextmenu",
   "version": "1.2.14",
-  "description": "ContextMenu for Mantine UI",
+  "description": "Enhance your Mantine UI applications usability with customizable context menus",
   "keywords": [
     "ui",
     "mantine",
@@ -12,7 +12,15 @@
     "react",
     "typescript",
     "javascript",
-    "front-end"
+    "front-end",
+    "frontend",
+    "user interface",
+    "ui",
+    "user experience",
+    "ux",
+    "productivity",
+    "usability",
+    "component"
   ],
   "repository": "icflorescu/mantine-contextmenu",
   "homepage": "https://icflorescu.github.io/mantine-contextmenu/",

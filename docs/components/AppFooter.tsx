@@ -3,6 +3,7 @@ import {
   AUTHOR_LINK,
   FOOTER_HEIGHT_ABOVE_NAVBAR_BREAKPOINT,
   FOOTER_HEIGHT_BELOW_NAVBAR_BREAKPOINT,
+  LICENSE_LINK,
   MANTINE_DATATABLE_LINK,
   NAVBAR_BREAKPOINT,
   NAVBAR_WIDTH,
@@ -60,7 +61,7 @@ export default function AppFooter() {
   const { classes } = useStyles();
   return (
     <div className={classes.root}>
-      <ExternalLink to={`${REPO_LINK}/blob/main/LICENSE`} rel="license">
+      <ExternalLink to={LICENSE_LINK} rel="license">
         <img src={`https://img.shields.io/npm/l/mantine-contextmenu.svg?style=${badgeStyle}`} alt="MIT License" />
       </ExternalLink>
       <Text size="sm" align="center">

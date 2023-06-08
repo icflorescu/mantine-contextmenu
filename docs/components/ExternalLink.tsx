@@ -1,9 +1,16 @@
 import { Anchor } from '@mantine/core';
 import { ReactNode } from 'react';
 
-export default function ExternalLink({ to, rel, children }: { to: string; rel?: string; children: ReactNode }) {
+type ExternalLinkProps = {
+  className?: string;
+  to: string;
+  rel?: string;
+  children: ReactNode;
+};
+
+export default function ExternalLink({ className, to, rel, children }: ExternalLinkProps) {
   return (
-    <Anchor href={to} target="_blank" rel={rel ?? 'noreferrer'}>
+    <Anchor className={className} href={to} target="_blank" rel={rel ?? 'noreferrer'}>
       {children}
     </Anchor>
   );

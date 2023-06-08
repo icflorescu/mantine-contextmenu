@@ -16,9 +16,16 @@ export const NAVBAR_BREAKPOINT = 'md';
 
 export const AUTHOR_LINK = 'https://github.com/icflorescu';
 export const REPO_LINK = 'https://github.com/icflorescu/mantine-contextmenu';
+export const LICENSE_LINK = `${REPO_LINK}/blob/main/LICENSE`;
 export const NPM_LINK = 'https://www.npmjs.com/package/mantine-contextmenu';
 export const SPONSOR_LINK = 'https://github.com/sponsors/icflorescu';
 export const MANTINE_DATATABLE_LINK = 'https://icflorescu.github.io/mantine-datatable/';
+export const MANTINE_LINK = 'https://mantine.dev';
+export const NEXTJS_LINK = 'https://nextjs.org';
+export const VITE_LINK = 'https://vitejs.dev';
+export const REMIX_LINK = 'https://remix.run';
+export const CRA_LINK = 'https://create-react-app.dev';
+export const GATSBY_LINK = 'https://www.gatsbyjs.com';
 
 export const PAGES: ({ external?: true; title: string; color?: MantineColor; description?: string } & (
   | {
