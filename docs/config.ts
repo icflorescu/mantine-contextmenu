@@ -5,12 +5,14 @@ import { FC } from 'react';
 export const MIXPANEL_PROJECT_TOKEN = '5e5998d76a5f7b40fb7136c6c9aa03a1';
 
 export const SEO_DEFAULT_TITLE = 'Mantine ContextMenu';
-export const SEO_DEFAULT_DESCRIPTION = 'The missing context-menu for Mantine UI applications';
+export const SEO_DEFAULT_DESCRIPTION =
+  'Design your Mantine applications for productivity and meet your users’ expectations by enhancing your UIs with desktop-grade context menus';
 export const SEO_CREATOR = '@icflorescu';
 
 export const HEADER_HEIGHT = 56;
-export const FOOTER_HEIGHT_BELOW_NAVBAR_BREAKPOINT = 164;
-export const FOOTER_HEIGHT_ABOVE_NAVBAR_BREAKPOINT = 92;
+export const FOOTER_BREAKPOINT = 1200;
+export const FOOTER_HEIGHT_BELOW_BREAKPOINT = 164;
+export const FOOTER_HEIGHT_ABOVE_BREAKPOINT = 76;
 export const NAVBAR_WIDTH = 300;
 export const NAVBAR_BREAKPOINT = 'md';
 
@@ -53,7 +55,7 @@ export const PAGES: ({ external?: true; title: string; color?: MantineColor; des
     title: 'Examples',
     color: 'green',
     items: [
-      { path: 'basic-usage', title: 'Basic usage', description: 'Example: basic usage' },
+      { path: 'basic-usage', title: 'Basic usage', description: 'Example: basic usage of Mantine ContextMenu' },
       {
         path: 'basic-configuration',
         title: 'Basic configuration',
@@ -123,6 +125,7 @@ export const PAGES: ({ external?: true; title: string; color?: MantineColor; des
     external: true,
     path: `${REPO_LINK}/blob/main/CHANGELOG.md`,
     title: 'Changelog',
+    description: 'Mantine ContextMenu changelog',
     color: 'gray',
     icon: IconList,
   },

@@ -6,7 +6,7 @@ import { AUTHOR_LINK, MANTINE_DATATABLE_LINK, NPM_LINK, REPO_LINK } from '~/conf
 const useStyles = createStyles((theme) => ({
   root: {
     textIndent: '-0.1em',
-    marginBottom: '.25em',
+    marginBottom: '.5em',
     color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.colors.gray[8],
     fontSize: 28,
     '@media (min-width: 300px)': {
