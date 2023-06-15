@@ -1,6 +1,7 @@
 import { createStyles, Group, Text } from '@mantine/core';
 import {
   AUTHOR_LINK,
+  FOOTER_BREAKPOINT,
   FOOTER_HEIGHT_ABOVE_BREAKPOINT,
   FOOTER_HEIGHT_BELOW_BREAKPOINT,
   LICENSE_LINK,
@@ -48,7 +49,7 @@ const useStyles = createStyles((theme) => {
           )} 30%)`,
         },
       },
-      [`@media (min-width: ${theme.breakpoints.lg})`]: {
+      [`@media (min-width: ${FOOTER_BREAKPOINT}px)`]: {
         height: FOOTER_HEIGHT_ABOVE_BREAKPOINT,
         flexDirection: 'row',
         justifyContent: 'space-between',
