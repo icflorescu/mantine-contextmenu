@@ -56,8 +56,8 @@ export default function Page() {
         <HomePageAuthor />
         <HomePageHeroImage />
         <Text className={classes.subtitle}>
-          If your applications are designed for productivity, you should meet your users’ expectations by enhancing your
-          UIs with desktop-grade context menus.
+          Design your applications for productivity and meet your users’ expectations by enhancing your UIs with
+          desktop-grade context menus.
         </Text>
         <div className={classes.features}>
           <HomePageFeature icon={IconSettings} title="Lightweight yet customizable">
