@@ -1,6 +1,6 @@
 {
   "name": "mantine-contextmenu-docs",
-  "version": "1.2.17",
+  "version": "1.2.18",
   "description": "Docs website for mantine-contextmenu; see ../package/package.json for more info",
   "private": true,
   "scripts": {
