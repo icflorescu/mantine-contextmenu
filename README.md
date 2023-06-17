@@ -19,6 +19,7 @@ The "dark-theme aware" **context-menu** for your Mantine UI applications, built 
 - **[Simple API](https://icflorescu.github.io/mantine-contextmenu/getting-started)** - just wrap your application in the `ContextMenuProvider` component and use the hook-generated function in your code
 - **[Custom content support](https://icflorescu.github.io/mantine-contextmenu/examples/custom-content)** - use any Mantine component as context menu content
 - **[Highly customizable styling](https://icflorescu.github.io/mantine-contextmenu/examples/styling)** - use the `className`/`classNames`, `style`/`styles` and `sx` props to customize the context menu appearance
+- **[Written in Typescript and well-documented](https://icflorescu.github.io/mantine-contextmenu/type-definitions)** - with detailed JSDoc annotations for each exported function and component
 
 ## Full documentation and examples
 
