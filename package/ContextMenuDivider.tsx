@@ -8,13 +8,13 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-type ContextMenuDividerProps = {
+export type ContextMenuDividerProps = {
   className: string;
   sx: Sx | (Sx | undefined)[] | undefined;
   style: CSSProperties;
 };
 
-export default function ContextMenuDivider({ className, sx, style }: ContextMenuDividerProps) {
+export function ContextMenuDivider({ className, sx, style }: ContextMenuDividerProps) {
   const { cx, classes } = useStyles();
   return <Box className={cx(classes.root, className)} sx={sx} style={style} />;
 }

@@ -1,8 +1,8 @@
 import { Paper, createStyles, packSx, px } from '@mantine/core';
 import { useClickOutside, useElementSize, useMergedRef, useWindowEvent } from '@mantine/hooks';
 import { CSSProperties, MouseEventHandler } from 'react';
-import ContextMenuDivider from './ContextMenuDivider';
-import ContextMenuItem from './ContextMenuItem';
+import { ContextMenuDivider } from './ContextMenuDivider';
+import { ContextMenuItem } from './ContextMenuItem';
 import type { ContextMenuContent, ContextMenuOptions } from './types';
 import { humanize } from './utils';
 
@@ -23,7 +23,7 @@ export type ContextMenuInstanceOptions = {
   content: ContextMenuContent;
 };
 
-type ContextMenuProps = ContextMenuOptions &
+export type ContextMenuProps = ContextMenuOptions &
   ContextMenuInstanceOptions & {
     onHide: () => void;
   };
