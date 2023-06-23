@@ -42,7 +42,7 @@ const useStyles = createStyles((theme, { color }: { color?: MantineColor }) => {
   };
 });
 
-export default function ContextMenuItem({
+export function ContextMenuItem({
   className,
   style,
   icon,
