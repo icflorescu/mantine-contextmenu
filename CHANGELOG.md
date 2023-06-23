@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.0 (2023-06-23)
+
+- Expose `ContextMenu`, `ContextMenuItem` and `ContextMenuDivider` components
+
 ## 1.2.3 (2023-04-29)
 
 - Stop event propagation (fix issue #18)
