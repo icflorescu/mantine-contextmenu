@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.1 (2023-06-28)
+
+- Relax peer dependencies (to Mantine 6.x)
+
 ## 1.3.0 (2023-06-23)
 
 - Expose `ContextMenu`, `ContextMenuItem` and `ContextMenuDivider` components
