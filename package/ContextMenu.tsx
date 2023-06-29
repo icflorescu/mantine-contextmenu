@@ -1,4 +1,4 @@
-import { Paper, createStyles, packSx, px } from '@mantine/core';
+import { Paper, Portal, createStyles, packSx, px } from '@mantine/core';
 import { useClickOutside, useElementSize, useMergedRef, useWindowEvent } from '@mantine/hooks';
 import { CSSProperties, MouseEventHandler } from 'react';
 import { ContextMenuDivider } from './ContextMenuDivider';
@@ -65,48 +65,50 @@ export function ContextMenu({
   const mdSpacing = px(spacing.md);
 
   return (
-    <Paper
-      ref={ref}
-      shadow={shadow}
-      radius={borderRadius}
-      className={cx(classes.root, className, classNames?.root)}
-      style={{ ...styleProperties?.root, ...style } as CSSProperties}
-      sx={[
-        {
-          zIndex,
-          top: y + height + mdSpacing > windowHeight ? windowHeight - height - mdSpacing : y,
-          left:
-            dir === 'ltr'
-              ? x + width + mdSpacing > windowWidth
-                ? windowWidth - width - mdSpacing
-                : x
-              : windowWidth - mdSpacing - (x - width - mdSpacing < 0 ? width + mdSpacing : x),
-        },
-        ...packSx(sx),
-      ]}
-    >
-      {Array.isArray(content)
-        ? content.map(({ key, className, sx, style, onClick, title, ...otherOptions }) =>
-            onClick ? (
-              <ContextMenuItem
-                key={key}
-                className={cx(classNames?.item, className)}
-                sx={sx}
-                style={{ ...styleProperties?.item, ...style } as CSSProperties}
-                title={title ?? humanize(key)}
-                onClick={handleClick(onClick)}
-                {...otherOptions}
-              />
-            ) : (
-              <ContextMenuDivider
-                key={key}
-                className={cx(classNames?.divider, className)}
-                sx={sx}
-                style={{ ...styleProperties?.divider, ...style } as CSSProperties}
-              />
+    <Portal>
+      <Paper
+        ref={ref}
+        shadow={shadow}
+        radius={borderRadius}
+        className={cx(classes.root, className, classNames?.root)}
+        style={{ ...styleProperties?.root, ...style } as CSSProperties}
+        sx={[
+          {
+            zIndex,
+            top: y + height + mdSpacing > windowHeight ? windowHeight - height - mdSpacing : y,
+            left:
+              dir === 'ltr'
+                ? x + width + mdSpacing > windowWidth
+                  ? windowWidth - width - mdSpacing
+                  : x
+                : windowWidth - mdSpacing - (x - width - mdSpacing < 0 ? width + mdSpacing : x),
+          },
+          ...packSx(sx),
+        ]}
+      >
+        {Array.isArray(content)
+          ? content.map(({ key, className, sx, style, onClick, title, ...otherOptions }) =>
+              onClick ? (
+                <ContextMenuItem
+                  key={key}
+                  className={cx(classNames?.item, className)}
+                  sx={sx}
+                  style={{ ...styleProperties?.item, ...style } as CSSProperties}
+                  title={title ?? humanize(key)}
+                  onClick={handleClick(onClick)}
+                  {...otherOptions}
+                />
+              ) : (
+                <ContextMenuDivider
+                  key={key}
+                  className={cx(classNames?.divider, className)}
+                  sx={sx}
+                  style={{ ...styleProperties?.divider, ...style } as CSSProperties}
+                />
+              )
             )
-          )
-        : content(onHide)}
-    </Paper>
+          : content(onHide)}
+      </Paper>
+    </Portal>
   );
 }
