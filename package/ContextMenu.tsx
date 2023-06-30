@@ -1,6 +1,6 @@
 import { Paper, Portal, createStyles, packSx, px } from '@mantine/core';
 import { useClickOutside, useElementSize, useMergedRef, useWindowEvent } from '@mantine/hooks';
-import { CSSProperties, MouseEventHandler } from 'react';
+import { CSSProperties, MouseEventHandler, useEffect, useState } from 'react';
 import { ContextMenuDivider } from './ContextMenuDivider';
 import { ContextMenuItem } from './ContextMenuItem';
 import type { ContextMenuContent, ContextMenuOptions } from './types';
@@ -52,6 +52,12 @@ export function ContextMenu({
   let windowWidth = 0;
   let windowHeight = 0;
   if (typeof window !== 'undefined') ({ innerWidth: windowWidth, innerHeight: windowHeight } = window);
+
+  // trigger a rerender to make sure that context menu is positioned correctly
+  const [, setRendered] = useState(false);
+  useEffect(() => {
+    setRendered(true);
+  }, []);
 
   const handleClick: (onClick: MouseEventHandler<HTMLButtonElement>) => MouseEventHandler<HTMLButtonElement> =
     (onClick) => (e) => {

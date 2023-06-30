@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.3 (2023-06-30)
+
+- Fix positioning regression introduced by using a Portal
+
 ## 1.3.2 (2023-06-29)
 
 - Use a Portal to render the context menu
