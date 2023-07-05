@@ -8,6 +8,7 @@
 [![Closed issues][closed-issues-image]][closed-issues-url]
 [![Downloads][downloads-image]][npm-url]
 [![Language][language-image]][repo-url]
+[![Sponsor the author][sponsor-image]][sponsor-url]
 
 The "dark-theme aware" **context-menu** for your Mantine UI applications, built by the creator of [Mantine DataTable](https://icflorescu.github.io/mantine-datatable/).
 
@@ -137,3 +138,5 @@ The [MIT License](https://github.com/icflorescu/mantine-contextmenu/blob/master/
 [last-commit-image]: https://img.shields.io/github/last-commit/icflorescu/mantine-contextmenu?style=flat-square
 [closed-issues-image]: https://img.shields.io/github/issues-closed-raw/icflorescu/mantine-contextmenu?style=flat-square
 [language-image]: https://img.shields.io/github/languages/top/icflorescu/mantine-contextmenu?style=flat-square
+[sponsor-image]: https://img.shields.io/badge/sponsor-violet?style=flat-square
+[sponsor-url]: https://github.com/sponsors/icflorescu
