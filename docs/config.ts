@@ -2,8 +2,6 @@ import { MantineColor } from '@mantine/core';
 import { IconAdjustments, IconHeartHandshake, IconHome, IconLifebuoy, IconList, IconRocket } from '@tabler/icons-react';
 import { FC } from 'react';
 
-export const MIXPANEL_PROJECT_TOKEN = '5e5998d76a5f7b40fb7136c6c9aa03a1';
-
 export const SEO_DEFAULT_TITLE = 'Mantine ContextMenu';
 export const SEO_DEFAULT_DESCRIPTION =
   'Design your Mantine applications for productivity and meet your users’ expectations by enhancing your UIs with desktop-grade context menus';
