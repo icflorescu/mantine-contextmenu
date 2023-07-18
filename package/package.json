@@ -52,11 +52,11 @@
     "lint": "eslint . --ext=.ts,.tsx && tsc --noEmit"
   },
   "devDependencies": {
-    "@mantine/core": "^6.0.16",
-    "@mantine/hooks": "^6.0.16",
-    "@types/react": "^18.2.14",
-    "@types/react-dom": "^18.2.6",
-    "esbuild": "^0.18.11",
+    "@mantine/core": "^6.0.17",
+    "@mantine/hooks": "^6.0.17",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "esbuild": "^0.18.14",
     "react": "^18.2.0",
     "typescript": "^5.1.6"
   },
