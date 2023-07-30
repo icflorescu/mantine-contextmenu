@@ -1,6 +1,6 @@
 # Changelog
 
-The following is a list of notable changes to the Mantine ContextMenu component.
+The following is a list of notable changes to the Mantine ContextMenu component.  
 Minor versions that are not listed in the changelog are minor bug fixes and small internal improvements or refactorings.
 
 ## 1.3.3 (2023-06-30)
