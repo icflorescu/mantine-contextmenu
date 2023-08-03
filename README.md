@@ -16,6 +16,7 @@ The "dark-theme aware" **context-menu** for your Mantine UI applications, built 
 
 ## Features
 
+- **Lightweight** - no expternal dependencies, [no bloat](https://bundlephobia.com/package/mantine-contextmenu)
 - **Dark-theme aware** - automatically adapts to the current Mantine theme
 - **[Simple API](https://icflorescu.github.io/mantine-contextmenu/getting-started)** - just wrap your application in the `ContextMenuProvider` component and use the hook-generated function in your code
 - **[Custom content support](https://icflorescu.github.io/mantine-contextmenu/examples/custom-content)** - use any Mantine component as context menu content
