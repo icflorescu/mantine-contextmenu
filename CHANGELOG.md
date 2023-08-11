@@ -3,6 +3,10 @@
 The following is a list of notable changes to the Mantine ContextMenu component.  
 Minor versions that are not listed in the changelog are minor bug fixes and small internal improvements or refactorings.
 
+## 1.3.14 (2023-08-11)
+
+- Switch to `useResizeObserver` instead of `useElementSize` to properly take into account the padding and border when calculating the menu position
+
 ## 1.3.13 (2023-08-10)
 
 - Lock `@mantine/core` and `@mantine/hooks` peer dependencies to `>=6 <=6.0.17 || >=6.0.19`, to avoid a [bug introduced in `6.0.18` and fixed in `6.0.19`](https://github.com/mantinedev/mantine/pull/4512)

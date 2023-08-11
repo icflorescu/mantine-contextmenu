@@ -7,6 +7,7 @@ import { copyImageToClipboard, downloadImage, unsplashImages } from '~/lib/image
 // example-start
 const useStyles = createStyles((theme) => ({
   contextMenu: {
+    padding: theme.spacing.md,
     border: `1px solid ${theme.colors.red[6]}`,
   },
 }));
