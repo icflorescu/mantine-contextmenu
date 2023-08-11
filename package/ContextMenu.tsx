@@ -1,5 +1,5 @@
 import { Paper, Portal, createStyles, packSx, px } from '@mantine/core';
-import { useClickOutside, useElementSize, useMergedRef, useWindowEvent } from '@mantine/hooks';
+import { useClickOutside, useMergedRef, useResizeObserver, useWindowEvent } from '@mantine/hooks';
 import { CSSProperties, MouseEventHandler, useEffect, useState } from 'react';
 import { ContextMenuDivider } from './ContextMenuDivider';
 import { ContextMenuItem } from './ContextMenuItem';
@@ -46,7 +46,8 @@ export function ContextMenu({
   useWindowEvent('scroll', onHide);
 
   const clickOutsideRef = useClickOutside<HTMLDivElement>(onHide);
-  const { ref: sizeRef, width, height } = useElementSize();
+  const [sizeRef] = useResizeObserver<HTMLDivElement>();
+  const { width, height } = sizeRef.current?.getBoundingClientRect() || { width: 0, height: 0 };
   const ref = useMergedRef(clickOutsideRef, sizeRef);
 
   let windowWidth = 0;
