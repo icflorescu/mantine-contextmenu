@@ -1,6 +1,6 @@
 {
   "name": "mantine-contextmenu-docs",
-  "version": "1.3.14",
+  "version": "1.3.15",
   "description": "Docs website for mantine-contextmenu; see ../package/package.json for more info",
   "private": true,
   "scripts": {
@@ -16,10 +16,10 @@
     "@mantine/next": "^6.0.19",
     "@mantine/notifications": "^6.0.19",
     "@mantine/prism": "^6.0.19",
-    "@tabler/icons-react": "^2.30.0",
+    "@tabler/icons-react": "^2.32.0",
     "lodash": "^4.17.21",
     "mantine-contextmenu": "*",
-    "next": "^13.4.13",
+    "next": "^13.4.19",
     "next-pwa": "^5.6.0",
     "next-sitemap": "^4.2.2",
     "react": "^18.2.0",
@@ -27,9 +27,9 @@
   },
   "devDependencies": {
     "@types/lodash": "^4.14.197",
-    "@types/node": "^20.4.9",
-    "@types/react": "^18.2.20",
-    "typescript": "^5.1.6",
+    "@types/node": "^20.5.7",
+    "@types/react": "^18.2.21",
+    "typescript": "^5.2.2",
     "webpack": "^5.88.2"
   }
 }
