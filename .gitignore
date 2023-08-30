@@ -13,3 +13,4 @@ docs/public/workbox-*.js
 docs/public/workbox-*.js.map
 package/README.md
 package/LICENSE
+.idea

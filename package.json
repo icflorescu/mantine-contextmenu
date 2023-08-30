@@ -29,7 +29,7 @@
   },
   "engines": {
     "npm": ">=8.13.2",
-    "node": ">=16.16.0"
+    "node": ">=18.17.0"
   },
   "packageManager": "yarn@1.22.19"
 }
