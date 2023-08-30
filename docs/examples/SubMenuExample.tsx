@@ -27,7 +27,7 @@ export default function ActionIconsExample() {
           key: "open",
           icon: <IconFolderOpen size={16} />,
           title: `Open ${image.author.name}’s profile in`,
-          children: [
+          submenu: [
             {
               key: 'new tab',
               icon: <IconLink size={16}/>,
