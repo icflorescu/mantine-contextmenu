@@ -37,16 +37,16 @@ export type ContextMenuOptions = {
   sx?: Sx | (Sx | undefined)[];
 
   /**
-   * Context menu elements classNames; an object with `root`, `item` and `divider` keys and class names as values
+   * Context menu elements classNames; an object with `root`, `item` `divider` and 'submenu' keys and class names as values
    * @see https://mantine.dev/styles/styles-api/
    */
-  classNames?: ClassNames<'root' | 'item' | 'divider'>;
+  classNames?: ClassNames<'root' | 'item' | 'divider' | 'submenu'>;
 
   /**
-   * Context menu styles; can be an object with `root`, `item` and `divider` keys and `CSSProperties` as values,
+   * Context menu styles; can be an object with `root`, `item`, `divider` and 'submenu' keys and `CSSProperties` as values,
    * or a function that accepts the current theme and returns a styles object
    */
-  styles?: Styles<'root' | 'item' | 'divider', CSSProperties>;
+  styles?: Styles<'root' | 'item' | 'divider' | 'submenu', CSSProperties>;
 };
 
 export type ContextMenuProviderProps = ContextMenuOptions & {
@@ -106,21 +106,21 @@ export type ContextMenuItemOptions = {
       /**
        * Optional context menu item `onClick` handler; if not provided, a divider will be rendered instead
        */
-      onClick: MouseEventHandler<HTMLButtonElement>;
+      onClick?: MouseEventHandler<HTMLButtonElement>;
 
-      children: never;
+      submenu?: never;
     }
   | {
       /**
        * Optional context menu item `onClick` handler; if not provided, a divider will be rendered instead
        */
-      children: ContextMenuItemOptions[];
+      submenu?: ContextMenuItemOptions[];
 
-      onClick: never;
+      onClick?: never;
     }
   | {
       onClick?: never;
-      children?: never;
+      submenu?: never;
     }
 );
 
