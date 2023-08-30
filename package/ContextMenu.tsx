@@ -5,6 +5,7 @@ import { ContextMenuDivider } from './ContextMenuDivider';
 import { ContextMenuItem } from './ContextMenuItem';
 import type { ContextMenuContent, ContextMenuOptions } from './types';
 import { humanize } from './utils';
+import {ContextMenuSubMenu} from "./ContextMenuSubMenu";
 
 const EMPTY_OBJECT = {};
 
@@ -21,6 +22,7 @@ export type ContextMenuInstanceOptions = {
   x: number;
   y: number;
   content: ContextMenuContent;
+  subOptions?: ContextMenuOptions;
 };
 
 export type ContextMenuProps = ContextMenuOptions &
@@ -41,6 +43,7 @@ export function ContextMenu({
   sx,
   classNames,
   styles,
+  subOptions,
 }: ContextMenuProps) {
   useWindowEvent('resize', onHide);
   useWindowEvent('scroll', onHide);
@@ -94,8 +97,19 @@ export function ContextMenu({
         ]}
       >
         {Array.isArray(content)
-          ? content.map(({ key, className, sx, style, onClick, title, ...otherOptions }) =>
-              onClick ? (
+          ? content.map(({ key, className, sx, style, onClick, title, submenu, ...otherOptions }) =>
+              submenu ? (
+                <ContextMenuSubMenu
+                  key={key}
+                  className={cx(classNames?.submenu, className)}
+                  sx={sx}
+                  style={{ ...styleProperties?.submenu, ...style } as CSSProperties}
+                  title={title ?? humanize(key)}
+                  submenu={submenu}
+                  subOptions={subOptions}
+                  {...otherOptions}
+                />
+              ): onClick ? (
                 <ContextMenuItem
                   key={key}
                   className={cx(classNames?.item, className)}

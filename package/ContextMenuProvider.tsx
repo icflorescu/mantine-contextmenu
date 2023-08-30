@@ -36,6 +36,12 @@ export function ContextMenuProvider({
       sx: options?.sx,
       classNames: options?.classNames,
       styles: options?.styles,
+      subOptions: {
+        ...options,
+        zIndex: options?.zIndex || zIndex,
+        shadow: options?.shadow || shadow,
+        borderRadius: options?.borderRadius || borderRadius,
+      },
     });
   };
 
