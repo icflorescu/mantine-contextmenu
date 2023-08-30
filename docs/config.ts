@@ -85,6 +85,11 @@ export const PAGES: ({ external?: true; title: string; color?: MantineColor; des
         description: 'Example: Adding Mantine ContextMenu to multiple targets',
       },
       {
+        path: 'sub-menus',
+        title: 'Sub Menus',
+        description: 'Example: Adding Sub menus to Mantine ContextMenu',
+      },
+      {
         path: 'custom-content',
         title: 'Custom content',
         description: 'Example: Condiguring Mantine ContextMenu to show custom content',
