@@ -59,21 +59,23 @@ const useStyles = createStyles((theme, {color}: { color?: MantineColor }) => {
   };
 });
 
-export function ContextMenuSubMenu({
+type ContextMenuSubmenuProps = WithRequiredProperty<Omit<ContextMenuItemOptions, 'key'>, 'title' | 'submenu'> & {
+  submenuOptions?: ContextMenuOptions,
+  showSubmenu: boolean,
+  onItemHover: () => void;
+};
+
+export function ContextMenuSubmenu({
                                      className,
                                      style,
                                      icon,
                                      title,
                                      color,
                                      submenu,
-                                     subOptions,
-                                     showSubMenu,
+                                     submenuOptions,
+                                     showSubmenu,
                                      onItemHover,
-                                   }: WithRequiredProperty<Omit<ContextMenuItemOptions, 'key'>, 'title' | 'submenu'> & {
-  subOptions?: ContextMenuOptions,
-  showSubMenu: boolean,
-  onItemHover: () => void;
-}) {
+                                   }: ContextMenuSubmenuProps) {
   const {cx, classes} = useStyles({color});
 
   const [{x, y}, setCoordinate] = useState<{ x: number, y: number }>({x: 0, y: 0});
@@ -97,19 +99,19 @@ export function ContextMenuSubMenu({
         {title}
       </Text>
       <span className={classes.chevron}></span>
-      {showSubMenu && <ContextMenu
+      {showSubmenu && <ContextMenu
           x={x}
           y={y}
           content={submenu}
-          zIndex={subOptions?.zIndex}
-          shadow={subOptions?.shadow}
-          borderRadius={subOptions?.borderRadius}
-          className={subOptions?.className}
-          style={subOptions?.style}
-          sx={subOptions?.sx}
-          classNames={subOptions?.classNames}
-          styles={subOptions?.styles}
-          subOptions={subOptions}
+          zIndex={submenuOptions?.zIndex}
+          shadow={submenuOptions?.shadow}
+          borderRadius={submenuOptions?.borderRadius}
+          className={submenuOptions?.className}
+          style={submenuOptions?.style}
+          sx={submenuOptions?.sx}
+          classNames={submenuOptions?.classNames}
+          styles={submenuOptions?.styles}
+          subOptions={submenuOptions}
           onHide={() => void 0}/>}
     </Box>
   );

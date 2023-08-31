@@ -42,6 +42,10 @@ const useStyles = createStyles((theme, { color }: { color?: MantineColor }) => {
   };
 });
 
+type ContextMenuItemProps = WithRequiredProperty<Omit<ContextMenuItemOptions, 'key'>, 'title' | 'onClick'> & {
+  onItemHover: () => void;
+}
+
 export function ContextMenuItem({
   className,
   style,
@@ -51,9 +55,7 @@ export function ContextMenuItem({
   disabled,
   onClick,
   onItemHover,
-}: WithRequiredProperty<Omit<ContextMenuItemOptions, 'key'>, 'title' | 'onClick'> & {
-  onItemHover: () => void;
-}) {
+}: ContextMenuItemProps) {
   const { cx, classes } = useStyles({ color });
   return (
     <UnstyledButton className={cx(classes.root, className)} style={style} disabled={disabled} onClick={onClick} onMouseOver={onItemHover}>

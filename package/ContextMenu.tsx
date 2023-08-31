@@ -5,7 +5,7 @@ import { ContextMenuDivider } from './ContextMenuDivider';
 import { ContextMenuItem } from './ContextMenuItem';
 import type { ContextMenuContent, ContextMenuOptions } from './types';
 import { humanize } from './utils';
-import {ContextMenuSubMenu} from "./ContextMenuSubMenu";
+import {ContextMenuSubmenu} from "./ContextMenuSubmenu";
 
 const EMPTY_OBJECT = {};
 
@@ -44,14 +44,15 @@ export function ContextMenu({
   classNames,
   styles,
   subOptions,
-}: ContextMenuProps, inboundRef: ForwardedRef<HTMLDivElement>) {
+}: ContextMenuProps) {
   useWindowEvent('resize', onHide);
   useWindowEvent('scroll', onHide);
 
   const clickOutsideRef = useClickOutside<HTMLDivElement>(onHide);
+
   const [sizeRef] = useResizeObserver<HTMLDivElement>();
   const { width, height } = sizeRef.current?.getBoundingClientRect() || { width: 0, height: 0 };
-  const ref = useMergedRef(clickOutsideRef, sizeRef, inboundRef);
+  const ref = useMergedRef(clickOutsideRef, sizeRef);
 
   let windowWidth = 0;
   let windowHeight = 0;
@@ -105,15 +106,15 @@ export function ContextMenu({
         {Array.isArray(content)
           ? content.map(({ key, className, sx, style, onClick, title, submenu, ...otherOptions }) =>
               submenu ? (
-                <ContextMenuSubMenu
+                <ContextMenuSubmenu
                   key={key}
                   className={cx(classNames?.submenu, className)}
                   sx={sx}
                   style={{ ...styleProperties?.submenu, ...style } as CSSProperties}
                   title={title ?? humanize(key)}
                   submenu={submenu}
-                  subOptions={subOptions}
-                  showSubMenu={showSubMenu}
+                  submenuOptions={subOptions}
+                  showSubmenu={showSubMenu}
                   onItemHover={toggleShowSubMenu(true)}
                   {...otherOptions}
                 />
