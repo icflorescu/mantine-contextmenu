@@ -12,9 +12,10 @@ export type ContextMenuDividerProps = {
   className: string;
   sx: Sx | (Sx | undefined)[] | undefined;
   style: CSSProperties;
+  onItemHover: () => void;
 };
 
-export function ContextMenuDivider({ className, sx, style }: ContextMenuDividerProps) {
+export function ContextMenuDivider({ className, sx, style, onItemHover }: ContextMenuDividerProps) {
   const { cx, classes } = useStyles();
-  return <Box className={cx(classes.root, className)} sx={sx} style={style} />;
+  return <Box className={cx(classes.root, className)} sx={sx} style={style} onMouseOver={onItemHover} />;
 }

@@ -1,6 +1,6 @@
 import { Paper, Portal, createStyles, packSx, px } from '@mantine/core';
 import { useClickOutside, useMergedRef, useResizeObserver, useWindowEvent } from '@mantine/hooks';
-import { CSSProperties, MouseEventHandler, useEffect, useState } from 'react';
+import {createRef, CSSProperties, ForwardedRef, forwardRef, MouseEventHandler, useEffect, useState} from 'react';
 import { ContextMenuDivider } from './ContextMenuDivider';
 import { ContextMenuItem } from './ContextMenuItem';
 import type { ContextMenuContent, ContextMenuOptions } from './types';
@@ -44,14 +44,14 @@ export function ContextMenu({
   classNames,
   styles,
   subOptions,
-}: ContextMenuProps) {
+}: ContextMenuProps, inboundRef: ForwardedRef<HTMLDivElement>) {
   useWindowEvent('resize', onHide);
   useWindowEvent('scroll', onHide);
 
   const clickOutsideRef = useClickOutside<HTMLDivElement>(onHide);
   const [sizeRef] = useResizeObserver<HTMLDivElement>();
   const { width, height } = sizeRef.current?.getBoundingClientRect() || { width: 0, height: 0 };
-  const ref = useMergedRef(clickOutsideRef, sizeRef);
+  const ref = useMergedRef(clickOutsideRef, sizeRef, inboundRef);
 
   let windowWidth = 0;
   let windowHeight = 0;
@@ -73,6 +73,12 @@ export function ContextMenu({
   const { dir, spacing } = theme;
   const styleProperties = typeof styles === 'function' ? styles(theme, EMPTY_OBJECT, EMPTY_OBJECT) : styles;
   const mdSpacing = px(spacing.md);
+
+  const [showSubMenu, setShowSubMenu] = useState<boolean>(false);
+
+  const toggleShowSubMenu = (show: boolean) => () => {
+    setShowSubMenu(show);
+  }
 
   return (
     <Portal>
@@ -107,6 +113,8 @@ export function ContextMenu({
                   title={title ?? humanize(key)}
                   submenu={submenu}
                   subOptions={subOptions}
+                  showSubMenu={showSubMenu}
+                  onItemHover={toggleShowSubMenu(true)}
                   {...otherOptions}
                 />
               ): onClick ? (
@@ -117,6 +125,7 @@ export function ContextMenu({
                   style={{ ...styleProperties?.item, ...style } as CSSProperties}
                   title={title ?? humanize(key)}
                   onClick={handleClick(onClick)}
+                  onItemHover={toggleShowSubMenu(false)}
                   {...otherOptions}
                 />
               ) : (
@@ -125,6 +134,7 @@ export function ContextMenu({
                   className={cx(classNames?.divider, className)}
                   sx={sx}
                   style={{ ...styleProperties?.divider, ...style } as CSSProperties}
+                  onItemHover={toggleShowSubMenu(false)}
                 />
               )
             )

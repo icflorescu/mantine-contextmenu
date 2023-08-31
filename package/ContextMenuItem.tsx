@@ -50,10 +50,13 @@ export function ContextMenuItem({
   color,
   disabled,
   onClick,
-}: WithRequiredProperty<Omit<ContextMenuItemOptions, 'key'>, 'title' | 'onClick'>) {
+  onItemHover,
+}: WithRequiredProperty<Omit<ContextMenuItemOptions, 'key'>, 'title' | 'onClick'> & {
+  onItemHover: () => void;
+}) {
   const { cx, classes } = useStyles({ color });
   return (
-    <UnstyledButton className={cx(classes.root, className)} style={style} disabled={disabled} onClick={onClick}>
+    <UnstyledButton className={cx(classes.root, className)} style={style} disabled={disabled} onClick={onClick} onMouseOver={onItemHover}>
       {icon && <Box className={classes.icon}>{icon}</Box>}
       <Text className={classes.title} size="sm">
         {title}
