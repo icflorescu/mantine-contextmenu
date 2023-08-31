@@ -1,4 +1,4 @@
-import { Container } from '@mantine/core';
+import {Code, Container} from '@mantine/core';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import CodeBlock from '~/components/CodeBlock';
 import PageNavigation from '~/components/PageNavigation';
@@ -18,10 +18,8 @@ export default function Page({ code }: InferGetStaticPropsType<typeof getStaticP
     <Container>
       <PageTitle of={PATH} />
       <PageText>
-        a // TODO
-      </PageText>
-      <PageText>
-        b // TODO
+        An item with a <Code>submenu</Code> property will render a sub context menu, available when hovering over the given option.
+        The field is the same as the config array, with support for nesting.
       </PageText>
       <CodeBlock language="typescript" content={code} />
       <PageText>Right-click on any image to trigger the context menu:</PageText>

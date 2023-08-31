@@ -112,7 +112,7 @@ export type ContextMenuItemOptions = {
     }
   | {
       /**
-       * Optional context menu item `onClick` handler; if not provided, a divider will be rendered instead
+       * Optional context submenu as a child of the given option; if provided, it will render an extra submenu
        */
       submenu?: ContextMenuItemOptions[];
 
