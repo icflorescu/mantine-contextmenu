@@ -73,7 +73,7 @@ export type ContextMenuItemOptions = {
    */
   style?: CSSProperties;
 } & (
-  | {
+  | ({
       /**
        * Optional context menu item icon
        */
@@ -94,18 +94,31 @@ export type ContextMenuItemOptions = {
        * Boolean indicating whether the context menu item is disabled
        */
       disabled?: boolean;
+    } & (
+      | {
+          /**
+           * Optional context menu item `onClick` handler; if not provided, a divider will be rendered instead
+           */
+          onClick: MouseEventHandler<HTMLButtonElement>;
 
-      /**
-       * Optional context menu item `onClick` handler; if not provided, a divider will be rendered instead
-       */
-      onClick: MouseEventHandler<HTMLButtonElement>;
-    }
+          items?: never;
+        }
+      | {
+          onClick?: never;
+
+          /**
+           * Optional items; if provided, a submenu will be rendered
+           */
+          items: ContextMenuItemOptions[];
+        }
+    ))
   | {
       icon?: never;
       title?: never;
       color?: never;
       disabled?: never;
       onClick?: never;
+      items?: never;
     }
 );
 

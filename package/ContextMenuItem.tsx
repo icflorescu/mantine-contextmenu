@@ -1,11 +1,13 @@
 import { Box, Text, UnstyledButton, createStyles, px, type MantineColor } from '@mantine/core';
-import { ContextMenuItemOptions } from './types';
+import { MouseEventHandler, useRef, useState } from 'react';
+import { ContextMenu } from './ContextMenu';
+import { ContextMenuContent, ContextMenuItemOptions } from './types';
 import { WithRequiredProperty } from './utils';
 
 const useStyles = createStyles((theme, { color }: { color?: MantineColor }) => {
   const verticalPadding = px(theme.spacing.sm) / 2;
   return {
-    root: {
+    button: {
       width: '100%',
       display: 'flex',
       alignItems: 'center',
@@ -32,12 +34,9 @@ const useStyles = createStyles((theme, { color }: { color?: MantineColor }) => {
         ),
       },
     },
-    icon: {
-      fontSize: 0,
-      marginRight: theme.spacing.xs,
-    },
     title: {
       whiteSpace: 'nowrap',
+      flexGrow: 1,
     },
   };
 });
@@ -50,14 +49,58 @@ export function ContextMenuItem({
   color,
   disabled,
   onClick,
-}: WithRequiredProperty<Omit<ContextMenuItemOptions, 'key'>, 'title' | 'onClick'>) {
+  onHide,
+  items,
+}: WithRequiredProperty<Omit<ContextMenuItemOptions, 'key'>, 'title'> & { onHide: () => void }) {
+  const ref = useRef<HTMLButtonElement>(null);
+  const [submenuPosition, setSubmenuPosition] = useState<{ x: number; y: number } | null>(null);
+
+  const handleClick: MouseEventHandler<HTMLButtonElement> | undefined = onClick
+    ? (e) => {
+        onHide();
+        onClick!(e);
+      }
+    : undefined;
+
+  const showSubmenu = () => {
+    const { top: y, right: x } = ref.current!.getBoundingClientRect();
+    setSubmenuPosition({ x, y });
+  };
+
+  const hideSubmenu = () => {
+    setSubmenuPosition(null);
+  };
+
+  const hasItemsAndIsNotDisabled = items && !disabled;
   const { cx, classes } = useStyles({ color });
+
   return (
-    <UnstyledButton className={cx(classes.root, className)} style={style} disabled={disabled} onClick={onClick}>
-      {icon && <Box className={classes.icon}>{icon}</Box>}
-      <Text className={classes.title} size="sm">
-        {title}
-      </Text>
-    </UnstyledButton>
+    <div
+      onMouseOver={hasItemsAndIsNotDisabled ? showSubmenu : undefined}
+      onMouseOut={hasItemsAndIsNotDisabled ? hideSubmenu : undefined}
+    >
+      <UnstyledButton
+        ref={ref}
+        className={cx(classes.button, className)}
+        style={style}
+        disabled={disabled}
+        onClick={handleClick}
+      >
+        {icon && (
+          <Box fz={0} mr="xs">
+            {icon}
+          </Box>
+        )}
+        <Text className={classes.title} size="sm">
+          {title}
+        </Text>
+        {items && (
+          <Box fz={10} mt={-2} ml="xs">
+            ▶
+          </Box>
+        )}
+      </UnstyledButton>
+      {submenuPosition && <ContextMenu content={items as ContextMenuContent} onHide={onHide} {...submenuPosition} />}
+    </div>
   );
 }

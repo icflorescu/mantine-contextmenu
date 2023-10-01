@@ -2,10 +2,10 @@ import { Container, Text, createStyles } from '@mantine/core';
 import { IconLifebuoy, IconRocket, IconScale, IconSettings } from '@tabler/icons-react';
 import ExternalLink from '~/components/ExternalLink';
 import InternalLink from '~/components/InternalLink';
-import { HomePageAuthor } from '~/components/homePage/HomePageAuthor';
 import HomePageButtons from '~/components/homePage/HomePageButtons';
 import HomePageFeature from '~/components/homePage/HomePageFeature';
 import HomePageHeroImage from '~/components/homePage/HomePageHeroImage';
+import { HomePageSubtitle } from '~/components/homePage/HomePageSubtitle';
 import HomePageTitle from '~/components/homePage/HomePageTitle';
 import {
   CRA_LINK,
@@ -53,7 +53,7 @@ export default function Page() {
     <Container>
       <div className={classes.root}>
         <HomePageTitle />
-        <HomePageAuthor />
+        <HomePageSubtitle />
         <HomePageHeroImage />
         <Text className={classes.subtitle}>
           Design your applications for productivity and meet your users’ expectations by enhancing your UIs with
