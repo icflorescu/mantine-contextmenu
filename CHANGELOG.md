@@ -3,6 +3,11 @@
 The following is a list of notable changes to the Mantine ContextMenu component.  
 Minor versions that are not listed in the changelog are minor bug fixes and small internal improvements or refactorings.
 
+## 6.0.0 (2023-10-01)
+
+- Bump version to `6.0.0` to match the compatible versions of `@mantine/hooks` and `@mantine/core`. From now on, we'll make sure to keep the major version of `mantine-contextmenu` in sync with the major version of Mantine core
+- Implement submenus (nested context menus) support (see [#68](https://github.com/icflorescu/mantine-contextmenu/issues/68)), many thanks to @Corvimia for her contribution 🙏 (see [#69](https://github.com/icflorescu/mantine-contextmenu/pull/69))
+
 ## 1.3.14 (2023-08-11)
 
 - Switch to `useResizeObserver` instead of `useElementSize` to properly take into account the padding and border when calculating the menu position
