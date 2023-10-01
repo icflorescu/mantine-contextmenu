@@ -1,5 +1,13 @@
 import { MantineColor } from '@mantine/core';
-import { IconAdjustments, IconHeartHandshake, IconHome, IconLifebuoy, IconList, IconRocket } from '@tabler/icons-react';
+import {
+  IconAdjustments,
+  IconBellFilled,
+  IconHeartHandshake,
+  IconHome,
+  IconLifebuoy,
+  IconList,
+  IconRocket,
+} from '@tabler/icons-react';
 import { FC } from 'react';
 
 export const SEO_DEFAULT_TITLE = 'Mantine ContextMenu: enhance your users’ experience';
@@ -123,6 +131,14 @@ export const PAGES: ({ external?: true; title: string; color?: MantineColor; des
     description: 'Hire the author of Mantine ContextMenu - a fullstack/frontend developer with 20+ years of experience',
     color: 'red',
     icon: IconHeartHandshake,
+  },
+  {
+    path: 'mantine-v7-support',
+    title: 'Mantine V7 support',
+    description:
+      'Mantine ContextMenu v6.x only supports Mantine v6.x. Mantine v7.x support is on the roadmap. Please support my work on this project by sponsoring me on GitHub to speed up the development of Mantine ContextMenu v7.x',
+    color: 'pink',
+    icon: IconBellFilled,
   },
   {
     external: true,
