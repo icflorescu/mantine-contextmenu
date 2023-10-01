@@ -18,7 +18,8 @@ export default function Page({ code }: InferGetStaticPropsType<typeof getStaticP
     <Container>
       <PageTitle of={PATH} />
       <PageText>
-        An item without an <Code>onClick</Code> handler will be rendered as a divider, like so:
+        An item without an <Code>onClick</Code> handler or an <Code>items</Code> property will be rendered as a divider,
+        like so:
       </PageText>
       <CodeBlock language="typescript" content={code} />
       <PageText>Right-click on the image to trigger the context menu:</PageText>

@@ -33,7 +33,7 @@ export default function Page({ code }: InferGetStaticPropsType<typeof getStaticP
       <PageText>Right-click on the image to trigger the context menu:</PageText>
       <BasicUsageExample />
       <PageText>
-        However, <InternalLink to="/type-definitions">there’s more</InternalLink> you can do with{' '}
+        However, <InternalLink to="/examples/basic-configuration">there’s more</InternalLink> you can do with{' '}
         <Code>Mantine ContextMenu</Code>.
         <br />
         Head over to the next example to discover other features.
