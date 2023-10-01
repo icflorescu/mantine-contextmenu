@@ -9,26 +9,26 @@
     "lint": "eslint . --ext=.ts,.tsx && tsc --noEmit"
   },
   "dependencies": {
+    "@ducanh2912/next-pwa": "^9.7.1",
     "@emotion/react": "^11.11.1",
     "@emotion/server": "^11.11.0",
-    "@mantine/core": "^6.0.19",
-    "@mantine/hooks": "^6.0.19",
-    "@mantine/next": "^6.0.19",
-    "@mantine/notifications": "^6.0.19",
-    "@mantine/prism": "^6.0.19",
-    "@tabler/icons-react": "^2.32.0",
+    "@mantine/core": "^6.0.21",
+    "@mantine/hooks": "^6.0.21",
+    "@mantine/next": "^6.0.21",
+    "@mantine/notifications": "^6.0.21",
+    "@mantine/prism": "^6.0.21",
+    "@tabler/icons-react": "^2.38.0",
     "lodash": "^4.17.21",
     "mantine-contextmenu": "*",
-    "next": "^13.4.19",
-    "next-pwa": "^5.6.0",
-    "next-sitemap": "^4.2.2",
+    "next": "^13.5.3",
+    "next-sitemap": "^4.2.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.197",
-    "@types/node": "^20.5.7",
-    "@types/react": "^18.2.21",
+    "@types/lodash": "^4.14.199",
+    "@types/node": "^20.8.0",
+    "@types/react": "^18.2.24",
     "typescript": "^5.2.2",
     "webpack": "^5.88.2"
   }

@@ -87,12 +87,17 @@ export const PAGES: ({ external?: true; title: string; color?: MantineColor; des
       {
         path: 'custom-content',
         title: 'Custom content',
-        description: 'Example: Condiguring Mantine ContextMenu to show custom content',
+        description: 'Example: Configuring Mantine ContextMenu to show custom content',
       },
       {
         path: 'styling',
         title: 'Styling',
         description: 'Example: Styling Mantine ContextMenu',
+      },
+      {
+        path: 'submenus',
+        title: 'Submenus (nested menus)',
+        description: 'Example: How to create Mantine ContextMenu Submenus (nested menus)',
       },
     ],
   },

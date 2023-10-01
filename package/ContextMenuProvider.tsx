@@ -1,5 +1,6 @@
 import { createContext, useContext, useState } from 'react';
-import { ContextMenu, ContextMenuInstanceOptions } from './ContextMenu';
+import { ContextMenuInstanceOptions } from './ContextMenu';
+import { ContextMenuPortal } from './ContextMenuPortal';
 import type { ContextMenuOptions, ContextMenuProviderProps, ShowContextMenuFunction } from './types';
 
 const MenuContext = createContext<ShowContextMenuFunction>(() => () => undefined);
@@ -42,7 +43,7 @@ export function ContextMenuProvider({
   return (
     <MenuContext.Provider value={showContextMenu}>
       {children}
-      {data && <ContextMenu onHide={destroy} {...data} />}
+      {data && <ContextMenuPortal onHide={destroy} {...data} />}
     </MenuContext.Provider>
   );
 }
