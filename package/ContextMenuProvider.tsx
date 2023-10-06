@@ -34,7 +34,6 @@ export function ContextMenuProvider({
       borderRadius: options?.borderRadius || borderRadius,
       className: options?.className,
       style: options?.style,
-      sx: options?.sx,
       classNames: options?.classNames,
       styles: options?.styles,
     });

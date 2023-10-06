@@ -1,6 +1,6 @@
 {
   "name": "mantine-contextmenu",
-  "version": "6.0.1",
+  "version": "7.0.0",
   "description": "Enhance your Mantine UI applications usability with customizable context menus",
   "keywords": [
     "ui",
@@ -52,17 +52,23 @@
     "lint": "eslint . --ext=.ts,.tsx && tsc --noEmit"
   },
   "devDependencies": {
-    "@mantine/core": "^6.0.21",
-    "@mantine/hooks": "^6.0.21",
+    "@mantine/core": "^7.1.2",
+    "@mantine/hooks": "^7.1.2",
     "@types/react": "^18.2.25",
     "@types/react-dom": "^18.2.10",
+    "clsx": "^2.0.0",
     "esbuild": "^0.19.4",
+    "esbuild-style-plugin": "^1.6.2",
+    "postcss": "^8.4.31",
+    "postcss-preset-mantine": "^1.8.0",
+    "postcss-simple-vars": "^7.0.1",
     "react": "^18.2.0",
     "typescript": "^5.2.2"
   },
   "peerDependencies": {
-    "@mantine/core": ">=6 <=6.0.17 || >=6.0.19 < 7",
-    "@mantine/hooks": ">=6 <=6.0.17 || >=6.0.19 < 7",
+    "@mantine/core": ">=7",
+    "@mantine/hooks": ">=7",
+    "clsx": ">=2",
     "react": ">=18"
   }
 }

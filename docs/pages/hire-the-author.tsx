@@ -1,51 +1,14 @@
-import { Container, createStyles, Text } from '@mantine/core';
+import { Container, Text } from '@mantine/core';
 import ExternalLink from '~/components/ExternalLink';
 import PageNavigation from '~/components/PageNavigation';
 import PageText from '~/components/PageText';
 import PageTitle from '~/components/PageTitle';
 import { AUTHOR_LINK, MANTINE_DATATABLE_LINK } from '~/config';
+import classes from './hire-the-author.module.css';
 
 const PATH = 'hire-the-author';
 
-const useStyles = createStyles((theme) => ({
-  intro: {
-    [`@media (min-width: ${theme.breakpoints.xs})`]: {
-      display: 'flex',
-      gap: theme.spacing.xl,
-      alignItems: 'flex-start',
-    },
-    [`@media (min-width: ${theme.breakpoints.md})`]: {
-      alignItems: 'end',
-    },
-  },
-  picture: {
-    width: '100%',
-    maxWidth: 200,
-    display: 'block',
-    borderRadius: theme.radius.sm,
-    [`@media (min-width: ${theme.breakpoints.xs})`]: {
-      marginTop: '1.8em',
-      width: 160,
-    },
-  },
-  greeting: {
-    fontSize: '120%',
-    color: theme.colorScheme === 'dark' ? theme.colors.dark[1] : theme.colors.gray[7],
-    margin: `${theme.spacing.xl} 0`,
-  },
-  badge: {
-    verticalAlign: 'text-bottom',
-  },
-  emphasis: {
-    color: theme.colorScheme === 'dark' ? theme.colors.red[4] : theme.colors.red[9],
-    [`@media (min-width: ${theme.breakpoints.xs})`]: {
-      marginTop: 0,
-    },
-  },
-}));
-
 export default function Page() {
-  const { classes } = useStyles();
   return (
     <Container>
       <PageTitle of={PATH} />

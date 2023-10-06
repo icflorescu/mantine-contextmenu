@@ -1,4 +1,5 @@
 import { build } from 'esbuild';
+import style from 'esbuild-style-plugin';
 import pkg from './package.json' assert { type: 'json' };
 
 const formats = [
@@ -16,6 +17,7 @@ const config = {
   entryPoints: ['index.ts'],
   inject: ['react-shim.mjs'],
   external: Object.keys(pkg.peerDependencies),
+  plugins: [style()],
 };
 
 for (const { name, extension } of formats) {

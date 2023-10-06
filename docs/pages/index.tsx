@@ -1,4 +1,4 @@
-import { Container, Text, createStyles } from '@mantine/core';
+import { Container, Text } from '@mantine/core';
 import { IconLifebuoy, IconRocket, IconScale, IconSettings } from '@tabler/icons-react';
 import ExternalLink from '~/components/ExternalLink';
 import InternalLink from '~/components/InternalLink';
@@ -17,38 +17,9 @@ import {
   REPO_LINK,
   VITE_LINK,
 } from '~/config';
-
-const useStyles = createStyles((theme) => ({
-  root: {
-    maxWidth: 640,
-    margin: '0 auto',
-  },
-  subtitle: {
-    margin: '1em 0 2em',
-    fontWeight: 500,
-    color: theme.colorScheme === 'dark' ? theme.colors.dark[1] : theme.colors.gray[8],
-    [`@media (min-width: ${theme.breakpoints.xs})`]: {
-      fontSize: 20,
-    },
-    [`@media (min-width: ${theme.breakpoints.sm})`]: {
-      fontSize: 24,
-    },
-  },
-  features: {
-    display: 'flex',
-    flexDirection: 'column',
-    gap: theme.spacing.lg,
-    columnGap: `calc(${theme.spacing.lg} * 2)`,
-    [`@media (min-width: ${theme.breakpoints.xs})`]: {
-      flexDirection: 'row',
-      flexWrap: 'wrap',
-      rowGap: `calc(${theme.spacing.lg} * 2)`,
-    },
-  },
-}));
+import classes from './index.module.css';
 
 export default function Page() {
-  const { classes } = useStyles();
   return (
     <Container>
       <div className={classes.root}>

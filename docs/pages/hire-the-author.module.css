@@ -1,0 +1,39 @@
+.intro {
+  @media (min-width: $mantine-breakpoint-xs) {
+    display: flex;
+    gap: var(--mantine-spacing-xl);
+    align-items: flex-start;
+  }
+
+  @media (min-width: $mantine-breakpoint-md) {
+    align-items: end;
+  }
+}
+
+.picture {
+  width: 100%;
+  max-width: rem(200px);
+  display: block;
+  border-radius: var(--mantine-radius-sm);
+  @media (min-width: $mantine-breakpoint-xs) {
+    margin-top: 1.8em;
+    width: rem(160px);
+  }
+}
+
+.greeting {
+  font-size: 120%;
+  color: light-dark(var(--mantine-colors-gray-7), var(--mantine-colors-dark-1));
+  margin: var(--mantine-spacing-xl) 0;
+}
+
+.badge {
+  vertical-align: text-bottom;
+}
+
+.emphasis {
+  color: light-dark(var(--mantine-colors-red-9), var(--mantine-colors-red-4));
+  @media (min-width: $mantine-breakpoint-xs) {
+    margin-top: 0;
+  }
+}

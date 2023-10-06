@@ -1,20 +1,12 @@
-import { Box, createStyles, type Sx } from '@mantine/core';
-import type { CSSProperties } from 'react';
-
-const useStyles = createStyles((theme) => ({
-  root: {
-    height: 1,
-    background: theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[1],
-  },
-}));
+import { Box } from '@mantine/core';
+import clsx from 'clsx';
+import classes from './ContextMenuDivider.module.css';
 
 export type ContextMenuDividerProps = {
   className: string;
-  sx: Sx | (Sx | undefined)[] | undefined;
-  style: CSSProperties;
+  style: React.CSSProperties;
 };
 
-export function ContextMenuDivider({ className, sx, style }: ContextMenuDividerProps) {
-  const { cx, classes } = useStyles();
-  return <Box className={cx(classes.root, className)} sx={sx} style={style} />;
+export function ContextMenuDivider({ className, style }: ContextMenuDividerProps) {
+  return <Box className={clsx(classes.root, className)} style={style} />;
 }

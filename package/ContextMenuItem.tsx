@@ -1,45 +1,10 @@
-import { Box, Text, UnstyledButton, createStyles, px, type MantineColor } from '@mantine/core';
+import { Box, Text, UnstyledButton } from '@mantine/core';
+import clsx from 'clsx';
 import { MouseEventHandler, useRef, useState } from 'react';
 import { ContextMenu } from './ContextMenu';
+import classes from './ContextMenuItem.module.css';
 import { ContextMenuContent, ContextMenuItemOptions } from './types';
-import { WithRequiredProperty } from './utils';
-
-const useStyles = createStyles((theme, { color }: { color?: MantineColor }) => {
-  const verticalPadding = px(theme.spacing.sm) / 2;
-  return {
-    button: {
-      width: '100%',
-      display: 'flex',
-      alignItems: 'center',
-      paddingTop: verticalPadding,
-      paddingBottom: verticalPadding,
-      paddingLeft: theme.spacing.sm,
-      paddingRight: theme.spacing.sm,
-      color: color && theme.colors[color][6],
-      transition: 'background .15s ease',
-      '&[disabled]': {
-        cursor: 'not-allowed',
-        color: theme.colorScheme === 'dark' ? theme.colors.dark[3] : theme.colors.gray[5],
-      },
-      '&:hover:not([disabled])': {
-        background: theme.fn.rgba(
-          color ? theme.colors[color][6] : theme.colorScheme === 'dark' ? theme.colors.dark[3] : theme.colors.gray[4],
-          color ? (theme.colorScheme === 'dark' ? 0.15 : 0.08) : 0.25
-        ),
-      },
-      '&:active:not([disabled])': {
-        background: theme.fn.rgba(
-          color ? theme.colors[color][6] : theme.colorScheme === 'dark' ? theme.colors.dark[3] : theme.colors.gray[4],
-          color ? (theme.colorScheme === 'dark' ? 0.3 : 0.2) : 0.5
-        ),
-      },
-    },
-    title: {
-      whiteSpace: 'nowrap',
-      flexGrow: 1,
-    },
-  };
-});
+import type { WithRequiredProperty } from './utils';
 
 export function ContextMenuItem({
   className,
@@ -72,7 +37,6 @@ export function ContextMenuItem({
   };
 
   const hasItemsAndIsNotDisabled = items && !disabled;
-  const { cx, classes } = useStyles({ color });
 
   return (
     <div
@@ -81,7 +45,7 @@ export function ContextMenuItem({
     >
       <UnstyledButton
         ref={ref}
-        className={cx(classes.button, className)}
+        className={clsx(classes.button, className)}
         style={style}
         disabled={disabled}
         onClick={handleClick}

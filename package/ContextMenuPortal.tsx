@@ -5,10 +5,10 @@ import { ContextMenu, type ContextMenuProps } from './ContextMenu';
 export function ContextMenuPortal({ onHide, ...otherProps }: ContextMenuProps) {
   useWindowEvent('resize', onHide);
   useWindowEvent('scroll', onHide);
-  const portalInnerRef = useClickOutside<HTMLDivElement>(onHide);
+  const ref = useClickOutside(onHide);
 
   return (
-    <Portal innerRef={portalInnerRef}>
+    <Portal ref={ref}>
       <ContextMenu {...otherProps} onHide={onHide} />
     </Portal>
   );

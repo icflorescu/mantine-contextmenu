@@ -1,3 +1,6 @@
+/**
+ * Utility type that makes a property required
+ */
 export type WithRequiredProperty<Type, Key extends keyof Type> = Type & {
   [Property in Key]-?: Type[Property];
 };
