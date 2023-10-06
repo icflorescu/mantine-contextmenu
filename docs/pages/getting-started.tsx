@@ -7,6 +7,7 @@ import InternalLink from '~/components/InternalLink';
 import PageNavigation from '~/components/PageNavigation';
 import PageText from '~/components/PageText';
 import PageTitle from '~/components/PageTitle';
+import { MANTINE_LINK, SPONSOR_LINK } from '~/config';
 import GettingStartedExample from '~/examples/GettingStartedExample';
 import allPromiseProps from '~/lib/allPromiseProps';
 import { getFirstExamplePagePath } from '~/lib/page';
@@ -38,23 +39,29 @@ export default function Page({ code }: InferGetStaticPropsType<typeof getStaticP
         frameworks).
         <br />
       </PageText>
+      <PageText warning>
+        Mantine ContextMenu v6.x supports <ExternalLink to="https://v6.mantine.dev/">Mantine v6.x</ExternalLink>.
+        <br />
+        <ExternalLink to={MANTINE_LINK}>Mantine v7.x</ExternalLink> support is on the roadmap. You can help speed up the
+        process by <ExternalLink to={SPONSOR_LINK}>sponsoring me on GitHub</ExternalLink>.
+      </PageText>
       <PageText>Install the package and its dependencies:</PageText>
       <CodeFiles
         items={[
           {
             title: 'yarn',
             language: 'bash',
-            content: 'yarn add @mantine/core @mantine/hooks @emotion/react mantine-contextmenu',
+            content: 'yarn add @mantine/core@6 @mantine/hooks@6 @emotion/react mantine-contextmenu',
           },
           {
             title: 'pnpm',
             language: 'bash',
-            content: 'pnpm i @mantine/core @mantine/hooks @emotion/react mantine-contextmenu',
+            content: 'pnpm i @mantine/core@6 @mantine/hooks@6 @emotion/react mantine-contextmenu',
           },
           {
             title: 'npm',
             language: 'bash',
-            content: 'npm i @mantine/core @mantine/hooks @emotion/react mantine-contextmenu',
+            content: 'npm i @mantine/core@6 @mantine/hooks@6 @emotion/react mantine-contextmenu',
           },
         ]}
       />
