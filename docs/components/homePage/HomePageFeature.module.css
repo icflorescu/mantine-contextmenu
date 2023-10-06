@@ -1,0 +1,26 @@
+.root {
+  display: flex;
+  gap: var(--mantine-spacing-md);
+  @media (min-width: $mantine-breakpoint-xs) {
+    width: calc(50% - var(--mantine-spacing-lg));
+    flex-direction: column;
+  }
+}
+
+.icon {
+  background: linear-gradient(45deg, var(--mantine-color-blue-6) 0%, var(--mantine-color-cyan-6) 100%);
+  margin-top: rem(-2px);
+  @media (min-width: $mantine-breakpoint-xs) {
+    margin-top: 0;
+  }
+}
+
+.title {
+  margin: -0.33em 0 0.33em;
+  font-weight: 700;
+  color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-2));
+}
+
+.description {
+  color: light-dark(var(--mantine-color-gray-8), var(--mantine-color-dark-1));
+}

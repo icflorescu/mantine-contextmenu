@@ -17,6 +17,7 @@
     "@mantine/hooks": "^7.1.2",
     "@mantine/notifications": "^7.1.2",
     "@tabler/icons-react": "^2.38.0",
+    "clsx": "^2.0.0",
     "lodash": "^4.17.21",
     "mantine-contextmenu": "*",
     "next": "^13.5.4",

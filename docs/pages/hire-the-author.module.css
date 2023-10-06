@@ -23,7 +23,7 @@
 
 .greeting {
   font-size: 120%;
-  color: light-dark(var(--mantine-colors-gray-7), var(--mantine-colors-dark-1));
+  color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-1));
   margin: var(--mantine-spacing-xl) 0;
 }
 
@@ -32,7 +32,7 @@
 }
 
 .emphasis {
-  color: light-dark(var(--mantine-colors-red-9), var(--mantine-colors-red-4));
+  color: light-dark(var(--mantine-color-red-9), var(--mantine-color-red-4));
   @media (min-width: $mantine-breakpoint-xs) {
     margin-top: 0;
   }
