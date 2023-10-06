@@ -15,6 +15,7 @@ export const SEO_DEFAULT_DESCRIPTION =
   'Design your Mantine applications for productivity and meet your users’ expectations by enhancing your UIs with desktop-grade context menus';
 export const SEO_CREATOR = '@icflorescu';
 
+// todo these should be removed / moved in css variables
 export const HEADER_HEIGHT = 56;
 export const FOOTER_BREAKPOINT = 1200;
 export const FOOTER_HEIGHT_BELOW_BREAKPOINT = 164;
