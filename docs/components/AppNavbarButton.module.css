@@ -1,0 +1,29 @@
+.root {
+  display: block;
+  width: 100%;
+  transition: background 0.15s ease;
+  &:hover {
+    background: light-dark(var(--mantine-color-gray-1), var(--mantine-color-dark-6));
+  }
+  &:active {
+    background: light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+  }
+}
+
+.active {
+  background: light-dark(var(--active-bg-color-light), var(--active-bg-color-dark));
+  &:hover {
+    background: light-dark(var(--active-bg-hover-color-light), var(--active-bg-hover-color-dark));
+  }
+  &:active {
+    background: light-dark(var(--active-bg-pressed-color-light), var(--active-bg-pressed-color-dark));
+  }
+}
+
+.icon {
+  transition: transform 0.15s ease;
+}
+
+.rotate {
+  transform: rotate3d(0, 0, 1, 90deg);
+}
