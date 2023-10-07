@@ -1,35 +1,18 @@
-import { Box, Collapse, createStyles } from '@mantine/core';
+import { Box, Collapse, rgba, useMantineTheme } from '@mantine/core';
 import { useLocalStorage } from '@mantine/hooks';
 import { IconChevronRight } from '@tabler/icons-react';
+import clsx from 'clsx';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import AppNavbarButton, { AppNavbarButtonDisplayProps } from './AppNavbarButton';
+import classes from './AppNavbarLinkList.module.css';
 import AppNavbarLinkListItem from './AppNavbarLinkListItem';
-
-const useStyles = createStyles({
-  items: {
-    position: 'relative',
-  },
-  connector: {
-    position: 'absolute',
-    top: -8,
-    left: 24,
-    width: 2,
-    bottom: 20,
-    transform: 'scale3d(1, 0, 1)',
-    transformOrigin: 'top',
-    transition: 'transform .75s ease-out',
-  },
-  connectorVisible: {
-    transform: 'scale3d(1, 1, 1)',
-  },
-});
 
 type AppNavbarLinkList = Omit<AppNavbarButtonDisplayProps, 'icon'> & {
   items: { title: string; description?: string; to: string }[];
 };
 
-export default function AppNavbarLinkList({ color, title, items }: AppNavbarLinkList) {
+export default function AppNavbarLinkList({ color = 'blue', title, items }: AppNavbarLinkList) {
   const localStorageKey = `${title}-navlinks-open`;
 
   const [open, setOpen] = useLocalStorage({
@@ -62,7 +45,7 @@ export default function AppNavbarLinkList({ color, title, items }: AppNavbarLink
     }
   }, [asPath, items, localStorageKey, setOpen]);
 
-  const { classes, cx } = useStyles();
+  const { colors } = useMantineTheme();
 
   return (
     <>
@@ -76,10 +59,10 @@ export default function AppNavbarLinkList({ color, title, items }: AppNavbarLink
           setOpen((o) => !o);
         }}
       />
-      <Collapse className={classes.items} in={open} transitionDuration={200}>
+      <Collapse className={classes.items} in={open || false} transitionDuration={200}>
         <Box
-          className={cx(classes.connector, { [classes.connectorVisible]: connectorVisible })}
-          sx={(theme) => ({ background: theme.fn.rgba(theme.colors[color || 'blue'][6], 0.5) })}
+          style={{ '--component-bg-color': rgba(colors[color][6], 0.5) }}
+          className={clsx(classes.connector, { [classes.connectorVisible]: connectorVisible })}
         />
         {items.map(({ title, description, to }) => (
           <AppNavbarLinkListItem
