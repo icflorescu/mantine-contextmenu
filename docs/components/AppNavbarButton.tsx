@@ -47,12 +47,12 @@ export default forwardRef(function AppNavbarButton(
   return (
     <UnstyledButton
       style={{
-        '--active-bg-color-light': rgba(colors[color][6], 0.1),
-        '--active-bg-color-dark': rgba(colors[color][6], 0.2),
-        '--active-bg-hover-color-light': rgba(darken(colors[color][6], 0.1), 0.15),
-        '--active-bg-hover-color-dark': rgba(lighten(colors[color][6], 0.1), 0.2),
-        '--active-bg-pressed-color-light': rgba(darken(colors[color][6], 0.3), 0.15),
-        '--active-bg-pressed-color-dark': rgba(lighten(colors[color][6], 0.3), 0.2),
+        '--component-active-bg-color-light': rgba(colors[color][6], 0.1),
+        '--component-active-bg-color-dark': rgba(colors[color][6], 0.2),
+        '--component-active-bg-hover-color-light': rgba(darken(colors[color][6], 0.1), 0.15),
+        '--component-active-bg-hover-color-dark': rgba(lighten(colors[color][6], 0.1), 0.2),
+        '--component-active-bg-pressed-color-light': rgba(darken(colors[color][6], 0.3), 0.15),
+        '--component-active-bg-pressed-color-dark': rgba(lighten(colors[color][6], 0.3), 0.2),
       }}
       className={clsx(classes.root, { [classes.active]: active })}
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment

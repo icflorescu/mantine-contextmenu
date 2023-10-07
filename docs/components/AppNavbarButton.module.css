@@ -11,12 +11,15 @@
 }
 
 .active {
-  background: light-dark(var(--active-bg-color-light), var(--active-bg-color-dark));
+  background: light-dark(var(--component-active-bg-color-light), var(--component-active-bg-color-dark));
   &:hover {
-    background: light-dark(var(--active-bg-hover-color-light), var(--active-bg-hover-color-dark));
+    background: light-dark(var(--component-active-bg-hover-color-light), var(--component-active-bg-hover-color-dark));
   }
   &:active {
-    background: light-dark(var(--active-bg-pressed-color-light), var(--active-bg-pressed-color-dark));
+    background: light-dark(
+      var(--component-active-bg-pressed-color-light),
+      var(--component-active-bg-pressed-color-dark)
+    );
   }
 }
 
