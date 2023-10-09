@@ -1,5 +1,13 @@
-import { MantineProvider } from '@mantine/core';
+// core mantine styles
 import '@mantine/core/styles.css';
+// code highlight styles
+import '@mantine/code-highlight/styles.css';
+// notifications styles
+import '@mantine/notifications/styles.css';
+// custom global styles
+import './global.css';
+
+import { MantineProvider } from '@mantine/core';
 import { Notifications } from '@mantine/notifications';
 import { ContextMenuProvider } from 'mantine-contextmenu';
 import { AppProps } from 'next/app';

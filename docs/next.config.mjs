@@ -3,7 +3,7 @@ import pkg from '../package/package.json' assert { type: 'json' };
 
 const withPWA = pwa({ dest: 'public' });
 
-const nextConfig = async (phase) => {
+const nextConfig = async () => {
   const { downloads: INITIAL_NPM_DOWNLOADS } = await fetch(
     'https://api.npmjs.org/downloads/point/last-month/mantine-contextmenu'
   ).then((res) => res.json());
@@ -15,20 +15,15 @@ const nextConfig = async (phase) => {
     output: 'export',
     reactStrictMode: true,
     transpilePackages: ['mantine-contextmenu'],
-    images: {
-      unoptimized: true,
-    },
+    images: { unoptimized: true },
     env: {
+      GITHUB_PAGES: process.env.GITHUB_PAGES === 'true',
       PACKAGE_VERSION: pkg.version,
-      BASE_PATH: '',
       INITIAL_NPM_DOWNLOADS,
     },
   };
 
-  if (phase === 'phase-production-build' && process.env.GITHUB_PAGES === 'true') {
-    config.env.BASE_PATH = config.basePath = '/mantine-contextmenu';
-    config.env.CANONICAL_URL = 'https://icflorescu.github.io/mantine-contextmenu/';
-  }
+  if (process.env.GITHUB_PAGES === 'true') config.basePath = '/mantine-contextmenu';
 
   return withPWA(config);
 };

@@ -1,0 +1,31 @@
+/* todo remove comments */
+
+body {
+  /* background: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.fn.lighten(theme.colors.gray[0], 0.9), */
+  background: light-dark(var(--mantine-color-gray-0) var(--mantine-color-dark-8));
+}
+
+::-webkit-scrollbar {
+  width: rem(12px);
+  height: rem(12px);
+  background: light-dark(var(--mantine-color-gray-3) var(--mantine-color-dark-6));
+}
+
+::-webkit-scrollbar-thumb {
+  background: light-dark(var(--mantine-color-gray-5) var(--mantine-color-dark-4));
+  border-radius: rem(6px);
+  border: 1px solid light-dark(var(--mantine-color-gray-3) var(--mantine-color-dark-6));
+  &:hover {
+    background: light-dark(var(--mantine-color-gray-6) var(--mantine-color-dark-3));
+  }
+}
+
+@-moz-document url-prefix() {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: light-dark(
+      var(--mantine-color-gray-3) var(--mantine-color-gray-5),
+      var(--mantine-color-dark-6) var(--mantine-color-dark-4)
+    );
+  }
+}

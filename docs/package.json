@@ -5,8 +5,8 @@
   "private": true,
   "scripts": {
     "dev": "NODE_NO_WARNINGS=1 next dev",
-    "build": "NODE_NO_WARNINGS=1 next build && next-sitemap",
-    "lint": "eslint . --ext=.ts,.tsx && tsc --noEmit"
+    "build": "NODE_NO_WARNINGS=1 next build",
+    "lint": "NODE_NO_WARNINGS=1 next lint"
   },
   "dependencies": {
     "@ducanh2912/next-pwa": "^9.7.1",
@@ -17,22 +17,23 @@
     "@mantine/hooks": "^7.1.2",
     "@mantine/notifications": "^7.1.2",
     "@tabler/icons-react": "^2.38.0",
-    "clsx": "^2.0.0",
-    "lodash": "^4.17.21",
+    "clsx": "^2",
+    "lodash": "^4",
     "mantine-contextmenu": "*",
-    "next": "^13.5.4",
-    "next-sitemap": "^4.2.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "next": "13.5.4",
+    "react": "^18",
+    "react-dom": "^18",
+    "swr": "^2.2.4"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.199",
-    "@types/node": "^20.8.2",
-    "@types/react": "^18.2.25",
+    "@types/lodash": "^4",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
     "postcss": "^8.4.31",
     "postcss-preset-mantine": "^1.8.0",
     "postcss-simple-vars": "^7.0.1",
-    "typescript": "^5.2.2",
+    "typescript": "^5",
     "webpack": "^5.88.2"
   }
 }

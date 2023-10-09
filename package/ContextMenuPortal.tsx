@@ -1,3 +1,5 @@
+'use client';
+
 import { Portal } from '@mantine/core';
 import { useClickOutside, useWindowEvent } from '@mantine/hooks';
 import { ContextMenu, type ContextMenuProps } from './ContextMenu';

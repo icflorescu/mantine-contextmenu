@@ -1,0 +1,17 @@
+.text {
+  border: 1px solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-3));
+  color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+  background-color: light-dark(var(--component-text-bg-color-light), var(--component-text-bg-color-dark));
+  border-top-left-radius: var(--mantine-radius-sm);
+  border-top-right-radius: var(--mantine-radius-sm);
+  border-bottom: 0;
+  padding-left: var(--mantine-spacing-xs);
+  padding-right: var(--mantine-spacing-xs);
+  line-height: rem(34px);
+  display: inline-block;
+  font-size: rem(12px);
+  font-weight: 500;
+  @media (min-width: $mantine-breakpoint-xs) {
+    font-size: rem(14px);
+  }
+}

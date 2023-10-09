@@ -1,3 +1,5 @@
+'use client';
+
 import { Paper, px, useDirection, useMantineTheme } from '@mantine/core';
 import { useResizeObserver } from '@mantine/hooks';
 import clsx from 'clsx';

@@ -1,0 +1,38 @@
+{
+  "name": "mantine-contextmenu-docs",
+  "version": "7.0.0",
+  "description": "Docs website for mantine-contextmenu; see ../package/package.json for more info",
+  "private": true,
+  "scripts": {
+    "dev": "NODE_NO_WARNINGS=1 next dev",
+    "build": "NODE_NO_WARNINGS=1 next build && next-sitemap",
+    "lint": "eslint . --ext=.ts,.tsx && tsc --noEmit"
+  },
+  "dependencies": {
+    "@ducanh2912/next-pwa": "^9.7.1",
+    "@emotion/react": "^11.11.1",
+    "@emotion/server": "^11.11.0",
+    "@mantine/code-highlight": "^7.1.2",
+    "@mantine/core": "^7.1.2",
+    "@mantine/hooks": "^7.1.2",
+    "@mantine/notifications": "^7.1.2",
+    "@tabler/icons-react": "^2.38.0",
+    "clsx": "^2.0.0",
+    "lodash": "^4.17.21",
+    "mantine-contextmenu": "*",
+    "next": "^13.5.4",
+    "next-sitemap": "^4.2.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.199",
+    "@types/node": "^20.8.2",
+    "@types/react": "^18.2.25",
+    "postcss": "^8.4.31",
+    "postcss-preset-mantine": "^1.8.0",
+    "postcss-simple-vars": "^7.0.1",
+    "typescript": "^5.2.2",
+    "webpack": "^5.88.2"
+  }
+}

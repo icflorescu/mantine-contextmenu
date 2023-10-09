@@ -1,48 +1,20 @@
-import { Box, Text, createStyles } from '@mantine/core';
+import { Box, Text } from '@mantine/core';
+import clsx from 'clsx';
 import Image from 'next/image';
 import type { MouseEventHandler } from 'react';
-import type { UnsplashImage } from '~/lib/image';
-import ExternalLink from './ExternalLink';
+import { PRODUCT_NAME } from '~/app/config';
+import type { UnsplashImage } from '~/lib/images';
+import { ExternalLink } from './ExternalLink';
+import classes from './Picture.module.css';
 
-const useStyles = createStyles((theme) => ({
-  root: {
-    aspectRatio: '16 / 9',
-    width: '100%',
-    position: 'relative',
-    borderRadius: theme.radius.md,
-    overflow: 'hidden',
-  },
-  image: {
-    objectFit: 'cover',
-  },
-  flipVertical: {
-    transform: 'scaleX(-1)',
-  },
-  flipHorizontal: {
-    transform: 'scaleY(-1)',
-  },
-  attribution: {
-    position: 'absolute',
-    bottom: 10,
-    left: 0,
-    right: 0,
-    display: 'flex',
-    justifyContent: 'center',
-  },
-  attributionText: {
-    padding: `0 ${theme.spacing.sm}`,
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-    color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.white,
-    fontSize: theme.fontSizes.xs,
-    lineHeight: 2,
-    borderRadius: theme.radius.sm,
-    a: {
-      color: theme.colors.blue[3],
-    },
-  },
-}));
+export type PictureProps = {
+  image: UnsplashImage;
+  flipVertical?: boolean;
+  flipHorizontal?: boolean;
+  onContextMenu?: MouseEventHandler<HTMLDivElement>;
+};
 
-export default function Picture({
+export function Picture({
   image: {
     file: { src },
     author: { name, profile },
@@ -50,22 +22,16 @@ export default function Picture({
   flipVertical,
   flipHorizontal,
   onContextMenu,
-}: {
-  image: UnsplashImage;
-  flipVertical?: boolean;
-  flipHorizontal?: boolean;
-  onContextMenu?: MouseEventHandler<HTMLDivElement>;
-}) {
-  const { cx, classes } = useStyles();
+}: PictureProps) {
   return (
     <Box className={classes.root} onContextMenu={onContextMenu}>
       <Image
-        className={cx(classes.image, {
+        className={clsx(classes.image, {
           [classes.flipHorizontal]: flipHorizontal,
           [classes.flipVertical]: flipVertical,
         })}
         src={src}
-        alt={`Picture by ${name} | Mantine ContextMenu`}
+        alt={`Picture by ${name} | ${PRODUCT_NAME}`}
         fill
         priority
       />

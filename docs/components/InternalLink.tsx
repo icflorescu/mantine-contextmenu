@@ -1,10 +1,14 @@
 import { Anchor } from '@mantine/core';
 import Link from 'next/link';
-import { ReactNode } from 'react';
 
-export default function InternalLink({ to, children }: { to: string; children: ReactNode }) {
+export type InternalLinkProps = React.PropsWithChildren<{
+  className?: string;
+  to: string;
+}>;
+
+export function InternalLink({ className, to, children }: InternalLinkProps) {
   return (
-    <Anchor component={Link} href={to}>
+    <Anchor className={className} component={Link} href={to}>
       {children}
     </Anchor>
   );

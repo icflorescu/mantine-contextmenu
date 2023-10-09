@@ -1,0 +1,21 @@
+.root {
+  display: flex;
+  align-items: center;
+  gap: var(--mantine-spacing-xs);
+  color: initial;
+  text-decoration: none;
+}
+
+.icon {
+  width: rem(30px);
+  height: auto;
+  background: var(--mantine-color-blue-6);
+  color: white;
+  padding: rem(5px);
+  border-radius: 50%;
+}
+
+.text {
+  font-size: rem(18px);
+  margin-bottom: rem(-2px);
+}

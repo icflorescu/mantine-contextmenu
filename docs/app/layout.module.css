@@ -1,0 +1,11 @@
+.codeHighlightRoot {
+  border-radius: var(--mantine-radius-sm);
+  border: rem(1px) solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-5));
+}
+
+.codeHighlightCopy {
+  position: absolute;
+  background: light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-6));
+  border-color: light-dark(var(--mantine-color-gray-4), var(--mantine-color-dark-4));
+  color: light-dark(var(--mantine-color-gray-8), var(--mantine-color-dark-2));
+}

@@ -1,3 +1,5 @@
+'use client';
+
 import { Box, Text, UnstyledButton } from '@mantine/core';
 import clsx from 'clsx';
 import { MouseEventHandler, useRef, useState } from 'react';

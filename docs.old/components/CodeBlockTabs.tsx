@@ -1,5 +1,5 @@
 import { createStyles } from '@mantine/core';
-import { Prism, PrismProps } from '@mantine/prism';
+import { Prism } from '@mantine/prism';
 import { IconBraces, IconTerminal2 } from '@tabler/icons-react';
 
 const useStyles = createStyles((theme) => ({
@@ -19,10 +19,12 @@ const useStyles = createStyles((theme) => ({
 }));
 
 type CodeBlockTabsProps = {
-  items: (Pick<PrismProps, 'language' | 'noCopy'> & {
+  items: {
+    language?: string;
+    noCopy?: boolean;
     title: string;
     content: string;
-  })[];
+  }[];
 };
 
 export default function CodeBlockTabs({ items }: CodeBlockTabsProps) {
