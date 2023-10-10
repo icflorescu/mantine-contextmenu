@@ -1,6 +1,14 @@
 import { Group, Text, useMantineTheme } from '@mantine/core';
 import { forwardRef } from 'react';
-import { AUTHOR_LINK, LICENSE_LINK, MANTINE_DATATABLE_LINK, NPM_LINK, REPO_LINK, SPONSORS_LINK } from '~/app/config';
+import {
+  AUTHOR_LINK,
+  AUTHOR_NAME,
+  LICENSE_LINK,
+  MANTINE_DATATABLE_LINK,
+  NPM_LINK,
+  REPO_LINK,
+  SPONSORS_LINK,
+} from '~/app/config';
 import { ExternalLink } from './ExternalLink';
 import classes from './Footer.module.css';
 
@@ -22,7 +30,7 @@ export const Footer = forwardRef(function Footer({}, ref: React.ForwardedRef<HTM
         </ExternalLink>
       </Group>
       <Text size="sm" ta="center">
-        Built by <ExternalLink to={AUTHOR_LINK}>Ionut-Cristian Florescu</ExternalLink>, the author of{' '}
+        Built by <ExternalLink to={AUTHOR_LINK}>{AUTHOR_NAME}</ExternalLink>, the author of{' '}
         <ExternalLink to={MANTINE_DATATABLE_LINK}>Mantine DataTable</ExternalLink>.
         <br />
         Please <ExternalLink to={SPONSORS_LINK}>sponsor my work</ExternalLink> if you find it useful.

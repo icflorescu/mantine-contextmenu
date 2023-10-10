@@ -1,13 +1,15 @@
-import { Title } from '@mantine/core';
+import { PageTitle } from '~/components/PageTitle';
+import { Txt } from '~/components/Txt';
 import { getRouteMetadata } from '~/lib/utils';
 
-export const metadata = getRouteMetadata('/hire-the-author');
+const PATH = '/hire-the-author';
+export const metadata = getRouteMetadata(PATH);
 
 export default function HireTheAuthorPage() {
   return (
     <>
-      <Title order={2}>Hire the author</Title>
-      <p>
+      <PageTitle of={PATH} />
+      <Txt>
         At et aspernatur consequuntur dolor corrupti repudiandae! Lorem ipsum dolor sit amet consectetur adipisicing
         elit. Explicabo quo, doloremque ab dignissimos inventore voluptas possimus aliquam voluptatibus laudantium? Sed
         ullam quod, saepe accusamus minus exercitationem esse obcaecati doloribus dicta natus nam ducimus debitis iusto
@@ -15,7 +17,7 @@ export default function HireTheAuthorPage() {
         molestias nulla reprehenderit porro natus! Expedita vero atque placeat nam aperiam magnam? Quaerat, ab repellat,
         unde, cumque molestiae dolores blanditiis laboriosam quibusdam velit dicta provident. Nesciunt incidunt ex
         doloremque?
-      </p>
+      </Txt>
     </>
   );
 }

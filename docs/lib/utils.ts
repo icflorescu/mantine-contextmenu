@@ -1,25 +1,10 @@
 import { useWindowScroll } from '@mantine/hooks';
 import memoize from 'lodash/memoize';
 import { Metadata } from 'next';
-import useSWR from 'swr';
-import { DOWNLOADS_REFRESH_INTERVAL, EXAMPLES_ROUTE_COLOR, PRODUCT_NAME, ROUTES } from '~/app/config';
+import { EXAMPLES_ROUTE_COLOR, PRODUCT_NAME, ROUTES } from '~/app/config';
 import { NavbarButtonProps } from '~/components/NavbarButton';
 
 export type WithOptionalProperty<T, K extends keyof T> = Omit<T, K> & Partial<Pick<T, K>>;
-
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
-
-export function useNpmDownloads() {
-  const { data } = useSWR<{ downloads: number }>(
-    'https://api.npmjs.org/downloads/point/last-month/mantine-contextmenu',
-    fetcher,
-    {
-      refreshInterval: DOWNLOADS_REFRESH_INTERVAL,
-    }
-  );
-
-  return `${((data?.downloads || process.env.INITIAL_NPM_DOWNLOADS) / 1000).toFixed(1)}k/mo`;
-}
 
 export const getRouteMetadata = memoize((href: string): Metadata => {
   const route = ROUTES.find((route) => route.href === href);

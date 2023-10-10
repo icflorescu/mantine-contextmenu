@@ -4,6 +4,8 @@
 }
 
 .codeHighlightCopy {
+  /* necessary production fix */
+  display: flex;
   position: absolute;
   background: light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-6));
   border-color: light-dark(var(--mantine-color-gray-4), var(--mantine-color-dark-4));

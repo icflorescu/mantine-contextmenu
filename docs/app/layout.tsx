@@ -5,6 +5,8 @@ import '@mantine/core/styles.layer.css';
 import '@mantine/code-highlight/styles.layer.css';
 // 3. Notifications styles
 import '@mantine/notifications/styles.layer.css';
+// 4. ContextMenu styles
+if (process.env.NODE_ENV === 'production') require('mantine-contextmenu/dist/index.css');
 
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import { Notifications } from '@mantine/notifications';

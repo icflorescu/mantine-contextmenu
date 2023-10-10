@@ -18,6 +18,7 @@ const config = {
   inject: ['react-shim.mjs'],
   external: Object.keys(pkg.peerDependencies),
   plugins: [style()],
+  banner: { js: "'use client';" },
 };
 
 for (const { name, extension } of formats) {

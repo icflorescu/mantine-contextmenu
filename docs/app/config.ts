@@ -1,5 +1,5 @@
 import { MantineColor } from '@mantine/core';
-import { IconHome, IconList, IconRocket, TablerIconsProps } from '@tabler/icons-react';
+import { IconHeartHandshake, IconHome, IconList, IconRocket, TablerIconsProps } from '@tabler/icons-react';
 
 export const PRODUCT_NAME = 'Mantine ContextMenu';
 export const PRODUCT_DESCRIPTION =
@@ -8,6 +8,7 @@ export const PRODUCT_DESCRIPTION =
 export const WEBSITE_LINK = 'https://icflorescu.github.io/mantine-contextmenu';
 export const V6_WEBSITE_LINK = 'https://icflorescu.github.io/mantine-contextmenu-v6';
 
+export const AUTHOR_NAME = 'Ionut-Cristian Florescu';
 export const AUTHOR_LINK = 'https://github.com/icflorescu';
 export const REPO_LINK = 'https://github.com/icflorescu/mantine-contextmenu';
 export const LICENSE_LINK = `${REPO_LINK}/blob/main/LICENSE`;
@@ -56,6 +57,13 @@ export const ROUTES: RouteInfo[] = [
   // '/type-definitions',
   // '/contribute-and-support',
   // '/hire-the-author',
+  {
+    href: '/hire-the-author',
+    title: 'Hire the author',
+    description: `Hire ${AUTHOR_NAME}, the author of ${PRODUCT_NAME}, a full-stack developer with 20+ years of experience`,
+    icon: IconHeartHandshake,
+    color: 'red',
+  },
   {
     href: `${REPO_LINK}/blob/main/CHANGELOG.md`,
     title: `Changelog`,

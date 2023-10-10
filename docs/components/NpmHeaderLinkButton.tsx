@@ -1,7 +1,7 @@
 import { Button } from '@mantine/core';
 import { IconBrandNpm } from '@tabler/icons-react';
 import { NPM_LINK, PRODUCT_NAME } from '~/app/config';
-import { useNpmDownloads } from '~/lib/utils';
+import { useNpmDownloads } from '~/lib/useNpmDownloads';
 
 export function NpmHeaderLinkButton() {
   const downloads = useNpmDownloads();

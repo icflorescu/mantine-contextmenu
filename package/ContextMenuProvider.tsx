@@ -25,6 +25,7 @@ export function ContextMenuProvider({
   };
 
   const showContextMenu: ShowContextMenuFunction = (content, options) => (e) => {
+    console.log('showContextMenu');
     e.preventDefault();
     e.stopPropagation();
     setData({
