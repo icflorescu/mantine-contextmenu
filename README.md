@@ -52,9 +52,7 @@ import 'mantine-contextmenu/styles.css';
 function App() {
   return (
     <MantineProvider>
-      <ContextMenuProvider>
-        {/* your app code here... */}
-      </ContextMenuProvider>
+      <ContextMenuProvider>{/* your app code here... */}</ContextMenuProvider>
     </MantineProvider>
   );
 }
