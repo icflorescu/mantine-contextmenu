@@ -1,4 +1,4 @@
-import type { MantineColor, MantineShadow, MantineSize } from '@mantine/core';
+import type { MantineColor, MantineShadow, MantineSize, MantineTheme } from '@mantine/core';
 import type { CSSProperties, MouseEventHandler, ReactNode } from 'react';
 
 export type ContextMenuOptions = {
@@ -26,21 +26,23 @@ export type ContextMenuOptions = {
   className?: string;
 
   /**
-   * Context menu container style
+   * Context menu container style; can be a function that accepts theme and returns a style object
    */
-  style?: CSSProperties;
+  style?: CSSProperties | ((theme: MantineTheme) => CSSProperties);
 
   /**
    * Context menu elements classNames; an object with `root`, `item` and `divider` keys and class names as values
    * @see https://mantine.dev/styles/styles-api/
    */
-  classNames?: Record<'root' | 'item' | 'divider', string>;
+  classNames?: Partial<Record<'root' | 'item' | 'divider', string>>;
 
   /**
    * Context menu styles; can be an object with `root`, `item` and `divider` keys and `CSSProperties` as values,
-   * or a function that accepts the current theme and returns a styles object
+   * or a function that accepts the current theme and returns a similarly structured object
    */
-  styles?: Record<'root' | 'item' | 'divider', CSSProperties>;
+  styles?:
+    | Partial<Record<'root' | 'item' | 'divider', CSSProperties>>
+    | ((theme: MantineTheme) => Partial<Record<'root' | 'item' | 'divider', CSSProperties>>);
 };
 
 export type ContextMenuProviderProps = ContextMenuOptions & {
@@ -60,7 +62,7 @@ export type ContextMenuItemOptions = {
   /**
    * Context menu item or divider style
    */
-  style?: CSSProperties;
+  style?: CSSProperties | ((theme: MantineTheme) => CSSProperties);
 } & (
   | ({
       /**

@@ -1,0 +1,10 @@
+.root {
+  border: 1px solid var(--mantine-color-red-6);
+}
+
+.item {
+  background: light-dark(var(--mantine-color-red-2), var(--mantine-color-red-6));
+  &:hover {
+    background: light-dark(var(--mantine-color-red-3), var(--mantine-color-red-8));
+  }
+}

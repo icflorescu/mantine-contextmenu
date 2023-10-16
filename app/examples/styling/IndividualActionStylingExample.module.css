@@ -1,0 +1,12 @@
+.contextMenuRoot {
+  border: 1px solid var(--mantine-color-orange-6);
+}
+
+.contextMenuItem {
+  color: var(--mantine-color-grape-6);
+}
+
+.copyAction {
+  font-weight: 700;
+  color: var(--mantine-color-red-6);
+}

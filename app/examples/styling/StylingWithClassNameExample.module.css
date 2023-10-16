@@ -1,0 +1,4 @@
+.contextMenu {
+  padding: var(--mantine-spacing-md);
+  border: 1px solid var(--mantine-color-red-6);
+}

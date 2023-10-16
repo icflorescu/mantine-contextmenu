@@ -1,8 +1,0 @@
-.line {
-  position: absolute;
-  top: rem(-2px);
-  bottom: rem(14px);
-  left: rem(29px);
-  width: rem(1px);
-  z-index: -1;
-}

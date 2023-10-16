@@ -1,12 +1,10 @@
 'use client';
 
-import { Box, Text, UnstyledButton } from '@mantine/core';
-import clsx from 'clsx';
+import { Box, UnstyledButton, getThemeColor, rgba, useMantineTheme } from '@mantine/core';
 import { MouseEventHandler, useRef, useState } from 'react';
 import { ContextMenu } from './ContextMenu';
-import classes from './ContextMenuItem.module.css';
 import { ContextMenuContent, ContextMenuItemOptions } from './types';
-import type { WithRequiredProperty } from './utils';
+import { cs, type WithRequiredProperty } from './utils';
 
 export function ContextMenuItem({
   className,
@@ -40,6 +38,10 @@ export function ContextMenuItem({
 
   const hasItemsAndIsNotDisabled = items && !disabled;
 
+  const theme = useMantineTheme();
+  const { colors } = theme;
+  const parsedColor = color ? getThemeColor(color, theme) : undefined;
+
   return (
     <div
       onMouseOver={hasItemsAndIsNotDisabled ? showSubmenu : undefined}
@@ -47,8 +49,23 @@ export function ContextMenuItem({
     >
       <UnstyledButton
         ref={ref}
-        className={clsx(classes.button, className)}
-        style={style}
+        style={{
+          '--mantine-cm-item-button-color': parsedColor ? parsedColor : 'var(--mantine-color-text)',
+          '--mantine-cm-item-button-hover-bg-color-light': parsedColor
+            ? rgba(parsedColor, 0.08)
+            : rgba(colors.gray[4], 0.25),
+          '--mantine-cm-item-button-hover-bg-color-dark': parsedColor
+            ? rgba(parsedColor, 0.15)
+            : rgba(colors.dark[3], 0.25),
+          '--mantine-cm-item-button-pressed-bg-color-light': parsedColor
+            ? rgba(parsedColor, 0.2)
+            : rgba(colors.gray[4], 0.5),
+          '--mantine-cm-item-button-pressed-bg-color-dark': parsedColor
+            ? rgba(parsedColor, 0.3)
+            : rgba(colors.dark[3], 0.5),
+          ...(typeof style === 'function' ? style(theme) : style),
+        }}
+        className={cs('mantine-cm-item-button', className)}
         disabled={disabled}
         onClick={handleClick}
       >
@@ -57,9 +74,7 @@ export function ContextMenuItem({
             {icon}
           </Box>
         )}
-        <Text className={classes.title} size="sm">
-          {title}
-        </Text>
+        <div className={'mantine-cm-item-button-title'}>{title}</div>
         {items && (
           <Box fz={10} mt={-2} ml="xs">
             ▶

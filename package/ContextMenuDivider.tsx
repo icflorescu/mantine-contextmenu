@@ -1,12 +1,14 @@
-import { Box } from '@mantine/core';
-import clsx from 'clsx';
-import classes from './ContextMenuDivider.module.css';
+'use client';
 
-export type ContextMenuDividerProps = {
-  className: string;
-  style: React.CSSProperties;
-};
+import { Box, useMantineTheme } from '@mantine/core';
+import { ContextMenuItemOptions } from './types';
+import { cs } from './utils';
+
+export type ContextMenuDividerProps = Pick<ContextMenuItemOptions, 'className' | 'style'>;
 
 export function ContextMenuDivider({ className, style }: ContextMenuDividerProps) {
-  return <Box className={clsx(classes.root, className)} style={style} />;
+  const theme = useMantineTheme();
+  return (
+    <Box className={cs('mantine-cm-divider', className)} style={typeof style === 'function' ? style(theme) : style} />
+  );
 }

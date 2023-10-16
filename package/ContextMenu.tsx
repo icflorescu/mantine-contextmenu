@@ -2,13 +2,10 @@
 
 import { Paper, px, useDirection, useMantineTheme } from '@mantine/core';
 import { useResizeObserver } from '@mantine/hooks';
-import clsx from 'clsx';
-import { useEffect, useState } from 'react';
-import classes from './ContextMenu.module.css';
 import { ContextMenuDivider } from './ContextMenuDivider';
 import { ContextMenuItem } from './ContextMenuItem';
 import type { ContextMenuContent, ContextMenuOptions } from './types';
-import { humanize } from './utils';
+import { cs, humanize } from './utils';
 
 export type ContextMenuInstanceOptions = {
   x: number;
@@ -41,25 +38,21 @@ export function ContextMenu({
   let windowHeight = 0;
   if (typeof window !== 'undefined') ({ innerWidth: windowWidth, innerHeight: windowHeight } = window);
 
-  // trigger a rerender to make sure that context menu is positioned correctly
-  const [, setRendered] = useState(false);
-  useEffect(() => {
-    setRendered(true);
-  }, []);
-
   const { dir } = useDirection();
-  const { spacing } = useMantineTheme();
-  const mdSpacing = px(spacing.md) as number;
+  const theme = useMantineTheme();
+  const resolvedStyle = typeof style === 'function' ? style(theme) : style;
+  const resolvedStyles = typeof styles === 'function' ? styles(theme) : styles;
+  const mdSpacing = px(theme.spacing.md) as number;
 
   return (
     <Paper
       ref={paperRef}
       shadow={shadow}
       radius={borderRadius}
-      className={clsx(classes.root, className, classNames?.root)}
+      className={cs('mantine-cm', className, classNames?.root)}
       style={{
-        ...styles?.root,
-        ...style,
+        ...resolvedStyles?.root,
+        ...resolvedStyle,
         zIndex,
         top: y + height + mdSpacing > windowHeight ? windowHeight - height - mdSpacing : y,
         left:
@@ -71,12 +64,13 @@ export function ContextMenu({
       }}
     >
       {Array.isArray(content)
-        ? content.map(({ key, className, style, onClick, items, title, ...otherOptions }) =>
-            onClick || items ? (
+        ? content.map(({ key, className, style, onClick, items, title, ...otherOptions }) => {
+            const resolvedItemStyle = typeof style === 'function' ? style(theme) : style;
+            return onClick || items ? (
               <ContextMenuItem
                 key={key}
-                className={clsx(classNames?.item, className)}
-                style={{ ...styles?.item, ...style }}
+                className={cs(classNames?.item, className)}
+                style={{ ...resolvedStyles?.item, ...resolvedItemStyle }}
                 title={title ?? humanize(key)}
                 onClick={onClick}
                 onHide={onHide}
@@ -86,11 +80,11 @@ export function ContextMenu({
             ) : (
               <ContextMenuDivider
                 key={key}
-                className={clsx(classNames?.divider, className)}
-                style={{ ...styles?.divider, ...style }}
+                className={cs(classNames?.divider, className)}
+                style={{ ...resolvedStyles?.divider, ...resolvedItemStyle }}
               />
-            )
-          )
+            );
+          })
         : content(onHide)}
     </Paper>
   );

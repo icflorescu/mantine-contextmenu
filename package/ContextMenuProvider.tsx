@@ -1,5 +1,6 @@
 'use client';
 
+import { MantineProvider } from '@mantine/core';
 import { createContext, useContext, useState } from 'react';
 import { ContextMenuInstanceOptions } from './ContextMenu';
 import { ContextMenuPortal } from './ContextMenuPortal';
@@ -25,7 +26,6 @@ export function ContextMenuProvider({
   };
 
   const showContextMenu: ShowContextMenuFunction = (content, options) => (e) => {
-    console.log('showContextMenu');
     e.preventDefault();
     e.stopPropagation();
     setData({
@@ -45,7 +45,7 @@ export function ContextMenuProvider({
   return (
     <MenuContext.Provider value={showContextMenu}>
       {children}
-      {data && <ContextMenuPortal onHide={destroy} {...data} />}
+      <MantineProvider>{data && <ContextMenuPortal onHide={destroy} {...data} />}</MantineProvider>
     </MenuContext.Provider>
   );
 }
