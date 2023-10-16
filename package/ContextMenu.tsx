@@ -1,21 +1,11 @@
-import { Paper, createStyles, packSx, px } from '@mantine/core';
+'use client';
+
+import { Paper, px, useDirection, useMantineTheme } from '@mantine/core';
 import { useResizeObserver } from '@mantine/hooks';
-import { CSSProperties, useEffect, useState } from 'react';
 import { ContextMenuDivider } from './ContextMenuDivider';
 import { ContextMenuItem } from './ContextMenuItem';
 import type { ContextMenuContent, ContextMenuOptions } from './types';
-import { humanize } from './utils';
-
-const EMPTY_OBJECT = {};
-
-const useStyles = createStyles((theme) => ({
-  root: {
-    position: 'fixed',
-    border: `1px solid ${theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[3]}`,
-    overflow: 'hidden',
-    transition: 'all .15s ease',
-  },
-}));
+import { cs, humanize } from './utils';
 
 export type ContextMenuInstanceOptions = {
   x: number;
@@ -38,7 +28,6 @@ export function ContextMenu({
   onHide,
   className,
   style,
-  sx,
   classNames,
   styles,
 }: ContextMenuProps) {
@@ -49,46 +38,39 @@ export function ContextMenu({
   let windowHeight = 0;
   if (typeof window !== 'undefined') ({ innerWidth: windowWidth, innerHeight: windowHeight } = window);
 
-  // trigger a rerender to make sure that context menu is positioned correctly
-  const [, setRendered] = useState(false);
-  useEffect(() => {
-    setRendered(true);
-  }, []);
-
-  const { cx, classes, theme } = useStyles();
-  const { dir, spacing } = theme;
-  const styleProperties = typeof styles === 'function' ? styles(theme, EMPTY_OBJECT, EMPTY_OBJECT) : styles;
-  const mdSpacing = px(spacing.md);
+  const { dir } = useDirection();
+  const theme = useMantineTheme();
+  const resolvedStyle = typeof style === 'function' ? style(theme) : style;
+  const resolvedStyles = typeof styles === 'function' ? styles(theme) : styles;
+  const mdSpacing = px(theme.spacing.md) as number;
 
   return (
     <Paper
       ref={paperRef}
       shadow={shadow}
       radius={borderRadius}
-      className={cx(classes.root, className, classNames?.root)}
-      style={{ ...styleProperties?.root, ...style } as CSSProperties}
-      sx={[
-        {
-          zIndex,
-          top: y + height + mdSpacing > windowHeight ? windowHeight - height - mdSpacing : y,
-          left:
-            dir === 'ltr'
-              ? x + width + mdSpacing > windowWidth
-                ? windowWidth - width - mdSpacing
-                : x
-              : windowWidth - mdSpacing - (x - width - mdSpacing < 0 ? width + mdSpacing : x),
-        },
-        ...packSx(sx),
-      ]}
+      className={cs('mantine-cm', className, classNames?.root)}
+      style={{
+        ...resolvedStyles?.root,
+        ...resolvedStyle,
+        zIndex,
+        top: y + height + mdSpacing > windowHeight ? windowHeight - height - mdSpacing : y,
+        left:
+          dir === 'ltr'
+            ? x + width + mdSpacing > windowWidth
+              ? windowWidth - width - mdSpacing
+              : x
+            : windowWidth - mdSpacing - (x - width - mdSpacing < 0 ? width + mdSpacing : x),
+      }}
     >
       {Array.isArray(content)
-        ? content.map(({ key, className, sx, style, onClick, items, title, ...otherOptions }) =>
-            onClick || items ? (
+        ? content.map(({ key, className, style, onClick, items, title, ...otherOptions }) => {
+            const resolvedItemStyle = typeof style === 'function' ? style(theme) : style;
+            return onClick || items ? (
               <ContextMenuItem
                 key={key}
-                className={cx(classNames?.item, className)}
-                sx={sx}
-                style={{ ...styleProperties?.item, ...style } as CSSProperties}
+                className={cs(classNames?.item, className)}
+                style={{ ...resolvedStyles?.item, ...resolvedItemStyle }}
                 title={title ?? humanize(key)}
                 onClick={onClick}
                 onHide={onHide}
@@ -98,12 +80,11 @@ export function ContextMenu({
             ) : (
               <ContextMenuDivider
                 key={key}
-                className={cx(classNames?.divider, className)}
-                sx={sx}
-                style={{ ...styleProperties?.divider, ...style } as CSSProperties}
+                className={cs(classNames?.divider, className)}
+                style={{ ...resolvedStyles?.divider, ...resolvedItemStyle }}
               />
-            )
-          )
+            );
+          })
         : content(onHide)}
     </Paper>
   );

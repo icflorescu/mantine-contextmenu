@@ -1,0 +1,49 @@
+.root {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  max-width: rem(526px);
+  margin: 0 auto;
+  position: relative;
+  border-radius: var(--mantine-radius-sm);
+  overflow: hidden;
+  cursor: context-menu;
+}
+.image {
+  object-fit: cover;
+  transition: transform 0.2s ease;
+}
+
+.flipVertical {
+  transform: scaleX(-1);
+}
+
+.flipHorizontal {
+  transform: scaleY(-1);
+}
+
+.flipVertical.flipHorizontal {
+  transform: scaleX(-1) scaleY(-1);
+}
+
+.attribution {
+  position: absolute;
+  bottom: rem(10px);
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.attributionText {
+  padding: 0 var(--mantine-spacing-sm);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: light-dark(white, var(--mantine-color-dark-0));
+  font-size: var(--mantine-font-size-xs);
+  line-height: 2;
+  border-radius: var(--mantine-radius-sm);
+  a {
+    white-space: nowrap;
+    color: var(--mantine-colors-blue-3);
+  }
+}

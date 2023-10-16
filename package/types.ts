@@ -1,4 +1,4 @@
-import type { ClassNames, MantineColor, MantineNumberSize, MantineShadow, Styles, Sx } from '@mantine/core';
+import type { MantineColor, MantineShadow, MantineSize, MantineTheme } from '@mantine/core';
 import type { CSSProperties, MouseEventHandler, ReactNode } from 'react';
 
 export type ContextMenuOptions = {
@@ -18,7 +18,7 @@ export type ContextMenuOptions = {
    * Context menu border radius
    * @default 'xs'
    */
-  borderRadius?: MantineNumberSize;
+  borderRadius?: MantineSize;
 
   /**
    * Context menu container className
@@ -26,27 +26,23 @@ export type ContextMenuOptions = {
   className?: string;
 
   /**
-   * Context menu container style
+   * Context menu container style; can be a function that accepts theme and returns a style object
    */
-  style?: CSSProperties;
-
-  /**
-   * Context menu container sx
-   * @see https://mantine.dev/styles/sx/
-   */
-  sx?: Sx | (Sx | undefined)[];
+  style?: CSSProperties | ((theme: MantineTheme) => CSSProperties);
 
   /**
    * Context menu elements classNames; an object with `root`, `item` and `divider` keys and class names as values
    * @see https://mantine.dev/styles/styles-api/
    */
-  classNames?: ClassNames<'root' | 'item' | 'divider'>;
+  classNames?: Partial<Record<'root' | 'item' | 'divider', string>>;
 
   /**
    * Context menu styles; can be an object with `root`, `item` and `divider` keys and `CSSProperties` as values,
-   * or a function that accepts the current theme and returns a styles object
+   * or a function that accepts the current theme and returns a similarly structured object
    */
-  styles?: Styles<'root' | 'item' | 'divider', CSSProperties>;
+  styles?:
+    | Partial<Record<'root' | 'item' | 'divider', CSSProperties>>
+    | ((theme: MantineTheme) => Partial<Record<'root' | 'item' | 'divider', CSSProperties>>);
 };
 
 export type ContextMenuProviderProps = ContextMenuOptions & {
@@ -64,14 +60,9 @@ export type ContextMenuItemOptions = {
   className?: string;
 
   /**
-   * Context menu item or divider sx
-   * @see https://mantine.dev/styles/sx/
-   */
-  sx?: Sx | (Sx | undefined)[];
-  /**
    * Context menu item or divider style
    */
-  style?: CSSProperties;
+  style?: CSSProperties | ((theme: MantineTheme) => CSSProperties);
 } & (
   | ({
       /**

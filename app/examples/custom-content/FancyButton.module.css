@@ -1,0 +1,20 @@
+.root {
+  width: 50%;
+  height: rem(60px);
+  padding: 0;
+  border-radius: 0;
+  cursor: pointer;
+  background: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-5));
+  transition: background 0.25s ease;
+  border: 0;
+  --border: 1px solid light-dark(var(--mantine-color-gray-4), var(--mantine-color-dark-3));
+  &:nth-child(2n) {
+    border-left: var(--border);
+  }
+  &:nth-child(n + 3) {
+    border-top: var(--border);
+  }
+  &:hover {
+    background: light-dark(rgba(0, 0, 0, 0.1), var(--mantine-color-dark-6));
+  }
+}

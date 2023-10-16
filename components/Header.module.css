@@ -1,0 +1,18 @@
+.root::after {
+  position: absolute;
+  content: '';
+  left: 0;
+  right: 0;
+  height: rem(6px);
+  bottom: rem(-7px);
+  background: light-dark(
+    linear-gradient(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0)),
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0))
+  );
+  transition: opacity 0.15s ease;
+  opacity: 0;
+}
+
+.scrolled::after {
+  opacity: 1;
+}

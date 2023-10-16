@@ -14,13 +14,16 @@ The "dark-theme aware" **context-menu** for your Mantine UI applications, built 
 
 [![Mantine ContextMenu](https://user-images.githubusercontent.com/581999/231230506-3278ea99-dfb3-4edc-ad67-d47f1626a298.png)](https://icflorescu.github.io/mantine-contextmenu/)
 
+**⚠️ NOTE: Mantine ContextMenu V7 is compatible with Mantine V7.**  
+**💡 If you're looking for an older version that works with Mantine V6, head over to [Mantine ContextMenu V6](https://icflorescu.github.io/mantine-contextmenu-v6).**
+
 ## Features
 
-- **Lightweight** - no expternal dependencies, [no bloat](https://bundlephobia.com/package/mantine-contextmenu)
+- **Lightweight** - no external dependencies, [no bloat](https://bundlephobia.com/package/mantine-contextmenu)
 - **Dark-theme aware** - automatically adapts to the current Mantine theme
 - **[Simple API](https://icflorescu.github.io/mantine-contextmenu/getting-started)** - just wrap your application in the `ContextMenuProvider` component and use the hook-generated function in your code
 - **[Custom content support](https://icflorescu.github.io/mantine-contextmenu/examples/custom-content)** - use any Mantine component as context menu content
-- **[Highly customizable styling](https://icflorescu.github.io/mantine-contextmenu/examples/styling)** - use the `className`/`classNames`, `style`/`styles` and `sx` props to customize the context menu appearance
+- **[Highly customizable styling](https://icflorescu.github.io/mantine-contextmenu/examples/styling)** - use the `className`/`classNames` and `style`/`styles` props to customize the context menu appearance
 - **[Written in Typescript and well-documented](https://icflorescu.github.io/mantine-contextmenu/type-definitions)** - with detailed JSDoc annotations for each exported function and component
 
 ## Full documentation and examples
@@ -29,29 +32,27 @@ Visit [icflorescu.github.io/mantine-contextmenu](https://icflorescu.github.io/ma
 
 ## Quickstart
 
-Install the package and its dependencies:
+Create a new [Mantine application](https://mantine.dev/pages/getting-started/), then install the package:
 
 ```sh
-npm i @mantine/core@6 @mantine/hooks@6 @emotion/react mantine-contextmenu
+npm i mantine-contextmenu
 ```
 
-**⚠️ NOTE: Mantine-ContextMenu V6 is compatible with Mantine V6.**  
-**⏳ Mantine v7 support is in thwe roadmap. If you want to speed up the process, please consider [sponsoring my work](https://github.com/sponsors/icflorescu). ❤️**
-
-If you're using Next.js, Vite, CRA, Remix or Gatsby, you might need to install additional dependencies. Please refer to Mantine's [getting started page](https://mantine.dev/pages/getting-started/) for more details.
-
-Wrap your application in the `ContextMenuProvider` components:
+Wrap your application in a `ContextMenuProvider` **inside** the `MantineProvider` and don't forget to import the necessary CSS files [in the correct order](https://mantine.dev/styles/mantine-styles/) (you [might need to use CSS layers](https://mantine.dev/styles/mantine-styles/#css-layers)):
 
 ```tsx
 import { MantineProvider } from '@mantine/core';
 import { ContextMenuProvider } from 'mantine-contextmenu';
 
+// 👇 Mantine core first
+import '@mantine/core/styles.css';
+// 👇 Mantine context menu second
+import 'mantine-contextmenu/styles.css';
+
 function App() {
   return (
     <MantineProvider>
-      <ContextMenuProvider>
-        {/* your app code here... */}
-      </ContextMenuProvider>
+      <ContextMenuProvider>{/* your app code here... */}</ContextMenuProvider>
     </MantineProvider>
   );
 }

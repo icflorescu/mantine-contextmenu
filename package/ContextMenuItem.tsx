@@ -1,45 +1,10 @@
-import { Box, Text, UnstyledButton, createStyles, px, type MantineColor } from '@mantine/core';
+'use client';
+
+import { Box, UnstyledButton, getThemeColor, rgba, useMantineTheme } from '@mantine/core';
 import { MouseEventHandler, useRef, useState } from 'react';
 import { ContextMenu } from './ContextMenu';
 import { ContextMenuContent, ContextMenuItemOptions } from './types';
-import { WithRequiredProperty } from './utils';
-
-const useStyles = createStyles((theme, { color }: { color?: MantineColor }) => {
-  const verticalPadding = px(theme.spacing.sm) / 2;
-  return {
-    button: {
-      width: '100%',
-      display: 'flex',
-      alignItems: 'center',
-      paddingTop: verticalPadding,
-      paddingBottom: verticalPadding,
-      paddingLeft: theme.spacing.sm,
-      paddingRight: theme.spacing.sm,
-      color: color && theme.colors[color][6],
-      transition: 'background .15s ease',
-      '&[disabled]': {
-        cursor: 'not-allowed',
-        color: theme.colorScheme === 'dark' ? theme.colors.dark[3] : theme.colors.gray[5],
-      },
-      '&:hover:not([disabled])': {
-        background: theme.fn.rgba(
-          color ? theme.colors[color][6] : theme.colorScheme === 'dark' ? theme.colors.dark[3] : theme.colors.gray[4],
-          color ? (theme.colorScheme === 'dark' ? 0.15 : 0.08) : 0.25
-        ),
-      },
-      '&:active:not([disabled])': {
-        background: theme.fn.rgba(
-          color ? theme.colors[color][6] : theme.colorScheme === 'dark' ? theme.colors.dark[3] : theme.colors.gray[4],
-          color ? (theme.colorScheme === 'dark' ? 0.3 : 0.2) : 0.5
-        ),
-      },
-    },
-    title: {
-      whiteSpace: 'nowrap',
-      flexGrow: 1,
-    },
-  };
-});
+import { cs, type WithRequiredProperty } from './utils';
 
 export function ContextMenuItem({
   className,
@@ -72,7 +37,10 @@ export function ContextMenuItem({
   };
 
   const hasItemsAndIsNotDisabled = items && !disabled;
-  const { cx, classes } = useStyles({ color });
+
+  const theme = useMantineTheme();
+  const { colors } = theme;
+  const parsedColor = color ? getThemeColor(color, theme) : undefined;
 
   return (
     <div
@@ -81,8 +49,23 @@ export function ContextMenuItem({
     >
       <UnstyledButton
         ref={ref}
-        className={cx(classes.button, className)}
-        style={style}
+        style={{
+          '--mantine-cm-item-button-color': parsedColor ? parsedColor : 'var(--mantine-color-text)',
+          '--mantine-cm-item-button-hover-bg-color-light': parsedColor
+            ? rgba(parsedColor, 0.08)
+            : rgba(colors.gray[4], 0.25),
+          '--mantine-cm-item-button-hover-bg-color-dark': parsedColor
+            ? rgba(parsedColor, 0.15)
+            : rgba(colors.dark[3], 0.25),
+          '--mantine-cm-item-button-pressed-bg-color-light': parsedColor
+            ? rgba(parsedColor, 0.2)
+            : rgba(colors.gray[4], 0.5),
+          '--mantine-cm-item-button-pressed-bg-color-dark': parsedColor
+            ? rgba(parsedColor, 0.3)
+            : rgba(colors.dark[3], 0.5),
+          ...(typeof style === 'function' ? style(theme) : style),
+        }}
+        className={cs('mantine-cm-item-button', className)}
         disabled={disabled}
         onClick={handleClick}
       >
@@ -91,9 +74,7 @@ export function ContextMenuItem({
             {icon}
           </Box>
         )}
-        <Text className={classes.title} size="sm">
-          {title}
-        </Text>
+        <div className={'mantine-cm-item-button-title'}>{title}</div>
         {items && (
           <Box fz={10} mt={-2} ml="xs">
             ▶

@@ -1,3 +1,6 @@
+'use client';
+
+import { MantineProvider } from '@mantine/core';
 import { createContext, useContext, useState } from 'react';
 import { ContextMenuInstanceOptions } from './ContextMenu';
 import { ContextMenuPortal } from './ContextMenuPortal';
@@ -34,7 +37,6 @@ export function ContextMenuProvider({
       borderRadius: options?.borderRadius || borderRadius,
       className: options?.className,
       style: options?.style,
-      sx: options?.sx,
       classNames: options?.classNames,
       styles: options?.styles,
     });
@@ -43,7 +45,7 @@ export function ContextMenuProvider({
   return (
     <MenuContext.Provider value={showContextMenu}>
       {children}
-      {data && <ContextMenuPortal onHide={destroy} {...data} />}
+      <MantineProvider>{data && <ContextMenuPortal onHide={destroy} {...data} />}</MantineProvider>
     </MenuContext.Provider>
   );
 }
