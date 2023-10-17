@@ -65,6 +65,7 @@ export function copyImageToClipboard(src: string) {
       color: 'red',
       title: 'Error',
       message: 'Your browser does not support copying images to clipboard in this context',
+      withBorder: true,
     });
     return;
   }
@@ -84,6 +85,7 @@ export function copyImageToClipboard(src: string) {
   notifications.show({
     title: 'Done',
     message: 'Image copied to clipboard',
+    withBorder: true,
   });
 }
 
