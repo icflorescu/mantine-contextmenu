@@ -1,6 +1,6 @@
 'use client';
 
-import { Box, UnstyledButton, getThemeColor, rgba, useMantineTheme } from '@mantine/core';
+import { Box, UnstyledButton, parseThemeColor, rgba, useMantineTheme } from '@mantine/core';
 import clsx from 'clsx';
 import { useRef, useState, type MouseEventHandler } from 'react';
 import { ContextMenu } from './ContextMenu';
@@ -40,7 +40,8 @@ export function ContextMenuItem({
 
   const theme = useMantineTheme();
   const { colors } = theme;
-  const parsedColor = color ? getThemeColor(color, theme) : undefined;
+  const parsedColor = color ? parseThemeColor({ color, theme }).value : undefined;
+  if (color === 'red') console.log(parsedColor);
 
   return (
     <div
@@ -70,7 +71,7 @@ export function ContextMenuItem({
         onClick={handleClick}
       >
         {icon && (
-          <Box fz={0} mr="xs">
+          <Box fz={0} mr="xs" mt={-2}>
             {icon}
           </Box>
         )}
