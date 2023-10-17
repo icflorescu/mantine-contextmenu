@@ -17,7 +17,8 @@ export function NavbarButton({ color, icon, title, description, href, onClick, e
   const isExternal = !!href?.startsWith('http');
   const Icon = onClick ? IconChevronRight : icon;
   const pathname = usePathname();
-  const isCurrent = pathname === href;
+  // this is to make sure for works for trailing slashes
+  const isCurrent = pathname === `${href}/` || pathname === href;
   const { colors } = useMantineTheme();
 
   const content = (
