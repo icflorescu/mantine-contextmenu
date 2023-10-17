@@ -2,10 +2,11 @@
 
 import { Paper, px, useDirection, useMantineTheme } from '@mantine/core';
 import { useResizeObserver } from '@mantine/hooks';
+import clsx from 'clsx';
 import { ContextMenuDivider } from './ContextMenuDivider';
 import { ContextMenuItem } from './ContextMenuItem';
 import type { ContextMenuContent, ContextMenuOptions } from './types';
-import { cs, humanize } from './utils';
+import { humanize } from './utils';
 
 export type ContextMenuInstanceOptions = {
   x: number;
@@ -49,7 +50,7 @@ export function ContextMenu({
       ref={paperRef}
       shadow={shadow}
       radius={borderRadius}
-      className={cs('mantine-cm', className, classNames?.root)}
+      className={clsx('mantine-contextmenu', className, classNames?.root)}
       style={{
         ...resolvedStyles?.root,
         ...resolvedStyle,
@@ -69,7 +70,7 @@ export function ContextMenu({
             return onClick || items ? (
               <ContextMenuItem
                 key={key}
-                className={cs(classNames?.item, className)}
+                className={clsx(classNames?.item, className)}
                 style={{ ...resolvedStyles?.item, ...resolvedItemStyle }}
                 title={title ?? humanize(key)}
                 onClick={onClick}
@@ -80,7 +81,7 @@ export function ContextMenu({
             ) : (
               <ContextMenuDivider
                 key={key}
-                className={cs(classNames?.divider, className)}
+                className={clsx(classNames?.divider, className)}
                 style={{ ...resolvedStyles?.divider, ...resolvedItemStyle }}
               />
             );

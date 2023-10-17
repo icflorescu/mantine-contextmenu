@@ -1,4 +1,4 @@
-.mantine-cm-item-button {
+.mantine-contextmenu-item-button {
   width: 100%;
   display: flex;
   align-items: center;
@@ -6,7 +6,7 @@
   padding-bottom: calc(var(--mantine-spacing-sm) / 2);
   padding-left: var(--mantine-spacing-sm);
   padding-right: var(--mantine-spacing-sm);
-  color: var(--mantine-cm-item-button-color);
+  color: var(--mantine-contextmenu-item-button-color);
   transition: background 0.15s ease;
   &[disabled] {
     cursor: not-allowed;
@@ -14,19 +14,19 @@
   }
   &:hover:not([disabled]) {
     background: light-dark(
-      var(--mantine-cm-item-button-hover-bg-color-light),
-      var(--mantine-cm-item-button-hover-bg-color-dark)
+      var(--mantine-contextmenu-item-button-hover-bg-color-light),
+      var(--mantine-contextmenu-item-button-hover-bg-color-dark)
     );
   }
   &:active:not([disabled]) {
     background: light-dark(
-      var(--mantine-cm-item-button-pressed-bg-color-light),
-      var(--mantine-cm-item-button-pressed-bg-color-dark)
+      var(--mantine-contextmenu-item-button-pressed-bg-color-light),
+      var(--mantine-contextmenu-item-button-pressed-bg-color-dark)
     );
   }
 }
 
-.mantine-cm-item-button-title {
+.mantine-contextmenu-item-button-title {
   font-size: var(--mantine-font-size-sm);
   white-space: nowrap;
   flex-grow: 1;

@@ -52,7 +52,7 @@ export default function StylingPage() {
         <ExternalLink to="https://developer.mozilla.org/en-US/docs/Web/CSS/@layer">CSS layers</ExternalLink>.
         <br />
         While <Code>@mantine/{'{package}'}/styles.layer.css</Code> files use a layer named <Code>mantine</Code>,{' '}
-        <Code>mantine-contextmenu/styles.css</Code> place styles in a layer named <Code>mantine-cm</Code>.
+        <Code>mantine-contextmenu/styles.css</Code> place styles in a layer named <Code>mantine-contextmenu</Code>.
       </Txt>
       <PageNavigation of={PATH} />
     </>
