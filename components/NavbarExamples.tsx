@@ -1,7 +1,8 @@
 import { Box, Collapse } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
+import clsx from 'clsx';
 import { usePathname } from 'next/navigation';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { PRODUCT_NAME } from '~/app/config';
 import { NavbarButton, NavbarButtonProps } from './NavbarButton';
 import classes from './NavbarExamples.module.css';
@@ -28,6 +29,8 @@ export function NavbarExamples({ items }: NavbarExamplesProps) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
+  const [didExpand, setDidExpand] = useState(false);
+
   return (
     <>
       <NavbarButton
@@ -40,8 +43,8 @@ export function NavbarExamples({ items }: NavbarExamplesProps) {
         }}
         expanded={expanded}
       />
-      <Collapse in={expanded} pos="relative">
-        <Box bg="green" className={classes.line} />
+      <Collapse in={expanded} onTransitionEnd={() => setDidExpand(expanded)} pos="relative">
+        <Box bg="green" className={clsx(classes.line, { [classes.lineVisible]: didExpand })} />
         {items.map((item) => (
           <NavbarButton key={item.href} {...item} />
         ))}

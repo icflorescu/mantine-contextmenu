@@ -41,11 +41,13 @@ export function NavbarButton({ color, icon, title, description, href, onClick, e
           <Icon size={16} className={clsx(classes.icon, { [classes.expanded]: expanded })} />
         </Center>
       ) : (
-        <div className={classes.dotWrapper}>
-          <Box className={classes.dot} bg={color} />
+        <div style={{ borderColor: colors[color][6] }} className={classes.dotWrapper}>
+          <Box className={classes.dot} bg={isCurrent ? color : 'transparent'} />
         </div>
       )}
-      <Text className={classes.text}>{title}</Text>
+      <Text className={classes.text} fz={Icon ? undefined : 'sm'}>
+        {title}
+      </Text>
     </Box>
   );
 
