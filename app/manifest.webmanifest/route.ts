@@ -2,8 +2,9 @@ import { MetadataRoute } from 'next';
 import { PRODUCT_DESCRIPTION, PRODUCT_NAME, WEBSITE_LINK } from '~/app/config';
 
 /**
- * we need to use this instead of a manifest.ts file because the basePath is
- * not being applied to the manifest route in the generated layout...
+ * todo move this to a manifest.ts file as soon as the bug in Next.js is fixed
+ * we need to use this instead of a manifest.ts due to a bug in Next.js
+ * (@see https://github.com/vercel/next.js/issues/56687)
  */
 
 const data: MetadataRoute.Manifest = {
