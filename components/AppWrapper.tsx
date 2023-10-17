@@ -2,6 +2,7 @@
 
 import { AppShell, AppShellMain, Container } from '@mantine/core';
 import { useDisclosure, useResizeObserver } from '@mantine/hooks';
+import { useEffect } from 'react';
 import classes from './AppWrapper.module.css';
 import { Footer } from './Footer';
 import { Header } from './Header';
@@ -10,6 +11,10 @@ import { Navbar } from './Navbar';
 export function AppWrapper({ children }: React.PropsWithChildren) {
   const [navbarExpanded, { toggle: toggleNavbar, close: collapseNavbar }] = useDisclosure(false);
   const [ref] = useResizeObserver();
+
+  useEffect(() => {
+    document.body.classList.toggle('noscroll', navbarExpanded);
+  }, [navbarExpanded]);
 
   return (
     <AppShell

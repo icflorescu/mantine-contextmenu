@@ -1,4 +1,4 @@
-import { Button } from '@mantine/core';
+import { Box, Button } from '@mantine/core';
 import { IconBrandNpm } from '@tabler/icons-react';
 import { NPM_LINK, PRODUCT_NAME } from '~/app/config';
 import { useNpmDownloads } from '~/lib/useNpmDownloads';
@@ -17,6 +17,9 @@ export function NpmHeaderLinkButton() {
       target="_blank"
     >
       {downloads}
+      <Box component="span" visibleFrom="md">
+        nth
+      </Box>
     </Button>
   );
 }

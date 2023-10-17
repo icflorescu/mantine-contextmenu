@@ -1,4 +1,4 @@
-import { Button } from '@mantine/core';
+import { Box, Button } from '@mantine/core';
 import { IconBrandGithub, IconHeartFilled } from '@tabler/icons-react';
 import { PRODUCT_NAME, REPO_LINK, SPONSORS_LINK } from '~/app/config';
 import classes from './HeaderLinkButtons.module.css';
@@ -16,7 +16,10 @@ export function HeaderLinkButtons() {
         href={REPO_LINK}
         target="_blank"
       >
-        Source code
+        Source
+        <Box component="span" visibleFrom="md">
+          &nbsp;code
+        </Box>
       </Button>
       <NpmHeaderLinkButton />
       <Button
