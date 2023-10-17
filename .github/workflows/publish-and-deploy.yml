@@ -44,7 +44,7 @@ jobs:
       - name: Install dependencies
         run: yarn install
       - name: Build
-        run: GITHUB_PAGES=true yarn build
+        run: GITHUB_PAGES=TRUE yarn build
       - name: Upload pages artifact
         uses: actions/upload-pages-artifact@v2
         with:

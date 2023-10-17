@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 namespace NodeJS {
   interface ProcessEnv extends NodeJS.ProcessEnv {
-    GITHUB_PAGES: boolean;
+    GITHUB_PAGES: 'TRUE' | 'FALSE';
     PACKAGE_VERSION: string;
-    INITIAL_NPM_DOWNLOADS: number;
+    INITIAL_NPM_DOWNLOADS: string;
   }
 }

@@ -3,9 +3,7 @@ const withPWA = require('@ducanh2912/next-pwa').default({ dest: 'public' });
 const { version: PACKAGE_VERSION } = require('./package.json');
 
 module.exports = async () => {
-  const { downloads: INITIAL_NPM_DOWNLOADS } = await fetch(
-    'https://api.npmjs.org/downloads/point/last-month/mantine-contextmenu'
-  )
+  const { downloads } = await fetch('https://api.npmjs.org/downloads/point/last-month/mantine-contextmenu')
     .then((res) => res.json())
     .catch(() => ({ downloads: 0 }));
 
@@ -16,13 +14,13 @@ module.exports = async () => {
     output: 'export',
     images: { unoptimized: true },
     env: {
-      GITHUB_PAGES: process.env.GITHUB_PAGES === 'true',
+      GITHUB_PAGES: String(process.env.GITHUB_PAGES === 'TRUE' || false).toUpperCase(),
       PACKAGE_VERSION,
-      INITIAL_NPM_DOWNLOADS,
+      INITIAL_NPM_DOWNLOADS: String(downloads),
     },
   };
 
-  if (process.env.GITHUB_PAGES === 'true') config.basePath = '/mantine-contextmenu';
+  if (process.env.GITHUB_PAGES) config.basePath = '/mantine-contextmenu';
 
   return withPWA(config);
 };
