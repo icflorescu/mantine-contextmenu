@@ -1,6 +1,21 @@
 import type { MantineColor, MantineShadow, MantineSize, MantineTheme } from '@mantine/core';
 import type { CSSProperties, MouseEventHandler, ReactNode } from 'react';
 
+/**
+ * Utility type that makes a property required
+ */
+export type WithRequiredProperty<Type, Key extends keyof Type> = Type & {
+  [Property in Key]-?: Type[Property];
+};
+
+/**
+ * Utility type that makes a property optional
+ */
+export type WithOptionalProperty<T, K extends keyof T> = Omit<T, K> & Partial<Pick<T, K>>;
+
+/**
+ * Context menu options
+ */
 export type ContextMenuOptions = {
   /**
    * zIndex of context menu
@@ -45,10 +60,16 @@ export type ContextMenuOptions = {
     | ((theme: MantineTheme) => Partial<Record<'root' | 'item' | 'divider', CSSProperties>>);
 };
 
+/**
+ * Context menu provider props
+ */
 export type ContextMenuProviderProps = ContextMenuOptions & {
   children: ReactNode;
 };
 
+/**
+ * Context menu item options
+ */
 export type ContextMenuItemOptions = {
   /**
    * Unique key of the context menu item or divider
@@ -113,8 +134,14 @@ export type ContextMenuItemOptions = {
     }
 );
 
+/**
+ * Context menu content - either an array of context menu items or a function that accepts a close callback and returns context menu content
+ */
 export type ContextMenuContent = ContextMenuItemOptions[] | ((close: () => void) => JSX.Element);
 
+/**
+ * Context menu hook return value
+ */
 export type ShowContextMenuFunction = (
   /**
    * Context menu content - either an array of context menu items

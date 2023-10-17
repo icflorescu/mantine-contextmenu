@@ -1,0 +1,5 @@
+@import '@mantine/core/esm/index.css' layer(mantine-core);
+@import '__PACKAGE__/styles.css' layer(mantine-contextmenu);
+
+/* 👇 Make sure the styles are applied in the correct order */
+@layer mantine-core, mantine-contextmenu;
