@@ -12,7 +12,7 @@
 .anchor {
   display: inline-block;
   padding-top: var(--app-shell-header-height);
-  margin: calc(1em - var(--app-shell-header-height)) 0 1em;
+  margin: calc(1em - var(--app-shell-header-height)) 0 0.5em;
   cursor: pointer;
   &:hover {
     text-decoration: underline;

@@ -29,10 +29,9 @@ export default async function GettingStartedPage() {
       <PageTitle of={PATH} />
       <Txt>
         {PRODUCT_NAME} depends on <Code>@mantine/core</Code> and <Code>@mantine/hooks</Code>.
-        <br />
-        Create a new <ExternalLink to={`${MANTINE_LINK}pages/getting-started/`}>
-          application with Mantine
-        </ExternalLink>{' '}
+      </Txt>
+      <Txt>
+        Create a new <ExternalLink to={`${MANTINE_LINK}pages/getting-started/`}>application with Mantine</ExternalLink>{' '}
         and install the package:
       </Txt>
       <CodeBlock
@@ -51,16 +50,8 @@ export default async function GettingStartedPage() {
         <Code>MantineProvider</Code> and don’t forget to import the necessary CSS files{' '}
         <strong>in the correct order</strong>.
       </Txt>
-      <PageSubtitle value="Ensure the styles import order with CSS layers" />
-      <Txt>
-        Since some bundlers and frameworks (
-        <ExternalLink to="https://github.com/vercel/next.js/issues/16630">including Next.js</ExternalLink>) do not allow
-        you to control the order of stylesheets in your application, {PRODUCT_NAME} provides a{' '}
-        <Code>styles.layer.css</Code> file that you can import to ensure the correct order by making use of{' '}
-        <ExternalLink to="https://developer.mozilla.org/en-US/docs/Web/CSS/@layer">CSS layers</ExternalLink>.
-      </Txt>
-      <Txt warning>
-        The <Code>@mantine/core</Code> package styles must be imported before {PRODUCT_NAME} styles.
+      <Txt idea>
+        The <Code>@mantine/core</Code> package styles must be applied before {PRODUCT_NAME} styles.
       </Txt>
       <Txt>
         For example, if you’re using a <ExternalLink to={`${MANTINE_LINK}/guides/next/`}></ExternalLink>Next.js

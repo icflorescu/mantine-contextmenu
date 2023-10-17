@@ -1,6 +1,7 @@
 import { MantineColor } from '@mantine/core';
 import {
   IconAdjustments,
+  IconBrandCss3,
   IconHeartFilled,
   IconHeartHandshake,
   IconHome,
@@ -59,6 +60,13 @@ export const ROUTES: RouteInfo[] = [
     color: 'orange',
   },
   {
+    href: '/styling',
+    title: 'Styling',
+    description: `Learn how styling works in ${PRODUCT_NAME}`,
+    icon: IconBrandCss3,
+    color: 'pink',
+  },
+  {
     href: '/examples/basic-usage',
     title: 'Basic usage',
     description: `Example: basic usage of ${PRODUCT_NAME}`,
@@ -99,9 +107,9 @@ export const ROUTES: RouteInfo[] = [
     description: `Example: Configuring ${PRODUCT_NAME} to show custom content`,
   },
   {
-    href: '/examples/styling',
-    title: 'Styling',
-    description: `Example: Learn how you can style the ${PRODUCT_NAME}`,
+    href: '/examples/custom-styling',
+    title: 'Custom styling',
+    description: `Example: Learn how you can customize the styling of ${PRODUCT_NAME}`,
   },
   {
     href: '/examples/submenus',

@@ -16,11 +16,11 @@ import { StylingWithStyleObjectExample } from './StylingWithStyleObjectExample';
 import { StylingWithStylesFunctionExample } from './StylingWithStylesFunctionExample';
 import { StylingWithStylesObjectExample } from './StylingWithStylesObjectExample';
 
-const PATH = '/examples/styling';
+const PATH = '/examples/custom-styling';
 
 export const metadata = getRouteMetadata(PATH);
 
-export default async function StylingExamplePage() {
+export default async function CustomStylingExamplePage() {
   const code = await allPromiseProps({
     'ProviderPropsExample.tsx': readCodeFile<string>(`${PATH}/ProviderPropsExample.tsx`),
     'ProviderPropsExample.module.css': readCodeFile<string>(`${PATH}/ProviderPropsExample.module.css`),
