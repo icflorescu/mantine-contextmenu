@@ -12,6 +12,7 @@ module.exports = async () => {
    */
   const config = {
     output: 'export',
+    trailingSlash: true,
     images: { unoptimized: true },
     env: {
       GITHUB_PAGES: String(process.env.GITHUB_PAGES === 'TRUE' || false).toUpperCase(),
