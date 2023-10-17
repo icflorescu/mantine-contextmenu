@@ -24,9 +24,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           defaultColorScheme="auto"
           theme={{
             components: {
-              Code: { classNames: { root: classes.codeFragment } },
-              CodeHighlight: { classNames: { root: classes.codeBox } },
-              CodeHighlightTabs: { classNames: { root: classes.codeBox } },
+              Button: { classNames: { label: classes.buttonLabel } },
+              Code: { classNames: { root: classes.codeRoot } },
+              CodeHighlight: { classNames: { root: classes.codeBlockBox } },
+              CodeHighlightTabs: { classNames: { root: classes.codeBlockBox } },
             },
           }}
         >

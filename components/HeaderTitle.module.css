@@ -18,4 +18,9 @@
 .text {
   font-size: rem(18px);
   margin-bottom: rem(-2px);
+
+  /* todo remove this firefox fix as soon as the problem is solved in Mantine */
+  @-moz-document url-prefix() {
+    margin-bottom: -0.25em;
+  }
 }

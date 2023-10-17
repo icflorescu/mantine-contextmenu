@@ -52,3 +52,11 @@
   height: rem(8px);
   border-radius: 50%;
 }
+
+/* todo remove this firefox fix as soon as the problem is solved in Mantine */
+@-moz-document url-prefix() {
+  .text {
+    margin-top: 0.25em;
+    margin-bottom: -0.25em;
+  }
+}
