@@ -4,3 +4,9 @@
 @import '../package/styles.css' layer(mantine-cm);
 
 @layer mantine-core, mantine-notifications, mantine-code-highlight, mantine-cm, mantine-cm-docs;
+
+@layer mantine-cm-docs {
+  .noscroll {
+    overflow: hidden;
+  }
+}
