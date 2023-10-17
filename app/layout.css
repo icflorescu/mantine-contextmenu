@@ -5,8 +5,6 @@
 
 @layer mantine-core, mantine-notifications, mantine-code-highlight, mantine-cm, mantine-cm-docs;
 
-@layer mantine-cm-docs {
-  .noscroll {
-    overflow: hidden;
-  }
+.noscroll {
+  overflow: hidden;
 }
