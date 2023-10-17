@@ -3,11 +3,13 @@ import { Notifications } from '@mantine/notifications';
 import { ContextMenuProvider } from '__PACKAGE__';
 import { Metadata } from 'next';
 import { AppWrapper } from '~/components/AppWrapper';
+import { WEBSITE_LINK } from './config';
 import './layout.css';
 import classes from './layout.module.css';
 
 export const metadata: Metadata = {
   metadataBase: process.env.GITHUB_PAGES === 'TRUE' ? new URL('https://icflorescu.github.io') : undefined,
+  manifest: `${process.env.GITHUB_PAGES === 'TRUE' ? WEBSITE_LINK : ''}/manifest.webmanifest`,
   title: 'Mantine ContextMenu: enhance your users’ experience',
   description:
     'Design your Mantine applications for productivity and meet your users’ expectations by enhancing your UIs with desktop-grade context menus',
