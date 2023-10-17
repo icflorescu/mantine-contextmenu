@@ -10,7 +10,7 @@
 }
 
 .content {
-  min-height: calc(100dvh - var(--footer-height) - var(--app-shell-header-height));
+  min-height: calc(100dvh - var(--docs-footer-height) - var(--app-shell-header-height));
   margin-bottom: var(--footer-height);
   padding: var(--mantine-spacing-xs) 0 var(--mantine-spacing-xl);
   background: var(--mantine-color-body);

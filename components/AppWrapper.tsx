@@ -17,7 +17,7 @@ export function AppWrapper({ children }: React.PropsWithChildren) {
 
   return (
     <AppShell
-      style={{ '--footer-height': `${ref.current?.getBoundingClientRect().height || 154}px` }}
+      style={{ '--docs-footer-height': `${ref.current?.getBoundingClientRect().height || 154}px` }}
       className={classes.root}
       header={{ height: 60 }}
       navbar={{ width: 260, breakpoint: 'sm', collapsed: { mobile: !navbarExpanded } }}
