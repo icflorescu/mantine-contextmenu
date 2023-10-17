@@ -1,18 +1,14 @@
 'use client';
 
-import { AppShell, AppShellMain, AppShellNavbar, Container } from '@mantine/core';
+import { AppShell, AppShellMain, Container } from '@mantine/core';
 import { useDisclosure, useResizeObserver } from '@mantine/hooks';
-import { getNavbarButtonsInfo } from '~/lib/utils';
 import classes from './AppWrapper.module.css';
 import { Footer } from './Footer';
 import { Header } from './Header';
-import { NavbarButton } from './NavbarButton';
-import { NavbarDynamicLinkButtons } from './NavbarDynamicLinkButtons';
-import { NavbarExamples } from './NavbarExamples';
+import { Navbar } from './Navbar';
 
 export function AppWrapper({ children }: React.PropsWithChildren) {
   const [navbarExpanded, { toggle: toggleNavbar, close: collapseNavbar }] = useDisclosure(false);
-  const navbarButtonsInfo = getNavbarButtonsInfo();
   const [ref] = useResizeObserver();
 
   return (
@@ -23,16 +19,7 @@ export function AppWrapper({ children }: React.PropsWithChildren) {
       navbar={{ width: 260, breakpoint: 'sm', collapsed: { mobile: !navbarExpanded } }}
     >
       <Header navbarExpanded={navbarExpanded} toggleNavbar={toggleNavbar} />
-      <AppShellNavbar py="md" onClick={collapseNavbar}>
-        {navbarButtonsInfo['before-examples'].map((item) => (
-          <NavbarButton key={item.href} {...item} />
-        ))}
-        <NavbarExamples items={navbarButtonsInfo['examples']} />
-        {navbarButtonsInfo['after-examples'].map((item) => (
-          <NavbarButton key={item.href} {...item} />
-        ))}
-        <NavbarDynamicLinkButtons />
-      </AppShellNavbar>
+      <Navbar onClick={collapseNavbar} />
       <AppShellMain className={classes.main}>
         <div className={classes.content}>
           <Container>{children}</Container>
