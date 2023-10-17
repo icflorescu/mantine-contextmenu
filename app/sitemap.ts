@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next';
-import { WEBSITE_LINK } from './config';
+import { ROUTES, WEBSITE_LINK } from './config';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -9,6 +9,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 1,
     },
-    // todo: add more pages here
+    ...ROUTES.filter(({ href }) => href.startsWith('/') && href !== '/').map(({ href }) => ({
+      url: `${WEBSITE_LINK}${href}`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.7,
+    })),
   ];
 }
