@@ -62,7 +62,7 @@ export const ROUTES: RouteInfo[] = [
   {
     href: '/styling',
     title: 'Styling',
-    description: `Learn how styling works in ${PRODUCT_NAME}`,
+    description: `Learn how styling works in Mantine V7 and ${PRODUCT_NAME} V7`,
     icon: IconBrandCss3,
     color: 'pink',
   },

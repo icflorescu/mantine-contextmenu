@@ -5,7 +5,7 @@ import { useContextMenu } from '__PACKAGE__';
 import { Picture } from '~/components/Picture';
 import { copyImageToClipboard, downloadImage, unsplashImages } from '~/lib/images';
 
-export default function GettingStartedExample() {
+export function SimpleExample() {
   // example-start
   const showContextMenu = useContextMenu();
   // example-skip

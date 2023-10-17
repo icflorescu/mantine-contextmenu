@@ -1,16 +1,32 @@
-import { Code } from '@mantine/core';
+import { Box, Code } from '@mantine/core';
+import { CodeBlock } from '~/components/CodeBlock';
 import { ExternalLink } from '~/components/ExternalLink';
+import { InternalLink } from '~/components/InternalLink';
 import { PageNavigation } from '~/components/PageNavigation';
 import { PageSubtitle } from '~/components/PageSubtitle';
 import { PageTitle } from '~/components/PageTitle';
 import { Txt } from '~/components/Txt';
-import { getRouteMetadata } from '~/lib/utils';
+import { readCodeFile } from '~/lib/code';
+import { allPromiseProps, getFirstExampleRoute, getRouteMetadata } from '~/lib/utils';
 import { MANTINE_LINK, PRODUCT_NAME, REPO_LINK } from '../config';
 
 const PATH = '/styling';
 export const metadata = getRouteMetadata(PATH);
 
-export default function StylingPage() {
+export default async function StylingPage() {
+  const code = await allPromiseProps({
+    simple: allPromiseProps({
+      'RootLayout.tsx': readCodeFile<string>(`${PATH}/examples/simple/RootLayout.tsx`),
+      'layout.css': readCodeFile<string>(`${PATH}/examples/simple/layout.css`),
+    }),
+    fineGrained: allPromiseProps({
+      'RootLayout.tsx': readCodeFile<string>(`${PATH}/examples/fine-grained/RootLayout.tsx`),
+      'postcss.config.js': readCodeFile<string>(`${PATH}/examples/fine-grained/postcss.config.js`),
+      'layout.css': readCodeFile<string>(`${PATH}/examples/fine-grained/layout.css`),
+    }),
+  });
+  const { href: firstExampleHref } = getFirstExampleRoute();
+
   return (
     <>
       <PageTitle of={PATH} />
@@ -46,13 +62,41 @@ export default function StylingPage() {
       <Txt>
         Some bundlers and frameworks (
         <ExternalLink to="https://github.com/vercel/next.js/issues/16630">including Next.js</ExternalLink>) do not allow
-        you to control the order of stylesheets in your application.
-        <br />
+        you to control the order of stylesheets in your application when importing CSS files.
+      </Txt>
+      <Txt>
         You can mitigate this by making use of{' '}
         <ExternalLink to="https://developer.mozilla.org/en-US/docs/Web/CSS/@layer">CSS layers</ExternalLink>.
-        <br />
-        While <Code>@mantine/{'{package}'}/styles.layer.css</Code> files use a layer named <Code>mantine</Code>,{' '}
-        <Code>mantine-contextmenu/styles.css</Code> place styles in a layer named <Code>mantine-contextmenu</Code>.
+      </Txt>
+      <Txt idea>
+        Please keep in mind that:
+        <Box component="ul" ml={-20}>
+          <li>
+            <Code>@mantine/{'{package}'}/styles.layer.css</Code> files will place styles in a layer named{' '}
+            <Code>mantine</Code>
+          </li>
+          <li>
+            <Code>mantine-contextmenu/styles.layer.css</Code> will place styles in a layer called{' '}
+            <Code>mantine-contextmenu</Code>
+          </li>
+        </Box>
+      </Txt>
+      <Txt>
+        For example, in a Next.js application you could ensure the correct order of styles either by importing the{' '}
+        <Code>styles.layer.css</Code> files and using the <Code>@layer</Code> directive, like so:
+      </Txt>
+      <CodeBlock tabs={{ code: code['simple'], keys: ['RootLayout.tsx', 'layout.css'] }} />
+      <Txt>
+        Or, if you want to have even more control over the order of styles, you can make use of the{' '}
+        <Code>postcss-import</Code> plugin to control the layer names when importing the <Code>styles.css</Code> files,
+        and then use the <Code>@layer</Code> directive, like so:
+      </Txt>
+      <CodeBlock tabs={{ code: code['fineGrained'], keys: ['RootLayout.tsx', 'postcss.config.js', 'layout.css'] }} />
+      <Txt>
+        Now that you understand how styling works, feel free to browse the{' '}
+        <InternalLink to={firstExampleHref}>code examples</InternalLink> to see the context menu in action and learn how
+        to use it, and refer to the <InternalLink to="/type-definitions">type definitions</InternalLink> page for an
+        exhaustive list of customizable options.
       </Txt>
       <PageNavigation of={PATH} />
     </>

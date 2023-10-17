@@ -9,7 +9,7 @@ import { PageTitle } from '~/components/PageTitle';
 import { Txt } from '~/components/Txt';
 import { readCodeFile } from '~/lib/code';
 import { allPromiseProps, getFirstExampleRoute, getRouteMetadata } from '~/lib/utils';
-import GettingStartedExample from './GettingStartedExample';
+import { SimpleExample } from './examples/SimpleExample';
 
 const PATH = '/getting-started';
 
@@ -17,9 +17,9 @@ export const metadata = getRouteMetadata(PATH);
 
 export default async function GettingStartedPage() {
   const code = await allPromiseProps({
-    'RootLayout.tsx': readCodeFile<string>(`${PATH}/RootLayout.tsx`),
-    'layout.css': readCodeFile<string>(`${PATH}/layout.css`),
-    'GettingStartedExample.tsx': readCodeFile<string>(`${PATH}/GettingStartedExample.tsx`),
+    'RootLayout.tsx': readCodeFile<string>(`${PATH}/examples/RootLayout.tsx`),
+    'layout.css': readCodeFile<string>(`${PATH}/examples/layout.css`),
+    'SimpleExample.tsx': readCodeFile<string>(`${PATH}/examples/SimpleExample.tsx`),
   });
 
   const { href: firstExampleHref } = getFirstExampleRoute();
@@ -62,16 +62,15 @@ export default async function GettingStartedPage() {
       <Txt>
         Import the <Code>useContextMenu</Code> hook and use it in your components like so:
       </Txt>
-      <CodeBlock code={code['GettingStartedExample.tsx']} />
+      <CodeBlock code={code['SimpleExample.tsx']} />
       <Txt>
         The above code will produce the following result (right-click on the image to trigger the context menu):
       </Txt>
-      <GettingStartedExample />
+      <SimpleExample />
       <Txt>
-        Browse the <InternalLink to={firstExampleHref}>code examples</InternalLink> to see the context menu in action
-        and learn how to use it, and refer to the{' '}
-        <InternalLink to="/type-definitions">type definitions page</InternalLink> for the exhaustive list of
-        customizable options.
+        Next, let’s make sure you have a good understanding of how <InternalLink to="/styling">styling</InternalLink>{' '}
+        works before browsing the <InternalLink to={firstExampleHref}>usage examples</InternalLink> and taking a look at
+        the <InternalLink to="/type-definitions">type definitions</InternalLink> page.
       </Txt>
       <PageNavigation of={PATH} />
     </>
