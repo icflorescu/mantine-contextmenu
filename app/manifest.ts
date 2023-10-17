@@ -13,7 +13,7 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: '#1971c2',
     icons: [
       {
-        src: `${process.env.GITHUB_PAGES ? WEBSITE_LINK : ''}/icon.svg`,
+        src: `${process.env.GITHUB_PAGES === 'TRUE' ? WEBSITE_LINK : ''}/icon.svg`,
         sizes: 'any',
       },
     ],

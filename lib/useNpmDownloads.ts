@@ -14,5 +14,5 @@ export function useNpmDownloads() {
     }
   );
 
-  return `${((data?.downloads || process.env.INITIAL_NPM_DOWNLOADS) / 1000).toFixed(1)}k/mo`;
+  return `${((data?.downloads || Number(process.env.INITIAL_NPM_DOWNLOADS)) / 1000).toFixed(1)}k/mo`;
 }
