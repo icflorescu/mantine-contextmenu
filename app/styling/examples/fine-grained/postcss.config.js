@@ -5,7 +5,7 @@ module.exports = {
     'postcss-import': {},
     'postcss-preset-mantine': {},
     'postcss-simple-vars': {
-      // ...
+      // your Mantine variables here...
     },
   },
 };
