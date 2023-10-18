@@ -1,8 +1,17 @@
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import { ContextMenuProvider } from '__PACKAGE__';
 
+// 👇 Import the mantine-core layer CSS file;
+//    this will automatically place it in a `mantine` layer
 import '@mantine/core/styles.layer.css';
+
+// 👇 Import the mantine-contextmenu layer CSS file;
+//    this will automatically place it in a `mantine-contextmenu` layer
 import '__PACKAGE__/styles.layer.css';
+
+// 👇 Import your own CSS file;
+//    make sure to specify the layers order with the `@layer` directive
+//    inside that file
 import './layout.css';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
