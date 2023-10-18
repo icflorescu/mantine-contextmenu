@@ -40,10 +40,9 @@ export default function ContributeAndSupportPage() {
       </ul>
       <PageSubtitle value="Please sponsor my work" />
       <Txt>
-        I built {PRODUCT_NAME} and <ExternalLink to={MANTINE_DATATABLE_LINK}>Mantine DataTable</ExternalLink> out of
-        passion, but the constand effort of spending so many hours on open-source development and maintenance takes its
-        toll, and passion alone doesn’t pay the bills. So, if you find {PRODUCT_NAME} useful and you want to support its
-        future development, please consider{' '}
+        I built these projects out of passion, but the constand effort of spending so many hours on open-source
+        development and maintenance takes its toll, and passion alone doesn’t pay the bills. So, if you find{' '}
+        {PRODUCT_NAME} useful and you want to support its future development, please consider{' '}
         <ExternalLink to="https://github.com/sponsors/icflorescu">sponsoring my work</ExternalLink> ❤️.
       </Txt>
       <PageSubtitle value="Raise issues and discuss new features" />
@@ -86,19 +85,55 @@ export default function ContributeAndSupportPage() {
           <ContributorsImage />
         </ExternalLink>
       </Box>
-      <Txt>Things to consider before contributing:</Txt>
       <Txt info>
-        Please target your PRs to the <Code>next</Code> branch.
-        <br />
-        Pushing to the <Code>main</Code> branch triggers a GitHub deployment workflow, so PRs targeting{' '}
-        <Code>main</Code> will be rejected.
-        <br />
-        If you want to implement a new feature or improve an existing one, make sure to add an example page and/or alter
-        the one(s) already referring to it.
-        <br />
-        It’s not a feature if other people don’t know about it or don’t understand how to use it.
+        Things to consider before contributing:
+        <Box component="ul" ml={-20}>
+          <li>
+            The <ExternalLink to={REPO_LINK}>repository</ExternalLink> is holding the code for both {PRODUCT_NAME} and
+            the documentation website you’re looking at.
+            <br />
+            Since the repo root contains a <Code>yarn.lock</Code> file, <strong>it should be obvious</strong> that you
+            have to use <ExternalLink to="https://yarnpkg.com/">Yarn</ExternalLink> to install dependencies and run
+            scripts.
+            <br />
+            Use <Code>yarn dev</Code> to start the development server, <Code>yarn lint</Code> to check the code for
+            linting errors, and <Code>yarn build</Code> to check that the code compiles.
+            <br />
+            Running <Code>yarn format</Code> will automatically format your code with{' '}
+            <ExternalLink to="https://prettier.io/">Prettier</ExternalLink>, so that it adheres to the project’s coding
+            style.
+            <br />
+            It’s a <ExternalLink to="https://nextjs.org/">Next.js</ExternalLink> project with an{' '}
+            <ExternalLink to="https://nextjs.org/docs/app/building-your-application/routing">app router</ExternalLink>{' '}
+            and makes use of{' '}
+            <ExternalLink to="https://nextjs.org/docs/app/building-your-application/rendering/server-components">
+              React Server Components
+            </ExternalLink>
+            .
+            <br />
+            <strong>Make sure you have a good grasp of these concepts before attempting to contribute.</strong>
+            <br />
+            The {PRODUCT_NAME} package code is located in the <Code>package</Code> folder, while the documentation
+            website code is located in the <Code>app</Code> folder.
+            <br />
+            The <Code>components</Code> folder holds generic React components used by the documentation website.
+          </li>
+          <li>
+            If you want to implement a new feature or improve an existing one, make sure to add an example page and/or
+            alter the one(s) already referring to it.
+            <br />
+            It’s not a feature if other people don’t know about it or don’t understand how to use it.
+          </li>
+          <li>
+            <strong>
+              Please target your PRs to the <Code>next</Code> branch.
+            </strong>
+            <br />
+            Pushing to the <Code>main</Code> branch triggers a GitHub deployment workflow, so PRs targeting{' '}
+            <Code>main</Code> will be rejected.
+          </li>
+        </Box>
       </Txt>
-      <PageSubtitle value="List of code contributors" />
       <PageSubtitle value="Other means of support" />
       <Txt>
         If you find this project useful, it would help a lot if you could:
