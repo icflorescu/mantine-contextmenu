@@ -7,7 +7,7 @@
   padding-left: var(--mantine-spacing-sm);
   padding-right: var(--mantine-spacing-sm);
   color: var(--mantine-contextmenu-item-button-color);
-  transition: background 0.15s ease;
+  transition: background 0.2s;
   &[disabled] {
     cursor: not-allowed;
     color: light-dark(var(--mantine-color-gray-5), var(--mantine-color-dark-3));
