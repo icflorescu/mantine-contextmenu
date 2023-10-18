@@ -32,13 +32,10 @@ Visit [icflorescu.github.io/mantine-contextmenu](https://icflorescu.github.io/ma
 
 ## Quickstart
 
-Create a new [Mantine application](https://mantine.dev/pages/getting-started/), then install the package:
+Create a new [Mantine application](https://mantine.dev/pages/getting-started/), make sure to have the `clsx` peer dependency installed,
+then install the package with `npm i mantine-contextmenu` or `yarn add mantine-contextmenu`:
 
-```sh
-npm i mantine-contextmenu
-```
-
-Wrap your application in a `ContextMenuProvider` **inside** the `MantineProvider` and don't forget to import the necessary CSS files [in the correct order](https://mantine.dev/styles/mantine-styles/) (you [might need to use CSS layers](https://mantine.dev/styles/mantine-styles/#css-layers)):
+Wrap your application in a `ContextMenuProvider` **inside** the `MantineProvider` and don't forget to import the necessary CSS files [in the correct order](https://mantine.dev/styles/mantine-styles/) (you [might need to use CSS layers](https://icflorescu.github.io/mantine-contextmenu/styling/#controlling-the-order-of-styles-with-css-layers)):
 
 ```tsx
 import { MantineProvider } from '@mantine/core';
@@ -58,7 +55,7 @@ function App() {
 }
 ```
 
-Use the hook-generated function in your code:
+Use the `showContextMenu` hook-generated function in your code:
 
 ```tsx
 import { IconCopy, IconDownload } from '@tabler/icons-react';
