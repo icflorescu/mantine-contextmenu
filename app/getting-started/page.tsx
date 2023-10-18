@@ -28,7 +28,7 @@ export default async function GettingStartedPage() {
     <>
       <PageTitle of={PATH} />
       <Txt>
-        {PRODUCT_NAME} depends on <Code>@mantine/core</Code> and <Code>@mantine/hooks</Code>.
+        {PRODUCT_NAME} depends on <Code>@mantine/core</Code>, <Code>@mantine/hooks</Code> and <Code>clsx</Code>.
       </Txt>
       <Txt>
         Create a new <ExternalLink to={`${MANTINE_LINK}pages/getting-started/`}>application with Mantine</ExternalLink>{' '}

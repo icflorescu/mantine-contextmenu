@@ -101,6 +101,7 @@
   },
   "peerDependencies": {
     "@mantine/core": ">=7",
-    "@mantine/hooks": ">=7"
+    "@mantine/hooks": ">=7",
+    "clsx": ">=2"
   }
 }
