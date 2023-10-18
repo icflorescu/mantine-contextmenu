@@ -19,6 +19,7 @@ export const PRODUCT_DESCRIPTION =
 export const WEB_ROOT = 'https://icflorescu.github.io';
 export const WEBSITE_LINK = `${WEB_ROOT}/${PACKAGE_NAME}`;
 export const V6_WEBSITE_LINK = `${WEB_ROOT}/${PACKAGE_NAME}-v6`;
+export const MANTINE_DATATABLE_PRODUCT_NAME = 'Mantine DataTable';
 export const MANTINE_DATATABLE_LINK = `${WEB_ROOT}/mantine-datatable/`;
 
 export const AUTHOR_NAME = 'Ionut-Cristian Florescu';

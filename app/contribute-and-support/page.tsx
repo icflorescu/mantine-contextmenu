@@ -1,5 +1,13 @@
 import { Box, Code } from '@mantine/core';
-import { AUTHOR_LINK, AUTHOR_NAME, MANTINE_DATATABLE_LINK, MANTINE_LINK, PRODUCT_NAME, REPO_LINK } from '~/app/config';
+import {
+  AUTHOR_LINK,
+  AUTHOR_NAME,
+  MANTINE_DATATABLE_LINK,
+  MANTINE_DATATABLE_PRODUCT_NAME,
+  MANTINE_LINK,
+  PRODUCT_NAME,
+  REPO_LINK,
+} from '~/app/config';
 import { ExternalLink } from '~/components/ExternalLink';
 import { InternalLink } from '~/components/InternalLink';
 import { PageNavigation } from '~/components/PageNavigation';
@@ -22,7 +30,7 @@ export default function ContributeAndSupportPage() {
       <PageTitle of={PATH} />
       <Txt>
         I’ve dedicated a sizeable amount of my own free time to build {PRODUCT_NAME} and{' '}
-        <ExternalLink to={MANTINE_DATATABLE_LINK}>Mantine DataTable</ExternalLink> because:
+        <ExternalLink to={MANTINE_DATATABLE_LINK}>{MANTINE_DATATABLE_PRODUCT_NAME}</ExternalLink> because:
       </Txt>
       <ul>
         <li>

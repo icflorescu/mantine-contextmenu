@@ -5,6 +5,7 @@ import {
   AUTHOR_NAME,
   LICENSE_LINK,
   MANTINE_DATATABLE_LINK,
+  MANTINE_DATATABLE_PRODUCT_NAME,
   NPM_LINK,
   REPO_LINK,
   SPONSORS_LINK,
@@ -31,7 +32,7 @@ export const Footer = forwardRef(function Footer({}, ref: React.ForwardedRef<HTM
       </Group>
       <Text size="sm" ta="center">
         Built by <ExternalLink to={AUTHOR_LINK}>{AUTHOR_NAME}</ExternalLink>, the author of{' '}
-        <ExternalLink to={MANTINE_DATATABLE_LINK}>Mantine DataTable</ExternalLink>.
+        <ExternalLink to={MANTINE_DATATABLE_LINK}>{MANTINE_DATATABLE_PRODUCT_NAME}</ExternalLink>.
         <br />
         Please <ExternalLink to={SPONSORS_LINK}>sponsor my work</ExternalLink> if you find it useful.
       </Text>

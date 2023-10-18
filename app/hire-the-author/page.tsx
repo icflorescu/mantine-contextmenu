@@ -1,4 +1,10 @@
-import { AUTHOR_LINK, AUTHOR_NAME, MANTINE_DATATABLE_LINK, PRODUCT_NAME } from '~/app/config';
+import {
+  AUTHOR_LINK,
+  AUTHOR_NAME,
+  MANTINE_DATATABLE_LINK,
+  MANTINE_DATATABLE_PRODUCT_NAME,
+  PRODUCT_NAME,
+} from '~/app/config';
 import { ExternalLink } from '~/components/ExternalLink';
 import { PageNavigation } from '~/components/PageNavigation';
 import { PageTitle } from '~/components/PageTitle';
@@ -15,15 +21,16 @@ export default function HireTheAuthorPage() {
       <PageTitle of={PATH} />
       <Txt>
         Hey, I’m <ExternalLink to={AUTHOR_LINK}>{AUTHOR_NAME}</ExternalLink> &mdash; the creator of {PRODUCT_NAME},{' '}
-        <ExternalLink to={MANTINE_DATATABLE_LINK}>Mantine DataTable</ExternalLink> and other open-source projects.
+        <ExternalLink to={MANTINE_DATATABLE_LINK}>{MANTINE_DATATABLE_PRODUCT_NAME}</ExternalLink> and other open-source
+        projects.
       </Txt>
       <Txt>
         I’m a full-stack developer (with a strong affinity for front-end) from Bucharest, Romania, EU, with more than
         two decades of experience in building commercial web applications and open-source projects.
       </Txt>
       <Txt>
-        <ExternalLink to={MANTINE_DATATABLE_LINK}>Mantine DataTable</ExternalLink>, one of my dearest open-source
-        projects, was much appreciated by the community partially due to its rather unique row context-menu
+        <ExternalLink to={MANTINE_DATATABLE_LINK}>{MANTINE_DATATABLE_PRODUCT_NAME}</ExternalLink>, one of my dearest
+        open-source projects, was much appreciated by the community partially due to its rather unique row context-menu
         functionality since its early days.
       </Txt>
       <Txt>
@@ -53,8 +60,8 @@ export default function HireTheAuthorPage() {
       <Txt idea>
         I’m getting a constant flow of approaches, some of them relevant, others not so relevant.
         <br />
-        Mentioning <strong>“{PRODUCT_NAME}”</strong> or <strong>“Mantine DataTable”</strong> in your message will help
-        me <strong>prioritize your message</strong> and get back to you faster.
+        Mentioning <strong>“{PRODUCT_NAME}”</strong> or <strong>“{MANTINE_DATATABLE_PRODUCT_NAME}”</strong> in your
+        message will help me <strong>prioritize your message</strong> and get back to you faster.
       </Txt>
       <Txt>
         Thank you for your interest in my work and I’m looking forward to hearing from you,
