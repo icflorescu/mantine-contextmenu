@@ -64,7 +64,8 @@ export default async function GettingStartedPage() {
       </Txt>
       <CodeBlock code={code['SimpleExample.tsx']} />
       <Txt>
-        The above code will produce the following result (right-click on the image to trigger the context menu):
+        The above code will produce the following result &mdash; right-click on the image (or long-tap on mobile
+        devices) to trigger the context menu:
       </Txt>
       <SimpleExample />
       <Txt>
