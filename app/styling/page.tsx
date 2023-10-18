@@ -47,8 +47,9 @@ export default async function StylingPage() {
       </Txt>
       <Txt idea>
         If you have used {PRODUCT_NAME} with Mantine V6 and you’re migrating to V7, please make sure to check out the
-        Mantine V7.0 and V7.1 changelogs to understand the new styling approach and how you can use CSS layers to
-        control the order of styles in your application.
+        Mantine <ExternalLink to={`${MANTINE_LINK}/changelog/7-0-0/`}>V7.0</ExternalLink> and{' '}
+        <ExternalLink to={`${MANTINE_LINK}/changelog/7-1-0/`}>V7.1</ExternalLink> changelogs to understand the new
+        styling approach and how you can use CSS layers to control the order of styles in your application.
       </Txt>
       <Txt>
         In V7, all <Code>@mantine/*</Code> packages are shipped with native CSS files which can be imported from{' '}

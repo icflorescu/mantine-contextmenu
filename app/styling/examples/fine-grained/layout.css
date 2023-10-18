@@ -1,4 +1,7 @@
+/* 👇 Directly import the mantine core styles into mantine-core layer */
 @import '@mantine/core/esm/index.css' layer(mantine-core);
+
+/* 👇 Directly import the mantine-contextmenu styles into mantine-contextmenu layer */
 @import '__PACKAGE__/styles.css' layer(mantine-contextmenu);
 
 /* 👇 Make sure the styles are applied in the correct order */

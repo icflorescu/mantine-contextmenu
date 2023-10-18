@@ -28,7 +28,7 @@ export default async function GettingStartedPage() {
     <>
       <PageTitle of={PATH} />
       <Txt>
-        {PRODUCT_NAME} depends on <Code>@mantine/core</Code> and <Code>@mantine/hooks</Code>.
+        {PRODUCT_NAME} depends on <Code>@mantine/core</Code>, <Code>@mantine/hooks</Code> and <Code>clsx</Code>.
       </Txt>
       <Txt>
         Create a new <ExternalLink to={`${MANTINE_LINK}pages/getting-started/`}>application with Mantine</ExternalLink>{' '}
@@ -64,7 +64,8 @@ export default async function GettingStartedPage() {
       </Txt>
       <CodeBlock code={code['SimpleExample.tsx']} />
       <Txt>
-        The above code will produce the following result (right-click on the image to trigger the context menu):
+        The above code will produce the following result &mdash; right-click on the image (or long-tap on mobile
+        devices) to trigger the context menu:
       </Txt>
       <SimpleExample />
       <Txt>
