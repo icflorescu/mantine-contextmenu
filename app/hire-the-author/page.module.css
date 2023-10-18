@@ -5,7 +5,10 @@
   min-width: rem(136px);
   width: 30%;
   margin: rem(60px) 0 0.5rem 1rem;
+  filter: saturate(90%);
+  transition: all 0.2s ease;
   @mixin hover {
+    filter: saturate(100%);
     box-shadow: var(--mantine-shadow-sm);
   }
   @media (min-width: $mantine-breakpoint-xs) {
