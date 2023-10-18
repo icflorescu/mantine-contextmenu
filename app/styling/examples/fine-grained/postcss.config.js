@@ -1,6 +1,8 @@
 module.exports = {
   plugins: {
-    'postcss-import': {}, // 👈 this plugin must come first
+    // 👇 the postcss-import plugin must come first;
+    //    make sure to install it with `npm i -D postcss-import` or `yarn add -D postcss-import`
+    'postcss-import': {},
     'postcss-preset-mantine': {},
     'postcss-simple-vars': {
       // ...
