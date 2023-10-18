@@ -1,10 +1,10 @@
 import { Code } from '@mantine/core';
+import { PRODUCT_NAME } from '~/app/config';
 import { ExternalLink } from '~/components/ExternalLink';
 import { InternalLink } from '~/components/InternalLink';
 import { PageTitle } from '~/components/PageTitle';
 import { Txt } from '~/components/Txt';
 import { getRouteMetadata } from '~/lib/utils';
-import { PRODUCT_NAME } from './config';
 
 const PATH = '/';
 export const metadata = getRouteMetadata(PATH);
