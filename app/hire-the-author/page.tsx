@@ -14,9 +14,12 @@ export default function HireTheAuthorPage() {
     <>
       <PageTitle of={PATH} />
       <Txt>
-        Hey, I’m <ExternalLink to={AUTHOR_LINK}>{AUTHOR_NAME}</ExternalLink> &mdash; the creator of {PRODUCT_NAME}, a
-        full-stack developer from Bucharest, Romania, EU, with more than two decades of experience in building
-        commercial web applications and open-source projects.
+        Hey, I’m <ExternalLink to={AUTHOR_LINK}>{AUTHOR_NAME}</ExternalLink> &mdash; the creator of {PRODUCT_NAME},{' '}
+        <ExternalLink to={MANTINE_DATATABLE_LINK}>Mantine DataTable</ExternalLink> and other open-source projects.
+      </Txt>
+      <Txt>
+        I’m a full-stack developer (with a strong affinity for front-end) from Bucharest, Romania, EU, with more than
+        two decades of experience in building commercial web applications and open-source projects.
       </Txt>
       <Txt>
         <ExternalLink to={MANTINE_DATATABLE_LINK}>Mantine DataTable</ExternalLink>, one of my dearest open-source
