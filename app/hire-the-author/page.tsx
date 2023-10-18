@@ -18,6 +18,13 @@ export const metadata = getRouteMetadata(PATH);
 export default function HireTheAuthorPage() {
   return (
     <>
+      <ExternalLink to={AUTHOR_LINK} rel="author">
+        <img
+          className={classes.picture}
+          src="https://avatars.githubusercontent.com/u/581999"
+          alt={`@icflorescu - author of ${PRODUCT_NAME}`}
+        />
+      </ExternalLink>
       <PageTitle of={PATH} />
       <Txt>
         Hey, I’m <ExternalLink to={AUTHOR_LINK}>{AUTHOR_NAME}</ExternalLink> &mdash; the creator of {PRODUCT_NAME},{' '}
