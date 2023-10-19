@@ -101,6 +101,19 @@ export function NestedSubmenuExample() {
                 },
               ],
             },
+            {
+              key: 'more-nested-items',
+              items: [
+                {
+                  key: 'nested-item-1',
+                  onClick: () => console.log('nested item 1 clicked'),
+                },
+                {
+                  key: 'nested-item-2',
+                  onClick: () => console.log('nested item 2 clicked'),
+                },
+              ],
+            },
           ],
         },
       ])}

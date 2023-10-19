@@ -16,7 +16,7 @@ export const metadata = getRouteMetadata(PATH);
 export default async function BasicConfigurationExamplePage() {
   const code = await allPromiseProps({
     'ProviderPropsExample.tsx': readCodeFile<string>(`${PATH}/ProviderPropsExample.tsx`),
-    'BasicConfigurationExample.tsx': readCodeFile<string>(`${PATH}/BasicConfigurationExample.tsx`),
+    'BasicConfigurationExampleContent.tsx': readCodeFile<string>(`${PATH}/BasicConfigurationExampleContent.tsx`),
   });
 
   return (
@@ -41,10 +41,11 @@ export default async function BasicConfigurationExamplePage() {
       </ul>
       <CodeBlock code={code['ProviderPropsExample.tsx']} />
       <Txt>
-        You can override these values by passing an object with the same keys as the second argument to the{' '}
-        <Code>showContextMenu</Code> function returned by the <Code>useContextMenu</Code> hook:
+        The <Code>zIndex</Code> value can be overridden by setting the <Code>zIndex</Code> property to the{' '}
+        <em>options</em> object passed as the second argument to the <Code>showContextMenu</Code> function returned by
+        the <Code>useContextMenu</Code> hook:
       </Txt>
-      <CodeBlock code={code['BasicConfigurationExample.tsx']} />
+      <CodeBlock code={code['BasicConfigurationExampleContent.tsx']} />
       <Txt>Right-click on the image to trigger the context menu:</Txt>
       <BasicConfigurationExample />
       <PageNavigation of={PATH} />

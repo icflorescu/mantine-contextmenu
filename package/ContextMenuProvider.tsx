@@ -4,9 +4,22 @@ import { MantineProvider } from '@mantine/core';
 import { createContext, useContext, useState } from 'react';
 import { ContextMenuInstanceOptions } from './ContextMenu';
 import { ContextMenuPortal } from './ContextMenuPortal';
-import type { ContextMenuOptions, ContextMenuProviderProps, ShowContextMenuFunction } from './types';
+import type {
+  ContextMenuOptions,
+  ContextMenuProviderProps,
+  ContextMenuSettings,
+  ShowContextMenuFunction,
+  WithRequiredProperty,
+} from './types';
 
-const MenuContext = createContext<ShowContextMenuFunction>(() => () => undefined);
+const DEFAULT_SETTINGS: WithRequiredProperty<ContextMenuSettings, 'shadow' | 'borderRadius' | 'submenuDelay'> = {
+  shadow: 'sm',
+  borderRadius: 'xs',
+  submenuDelay: 500,
+};
+
+export const MenuSettingsContext = createContext(DEFAULT_SETTINGS);
+export const MenuContext = createContext<ShowContextMenuFunction>(() => () => undefined);
 
 /**
  * Provider that allows to show a context menu anywhere in your application.
@@ -15,8 +28,9 @@ const MenuContext = createContext<ShowContextMenuFunction>(() => () => undefined
  */
 export function ContextMenuProvider({
   zIndex = 9999,
-  shadow = 'sm',
-  borderRadius = 'xs',
+  shadow = DEFAULT_SETTINGS.shadow,
+  borderRadius = DEFAULT_SETTINGS.borderRadius,
+  submenuDelay = DEFAULT_SETTINGS.submenuDelay,
   children,
 }: ContextMenuProviderProps) {
   const [data, setData] = useState<(ContextMenuInstanceOptions & ContextMenuOptions) | null>(null);
@@ -33,8 +47,6 @@ export function ContextMenuProvider({
       y: e.clientY,
       content,
       zIndex: options?.zIndex || zIndex,
-      shadow: options?.shadow || shadow,
-      borderRadius: options?.borderRadius || borderRadius,
       className: options?.className,
       style: options?.style,
       classNames: options?.classNames,
@@ -43,10 +55,12 @@ export function ContextMenuProvider({
   };
 
   return (
-    <MenuContext.Provider value={showContextMenu}>
-      {children}
-      <MantineProvider>{data && <ContextMenuPortal onHide={destroy} {...data} />}</MantineProvider>
-    </MenuContext.Provider>
+    <MenuSettingsContext.Provider value={{ shadow, borderRadius, submenuDelay }}>
+      <MenuContext.Provider value={showContextMenu}>
+        {children}
+        <MantineProvider>{data && <ContextMenuPortal onHide={destroy} {...data} />}</MantineProvider>
+      </MenuContext.Provider>
+    </MenuSettingsContext.Provider>
   );
 }
 

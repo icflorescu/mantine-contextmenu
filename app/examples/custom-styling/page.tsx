@@ -47,7 +47,7 @@ export default async function CustomStylingExamplePage() {
         <InternalLink to="/examples/action-colors">action colors</InternalLink>.
       </Txt>
       <Txt>
-        The ContextMenuProvider wrapper component accepts the following properties: <Code>className</Code>,{' '}
+        The <Code>ContextMenuProvider</Code> wrapper component accepts the following properties: <Code>className</Code>,{' '}
         <Code>style</Code>, <Code>classNames</Code> and <Code>styles</Code>.
       </Txt>
       <Txt>
@@ -69,8 +69,8 @@ export default async function CustomStylingExamplePage() {
         to do so.
       </Txt>
       <Txt>
-        You can pass an <em>options</em> object with the same properties as the second argument to the{' '}
-        <Code>showContextMenu</Code>
+        The <Code>ContextMenuProvider</Code> styling values can be overriden by setting the similarly-named properties
+        of an <em>options</em> object passed as the second argument to the <Code>showContextMenu</Code>
         function returned by <Code>useContextMenu</Code> hook to target the individual context menu instances, in which
         case they will override the initial provider properties.
         <br />
