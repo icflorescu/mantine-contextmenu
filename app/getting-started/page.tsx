@@ -1,5 +1,5 @@
 import { Code } from '@mantine/core';
-import { MANTINE_LINK, PACKAGE_NAME, PRODUCT_NAME } from '~/app/config';
+import { MANTINE_LINK, PRODUCT_NAME } from '~/app/config';
 import { CodeBlock } from '~/components/CodeBlock';
 import { ExternalLink } from '~/components/ExternalLink';
 import { InternalLink } from '~/components/InternalLink';
@@ -39,10 +39,10 @@ export default async function GettingStartedPage() {
           {
             language: 'shell',
             fileName: 'yarn',
-            code: `yarn add ${PACKAGE_NAME} clsx`,
+            code: `yarn add ${process.env.PACKAGE_NAME} clsx`,
           },
-          { language: 'shell', fileName: 'npm', code: `npm i ${PACKAGE_NAME} clsx` },
-          { language: 'shell', fileName: 'pnpm', code: `pnpm i ${PACKAGE_NAME} clsx` },
+          { language: 'shell', fileName: 'npm', code: `npm i ${process.env.PACKAGE_NAME} clsx` },
+          { language: 'shell', fileName: 'pnpm', code: `pnpm i ${process.env.PACKAGE_NAME} clsx` },
         ]}
       />
       <Txt>
