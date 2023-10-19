@@ -7,7 +7,7 @@ import { PRODUCT_NAME } from '~/app/config';
 import { NavbarButton, NavbarButtonProps } from './NavbarButton';
 import classes from './NavbarExamples.module.css';
 
-const EXPANSION_STATE_STORAGE_KEY = 'mantine-contextmenu-examples-expanded';
+const EXPANSION_STATE_STORAGE_KEY = `${process.env.PACKAGE_NAME}-examples-expanded`;
 
 export type NavbarExamplesProps = {
   items: NavbarButtonProps[];

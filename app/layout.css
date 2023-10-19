@@ -8,3 +8,7 @@
 .noscroll {
   overflow: hidden;
 }
+
+.nowrap {
+  white-space: nowrap;
+}

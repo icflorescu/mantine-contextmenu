@@ -1,4 +1,5 @@
 import { Box, Code } from '@mantine/core';
+import { MANTINE_LINK, PRODUCT_NAME, REPO_LINK } from '~/app/config';
 import { CodeBlock } from '~/components/CodeBlock';
 import { ExternalLink } from '~/components/ExternalLink';
 import { InternalLink } from '~/components/InternalLink';
@@ -8,7 +9,6 @@ import { PageTitle } from '~/components/PageTitle';
 import { Txt } from '~/components/Txt';
 import { readCodeFile } from '~/lib/code';
 import { allPromiseProps, getFirstExampleRoute, getRouteMetadata } from '~/lib/utils';
-import { MANTINE_LINK, PRODUCT_NAME, REPO_LINK } from '../config';
 
 const PATH = '/styling';
 export const metadata = getRouteMetadata(PATH);
@@ -57,7 +57,7 @@ export default async function StylingPage() {
       </Txt>
       <Txt>
         Similarly, {PRODUCT_NAME} comes with native CSS files which can be imported from{' '}
-        <Code>mantine-contextmenu/styles.css</Code> or <Code>mantine-contextmenu/styles.layer.css</Code>.
+        <Code>{process.env.PACKAGE_NAME}/styles.css</Code> or <Code>{process.env.PACKAGE_NAME}/styles.layer.css</Code>.
       </Txt>
       <PageSubtitle value="Controlling the order of styles with CSS layers" />
       <Txt>
@@ -77,8 +77,8 @@ export default async function StylingPage() {
             <Code>mantine</Code>
           </li>
           <li>
-            <Code>mantine-contextmenu/styles.layer.css</Code> will place styles in a layer called{' '}
-            <Code>mantine-contextmenu</Code>
+            <Code>{process.env.PACKAGE_NAME}/styles.layer.css</Code> will place styles in a layer called{' '}
+            <Code>{process.env.PACKAGE_NAME}</Code>
           </li>
         </Box>
       </Txt>

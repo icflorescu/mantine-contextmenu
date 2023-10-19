@@ -97,8 +97,8 @@ export default function ContributeAndSupportPage() {
         Things to consider before contributing:
         <Box component="ul" ml={-20}>
           <li>
-            The <ExternalLink to={REPO_LINK}>repository</ExternalLink> is holding the code for both {PRODUCT_NAME} and
-            the documentation website you’re looking at.
+            The <ExternalLink to={REPO_LINK}>repository</ExternalLink> is holding the code for both {PRODUCT_NAME}{' '}
+            package and the documentation website you’re looking at.
             <br />
             Since the repo root contains a <Code>yarn.lock</Code> file, <strong>it should be obvious</strong> that you
             have to use <ExternalLink to="https://yarnpkg.com/">Yarn</ExternalLink> to install dependencies and run
@@ -111,7 +111,7 @@ export default function ContributeAndSupportPage() {
             <ExternalLink to="https://prettier.io/">Prettier</ExternalLink>, so that it adheres to the project’s coding
             style.
             <br />
-            It’s a <ExternalLink to="https://nextjs.org/">Next.js</ExternalLink> project with an{' '}
+            This is a <ExternalLink to="https://nextjs.org/">Next.js</ExternalLink> project with an{' '}
             <ExternalLink to="https://nextjs.org/docs/app/building-your-application/routing">app router</ExternalLink>{' '}
             and makes use of{' '}
             <ExternalLink to="https://nextjs.org/docs/app/building-your-application/rendering/server-components">
@@ -119,7 +119,7 @@ export default function ContributeAndSupportPage() {
             </ExternalLink>
             .
             <br />
-            <strong>Make sure you have a good grasp of these concepts before attempting to contribute.</strong>
+            <strong>Make sure you have a good grasp of the above before attempting to contribute.</strong>
             <br />
             The {PRODUCT_NAME} package code is located in the <Code>package</Code> folder, while the documentation
             website code is located in the <Code>app</Code> folder.

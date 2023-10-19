@@ -3,8 +3,10 @@
 import { Paper, px, useDirection, useMantineTheme } from '@mantine/core';
 import { useResizeObserver } from '@mantine/hooks';
 import clsx from 'clsx';
+import { useContext } from 'react';
 import { ContextMenuDivider } from './ContextMenuDivider';
 import { ContextMenuItem } from './ContextMenuItem';
+import { MenuSettingsContext } from './ContextMenuProvider';
 import type { ContextMenuContent, ContextMenuOptions } from './types';
 import { humanize } from './utils';
 
@@ -19,19 +21,8 @@ export type ContextMenuProps = ContextMenuOptions &
     onHide: () => void;
   };
 
-export function ContextMenu({
-  x,
-  y,
-  content,
-  zIndex,
-  shadow,
-  borderRadius,
-  onHide,
-  className,
-  style,
-  classNames,
-  styles,
-}: ContextMenuProps) {
+export function ContextMenu({ x, y, content, zIndex, onHide, className, style, classNames, styles }: ContextMenuProps) {
+  const { shadow, borderRadius } = useContext(MenuSettingsContext);
   const [paperRef] = useResizeObserver<HTMLDivElement>();
   const { width, height } = paperRef.current?.getBoundingClientRect() || { width: 0, height: 0 };
 

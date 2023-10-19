@@ -15,7 +15,7 @@
 }
 
 .backgroundLine {
-  stroke: light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-5));
+  stroke: light-dark(var(--mantine-color-gray-4), var(--mantine-color-dark-4));
   strokewidth: 1;
 }
 
@@ -65,7 +65,6 @@
   line-height: 2;
   border-radius: var(--mantine-radius-sm);
   a {
-    white-space: nowrap;
     color: var(--mantine-colors-blue-3);
   }
 }

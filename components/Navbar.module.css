@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   height: rem(6px);
-  transition: opacity 0.15s ease;
+  transition: opacity 0.2s ease;
   opacity: 0;
 }
 

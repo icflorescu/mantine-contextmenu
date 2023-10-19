@@ -11,22 +11,21 @@ import {
   TablerIconsProps,
 } from '@tabler/icons-react';
 
-export const PACKAGE_NAME = 'mantine-contextmenu';
 export const PRODUCT_NAME = 'Mantine ContextMenu';
 export const PRODUCT_DESCRIPTION =
   'Design your Mantine applications for productivity and meet your users’ expectations by enhancing your UIs with desktop-grade context menus';
 
 export const WEB_ROOT = 'https://icflorescu.github.io';
-export const WEBSITE_LINK = `${WEB_ROOT}/${PACKAGE_NAME}`;
-export const V6_WEBSITE_LINK = `${WEB_ROOT}/${PACKAGE_NAME}-v6`;
+export const WEBSITE_LINK = `${WEB_ROOT}/${process.env.PACKAGE_NAME}`;
+export const V6_WEBSITE_LINK = `${WEB_ROOT}/${process.env.PACKAGE_NAME}-v6`;
 export const MANTINE_DATATABLE_PRODUCT_NAME = 'Mantine DataTable';
 export const MANTINE_DATATABLE_LINK = `${WEB_ROOT}/mantine-datatable/`;
 
 export const AUTHOR_NAME = 'Ionut-Cristian Florescu';
 export const AUTHOR_LINK = 'https://github.com/icflorescu';
-export const REPO_LINK = `${AUTHOR_LINK}/${PACKAGE_NAME}`;
+export const REPO_LINK = `${AUTHOR_LINK}/${process.env.PACKAGE_NAME}`;
 export const LICENSE_LINK = `${REPO_LINK}/blob/main/LICENSE`;
-export const NPM_LINK = `https://www.npmjs.com/package/${PACKAGE_NAME}`;
+export const NPM_LINK = `https://www.npmjs.com/package/${process.env.PACKAGE_NAME}`;
 export const SPONSORS_LINK = 'https://github.com/sponsors/icflorescu';
 export const MANTINE_LINK = 'https://mantine.dev';
 export const NEXTJS_LINK = 'https://nextjs.org';

@@ -24,18 +24,6 @@ export type ContextMenuOptions = {
   zIndex?: number;
 
   /**
-   * Context menu shadow
-   * @default 'sm'
-   */
-  shadow?: MantineShadow;
-
-  /**
-   * Context menu border radius
-   * @default 'xs'
-   */
-  borderRadius?: MantineSize;
-
-  /**
    * Context menu container className
    */
   className?: string;
@@ -61,11 +49,35 @@ export type ContextMenuOptions = {
 };
 
 /**
+ * Generic context menu settings
+ */
+export type ContextMenuSettings = {
+  /**
+   * Context menu shadow
+   * @default 'sm'
+   */
+  shadow?: MantineShadow;
+
+  /**
+   * Context menu border radius
+   * @default 'xs'
+   */
+  borderRadius?: MantineSize;
+
+  /**
+   * Delay in ms to use when showing and hiding submenus
+   * @default 500
+   */
+  submenuDelay?: number;
+};
+
+/**
  * Context menu provider props
  */
-export type ContextMenuProviderProps = ContextMenuOptions & {
-  children: ReactNode;
-};
+export type ContextMenuProviderProps = ContextMenuSettings &
+  ContextMenuOptions & {
+    children: ReactNode;
+  };
 
 /**
  * Context menu item options

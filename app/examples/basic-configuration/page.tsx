@@ -16,7 +16,7 @@ export const metadata = getRouteMetadata(PATH);
 export default async function BasicConfigurationExamplePage() {
   const code = await allPromiseProps({
     'ProviderPropsExample.tsx': readCodeFile<string>(`${PATH}/ProviderPropsExample.tsx`),
-    'BasicConfigurationExample.tsx': readCodeFile<string>(`${PATH}/BasicConfigurationExample.tsx`),
+    'BasicConfigurationExampleContent.tsx': readCodeFile<string>(`${PATH}/BasicConfigurationExampleContent.tsx`),
   });
 
   return (
@@ -31,22 +31,21 @@ export default async function BasicConfigurationExamplePage() {
           <Code>zIndex: number</Code> → defaults to <Code>9999</Code>
         </li>
         <li>
-          <Code>shadow: MantineShadow</Code> value (see{' '}
-          <ExternalLink to={`${MANTINE_LINK}/core/paper/`}>Mantine Paper</ExternalLink> docs) → defaults to{' '}
-          <Code>sm</Code>
+          <Code>shadow: MantineShadow</Code> → defaults to <Code>sm</Code> (see{' '}
+          <ExternalLink to={`${MANTINE_LINK}/core/paper/`}>Mantine Paper</ExternalLink> docs)
         </li>
         <li>
-          <Code>borderRadius: MantineSize</Code> value (see{' '}
-          <ExternalLink to={`${MANTINE_LINK}/core/paper/`}>Mantine Paper</ExternalLink> docs) → defaults to{' '}
-          <Code>xs</Code>
+          <Code>borderRadius: MantineSize</Code> → defaults to <Code>xs</Code> (see{' '}
+          <ExternalLink to={`${MANTINE_LINK}/core/paper/`}>Mantine Paper</ExternalLink> docs)
         </li>
       </ul>
       <CodeBlock code={code['ProviderPropsExample.tsx']} />
       <Txt>
-        You can override these values by passing an object with the same keys as the second argument to the{' '}
-        <Code>showContextMenu</Code> function returned by the <Code>useContextMenu</Code> hook:
+        The <Code>zIndex</Code> value can be overridden by setting the <Code>zIndex</Code> property to the{' '}
+        <em>options</em> object passed as the second argument to the <Code>showContextMenu</Code> function returned by
+        the <Code>useContextMenu</Code> hook:
       </Txt>
-      <CodeBlock code={code['BasicConfigurationExample.tsx']} />
+      <CodeBlock code={code['BasicConfigurationExampleContent.tsx']} />
       <Txt>Right-click on the image to trigger the context menu:</Txt>
       <BasicConfigurationExample />
       <PageNavigation of={PATH} />

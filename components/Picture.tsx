@@ -39,7 +39,10 @@ export function Picture({
         />
         <div className={classes.attribution}>
           <Text className={classes.attributionText}>
-            Picture by <ExternalLink to={`https://unsplash.com/@${profile}`}>{name}</ExternalLink>
+            Picture by{' '}
+            <ExternalLink className="nowrap" to={`https://unsplash.com/@${profile}`}>
+              {name}
+            </ExternalLink>
           </Text>
         </div>
       </div>

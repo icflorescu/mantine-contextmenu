@@ -5,7 +5,8 @@ import { PageSubtitle } from '~/components/PageSubtitle';
 import { PageTitle } from '~/components/PageTitle';
 import { Txt } from '~/components/Txt';
 import { readCodeFile } from '~/lib/code';
-import { getRouteMetadata } from '~/lib/utils';
+import { allPromiseProps, getRouteMetadata } from '~/lib/utils';
+import { SubmenuDelayExample } from './SubmenuDelayExample';
 import { NestedSubmenuExample, SubmenuExample } from './SubmenuExamples';
 
 const PATH = '/examples/submenus';
@@ -13,7 +14,10 @@ const PATH = '/examples/submenus';
 export const metadata = getRouteMetadata(PATH);
 
 export default async function ActionColorsExamplePage() {
-  const code = (await readCodeFile(`${PATH}/SubmenuExamples.tsx`)) as Record<'submenu' | 'nested-submenu', string>;
+  const code = await allPromiseProps({
+    default: readCodeFile(`${PATH}/SubmenuExamples.tsx`) as Promise<Record<'submenu' | 'nested-submenu', string>>,
+    submenuDelayProviderProp: readCodeFile(`${PATH}/SubmenuDelayProviderPropExample.tsx`) as Promise<string>,
+  });
 
   return (
     <>
@@ -22,7 +26,7 @@ export default async function ActionColorsExamplePage() {
         An item with an <Code>items</Code> property will render a submenu, available when hovering over the given
         option.
       </Txt>
-      <CodeBlock code={code['submenu']} />
+      <CodeBlock code={code['default']['submenu']} />
       <Txt>Right-click on the image to trigger the context menu:</Txt>
       <SubmenuExample />
       <PageSubtitle value="Nesting" />
@@ -30,9 +34,17 @@ export default async function ActionColorsExamplePage() {
         You can nest as many submenus as you want. Don’t abuse this feature, though, as it might be confusing for the
         user.
       </Txt>
-      <CodeBlock code={code['nested-submenu']} />
+      <CodeBlock code={code['default']['nested-submenu']} />
       <Txt>Right-click on the image to trigger the context menu:</Txt>
       <NestedSubmenuExample />
+      <PageSubtitle value="Show/hide delay" />
+      <Txt>
+        You can control the delay between hovering over or out of an item and the submenu appearing or disappearing by
+        setting the <Code>submenuDelay</Code> property of the <Code>ContextMenuProvider</Code> component.
+      </Txt>
+      <CodeBlock code={code['submenuDelayProviderProp']} />
+      <Txt>Right-click on the image to trigger the context menu:</Txt>
+      <SubmenuDelayExample />
       <PageNavigation of={PATH} />
     </>
   );

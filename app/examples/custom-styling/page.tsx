@@ -45,23 +45,11 @@ export default async function CustomStylingExamplePage() {
         There are many ways to style a context menu besides setting its{' '}
         <InternalLink to="/examples/basic-configuration">basic configuration options</InternalLink> and its items{' '}
         <InternalLink to="/examples/action-colors">action colors</InternalLink>.
-        <br />
-        The ContextMenuProvider wrapper component accepts the following properties:
       </Txt>
-      <ul>
-        <li>
-          <Code>className</Code>
-        </li>
-        <li>
-          <Code>style</Code>
-        </li>
-        <li>
-          <Code>classNames</Code>
-        </li>
-        <li>
-          <Code>styles</Code>
-        </li>
-      </ul>
+      <Txt>
+        The <Code>ContextMenuProvider</Code> wrapper component accepts the following properties: <Code>className</Code>,{' '}
+        <Code>style</Code>, <Code>classNames</Code> and <Code>styles</Code>.
+      </Txt>
       <Txt>
         The <Code>className</Code> and <Code>style</Code> properties can be used to target the component root, while the{' '}
         <Code>classNames</Code> and <Code>styles</Code> properties can be used to target the individual component parts,{' '}
@@ -81,8 +69,8 @@ export default async function CustomStylingExamplePage() {
         to do so.
       </Txt>
       <Txt>
-        You can pass an <em>options</em> object with the same properties as the second argument to the{' '}
-        <Code>showContextMenu</Code>
+        The <Code>ContextMenuProvider</Code> styling values can be overriden by setting the similarly-named properties
+        of an <em>options</em> object passed as the second argument to the <Code>showContextMenu</Code>
         function returned by <Code>useContextMenu</Code> hook to target the individual context menu instances, in which
         case they will override the initial provider properties.
         <br />

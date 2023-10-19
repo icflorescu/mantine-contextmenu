@@ -1,5 +1,4 @@
 import { readFile } from 'node:fs/promises';
-import { PACKAGE_NAME } from '~/app/config';
 
 /**
  * Read code examples from files, taking into account the following type of comments:
@@ -14,7 +13,10 @@ import { PACKAGE_NAME } from '~/app/config';
  * it returns an object with block name keys and string values
  */
 export async function readCodeFile<T extends string | Record<string, string> = string>(path: string): Promise<T> {
-  const content = (await readFile(`app${path}`, { encoding: 'utf8' })).replaceAll('__PACKAGE__', PACKAGE_NAME);
+  const content = (await readFile(`app${path}`, { encoding: 'utf8' })).replaceAll(
+    '__PACKAGE__',
+    process.env.PACKAGE_NAME
+  );
   if (
     !(
       content.match(/\/\/ +example-start/) ||
