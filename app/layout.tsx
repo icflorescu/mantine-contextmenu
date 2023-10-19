@@ -8,7 +8,7 @@ import './layout.css';
 import classes from './layout.module.css';
 
 export const metadata: Metadata = {
-  metadataBase: process.env.GITHUB_PAGES === 'TRUE' ? new URL('https://icflorescu.github.io') : undefined,
+  metadataBase: new URL(process.env.GITHUB_PAGES === 'TRUE' ? 'https://icflorescu.github.io' : 'http://localhost:3000'),
   manifest: `${process.env.GITHUB_PAGES === 'TRUE' ? WEBSITE_LINK : ''}/manifest.webmanifest`,
   title: 'Mantine ContextMenu: enhance your users’ experience',
   description:
