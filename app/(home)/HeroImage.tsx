@@ -4,7 +4,7 @@ import { IconEyeglass, IconSunglasses, IconX } from '@tabler/icons-react';
 import { useContextMenu } from '__PACKAGE__';
 import clsx from 'clsx';
 import { useState } from 'react';
-import { PRODUCT_NAME } from '../config';
+import { PRODUCT_NAME } from '~/app/config';
 import classes from './HeroImage.module.css';
 import picture from './hero.png';
 
