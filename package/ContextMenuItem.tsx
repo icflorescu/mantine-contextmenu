@@ -41,7 +41,6 @@ export function ContextMenuItem({
   const theme = useMantineTheme();
   const { colors } = theme;
   const parsedColor = color ? parseThemeColor({ color, theme }).value : undefined;
-  if (color === 'red') console.log(parsedColor);
 
   return (
     <div
