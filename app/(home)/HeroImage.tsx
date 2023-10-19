@@ -6,6 +6,7 @@ import clsx from 'clsx';
 import { useState } from 'react';
 import { PRODUCT_NAME } from '../config';
 import classes from './HeroImage.module.css';
+import picture from './hero.png';
 
 export function HeroImage() {
   const [filter, setFilter] = useState<'none' | 'sepia' | 'grayscale'>('none');
@@ -43,7 +44,7 @@ export function HeroImage() {
         },
       ])}
     >
-      <img src="/mantine-contextmenu.png" alt={PRODUCT_NAME} />
+      <img src={picture.src} alt={PRODUCT_NAME} />
       <div className={classes.rightShadow} />
     </div>
   );
