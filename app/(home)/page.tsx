@@ -1,63 +1,106 @@
-import { Code } from '@mantine/core';
-import { PRODUCT_NAME } from '~/app/config';
+import { Button, Flex, Stack, Text } from '@mantine/core';
+import { IconBrandGithub, IconLifebuoy, IconRocket, IconScale, IconSettings } from '@tabler/icons-react';
+import clsx from 'clsx';
+import Link from 'next/link';
+import {
+  CRA_LINK,
+  GATSBY_LINK,
+  LICENSE_LINK,
+  MANTINE_LINK,
+  NEXTJS_LINK,
+  PRODUCT_NAME,
+  REMIX_LINK,
+  REPO_LINK,
+  VITE_LINK,
+} from '~/app/config';
 import { ExternalLink } from '~/components/ExternalLink';
 import { InternalLink } from '~/components/InternalLink';
-import { PageTitle } from '~/components/PageTitle';
-import { Txt } from '~/components/Txt';
-import { getRouteMetadata } from '~/lib/utils';
+import { getFirstExampleRoute, getRouteMetadata } from '~/lib/utils';
+import { Feature } from './Feature';
+import { HeroImage } from './HeroImage';
+import { HomePageSubtitle } from './HomePageSubtitle';
+import { HomePageTitle } from './HomePageTitle';
+import classes from './page.module.css';
 
 const PATH = '/';
 export const metadata = getRouteMetadata(PATH);
 
+const { href: firstExampleHref, title: firstExampleTitle } = getFirstExampleRoute();
+
 export default function HomePage() {
   return (
-    <>
-      <PageTitle>{PRODUCT_NAME} V7 alpha is here! 🎉</PageTitle>
-      <Txt warning>This page is still WIP.</Txt>
-      <Txt>
-        This is a <strong>major rewrite</strong> of the library internals, with the following goals in mind:
-      </Txt>
-      <ul>
-        <li>
-          <strong>Mantine V7 compatibility</strong> - switch the styling approach from CSS-in-JS to PostCSS (or PostCSS
-          modules)
-        </li>
-        <li>
-          Make the repo easier to maintain by switching from a monorepo approach to a single-package that includes the
-          source code, documentation and examples; this should also make it easier for new contributors to get started
-        </li>
-        <li>
-          Streamline the build process - switch from bundling the code with <Code>esbuild</Code> to simply transpiling
-          it with plain <Code>tsc</Code> and <Code>postcss</Code>
-          commands
-        </li>
-        <li>
-          Rewrite the entire documentation website to make use of{' '}
-          <ExternalLink to="https://nextjs.org/docs/app">Next.js app router</ExternalLink> and{' '}
-          <ExternalLink to="https://nextjs.org/docs/app/building-your-application/rendering/server-components">
-            React Server Components
-          </ExternalLink>
-          ; this should also ensure the package will work properly in such an environment
-        </li>
-      </ul>
-      <Txt>For now, have a look at:</Txt>
-      <ul>
-        <li>
-          How to <InternalLink to="/getting-started">get started</InternalLink>
-        </li>
-        <li>
-          <InternalLink to="/examples/basic-usage">Usage examples</InternalLink>
-        </li>
-        <li>
-          <InternalLink to="/type-definitions">Type definitions</InternalLink>
-        </li>
-        <li>
-          How to speed up the development process by{' '}
-          <InternalLink to="/contribute-and-support">sponsoring</InternalLink> or{' '}
-          <InternalLink to="/hire-the-author">hiring</InternalLink> the author
-        </li>
-      </ul>
-      <Txt>Stay tuned for more updates soon!</Txt>
-    </>
+    <Stack gap="xl" maw={642} mx="auto">
+      <HomePageTitle />
+      <HomePageSubtitle />
+      <HeroImage />
+      <Text component="div">
+        Design your applications for productivity and meet your users’ expectations by enhancing your UIs with
+        desktop-grade context menus.
+      </Text>
+      <Flex direction={{ base: 'column', xs: 'row' }} gap="xl" wrap={{ base: 'nowrap', xs: 'wrap' }}>
+        <Feature icon={IconSettings} title="Lightweight yet customizable">
+          Features a <InternalLink to="/examples/basic-usage">succinct API</InternalLink>, respects the Mantine dark
+          mode and can be{' '}
+          <InternalLink to="/examples/custom-content">easily customized by providing your own content</InternalLink>{' '}
+          instead of using the default generated menu items
+        </Feature>
+        <Feature icon={IconLifebuoy} title="Typescript based">
+          The entire codebase is <ExternalLink to={REPO_LINK}>written in TypeScript</ExternalLink>, options are{' '}
+          <InternalLink to="/type-definitions">well typed</InternalLink> and documented with JSDoc, so you can build
+          type safe applications with confidence
+        </Feature>
+        <Feature icon={IconScale} title="Free and open-source">
+          This package is released under the <ExternalLink to={LICENSE_LINK}>MIT license</ExternalLink>, same as{' '}
+          <ExternalLink to={MANTINE_LINK}>Mantine</ExternalLink>, so you can freely build fantastic data-rich
+          applications with it
+        </Feature>
+        <Feature icon={IconRocket} title="Use anywhere">
+          You can use it in any modern React framework supported by{' '}
+          <ExternalLink to={MANTINE_LINK}>Mantine</ExternalLink>, such as{' '}
+          <ExternalLink to={NEXTJS_LINK}>Next.js</ExternalLink>, <ExternalLink to={VITE_LINK}>Vite</ExternalLink>,{' '}
+          <ExternalLink to={CRA_LINK}>Create React App</ExternalLink>,{' '}
+          <ExternalLink to={REMIX_LINK}>Remix</ExternalLink> or <ExternalLink to={GATSBY_LINK}>Gatsby</ExternalLink>
+        </Feature>
+      </Flex>
+      <Flex wrap="wrap" gap="md">
+        <Button
+          classNames={{ root: clsx(classes.button, classes.buttonHalf), label: classes.buttonLabel }}
+          size="md"
+          variant="gradient"
+          gradient={{ from: 'blue', to: 'cyan' }}
+          component={Link}
+          href="/getting-started"
+          aria-label={`Get started with ${PRODUCT_NAME}`}
+          leftSection={<IconRocket />}
+        >
+          Get started
+        </Button>
+        <Button
+          classNames={{ root: clsx(classes.button, classes.buttonHalf), label: classes.buttonLabel }}
+          size="md"
+          variant="gradient"
+          gradient={{ from: 'gray.6', to: 'gray.5' }}
+          component="a"
+          href="/get-started"
+          target="_blank"
+          aria-label={`View the source code of ${PRODUCT_NAME} on GitHub`}
+          leftSection={<IconBrandGithub />}
+        >
+          View code
+        </Button>
+        <Button
+          classNames={{ root: classes.button, label: classes.buttonLabel }}
+          size="md"
+          variant="gradient"
+          gradient={{ from: 'green.7', to: 'green.6' }}
+          component={Link}
+          href={firstExampleHref}
+          aria-label={firstExampleTitle}
+          leftSection={<IconRocket />}
+        >
+          Learn by example
+        </Button>
+      </Flex>
+    </Stack>
   );
 }

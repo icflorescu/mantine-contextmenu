@@ -45,23 +45,11 @@ export default async function CustomStylingExamplePage() {
         There are many ways to style a context menu besides setting its{' '}
         <InternalLink to="/examples/basic-configuration">basic configuration options</InternalLink> and its items{' '}
         <InternalLink to="/examples/action-colors">action colors</InternalLink>.
-        <br />
-        The ContextMenuProvider wrapper component accepts the following properties:
       </Txt>
-      <ul>
-        <li>
-          <Code>className</Code>
-        </li>
-        <li>
-          <Code>style</Code>
-        </li>
-        <li>
-          <Code>classNames</Code>
-        </li>
-        <li>
-          <Code>styles</Code>
-        </li>
-      </ul>
+      <Txt>
+        The ContextMenuProvider wrapper component accepts the following properties: <Code>className</Code>,{' '}
+        <Code>style</Code>, <Code>classNames</Code> and <Code>styles</Code>.
+      </Txt>
       <Txt>
         The <Code>className</Code> and <Code>style</Code> properties can be used to target the component root, while the{' '}
         <Code>classNames</Code> and <Code>styles</Code> properties can be used to target the individual component parts,{' '}

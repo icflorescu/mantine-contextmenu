@@ -31,18 +31,18 @@ export default async function GettingStartedPage() {
         {PRODUCT_NAME} depends on <Code>@mantine/core</Code>, <Code>@mantine/hooks</Code> and <Code>clsx</Code>.
       </Txt>
       <Txt>
-        Create a new <ExternalLink to={`${MANTINE_LINK}pages/getting-started/`}>application with Mantine</ExternalLink>{' '}
-        and install the package:
+        Create a new <ExternalLink to={`${MANTINE_LINK}/getting-started/`}>application with Mantine</ExternalLink> and
+        install the package:
       </Txt>
       <CodeBlock
         tabs={[
           {
             language: 'shell',
             fileName: 'yarn',
-            code: `yarn add ${PACKAGE_NAME}`,
+            code: `yarn add ${PACKAGE_NAME} clsx`,
           },
-          { language: 'shell', fileName: 'npm', code: `npm i ${PACKAGE_NAME}` },
-          { language: 'shell', fileName: 'pnpm', code: `pnpm i ${PACKAGE_NAME}` },
+          { language: 'shell', fileName: 'npm', code: `npm i ${PACKAGE_NAME} clsx` },
+          { language: 'shell', fileName: 'pnpm', code: `pnpm i ${PACKAGE_NAME} clsx` },
         ]}
       />
       <Txt>

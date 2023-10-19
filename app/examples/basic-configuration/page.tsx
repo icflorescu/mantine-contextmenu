@@ -31,14 +31,12 @@ export default async function BasicConfigurationExamplePage() {
           <Code>zIndex: number</Code> → defaults to <Code>9999</Code>
         </li>
         <li>
-          <Code>shadow: MantineShadow</Code> value (see{' '}
-          <ExternalLink to={`${MANTINE_LINK}/core/paper/`}>Mantine Paper</ExternalLink> docs) → defaults to{' '}
-          <Code>sm</Code>
+          <Code>shadow: MantineShadow</Code> → defaults to <Code>sm</Code> (see{' '}
+          <ExternalLink to={`${MANTINE_LINK}/core/paper/`}>Mantine Paper</ExternalLink> docs)
         </li>
         <li>
-          <Code>borderRadius: MantineSize</Code> value (see{' '}
-          <ExternalLink to={`${MANTINE_LINK}/core/paper/`}>Mantine Paper</ExternalLink> docs) → defaults to{' '}
-          <Code>xs</Code>
+          <Code>borderRadius: MantineSize</Code> → defaults to <Code>xs</Code> (see{' '}
+          <ExternalLink to={`${MANTINE_LINK}/core/paper/`}>Mantine Paper</ExternalLink> docs)
         </li>
       </ul>
       <CodeBlock code={code['ProviderPropsExample.tsx']} />

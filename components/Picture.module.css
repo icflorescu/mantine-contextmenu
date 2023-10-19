@@ -65,7 +65,6 @@
   line-height: 2;
   border-radius: var(--mantine-radius-sm);
   a {
-    white-space: nowrap;
     color: var(--mantine-colors-blue-3);
   }
 }
