@@ -16,7 +16,7 @@ export function ContributorsImage() {
 
   return (
     <img
-      src={`https://contrib.rocks/image?repo=icflorescu/mantine-contextmenu&columns=${cols}`}
+      src={`https://contrib.rocks/image?repo=icflorescu/${process.env.PACKAGE_NAME}&columns=${cols}`}
       alt={`${PRODUCT_NAME} contributors`}
     />
   );

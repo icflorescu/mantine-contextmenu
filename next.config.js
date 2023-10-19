@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const withPWA = require('@ducanh2912/next-pwa').default({ dest: 'public' });
-const { version: PACKAGE_VERSION } = require('./package.json');
+const { name: PACKAGE_NAME, version: PACKAGE_VERSION } = require('./package.json');
 
 module.exports = async () => {
   const { downloads } = await fetch('https://api.npmjs.org/downloads/point/last-month/mantine-contextmenu')
@@ -16,6 +16,7 @@ module.exports = async () => {
     images: { unoptimized: true },
     env: {
       GITHUB_PAGES: String(process.env.GITHUB_PAGES === 'TRUE' || false).toUpperCase(),
+      PACKAGE_NAME,
       PACKAGE_VERSION,
       INITIAL_NPM_DOWNLOADS: String(downloads),
     },

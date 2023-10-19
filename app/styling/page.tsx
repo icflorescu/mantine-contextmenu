@@ -57,7 +57,7 @@ export default async function StylingPage() {
       </Txt>
       <Txt>
         Similarly, {PRODUCT_NAME} comes with native CSS files which can be imported from{' '}
-        <Code>mantine-contextmenu/styles.css</Code> or <Code>mantine-contextmenu/styles.layer.css</Code>.
+        <Code>{process.env.PACKAGE_NAME}/styles.css</Code> or <Code>{process.env.PACKAGE_NAME}/styles.layer.css</Code>.
       </Txt>
       <PageSubtitle value="Controlling the order of styles with CSS layers" />
       <Txt>
@@ -77,8 +77,8 @@ export default async function StylingPage() {
             <Code>mantine</Code>
           </li>
           <li>
-            <Code>mantine-contextmenu/styles.layer.css</Code> will place styles in a layer called{' '}
-            <Code>mantine-contextmenu</Code>
+            <Code>{process.env.PACKAGE_NAME}/styles.layer.css</Code> will place styles in a layer called{' '}
+            <Code>{process.env.PACKAGE_NAME}</Code>
           </li>
         </Box>
       </Txt>

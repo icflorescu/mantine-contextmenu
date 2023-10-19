@@ -21,7 +21,7 @@ export const Footer = forwardRef(function Footer({}, ref: React.ForwardedRef<HTM
     <footer ref={ref} className={classes.root}>
       <Group className={classes.imageLinks} gap="xs">
         <ExternalLink className={classes.imageLink} to={LICENSE_LINK} rel="license">
-          <img src={`https://img.shields.io/npm/l/mantine-contextmenu.svg${badgeParams}`} alt="MIT License" />
+          <img src={`https://img.shields.io/npm/l/${process.env.PACKAGE_NAME}.svg${badgeParams}`} alt="MIT License" />
         </ExternalLink>
         <ExternalLink className={classes.imageLink} to={SPONSORS_LINK}>
           <img
@@ -39,12 +39,15 @@ export const Footer = forwardRef(function Footer({}, ref: React.ForwardedRef<HTM
       <Group className={classes.imageLinks} gap="xs">
         <ExternalLink className={classes.imageLink} to={REPO_LINK}>
           <img
-            src={`https://img.shields.io/github/stars/icflorescu/mantine-contextmenu${badgeParams}`}
+            src={`https://img.shields.io/github/stars/icflorescu/${process.env.PACKAGE_NAME}${badgeParams}`}
             alt="GitHub Stars"
           />
         </ExternalLink>
         <ExternalLink className={classes.imageLink} to={NPM_LINK}>
-          <img src={`https://img.shields.io/npm/dm/mantine-contextmenu.svg${badgeParams}`} alt="NPM Downloads" />
+          <img
+            src={`https://img.shields.io/npm/dm/${process.env.PACKAGE_NAME}.svg${badgeParams}`}
+            alt="NPM Downloads"
+          />
         </ExternalLink>
       </Group>
     </footer>
