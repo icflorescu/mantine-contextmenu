@@ -1,6 +1,7 @@
 'use client';
 
 import { Box, UnstyledButton, parseThemeColor, rgba, useMantineTheme } from '@mantine/core';
+import { useTimeout } from '@mantine/hooks';
 import clsx from 'clsx';
 import { useRef, useState, type MouseEventHandler } from 'react';
 import { ContextMenu } from './ContextMenu';
@@ -28,13 +29,14 @@ export function ContextMenuItem({
     : undefined;
 
   const showSubmenu = () => {
+    stopHidingSubmenu();
     const { top: y, right: x } = ref.current!.getBoundingClientRect();
     setSubmenuPosition({ x, y });
   };
 
-  const hideSubmenu = () => {
+  const { start: startHidingSubmenu, clear: stopHidingSubmenu } = useTimeout(() => {
     setSubmenuPosition(null);
-  };
+  }, 500);
 
   const hasItemsAndIsNotDisabled = items && !disabled;
 
@@ -44,8 +46,8 @@ export function ContextMenuItem({
 
   return (
     <div
-      onMouseOver={hasItemsAndIsNotDisabled ? showSubmenu : undefined}
-      onMouseOut={hasItemsAndIsNotDisabled ? hideSubmenu : undefined}
+      onMouseEnter={hasItemsAndIsNotDisabled ? showSubmenu : undefined}
+      onMouseLeave={hasItemsAndIsNotDisabled ? startHidingSubmenu : undefined}
     >
       <UnstyledButton
         ref={ref}
