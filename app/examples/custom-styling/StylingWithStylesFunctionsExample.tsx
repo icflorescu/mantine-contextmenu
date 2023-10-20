@@ -6,8 +6,8 @@ import { Picture } from '~/components/Picture';
 import { copyImageToClipboard, downloadImage, unsplashImages } from '~/lib/images';
 
 // example-start
-export function StylingWithStylesFunctionExample() {
-  const showContextMenu = useContextMenu();
+export function StylingWithStylesFunctionsExample() {
+  const { showContextMenu } = useContextMenu();
   // example-skip
   const image = unsplashImages[3];
   const { src } = image.file;
@@ -35,10 +35,10 @@ export function StylingWithStylesFunctionExample() {
           // example-resume
         ],
         {
-          styles: (theme) => ({
-            root: { border: `1px solid ${theme.colors.indigo[6]}` },
-            item: { color: theme.colors.orange[6] },
-          }),
+          styles: {
+            root: (theme) => ({ border: `1px solid ${theme.colors.indigo[6]}` }),
+            item: (theme) => ({ color: theme.colors.orange[6] }),
+          },
         }
       )}
     />

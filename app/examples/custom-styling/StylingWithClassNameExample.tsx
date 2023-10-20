@@ -7,7 +7,7 @@ import { copyImageToClipboard, downloadImage, unsplashImages } from '~/lib/image
 import classes from './StylingWithClassNameExample.module.css';
 
 export function StylingWithClassNameExample() {
-  const showContextMenu = useContextMenu();
+  const { showContextMenu } = useContextMenu();
   // example-skip
   const image = unsplashImages[8];
   const { src } = image.file;

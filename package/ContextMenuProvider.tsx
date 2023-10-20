@@ -8,6 +8,7 @@ import type {
   ContextMenuOptions,
   ContextMenuProviderProps,
   ContextMenuSettings,
+  HideContextMenuFunction,
   ShowContextMenuFunction,
   WithRequiredProperty,
 } from './types';
@@ -18,8 +19,11 @@ const DEFAULT_SETTINGS: WithRequiredProperty<ContextMenuSettings, 'shadow' | 'bo
   submenuDelay: 500,
 };
 
-export const MenuSettingsContext = createContext(DEFAULT_SETTINGS);
-export const MenuContext = createContext<ShowContextMenuFunction>(() => () => undefined);
+export const ContextMenuSettingsCtx = createContext(DEFAULT_SETTINGS);
+export const ContextMenuCtx = createContext<{
+  showContextMenu: ShowContextMenuFunction;
+  hideContextMenu: HideContextMenuFunction;
+}>({ showContextMenu: () => () => undefined, hideContextMenu: () => undefined });
 
 /**
  * Provider that allows to show a context menu anywhere in your application.
@@ -35,7 +39,7 @@ export function ContextMenuProvider({
 }: ContextMenuProviderProps) {
   const [data, setData] = useState<(ContextMenuInstanceOptions & ContextMenuOptions) | null>(null);
 
-  const destroy = () => {
+  const hideContextMenu = () => {
     setData(null);
   };
 
@@ -55,18 +59,18 @@ export function ContextMenuProvider({
   };
 
   return (
-    <MenuSettingsContext.Provider value={{ shadow, borderRadius, submenuDelay }}>
-      <MenuContext.Provider value={showContextMenu}>
+    <ContextMenuSettingsCtx.Provider value={{ shadow, borderRadius, submenuDelay }}>
+      <ContextMenuCtx.Provider value={{ showContextMenu, hideContextMenu }}>
         {children}
-        <MantineProvider>{data && <ContextMenuPortal onHide={destroy} {...data} />}</MantineProvider>
-      </MenuContext.Provider>
-    </MenuSettingsContext.Provider>
+        <MantineProvider>{data && <ContextMenuPortal onHide={hideContextMenu} {...data} />}</MantineProvider>
+      </ContextMenuCtx.Provider>
+    </ContextMenuSettingsCtx.Provider>
   );
 }
 
 /**
- * Hook returning a function that shows a context menu.
+ * Hook returning functions that show and hide the context menu.
  */
 export function useContextMenu() {
-  return useContext(MenuContext);
+  return useContext(ContextMenuCtx);
 }

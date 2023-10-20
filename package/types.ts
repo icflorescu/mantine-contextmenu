@@ -1,5 +1,4 @@
-import type { MantineColor, MantineShadow, MantineSize, MantineTheme } from '@mantine/core';
-import type { CSSProperties, MouseEventHandler, ReactNode } from 'react';
+import type { MantineColor, MantineRadius, MantineShadow, MantineStyleProp, StylesRecord } from '@mantine/core';
 
 /**
  * Utility type that makes a property required
@@ -18,34 +17,32 @@ export type WithOptionalProperty<T, K extends keyof T> = Omit<T, K> & Partial<Pi
  */
 export type ContextMenuOptions = {
   /**
-   * zIndex of context menu
+   * The z-index of context menu.
    * @default 9999
    */
   zIndex?: number;
 
   /**
-   * Context menu container className
+   * Context menu container className.
    */
   className?: string;
 
   /**
-   * Context menu container style; can be a function that accepts theme and returns a style object
+   * Context menu container style.
    */
-  style?: CSSProperties | ((theme: MantineTheme) => CSSProperties);
+  style?: MantineStyleProp;
 
   /**
-   * Context menu elements classNames; an object with `root`, `item` and `divider` keys and class names as values
-   * @see https://mantine.dev/styles/styles-api/
+   * Context menu elements classNames.
    */
   classNames?: Partial<Record<'root' | 'item' | 'divider', string>>;
 
   /**
-   * Context menu styles; can be an object with `root`, `item` and `divider` keys and `CSSProperties` as values,
-   * or a function that accepts the current theme and returns a similarly structured object
+   * Context menu styles.
+   * Can be an object with `root`, `item` and `divider` keys and `CSSProperties` as values,
+   * or a function that accepts the current theme and returns a similarly structured object.
    */
-  styles?:
-    | Partial<Record<'root' | 'item' | 'divider', CSSProperties>>
-    | ((theme: MantineTheme) => Partial<Record<'root' | 'item' | 'divider', CSSProperties>>);
+  styles?: StylesRecord<'root' | 'item' | 'divider', MantineStyleProp>;
 };
 
 /**
@@ -53,19 +50,19 @@ export type ContextMenuOptions = {
  */
 export type ContextMenuSettings = {
   /**
-   * Context menu shadow
+   * Context menu shadow.
    * @default 'sm'
    */
   shadow?: MantineShadow;
 
   /**
-   * Context menu border radius
+   * Context menu border radius.
    * @default 'xs'
    */
-  borderRadius?: MantineSize;
+  borderRadius?: MantineRadius;
 
   /**
-   * Delay in ms to use when showing and hiding submenus
+   * Delay in ms to use when showing and hiding submenus.
    * @default 500
    */
   submenuDelay?: number;
@@ -76,7 +73,7 @@ export type ContextMenuSettings = {
  */
 export type ContextMenuProviderProps = ContextMenuSettings &
   ContextMenuOptions & {
-    children: ReactNode;
+    children: React.ReactNode;
   };
 
 /**
@@ -84,46 +81,48 @@ export type ContextMenuProviderProps = ContextMenuSettings &
  */
 export type ContextMenuItemOptions = {
   /**
-   * Unique key of the context menu item or divider
+   * Unique key of the context menu item or divider.
    */
   key: string;
   /**
-   * Context menu item or divider className
+   * Context menu item or divider className.
    */
   className?: string;
 
   /**
-   * Context menu item or divider style
+   * Context menu item or divider style.
    */
-  style?: CSSProperties | ((theme: MantineTheme) => CSSProperties);
+  style?: MantineStyleProp;
 } & (
   | ({
       /**
-       * Optional context menu item icon
+       * Optional context menu item icon.
        */
-      icon?: ReactNode;
+      icon?: React.ReactNode;
 
       /**
-       * Optional context menu item title; if not provided, one will be generated automatically by "humanizing" the key
+       * Optional context menu item title.
+       * If not provided, one will be generated automatically by "humanizing" the key.
        * @default humanize(key)
        */
-      title?: ReactNode;
+      title?: React.ReactNode;
 
       /**
-       * Optional context menu item color
+       * Optional context menu item color.
        */
       color?: MantineColor;
 
       /**
-       * Boolean indicating whether the context menu item is disabled
+       * Boolean indicating whether the context menu item is disabled.
        */
       disabled?: boolean;
     } & (
       | {
           /**
-           * Optional context menu item `onClick` handler; if not provided, a divider will be rendered instead
+           * Optional context menu item `onClick` handler.
+           * If not provided, a divider will be rendered instead.
            */
-          onClick: MouseEventHandler<HTMLButtonElement>;
+          onClick: React.MouseEventHandler<HTMLButtonElement>;
 
           items?: never;
         }
@@ -131,7 +130,8 @@ export type ContextMenuItemOptions = {
           onClick?: never;
 
           /**
-           * Optional items; if provided, a submenu will be rendered
+           * Optional items.
+           * If provided, a submenu will be rendered.
            */
           items: ContextMenuItemOptions[];
         }
@@ -147,22 +147,25 @@ export type ContextMenuItemOptions = {
 );
 
 /**
- * Context menu content - either an array of context menu items or a function that accepts a close callback and returns context menu content
+ * Context menu content.
+ * Either an array of context menu items, or a function that accepts a close callback and returns context menu content.
  */
 export type ContextMenuContent = ContextMenuItemOptions[] | ((close: () => void) => JSX.Element);
 
 /**
- * Context menu hook return value
+ * Show context menu function
  */
 export type ShowContextMenuFunction = (
   /**
-   * Context menu content - either an array of context menu items
-   * or a function that accepts a close callback and returns context menu content
+   * Context menu content.
+   * Either an array of context menu items or a function that accepts a close callback and returns context menu content.
    */
   content: ContextMenuContent,
 
   /**
-   * Context menu options (overrides provider options)
+   * Context menu options (overrides provider props).
    */
   options?: ContextMenuOptions
-) => MouseEventHandler;
+) => React.MouseEventHandler;
+
+export type HideContextMenuFunction = () => void;

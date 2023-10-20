@@ -1,6 +1,6 @@
 {
   "name": "mantine-contextmenu",
-  "version": "7.0.0-alpha.5",
+  "version": "7.0.0-alpha.6",
   "description": "Enhance your Mantine UI applications usability with customizable context menus",
   "keywords": [
     "ui",
@@ -76,7 +76,7 @@
     "@tabler/icons-react": "^2.39.0",
     "@types/lodash": "^4.14.200",
     "@types/node": "^20.8.7",
-    "@types/react": "^18.2.29",
+    "@types/react": "^18.2.31",
     "@types/react-dom": "^18.2.14",
     "@typescript-eslint/eslint-plugin": "^6.8.0",
     "@typescript-eslint/parser": "^6.8.0",

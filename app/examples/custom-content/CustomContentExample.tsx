@@ -9,7 +9,7 @@ import { copyImageToClipboard, downloadImage, unsplashImages } from '~/lib/image
 import { FancyButton } from './FancyButton';
 
 export function CustomContentExample() {
-  const showContextMenu = useContextMenu();
+  const { showContextMenu } = useContextMenu();
 
   const [flipVertical, setFlipVertical] = useState(false);
   const [flipHorizontal, setFlipHorizontal] = useState(false);

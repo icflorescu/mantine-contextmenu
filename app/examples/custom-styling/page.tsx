@@ -1,4 +1,5 @@
 import { Code } from '@mantine/core';
+import { MANTINE_LINK } from '~/app/config';
 import { CodeBlock } from '~/components/CodeBlock';
 import { ExternalLink } from '~/components/ExternalLink';
 import { InternalLink } from '~/components/InternalLink';
@@ -13,7 +14,7 @@ import { StylingWithClassNameExample } from './StylingWithClassNameExample';
 import StylingWithClassNamesExample from './StylingWithClassNamesExample';
 import { StylingWithStyleFunctionExample } from './StylingWithStyleFunctionExample';
 import { StylingWithStyleObjectExample } from './StylingWithStyleObjectExample';
-import { StylingWithStylesFunctionExample } from './StylingWithStylesFunctionExample';
+import { StylingWithStylesFunctionsExample } from './StylingWithStylesFunctionsExample';
 import { StylingWithStylesObjectExample } from './StylingWithStylesObjectExample';
 
 const PATH = '/examples/custom-styling';
@@ -31,7 +32,7 @@ export default async function CustomStylingExamplePage() {
     'StylingWithClassNamesExample.tsx': readCodeFile<string>(`${PATH}/StylingWithClassNamesExample.tsx`),
     'StylingWithClassNamesExample.module.css': readCodeFile<string>(`${PATH}/StylingWithClassNamesExample.module.css`),
     'StylingWithStylesObjectExample.tsx': readCodeFile<string>(`${PATH}/StylingWithStylesObjectExample.tsx`),
-    'StylingWithStylesFunctionExample.tsx': readCodeFile<string>(`${PATH}/StylingWithStylesFunctionExample.tsx`),
+    'StylingWithStylesFunctionsExample.tsx': readCodeFile<string>(`${PATH}/StylingWithStylesFunctionsExample.tsx`),
     'IndividualActionStylingExample.tsx': readCodeFile<string>(`${PATH}/IndividualActionStylingExample.tsx`),
     'IndividualActionStylingExample.module.css': readCodeFile<string>(
       `${PATH}/IndividualActionStylingExample.module.css`
@@ -42,13 +43,16 @@ export default async function CustomStylingExamplePage() {
     <>
       <PageTitle of={PATH} />
       <Txt>
-        There are many ways to style a context menu besides setting its{' '}
+        There are more ways to style a context menu besides setting its{' '}
         <InternalLink to="/examples/basic-configuration">basic configuration options</InternalLink> and its items{' '}
         <InternalLink to="/examples/action-colors">action colors</InternalLink>.
       </Txt>
       <Txt>
         The <Code>ContextMenuProvider</Code> wrapper component accepts the following properties: <Code>className</Code>,{' '}
         <Code>style</Code>, <Code>classNames</Code> and <Code>styles</Code>.
+        <br />
+        Have a look at <ExternalLink to={`${MANTINE_LINK}/styles/styles-api/`}>Mantine Styles API</ExternalLink>{' '}
+        documentation to make a general idea of how these properties work.
       </Txt>
       <Txt>
         The <Code>className</Code> and <Code>style</Code> properties can be used to target the component root, while the{' '}
@@ -108,11 +112,9 @@ export default async function CustomStylingExamplePage() {
       </Txt>
       <CodeBlock code={code['StylingWithStylesObjectExample.tsx']} />
       <StylingWithStylesObjectExample />
-      <Txt>
-        You can also use a function that will receive the current theme as an argument and return a styles object:
-      </Txt>
-      <CodeBlock code={code['StylingWithStylesFunctionExample.tsx']} />
-      <StylingWithStylesFunctionExample />
+      <Txt>You can also use functions that receive the current theme as an argument and return styles objects:</Txt>
+      <CodeBlock code={code['StylingWithStylesFunctionsExample.tsx']} />
+      <StylingWithStylesFunctionsExample />
       <PageSubtitle value="Styling individual actions with className and style" />
       <Txt>
         You can also style individual actions by passing a <Code>className</Code> or <Code>style</Code> property to the

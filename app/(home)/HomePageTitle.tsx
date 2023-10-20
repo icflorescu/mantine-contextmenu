@@ -15,7 +15,7 @@ import {
 import classes from './HomePageTitle.module.css';
 
 export function HomePageTitle() {
-  const showContextMenu = useContextMenu();
+  const { showContextMenu } = useContextMenu();
 
   return (
     <Title className={classes.root} order={2}>
