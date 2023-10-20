@@ -5,7 +5,7 @@ import { useTimeout } from '@mantine/hooks';
 import clsx from 'clsx';
 import { useContext, useRef, useState, type MouseEventHandler } from 'react';
 import { ContextMenu } from './ContextMenu';
-import { MenuSettingsContext } from './ContextMenuProvider';
+import { ContextMenuSettingsCtx } from './ContextMenuProvider';
 import type { ContextMenuContent, ContextMenuItemOptions, WithRequiredProperty } from './types';
 
 export function ContextMenuItem({
@@ -20,7 +20,7 @@ export function ContextMenuItem({
   items,
 }: WithRequiredProperty<Omit<ContextMenuItemOptions, 'key'>, 'title'> & { onHide: () => void }) {
   const ref = useRef<HTMLButtonElement>(null);
-  const { submenuDelay } = useContext(MenuSettingsContext);
+  const { submenuDelay } = useContext(ContextMenuSettingsCtx);
 
   const [submenuPosition, setSubmenuPosition] = useState<{ x: number; y: number } | null>(null);
 

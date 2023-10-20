@@ -6,7 +6,7 @@ import clsx from 'clsx';
 import { useContext } from 'react';
 import { ContextMenuDivider } from './ContextMenuDivider';
 import { ContextMenuItem } from './ContextMenuItem';
-import { MenuSettingsContext } from './ContextMenuProvider';
+import { ContextMenuSettingsCtx } from './ContextMenuProvider';
 import type { ContextMenuContent, ContextMenuOptions } from './types';
 import { humanize } from './utils';
 
@@ -22,7 +22,7 @@ export type ContextMenuProps = ContextMenuOptions &
   };
 
 export function ContextMenu({ x, y, content, zIndex, onHide, className, style, classNames, styles }: ContextMenuProps) {
-  const { shadow, borderRadius } = useContext(MenuSettingsContext);
+  const { shadow, borderRadius } = useContext(ContextMenuSettingsCtx);
   const [paperRef] = useResizeObserver<HTMLDivElement>();
   const { width, height } = paperRef.current?.getBoundingClientRect() || { width: 0, height: 0 };
 

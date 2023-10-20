@@ -11,7 +11,7 @@ import picture from './hero.png';
 export function HeroImage() {
   const [filter, setFilter] = useState<'none' | 'sepia' | 'grayscale'>('none');
 
-  const showContextMenu = useContextMenu();
+  const { showContextMenu } = useContextMenu();
 
   return (
     <div

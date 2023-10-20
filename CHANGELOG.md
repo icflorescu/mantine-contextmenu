@@ -3,13 +3,18 @@
 The following is a list of notable changes to the Mantine ContextMenu component.  
 Minor versions that are not listed in the changelog are minor bug fixes and small internal improvements or refactorings.
 
-# 7.0.0-alpha.4 (2023-10-19)
+## 7.0.0-alpha.6 (2023-10-19)
+
+- **BREAKING CHANGE**: Change the types of `style` and `styles` properties to `MantineStyleProp` and `StylesRecord<'root' | 'item' | 'divider', MantineStyleProp>` respectively, to match Mantine's approach to styling
+- **BREAKING CHANGE**: the `useContextMenu` hook now returns an object with `showContextMenu` and `hideContextMenu` functions instead of a function
+
+## 7.0.0-alpha.4 (2023-10-19)
 
 - Remove `borderRadius` and `shadow` from the options provided to `showContextMenu`, as customizing them through the `<ContextMenuProvider>` props should be enough
 - Add a `submenuDelay` prop to the `<ContextMenuProvider>` component, to control the delay before a submenu is shown when hovering over a menu item that has a submenu
 - Substantial improvements to the documentation website
 
-# 7.0.0-alpha.1 (2023-10-16)
+## 7.0.0-alpha.1 (2023-10-16)
 
 - The V7 alpha release is here! 🎉
 - The V7 is a major rewrite of the library internals, with the following goals in mind:

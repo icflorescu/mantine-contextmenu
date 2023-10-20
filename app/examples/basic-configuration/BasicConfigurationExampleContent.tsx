@@ -6,7 +6,7 @@ import { copyImageToClipboard, downloadImage, unsplashImages } from '~/lib/image
 
 export function BasicConfigurationExampleContent() {
   // example-start
-  const showContextMenu = useContextMenu();
+  const { showContextMenu } = useContextMenu();
   // example-skip
   const image = unsplashImages[2];
   const { src } = image.file;

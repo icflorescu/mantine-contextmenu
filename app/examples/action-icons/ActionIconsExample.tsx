@@ -7,7 +7,7 @@ import { copyImageToClipboard, downloadImage, unsplashImages } from '~/lib/image
 
 export function ActionIconsExample() {
   // example-start
-  const showContextMenu = useContextMenu();
+  const { showContextMenu } = useContextMenu();
   // example-skip
   const image = unsplashImages[4];
   const { src } = image.file;

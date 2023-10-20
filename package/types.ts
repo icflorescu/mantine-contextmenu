@@ -153,7 +153,7 @@ export type ContextMenuItemOptions = {
 export type ContextMenuContent = ContextMenuItemOptions[] | ((close: () => void) => JSX.Element);
 
 /**
- * Context menu hook return value
+ * Show context menu function
  */
 export type ShowContextMenuFunction = (
   /**
@@ -167,3 +167,5 @@ export type ShowContextMenuFunction = (
    */
   options?: ContextMenuOptions
 ) => React.MouseEventHandler;
+
+export type HideContextMenuFunction = () => void;

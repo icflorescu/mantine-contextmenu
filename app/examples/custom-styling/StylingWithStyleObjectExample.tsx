@@ -7,7 +7,7 @@ import { copyImageToClipboard, downloadImage, unsplashImages } from '~/lib/image
 
 // example-start
 export function StylingWithStyleObjectExample() {
-  const showContextMenu = useContextMenu();
+  const { showContextMenu } = useContextMenu();
   // example-skip
   const image = unsplashImages[9];
   const { src } = image.file;

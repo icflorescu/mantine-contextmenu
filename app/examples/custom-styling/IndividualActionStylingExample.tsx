@@ -8,7 +8,7 @@ import { copyImageToClipboard, downloadImage, unsplashImages } from '~/lib/image
 import classes from './IndividualActionStylingExample.module.css';
 
 export default function IndividualActionStylingExample() {
-  const showContextMenu = useContextMenu();
+  const { showContextMenu } = useContextMenu();
   // example-skip
   const [flipVertical, setFlipVertical] = useState(false);
   const [flipHorizontal, setFlipHorizontal] = useState(false);

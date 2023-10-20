@@ -8,7 +8,7 @@ import { copyImageToClipboard, downloadImage, unsplashImages } from '~/lib/image
 
 export function ActionDividersExample() {
   // example-start
-  const showContextMenu = useContextMenu();
+  const { showContextMenu } = useContextMenu();
 
   const [flipVertical, setFlipVertical] = useState(false);
   const [flipHorizontal, setFlipHorizontal] = useState(false);

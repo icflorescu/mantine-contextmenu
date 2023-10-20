@@ -7,7 +7,7 @@ import { copyImageToClipboard, downloadImage, unsplashImages } from '~/lib/image
 
 export function SubmenuExample() {
   // example-start submenu
-  const showContextMenu = useContextMenu();
+  const { showContextMenu } = useContextMenu();
   // example-skip
   const image = unsplashImages[1];
   const { src } = image.file;
@@ -48,7 +48,7 @@ export function SubmenuExample() {
 
 export function NestedSubmenuExample() {
   // example-start nested-submenu
-  const showContextMenu = useContextMenu();
+  const { showContextMenu } = useContextMenu();
   // example-skip
   const image = unsplashImages[2];
   const { src } = image.file;
