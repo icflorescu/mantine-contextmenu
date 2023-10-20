@@ -1,6 +1,6 @@
 'use client';
 
-import { Box, UnstyledButton, parseThemeColor, rgba, useMantineTheme } from '@mantine/core';
+import { Box, UnstyledButton, parseThemeColor, rgba } from '@mantine/core';
 import { useTimeout } from '@mantine/hooks';
 import clsx from 'clsx';
 import { useContext, useRef, useState, type MouseEventHandler } from 'react';
@@ -52,10 +52,6 @@ export function ContextMenuItem({
 
   const hasItemsAndIsNotDisabled = items && !disabled;
 
-  const theme = useMantineTheme();
-  const { colors } = theme;
-  const parsedColor = color ? parseThemeColor({ color, theme }).value : undefined;
-
   return (
     <div
       onMouseEnter={hasItemsAndIsNotDisabled ? showSubmenu : undefined}
@@ -63,22 +59,28 @@ export function ContextMenuItem({
     >
       <UnstyledButton
         ref={ref}
-        style={{
-          '--mantine-contextmenu-item-button-color': parsedColor ? parsedColor : 'var(--mantine-color-text)',
-          '--mantine-contextmenu-item-button-hover-bg-color-light': parsedColor
-            ? rgba(parsedColor, 0.08)
-            : rgba(colors.gray[4], 0.25),
-          '--mantine-contextmenu-item-button-hover-bg-color-dark': parsedColor
-            ? rgba(parsedColor, 0.15)
-            : rgba(colors.dark[3], 0.25),
-          '--mantine-contextmenu-item-button-pressed-bg-color-light': parsedColor
-            ? rgba(parsedColor, 0.2)
-            : rgba(colors.gray[4], 0.5),
-          '--mantine-contextmenu-item-button-pressed-bg-color-dark': parsedColor
-            ? rgba(parsedColor, 0.3)
-            : rgba(colors.dark[3], 0.5),
-          ...(typeof style === 'function' ? style(theme) : style),
-        }}
+        style={[
+          (theme) => {
+            const { colors } = theme;
+            const parsedColor = color ? parseThemeColor({ color, theme }).value : undefined;
+            return {
+              '--mantine-contextmenu-item-button-color': parsedColor ? parsedColor : 'var(--mantine-color-text)',
+              '--mantine-contextmenu-item-button-hover-bg-color-light': parsedColor
+                ? rgba(parsedColor, 0.08)
+                : rgba(colors.gray[4], 0.25),
+              '--mantine-contextmenu-item-button-hover-bg-color-dark': parsedColor
+                ? rgba(parsedColor, 0.15)
+                : rgba(colors.dark[3], 0.25),
+              '--mantine-contextmenu-item-button-pressed-bg-color-light': parsedColor
+                ? rgba(parsedColor, 0.2)
+                : rgba(colors.gray[4], 0.5),
+              '--mantine-contextmenu-item-button-pressed-bg-color-dark': parsedColor
+                ? rgba(parsedColor, 0.3)
+                : rgba(colors.dark[3], 0.5),
+            };
+          },
+          style,
+        ]}
         className={clsx('mantine-contextmenu-item-button', className)}
         disabled={disabled}
         onClick={handleClick}

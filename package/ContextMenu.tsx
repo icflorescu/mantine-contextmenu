@@ -1,6 +1,6 @@
 'use client';
 
-import { Paper, px, useDirection, useMantineTheme } from '@mantine/core';
+import { Paper, px, useDirection } from '@mantine/core';
 import { useResizeObserver } from '@mantine/hooks';
 import clsx from 'clsx';
 import { useContext } from 'react';
@@ -31,10 +31,6 @@ export function ContextMenu({ x, y, content, zIndex, onHide, className, style, c
   if (typeof window !== 'undefined') ({ innerWidth: windowWidth, innerHeight: windowHeight } = window);
 
   const { dir } = useDirection();
-  const theme = useMantineTheme();
-  const resolvedStyle = typeof style === 'function' ? style(theme) : style;
-  const resolvedStyles = typeof styles === 'function' ? styles(theme) : styles;
-  const mdSpacing = px(theme.spacing.md) as number;
 
   return (
     <Paper
@@ -42,27 +38,31 @@ export function ContextMenu({ x, y, content, zIndex, onHide, className, style, c
       shadow={shadow}
       radius={borderRadius}
       className={clsx('mantine-contextmenu', className, classNames?.root)}
-      style={{
-        ...resolvedStyles?.root,
-        ...resolvedStyle,
-        zIndex,
-        top: y + height + mdSpacing > windowHeight ? windowHeight - height - mdSpacing : y,
-        left:
-          dir === 'ltr'
-            ? x + width + mdSpacing > windowWidth
-              ? windowWidth - width - mdSpacing
-              : x
-            : windowWidth - mdSpacing - (x - width - mdSpacing < 0 ? width + mdSpacing : x),
-      }}
+      style={[
+        styles?.root,
+        style,
+        ({ spacing: { md } }) => {
+          const mdSpacing = px(md) as number;
+          return {
+            zIndex,
+            top: y + height + mdSpacing > windowHeight ? windowHeight - height - mdSpacing : y,
+            left:
+              dir === 'ltr'
+                ? x + width + mdSpacing > windowWidth
+                  ? windowWidth - width - mdSpacing
+                  : x
+                : windowWidth - mdSpacing - (x - width - mdSpacing < 0 ? width + mdSpacing : x),
+          };
+        },
+      ]}
     >
       {Array.isArray(content)
-        ? content.map(({ key, className, style, onClick, items, title, ...otherOptions }) => {
-            const resolvedItemStyle = typeof style === 'function' ? style(theme) : style;
-            return onClick || items ? (
+        ? content.map(({ key, className, style, onClick, items, title, ...otherOptions }) =>
+            onClick || items ? (
               <ContextMenuItem
                 key={key}
                 className={clsx(classNames?.item, className)}
-                style={{ ...resolvedStyles?.item, ...resolvedItemStyle }}
+                style={[styles?.item, style]}
                 title={title ?? humanize(key)}
                 onClick={onClick}
                 onHide={onHide}
@@ -73,10 +73,10 @@ export function ContextMenu({ x, y, content, zIndex, onHide, className, style, c
               <ContextMenuDivider
                 key={key}
                 className={clsx(classNames?.divider, className)}
-                style={{ ...resolvedStyles?.divider, ...resolvedItemStyle }}
+                style={[styles?.divider, style]}
               />
-            );
-          })
+            )
+          )
         : content(onHide)}
     </Paper>
   );

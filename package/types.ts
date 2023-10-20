@@ -1,4 +1,4 @@
-import type { MantineColor, MantineShadow, MantineSize, MantineTheme } from '@mantine/core';
+import type { MantineColor, MantineRadius, MantineShadow, MantineStyleProp, StylesRecord } from '@mantine/core';
 
 /**
  * Utility type that makes a property required
@@ -29,14 +29,11 @@ export type ContextMenuOptions = {
 
   /**
    * Context menu container style.
-   * Can be a style object of a function that accepts the current theme and returns a style object.
    */
-  style?: React.CSSProperties | ((theme: MantineTheme) => React.CSSProperties);
+  style?: MantineStyleProp;
 
   /**
    * Context menu elements classNames.
-   * An object with `root`, `item` and `divider` keys and class names as values.
-   * @see https://mantine.dev/styles/styles-api/
    */
   classNames?: Partial<Record<'root' | 'item' | 'divider', string>>;
 
@@ -45,9 +42,7 @@ export type ContextMenuOptions = {
    * Can be an object with `root`, `item` and `divider` keys and `CSSProperties` as values,
    * or a function that accepts the current theme and returns a similarly structured object.
    */
-  styles?:
-    | Partial<Record<'root' | 'item' | 'divider', React.CSSProperties>>
-    | ((theme: MantineTheme) => Partial<Record<'root' | 'item' | 'divider', React.CSSProperties>>);
+  styles?: StylesRecord<'root' | 'item' | 'divider', MantineStyleProp>;
 };
 
 /**
@@ -64,7 +59,7 @@ export type ContextMenuSettings = {
    * Context menu border radius.
    * @default 'xs'
    */
-  borderRadius?: MantineSize | (string & NonNullable<unknown>) | number;
+  borderRadius?: MantineRadius;
 
   /**
    * Delay in ms to use when showing and hiding submenus.
@@ -97,7 +92,7 @@ export type ContextMenuItemOptions = {
   /**
    * Context menu item or divider style.
    */
-  style?: React.CSSProperties | ((theme: MantineTheme) => React.CSSProperties);
+  style?: MantineStyleProp;
 } & (
   | ({
       /**
