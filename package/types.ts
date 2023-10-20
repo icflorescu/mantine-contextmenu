@@ -1,5 +1,4 @@
 import type { MantineColor, MantineShadow, MantineSize, MantineTheme } from '@mantine/core';
-import type { CSSProperties, MouseEventHandler, ReactNode } from 'react';
 
 /**
  * Utility type that makes a property required
@@ -31,7 +30,7 @@ export type ContextMenuOptions = {
   /**
    * Context menu container style; can be a function that accepts theme and returns a style object
    */
-  style?: CSSProperties | ((theme: MantineTheme) => CSSProperties);
+  style?: React.CSSProperties | ((theme: MantineTheme) => React.CSSProperties);
 
   /**
    * Context menu elements classNames; an object with `root`, `item` and `divider` keys and class names as values
@@ -44,8 +43,8 @@ export type ContextMenuOptions = {
    * or a function that accepts the current theme and returns a similarly structured object
    */
   styles?:
-    | Partial<Record<'root' | 'item' | 'divider', CSSProperties>>
-    | ((theme: MantineTheme) => Partial<Record<'root' | 'item' | 'divider', CSSProperties>>);
+    | Partial<Record<'root' | 'item' | 'divider', React.CSSProperties>>
+    | ((theme: MantineTheme) => Partial<Record<'root' | 'item' | 'divider', React.CSSProperties>>);
 };
 
 /**
@@ -62,7 +61,7 @@ export type ContextMenuSettings = {
    * Context menu border radius
    * @default 'xs'
    */
-  borderRadius?: MantineSize;
+  borderRadius?: MantineSize | (string & NonNullable<unknown>) | number;
 
   /**
    * Delay in ms to use when showing and hiding submenus
@@ -76,7 +75,7 @@ export type ContextMenuSettings = {
  */
 export type ContextMenuProviderProps = ContextMenuSettings &
   ContextMenuOptions & {
-    children: ReactNode;
+    children: React.ReactNode;
   };
 
 /**
@@ -95,19 +94,19 @@ export type ContextMenuItemOptions = {
   /**
    * Context menu item or divider style
    */
-  style?: CSSProperties | ((theme: MantineTheme) => CSSProperties);
+  style?: React.CSSProperties | ((theme: MantineTheme) => React.CSSProperties);
 } & (
   | ({
       /**
        * Optional context menu item icon
        */
-      icon?: ReactNode;
+      icon?: React.ReactNode;
 
       /**
        * Optional context menu item title; if not provided, one will be generated automatically by "humanizing" the key
        * @default humanize(key)
        */
-      title?: ReactNode;
+      title?: React.ReactNode;
 
       /**
        * Optional context menu item color
@@ -123,7 +122,7 @@ export type ContextMenuItemOptions = {
           /**
            * Optional context menu item `onClick` handler; if not provided, a divider will be rendered instead
            */
-          onClick: MouseEventHandler<HTMLButtonElement>;
+          onClick: React.MouseEventHandler<HTMLButtonElement>;
 
           items?: never;
         }
@@ -165,4 +164,4 @@ export type ShowContextMenuFunction = (
    * Context menu options (overrides provider options)
    */
   options?: ContextMenuOptions
-) => MouseEventHandler;
+) => React.MouseEventHandler;
