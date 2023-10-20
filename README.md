@@ -64,7 +64,7 @@ import Picture from '~/components/Picture';
 import { copyImageToClipboard, downloadImage, unsplashImages } from '~/lib/image';
 
 export default function GettingStartedExample() {
-  const showContextMenu = useContextMenu();
+  const { showContextMenu } = useContextMenu();
 
   const image = unsplashImages[0];
   const { src } = image.file;
