@@ -23,7 +23,7 @@ export type ContextMenuOptions = {
   zIndex?: number;
 
   /**
-   * Context menu container className.
+   * Context menu container class name.
    */
   className?: string;
 
@@ -33,13 +33,13 @@ export type ContextMenuOptions = {
   style?: MantineStyleProp;
 
   /**
-   * Context menu elements classNames.
+   * Context menu elements class names.
    */
   classNames?: Partial<Record<'root' | 'item' | 'divider', string>>;
 
   /**
    * Context menu styles.
-   * Can be an object with `root`, `item` and `divider` keys and `CSSProperties` as values,
+   * Can be an object with `root`, `item` and `divider` keys and style objects as values,
    * or a function that accepts the current theme and returns a similarly structured object.
    */
   styles?: StylesRecord<'root' | 'item' | 'divider', MantineStyleProp>;
