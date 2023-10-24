@@ -168,4 +168,7 @@ export type ShowContextMenuFunction = (
   options?: ContextMenuOptions
 ) => React.MouseEventHandler;
 
+/**
+ * Hide context menu function
+ */
 export type HideContextMenuFunction = () => void;

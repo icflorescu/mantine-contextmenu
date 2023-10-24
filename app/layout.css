@@ -5,6 +5,10 @@
 
 @layer mantine-core, mantine-notifications, mantine-code-highlight, mantine-contextmenu;
 
+a code {
+  color: var(--mantine-color-anchor);
+}
+
 .noscroll {
   overflow: hidden;
 }

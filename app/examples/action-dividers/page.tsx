@@ -19,7 +19,11 @@ export default async function ActionDividersExamplePage() {
     <>
       <PageTitle of={PATH} />
       <Txt>
-        An item without an <Code>onClick</Code> handler or an{' '}
+        An item missing both its{' '}
+        <InternalLink to="/examples/basic-usage">
+          <Code>onClick</Code> handler
+        </InternalLink>{' '}
+        and{' '}
         <InternalLink to="/examples/submenus">
           <Code>items</Code> property
         </InternalLink>{' '}

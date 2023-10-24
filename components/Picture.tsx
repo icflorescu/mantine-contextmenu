@@ -1,7 +1,6 @@
 import { Text } from '@mantine/core';
 import clsx from 'clsx';
 import Image from 'next/image';
-import type { MouseEventHandler } from 'react';
 import { PRODUCT_NAME } from '~/app/config';
 import type { UnsplashImage } from '~/lib/images';
 import { ExternalLink } from './ExternalLink';
@@ -11,7 +10,7 @@ export type PictureProps = {
   image: UnsplashImage;
   flipVertical?: boolean;
   flipHorizontal?: boolean;
-  onContextMenu?: MouseEventHandler<HTMLDivElement>;
+  onContextMenu?: React.MouseEventHandler<HTMLDivElement>;
 };
 
 export function Picture({

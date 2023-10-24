@@ -21,9 +21,21 @@ const DEFAULT_SETTINGS: WithRequiredProperty<ContextMenuSettings, 'shadow' | 'bo
 
 export const ContextMenuSettingsCtx = createContext(DEFAULT_SETTINGS);
 export const ContextMenuCtx = createContext<{
+  /**
+   * Function that shows the context menu.
+   */
   showContextMenu: ShowContextMenuFunction;
+
+  /**
+   * Function that hides the context menu.
+   */
   hideContextMenu: HideContextMenuFunction;
-}>({ showContextMenu: () => () => undefined, hideContextMenu: () => undefined });
+
+  /**
+   * Boolean indicating whether the context menu is currently visible.
+   */
+  isContextMenuVisible: boolean;
+}>({ showContextMenu: () => () => undefined, hideContextMenu: () => undefined, isContextMenuVisible: false });
 
 /**
  * Provider that allows to show a context menu anywhere in your application.
@@ -60,7 +72,7 @@ export function ContextMenuProvider({
 
   return (
     <ContextMenuSettingsCtx.Provider value={{ shadow, borderRadius, submenuDelay }}>
-      <ContextMenuCtx.Provider value={{ showContextMenu, hideContextMenu }}>
+      <ContextMenuCtx.Provider value={{ showContextMenu, hideContextMenu, isContextMenuVisible: !!data }}>
         {children}
         <MantineProvider>{data && <ContextMenuPortal onHide={hideContextMenu} {...data} />}</MantineProvider>
       </ContextMenuCtx.Provider>

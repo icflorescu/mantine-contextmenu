@@ -1,15 +1,14 @@
 import { Box, Center, Text, rgba } from '@mantine/core';
 import { IconChevronRight } from '@tabler/icons-react';
-import { WithOptionalProperty, WithRequiredProperty } from '__PACKAGE__';
+import type { WithOptionalProperty, WithRequiredProperty } from '__PACKAGE__';
 import clsx from 'clsx';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { MouseEventHandler } from 'react';
-import { RouteInfo } from '~/app/config';
+import type { RouteInfo } from '~/app/config';
 import classes from './NavbarButton.module.css';
 
 export type NavbarButtonProps = WithRequiredProperty<WithOptionalProperty<RouteInfo, 'href'>, 'color'> & {
-  onClick?: MouseEventHandler<HTMLAnchorElement>;
+  onClick?: React.MouseEventHandler<HTMLAnchorElement>;
   expanded?: boolean;
 };
 
@@ -23,10 +22,10 @@ export function NavbarButton({ color, icon, title, description, href, onClick, e
   const content = (
     <Box
       style={({ colors }) => ({
-        '--docs-button-bg-color-light': isCurrent ? rgba(colors[color][6], 0.1) : 'transparent',
-        '--docs-button-bg-color-dark': isCurrent ? rgba(colors[color][6], 0.2) : 'transparent',
-        '--docs-button-hover-bg-color-light': isCurrent ? rgba(colors[color][6], 0.2) : rgba(colors.gray[6], 0.1),
-        '--docs-button-hover-bg-color-dark': isCurrent ? rgba(colors[color][6], 0.3) : rgba(colors.gray[6], 0.2),
+        '--navbar-button-bg-color-light': isCurrent ? rgba(colors[color][6], 0.1) : 'transparent',
+        '--navbar-button-bg-color-dark': isCurrent ? rgba(colors[color][6], 0.2) : 'transparent',
+        '--navbar-button-hover-bg-color-light': isCurrent ? rgba(colors[color][6], 0.2) : rgba(colors.gray[6], 0.1),
+        '--navbar-button-hover-bg-color-dark': isCurrent ? rgba(colors[color][6], 0.3) : rgba(colors.gray[6], 0.2),
       })}
       className={classes.root}
       component="a"
