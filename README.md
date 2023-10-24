@@ -55,7 +55,7 @@ function App() {
 }
 ```
 
-Use the `showContextMenu` hook-generated function in your code:
+Use the `showContextMenu` function geenrated by the `useContextMenu` in your code:
 
 ```tsx
 import { IconCopy, IconDownload } from '@tabler/icons-react';
@@ -97,7 +97,11 @@ Make sure to browse the list of [usage examples](https://icflorescu.github.io/ma
 
 💡 [Mantine DataTable](https://icflorescu.github.io/mantine-datatable/) - The "dark-theme aware" **data-table component** for your Mantine UI applications, built by the creator of Mantine ContextMenu.
 
-## Code contributors
+## Contributing
+
+See the [contributing guide in the documentation website](https://icflorescu.github.io/mantine-contextmenu/contribute-and-support) or the repo [CONTRIBUTING.md](https://github.com/icflorescu/mantine-contextmenu/blob/master/CONTRIBUTING.md) file for details.
+
+Here's the list of people who have already contributed to Mantine ContextMenu:
 
 [![Contributors list](https://contrib.rocks/image?repo=icflorescu/mantine-contextmenu)](https://github.com/icflorescu/mantine-contextmenu/graphs/contributors)
 
@@ -105,7 +109,9 @@ Want to [become a code contributor](https://icflorescu.github.io/mantine-context
 
 ## Sponsor the project
 
-If you find this package useful, please consider ❤️ [sponsoring my work](https://github.com/sponsors/icflorescu). Your sponsorship will help me dedicate more time to maintaining the project and will encourage me to add new features and fix existing bugs. If you're a company using Mantine ContextMenu in a commercial project, you can also [hire my services](https://github.com/icflorescu).
+If you find this package useful, please consider ❤️ [sponsoring my work](https://github.com/sponsors/icflorescu).  
+Your sponsorship will help me dedicate more time to maintaining the project and will encourage me to add new features and fix existing bugs.  
+If you're a company using Mantine ContextMenu in a commercial project, you can also [hire my services](https://github.com/icflorescu).
 
 ## Other means of support
 
@@ -120,8 +126,8 @@ which in turn will help maintain my vested interest in keeping the project alive
 
 ## Hiring the author
 
-If you want to hire my services, don’t hesitate to drop me a line at the email address listed in my [GitHub profile](https://github.com/icflorescu).
-I’m currently getting a constant flow of approaches, some of them relevant, others not so relevant.
+If you want to hire my services, don't hesitate to drop me a line at the email address listed in my [GitHub profile](https://github.com/icflorescu).  
+I'm currently getting a constant flow of approaches, some of them relevant, others not so relevant.  
 Mentioning “Mantine ContextMenu” in your text would help me prioritize your message.
 
 ## License
