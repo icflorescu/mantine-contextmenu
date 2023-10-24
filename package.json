@@ -100,8 +100,8 @@
     "webpack": "^5.89.0"
   },
   "peerDependencies": {
-    "@mantine/core": ">=7",
-    "@mantine/hooks": ">=7",
+    "@mantine/core": ">=7.1",
+    "@mantine/hooks": ">=7.1",
     "clsx": ">=2"
   }
 }
