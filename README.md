@@ -15,7 +15,7 @@ The "dark-theme aware" **context-menu** for your Mantine UI applications, built 
 [![Mantine ContextMenu](https://user-images.githubusercontent.com/581999/231230506-3278ea99-dfb3-4edc-ad67-d47f1626a298.png)](https://icflorescu.github.io/mantine-contextmenu/)
 
 **⚠️ NOTE: Mantine ContextMenu V7 is compatible with Mantine V7.**  
-**💡 If you're looking for an older version that works with Mantine V6, head over to [Mantine ContextMenu V6](https://icflorescu.github.io/mantine-contextmenu-v6).**
+**💡 If you're looking for the old version that works with Mantine V6, head over to [Mantine ContextMenu V6](https://icflorescu.github.io/mantine-contextmenu-v6).**  
 
 ## Features
 
