@@ -30,8 +30,8 @@ export default async function ImperativeHidingExamplePage() {
         to determine whether the context menu is currently visible.
       </Txt>
       <Txt>
-        In the example below, we’ll hide the context menu automatically after five seconds have elapsed or when the user
-        presses the <Code>H</Code> key:
+        In the example below, we’ll hide the context menu automatically when the user presses the <Code>H</Code> key,
+        his mouse cursor leaves the page, or after five seconds have elapsed:
       </Txt>
       <CodeBlock code={code} />
       <Txt>Right-click on the image below to show the context menu:</Txt>

@@ -1,7 +1,7 @@
 'use client';
 
 // example-start
-import { useHotkeys, useTimeout } from '@mantine/hooks';
+import { useHotkeys, usePageLeave, useTimeout } from '@mantine/hooks';
 import { useContextMenu } from '__PACKAGE__';
 import { useEffect } from 'react';
 import { Picture } from '~/components/Picture';
@@ -22,6 +22,9 @@ export function ImperativeHidingExample() {
 
   // 👇 hide the context menu when the user hits the `H` key
   useHotkeys([['H', hideContextMenu]]);
+
+  // 👇 hide the context menu when the mouse cursor leaves the page
+  usePageLeave(hideContextMenu);
 
   // example-skip
   const image = unsplashImages[2];
