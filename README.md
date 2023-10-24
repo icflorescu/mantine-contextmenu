@@ -115,7 +115,11 @@ If you're a company using Mantine ContextMenu in a commercial project, you can a
 
 ## Other means of support
 
-If you find this package useful, please 🙏 star the repository, 💕 [tweet about it](https://twitter.com/share?text=Check%20out%20the%20missing%20context-menu%20for%20Mantine%20UI%20applications!&url=https%3A%2F%2Fgithub.com%2Ficflorescu%2Fmantine-contextmenu&hashtags=react%2Cmantine%2Cui%2Ccontextmenu%2Cfrontend%2Copensource&via=icflorescu), 👍 [endorse me on LinkedIn](https://www.linkedin.com/in/icflorescu) or consider hiring my services.
+If you can't afford to sponsor the project or hire my services, there are other ways you can support my work:  
+
+- 🙏 star the repository;
+- 💕 [tweet about it](https://twitter.com/share?text=Check%20out%20the%20missing%20context-menu%20for%20Mantine%20UI%20applications!&url=https%3A%2F%2Fgithub.com%2Ficflorescu%2Fmantine-contextmenu&hashtags=react%2Cmantine%2Cui%2Ccontextmenu%2Cfrontend%2Copensource&via=icflorescu);
+- 👍 [endorse me on LinkedIn](https://www.linkedin.com/in/icflorescu).
 
 The more stars this repository gets, the more visibility it gains among the Mantine users community. The more
 users it gets, the more chances that some of those users will become active code contributors willing to put
