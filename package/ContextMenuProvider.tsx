@@ -2,7 +2,7 @@
 
 import { MantineProvider } from '@mantine/core';
 import { createContext, useContext, useState } from 'react';
-import { ContextMenuInstanceOptions } from './ContextMenu';
+import type { ContextMenuInstanceOptions } from './ContextMenu';
 import { ContextMenuPortal } from './ContextMenuPortal';
 import type {
   ContextMenuOptions,
