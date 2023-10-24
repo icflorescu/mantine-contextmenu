@@ -10,6 +10,7 @@ const images = unsplashImages.slice(1);
 
 export function MultipleTargetsExample() {
   // example-start
+  // 👇 the same function will be used for multiple components
   const { showContextMenu } = useContextMenu();
 
   return (

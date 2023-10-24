@@ -50,7 +50,7 @@ export default async function GettingStartedPage() {
         <Code>MantineProvider</Code> and don’t forget to import the necessary CSS files{' '}
         <strong>in the correct order</strong>.
       </Txt>
-      <Txt idea>
+      <Txt idea title="Important">
         The <Code>@mantine/core</Code> package styles must be applied before {PRODUCT_NAME} styles.
       </Txt>
       <Txt>

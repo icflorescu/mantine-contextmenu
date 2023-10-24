@@ -39,8 +39,6 @@ export function ContextMenu({ x, y, content, zIndex, onHide, className, style, c
       radius={borderRadius}
       className={clsx('mantine-contextmenu', className, classNames?.root)}
       style={[
-        styles?.root,
-        style,
         ({ spacing: { md } }) => {
           const mdSpacing = px(md) as number;
           return {
@@ -54,6 +52,8 @@ export function ContextMenu({ x, y, content, zIndex, onHide, className, style, c
                 : windowWidth - mdSpacing - (x - width - mdSpacing < 0 ? width + mdSpacing : x),
           };
         },
+        style,
+        styles?.root,
       ]}
     >
       {Array.isArray(content)

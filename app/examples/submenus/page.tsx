@@ -37,10 +37,11 @@ export default async function ActionColorsExamplePage() {
       <CodeBlock code={code['default']['nested-submenu']} />
       <Txt>Right-click on the image to trigger the context menu:</Txt>
       <NestedSubmenuExample />
-      <PageSubtitle value="Show/hide delay" />
+      <PageSubtitle value="Controlling the show/hide delay" />
       <Txt>
-        You can control the delay between hovering over or out of an item and the submenu appearing or disappearing by
-        setting the <Code>submenuDelay</Code> property of the <Code>ContextMenuProvider</Code> component.
+        You can change the default <Code>500ms</Code> delay between hovering over or out of an item and the submenu
+        appearing or disappearing by setting the <Code>submenuDelay</Code> property of the{' '}
+        <Code>ContextMenuProvider</Code> component.
       </Txt>
       <CodeBlock code={code['submenuDelayProviderProp']} />
       <Txt>Right-click on the image to trigger the context menu:</Txt>

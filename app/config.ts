@@ -117,6 +117,11 @@ export const ROUTES: RouteInfo[] = [
     description: `Example: How to create ${PRODUCT_NAME} submenus (nested menus)`,
   },
   {
+    href: '/examples/imperative-hiding',
+    title: 'Imperative hiding',
+    description: `Example: How to imperatively hide a ${PRODUCT_NAME}`,
+  },
+  {
     href: '/type-definitions',
     title: 'Type definitions',
     description: `${PRODUCT_NAME} is written in TypeScript and its options are well documented with additional JSDoc annotations`,

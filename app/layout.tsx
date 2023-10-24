@@ -1,7 +1,7 @@
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import { Notifications } from '@mantine/notifications';
 import { ContextMenuProvider } from '__PACKAGE__';
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 import { AppWrapper } from '~/components/AppWrapper';
 import { PRODUCT_NAME, WEBSITE_LINK } from './config';
 import './layout.css';
@@ -9,6 +9,7 @@ import classes from './layout.module.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.GITHUB_PAGES === 'TRUE' ? 'https://icflorescu.github.io' : 'http://localhost:3000'),
+  alternates: { canonical: '/' },
   manifest: `${process.env.GITHUB_PAGES === 'TRUE' ? WEBSITE_LINK : ''}/manifest.webmanifest`,
   title: `${PRODUCT_NAME}: enhance your users’ experience`,
   description:

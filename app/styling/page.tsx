@@ -31,11 +31,11 @@ export default async function StylingPage() {
     <>
       <PageTitle of={PATH} />
       <Txt>
-        {PRODUCT_NAME} V7 is a major release with{' '}
+        {PRODUCT_NAME} V7.1 is a major release with{' '}
         <ExternalLink to={`${REPO_LINK}/blob/main/CHANGELOG.md`}>breaking changes</ExternalLink> and is compatible with{' '}
-        <ExternalLink to={MANTINE_LINK}>Mantine V7</ExternalLink>.
+        <ExternalLink to={MANTINE_LINK}>Mantine V7.1</ExternalLink>.
         <br />
-        One of the breaking changes in Mantine V7 is the{' '}
+        One of the breaking changes in Mantine V7 was the{' '}
         <ExternalLink to={`${MANTINE_LINK}/changelog/7-0-0/#migration-to-native-css`}>
           migration to native CSS
         </ExternalLink>
@@ -45,7 +45,7 @@ export default async function StylingPage() {
         hence the <Code>createStyles</Code> function is no longer available for use in other libraries built on top of
         it or in your own code.
       </Txt>
-      <Txt idea>
+      <Txt idea title="Background information">
         If you have used {PRODUCT_NAME} with Mantine V6 and you’re migrating to V7, please make sure to check out the
         Mantine <ExternalLink to={`${MANTINE_LINK}/changelog/7-0-0/`}>V7.0</ExternalLink> and{' '}
         <ExternalLink to={`${MANTINE_LINK}/changelog/7-1-0/`}>V7.1</ExternalLink> changelogs to understand the new
@@ -69,9 +69,8 @@ export default async function StylingPage() {
         You can mitigate this by making use of{' '}
         <ExternalLink to="https://developer.mozilla.org/en-US/docs/Web/CSS/@layer">CSS layers</ExternalLink>.
       </Txt>
-      <Txt idea>
-        Please keep in mind that:
-        <Box component="ul" ml={-20}>
+      <Txt idea title="Please keep in mind that:">
+        <Box component="ul" ml={-20} mt={0}>
           <li>
             <Code>@mantine/{'{package}'}/styles.layer.css</Code> files will place styles in a layer named{' '}
             <Code>mantine</Code>

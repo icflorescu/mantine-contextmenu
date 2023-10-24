@@ -64,7 +64,7 @@ export default async function CustomStylingExamplePage() {
         to all the context menus that are rendered within the provider.
       </Txt>
       <CodeBlock tabs={{ code, keys: ['ProviderPropsExample.tsx', 'ProviderPropsExample.module.css'] }} />
-      <Txt info>
+      <Txt idea title="Tip">
         When styling with class names, you may need to increase selector specificity to override the default styling.
         Use <ExternalLink to="https://developer.mozilla.org/en-US/docs/Web/CSS/@layer">CSS layers</ExternalLink> or{' '}
         <ExternalLink to="https://blogs.halodoc.io/best-practices-that-we-follow-to-avoid-specificity-issues/">

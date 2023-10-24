@@ -32,6 +32,8 @@ export function ActionDividersExample() {
           icon: <IconDownload size={16} />,
           onClick: () => downloadImage(src),
         },
+        // 👇 render a divider
+        //    (the key can be anything, it's just used to identify the item)
         { key: 'divider' },
         {
           key: 'flipVertical',

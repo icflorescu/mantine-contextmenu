@@ -7,10 +7,10 @@
   cursor: pointer;
   user-select: none;
   color: var(--mantine-color-text);
-  background: light-dark(var(--docs-button-bg-color-light), var(--docs-button-bg-color-dark));
+  background: light-dark(var(--navbar-button-bg-color-light), var(--navbar-button-bg-color-dark));
   transition: background 0.2s;
   &:hover {
-    background: light-dark(var(--docs-button-hover-bg-color-light), var(--docs-button-hover-bg-color-dark));
+    background: light-dark(var(--navbar-button-hover-bg-color-light), var(--navbar-button-hover-bg-color-dark));
   }
   &:active {
     .icon:not(.expanded),
@@ -54,7 +54,7 @@
   border-radius: 50%;
 }
 
-/* todo remove this firefox fix as soon as the problem is solved in Mantine */
+/* todo remove this firefox fix if the problem is solved in Mantine */
 @-moz-document url-prefix() {
   .text {
     margin-top: 0.125em;

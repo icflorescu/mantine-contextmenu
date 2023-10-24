@@ -3,6 +3,11 @@
 The following is a list of notable changes to the Mantine ContextMenu component.  
 Minor versions that are not listed in the changelog are minor bug fixes and small internal improvements or refactorings.
 
+## 7.1.0 (2023-10-24)
+
+- The first stable release of the V7.1 is here! 🎉
+- The object returned by the `useContextMenu` hook now includes an `isContextMenuVisible` boolean property
+
 ## 7.0.0-alpha.6 (2023-10-19)
 
 - **BREAKING CHANGE**: Change the types of `style` and `styles` properties to `MantineStyleProp` and `StylesRecord<'root' | 'item' | 'divider', MantineStyleProp>` respectively, to match Mantine's approach to styling
