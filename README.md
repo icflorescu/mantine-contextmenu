@@ -15,7 +15,7 @@ The "dark-theme aware" **context-menu** for your Mantine UI applications, built 
 [![Mantine ContextMenu](https://user-images.githubusercontent.com/581999/231230506-3278ea99-dfb3-4edc-ad67-d47f1626a298.png)](https://icflorescu.github.io/mantine-contextmenu/)
 
 **⚠️ NOTE: Mantine ContextMenu V7.1 is compatible with Mantine V7.1.**  
-**💡 If you're looking for the old version that works with Mantine V6, head over to [Mantine ContextMenu V6](https://icflorescu.github.io/mantine-contextmenu-v6).**  
+**💡 If you're looking for the old version that works with [Mantine V6](https://v6.mantine.dev), head over to [Mantine ContextMenu V6](https://icflorescu.github.io/mantine-contextmenu-v6).**  
 
 ## Features
 
@@ -115,7 +115,11 @@ If you're a company using Mantine ContextMenu in a commercial project, you can a
 
 ## Other means of support
 
-If you find this package useful, please 🙏 star the repository, 💕 [tweet about it](https://twitter.com/share?text=Check%20out%20the%20missing%20context-menu%20for%20Mantine%20UI%20applications!&url=https%3A%2F%2Fgithub.com%2Ficflorescu%2Fmantine-contextmenu&hashtags=react%2Cmantine%2Cui%2Ccontextmenu%2Cfrontend%2Copensource&via=icflorescu), 👍 [endorse me on LinkedIn](https://www.linkedin.com/in/icflorescu) or consider hiring my services.
+If you can't afford to sponsor the project or hire my services, there are other ways you can support my work:  
+
+- 🙏 star the repository;
+- 💕 [tweet about it](https://twitter.com/share?text=Check%20out%20the%20missing%20context-menu%20for%20Mantine%20UI%20applications!&url=https%3A%2F%2Fgithub.com%2Ficflorescu%2Fmantine-contextmenu&hashtags=react%2Cmantine%2Cui%2Ccontextmenu%2Cfrontend%2Copensource&via=icflorescu);
+- 👍 [endorse me on LinkedIn](https://www.linkedin.com/in/icflorescu).
 
 The more stars this repository gets, the more visibility it gains among the Mantine users community. The more
 users it gets, the more chances that some of those users will become active code contributors willing to put
