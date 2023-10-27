@@ -48,6 +48,7 @@ export default async function BasicConfigurationExamplePage() {
       <CodeBlock code={code['BasicConfigurationExampleContent.tsx']} />
       <Txt>Right-click on the image to trigger the context menu:</Txt>
       <BasicConfigurationExample />
+      <Txt>Head over to the next example to discover other features.</Txt>
       <PageNavigation of={PATH} />
     </>
   );

@@ -20,6 +20,7 @@ export default async function ActionIconsExamplePage() {
       <CodeBlock code={code} />
       <Txt>Right-click on the image to trigger the context menu:</Txt>
       <ActionIconsExample />
+      <Txt>Head over to the next example to discover other features.</Txt>
       <PageNavigation of={PATH} />
     </>
   );
