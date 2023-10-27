@@ -11,7 +11,7 @@ const PATH = '/examples/action-titles';
 export const metadata = getRouteMetadata(PATH);
 
 export default async function ActionTitlesExamplePage() {
-  const code = (await readCodeFile(`${PATH}/ActionTitlesExample.tsx`)) as string;
+  const code = await readCodeFile<string>(`${PATH}/ActionTitlesExample.tsx`);
 
   return (
     <>

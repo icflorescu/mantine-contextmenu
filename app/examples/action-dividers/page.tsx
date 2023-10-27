@@ -13,7 +13,7 @@ const PATH = '/examples/action-dividers';
 export const metadata = getRouteMetadata(PATH);
 
 export default async function ActionDividersExamplePage() {
-  const code = (await readCodeFile(`${PATH}/ActionDividersExample.tsx`)) as string;
+  const code = await readCodeFile<string>(`${PATH}/ActionDividersExample.tsx`);
 
   return (
     <>

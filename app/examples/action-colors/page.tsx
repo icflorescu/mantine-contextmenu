@@ -11,7 +11,7 @@ const PATH = '/examples/action-colors';
 export const metadata = getRouteMetadata(PATH);
 
 export default async function ActionColorsExamplePage() {
-  const code = (await readCodeFile(`${PATH}/ActionColorsExample.tsx`)) as string;
+  const code = await readCodeFile<string>(`${PATH}/ActionColorsExample.tsx`);
 
   return (
     <>

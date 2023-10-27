@@ -11,7 +11,7 @@ const PATH = '/examples/action-icons';
 export const metadata = getRouteMetadata(PATH);
 
 export default async function ActionIconsExamplePage() {
-  const code = (await readCodeFile(`${PATH}/ActionIconsExample.tsx`)) as string;
+  const code = await readCodeFile<string>(`${PATH}/ActionIconsExample.tsx`);
 
   return (
     <>

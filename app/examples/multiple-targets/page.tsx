@@ -11,7 +11,7 @@ const PATH = '/examples/multiple-targets';
 export const metadata = getRouteMetadata(PATH);
 
 export default async function MultipleTargetsExamplePage() {
-  const code = (await readCodeFile(`${PATH}/MultipleTargetsExample.tsx`)) as string;
+  const code = await readCodeFile<string>(`${PATH}/MultipleTargetsExample.tsx`);
 
   return (
     <>

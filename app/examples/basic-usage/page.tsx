@@ -13,7 +13,7 @@ const PATH = '/examples/basic-usage';
 export const metadata = getRouteMetadata(PATH);
 
 export default async function BasicUsageExamplePage() {
-  const code = (await readCodeFile(`${PATH}/BasicUsageExample.tsx`)) as string;
+  const code = await readCodeFile<string>(`${PATH}/BasicUsageExample.tsx`);
 
   return (
     <>
