@@ -97,6 +97,16 @@ export const ROUTES: RouteInfo[] = [
     description: `Example: Adding dividers between ${PRODUCT_NAME} items`,
   },
   {
+    href: '/examples/conditionally-disabling-items',
+    title: 'Conditionally disabling items',
+    description: `Example: How to conditionally disable ${PRODUCT_NAME} items`,
+  },
+  {
+    href: '/examples/conditionally-hiding-items',
+    title: 'Conditionally hiding items',
+    description: `Example: How to conditionally hide ${PRODUCT_NAME} items`,
+  },
+  {
     href: '/examples/multiple-targets',
     title: 'Multiple targets',
     description: `Example: Adding ${PRODUCT_NAME} to multiple targets`,

@@ -57,8 +57,8 @@ export function ContextMenu({ x, y, content, zIndex, onHide, className, style, c
       ]}
     >
       {Array.isArray(content)
-        ? content.map(({ key, className, style, onClick, items, title, ...otherOptions }) =>
-            onClick || items ? (
+        ? content.map(({ key, hidden, className, style, onClick, items, title, ...otherOptions }) =>
+            hidden ? null : onClick || items ? (
               <ContextMenuItem
                 key={key}
                 className={clsx(classNames?.item, className)}
