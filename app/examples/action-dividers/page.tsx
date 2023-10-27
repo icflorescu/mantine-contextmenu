@@ -13,7 +13,7 @@ const PATH = '/examples/action-dividers';
 export const metadata = getRouteMetadata(PATH);
 
 export default async function ActionDividersExamplePage() {
-  const code = (await readCodeFile(`${PATH}/ActionDividersExample.tsx`)) as string;
+  const code = await readCodeFile<string>(`${PATH}/ActionDividersExample.tsx`);
 
   return (
     <>
@@ -32,6 +32,7 @@ export default async function ActionDividersExamplePage() {
       <CodeBlock code={code} />
       <Txt>Right-click on the image to trigger the context menu:</Txt>
       <ActionDividersExample />
+      <Txt>Head over to the next example to discover other features.</Txt>
       <PageNavigation of={PATH} />
     </>
   );

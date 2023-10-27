@@ -1,12 +1,11 @@
 import { Code } from '@mantine/core';
 import { PRODUCT_NAME } from '~/app/config';
 import { CodeBlock } from '~/components/CodeBlock';
-import { InternalLink } from '~/components/InternalLink';
 import { PageNavigation } from '~/components/PageNavigation';
 import { PageTitle } from '~/components/PageTitle';
 import { Txt } from '~/components/Txt';
 import { readCodeFile } from '~/lib/code';
-import { getNextRoute, getRouteMetadata } from '~/lib/utils';
+import { getRouteMetadata } from '~/lib/utils';
 import { BasicUsageExample } from './BasicUsageExample';
 
 const PATH = '/examples/basic-usage';
@@ -14,8 +13,7 @@ const PATH = '/examples/basic-usage';
 export const metadata = getRouteMetadata(PATH);
 
 export default async function BasicUsageExamplePage() {
-  const code = (await readCodeFile(`${PATH}/BasicUsageExample.tsx`)) as string;
-  const { href: nextExampleHref } = getNextRoute(PATH);
+  const code = await readCodeFile<string>(`${PATH}/BasicUsageExample.tsx`);
 
   return (
     <>
@@ -35,7 +33,7 @@ export default async function BasicUsageExamplePage() {
       <Txt>Right-click on the image to trigger the context menu:</Txt>
       <BasicUsageExample />
       <Txt>
-        However, <InternalLink to={nextExampleHref}>there’s more</InternalLink> you can do with {PRODUCT_NAME}.
+        However, there’s more you can do with {PRODUCT_NAME}.
         <br />
         Head over to the next example to discover other features.
       </Txt>

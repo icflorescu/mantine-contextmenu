@@ -11,7 +11,7 @@ const PATH = '/examples/action-colors';
 export const metadata = getRouteMetadata(PATH);
 
 export default async function ActionColorsExamplePage() {
-  const code = (await readCodeFile(`${PATH}/ActionColorsExample.tsx`)) as string;
+  const code = await readCodeFile<string>(`${PATH}/ActionColorsExample.tsx`);
 
   return (
     <>
@@ -20,6 +20,7 @@ export default async function ActionColorsExamplePage() {
       <CodeBlock code={code} />
       <Txt>Right-click on the image to trigger the context menu:</Txt>
       <ActionColorsExample />
+      <Txt>Head over to the next example to discover other features.</Txt>
       <PageNavigation of={PATH} />
     </>
   );

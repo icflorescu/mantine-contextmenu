@@ -15,8 +15,8 @@ export const metadata = getRouteMetadata(PATH);
 
 export default async function ActionColorsExamplePage() {
   const code = await allPromiseProps({
-    default: readCodeFile(`${PATH}/SubmenuExamples.tsx`) as Promise<Record<'submenu' | 'nested-submenu', string>>,
-    submenuDelayProviderProp: readCodeFile(`${PATH}/SubmenuDelayProviderPropExample.tsx`) as Promise<string>,
+    default: readCodeFile<Record<'submenu' | 'nested-submenu', string>>(`${PATH}/SubmenuExamples.tsx`),
+    submenuDelayProviderProp: readCodeFile<string>(`${PATH}/SubmenuDelayProviderPropExample.tsx`),
   });
 
   return (
@@ -46,6 +46,7 @@ export default async function ActionColorsExamplePage() {
       <CodeBlock code={code['submenuDelayProviderProp']} />
       <Txt>Right-click on the image to trigger the context menu:</Txt>
       <SubmenuDelayExample />
+      <Txt>Head over to the next example to discover other features.</Txt>
       <PageNavigation of={PATH} />
     </>
   );

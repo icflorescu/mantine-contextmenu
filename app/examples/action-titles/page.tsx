@@ -11,7 +11,7 @@ const PATH = '/examples/action-titles';
 export const metadata = getRouteMetadata(PATH);
 
 export default async function ActionTitlesExamplePage() {
-  const code = (await readCodeFile(`${PATH}/ActionTitlesExample.tsx`)) as string;
+  const code = await readCodeFile<string>(`${PATH}/ActionTitlesExample.tsx`);
 
   return (
     <>
@@ -23,6 +23,7 @@ export default async function ActionTitlesExamplePage() {
       <CodeBlock code={code} />
       <Txt>Right-click on the image to trigger the context menu:</Txt>
       <ActionTitlesExample />
+      <Txt>Head over to the next example to discover other features.</Txt>
       <PageNavigation of={PATH} />
     </>
   );

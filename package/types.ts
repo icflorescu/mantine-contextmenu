@@ -93,6 +93,11 @@ export type ContextMenuItemOptions = {
    * Context menu item or divider style.
    */
   style?: MantineStyleProp;
+
+  /**
+   * Boolean indicating whether the context menu item is hidden.
+   */
+  hidden?: boolean;
 } & (
   | ({
       /**

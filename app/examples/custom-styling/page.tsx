@@ -124,6 +124,7 @@ export default async function CustomStylingExamplePage() {
         tabs={{ code, keys: ['IndividualActionStylingExample.tsx', 'IndividualActionStylingExample.module.css'] }}
       />
       <IndividualActionStylingExample />
+      <Txt>Head over to the next example to discover other features.</Txt>
       <PageNavigation of={PATH} />
     </>
   );

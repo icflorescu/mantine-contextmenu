@@ -3,6 +3,10 @@
 The following is a list of notable changes to the Mantine ContextMenu component.  
 Minor versions that are not listed in the changelog are minor bug fixes and small internal improvements or refactorings.
 
+## 7.1.3 (2023-10-27)
+
+- Add `hidden` prop to menu items, to allow conditional hiding
+
 ## 7.1.0 (2023-10-24)
 
 - The first stable release of the V7.1 is here! 🎉

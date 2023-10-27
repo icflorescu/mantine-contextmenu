@@ -10,7 +10,7 @@ const PATH = '/type-definitions';
 export const metadata = getRouteMetadata(PATH);
 
 export default async function TypeDefinitionsPage() {
-  const code = (await readCodeFile(`/../package/types.ts`)) as string;
+  const code = await readCodeFile<string>('/../package/types.ts');
   return (
     <>
       <PageTitle of={PATH} />
