@@ -13,6 +13,7 @@ import {
 import { ExternalLink } from './ExternalLink';
 import classes from './Footer.module.css';
 
+// eslint-disable-next-line no-empty-pattern
 export const Footer = forwardRef(function Footer({}, ref: React.ForwardedRef<HTMLDivElement>) {
   const { colors } = useMantineTheme();
   const color = colors.blue[7].substring(1);
