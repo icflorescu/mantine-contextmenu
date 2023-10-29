@@ -1,3 +1,4 @@
+import type { Route } from 'next';
 import { PRODUCT_NAME } from '~/app/config';
 import { CodeBlock } from '~/components/CodeBlock';
 import { PageNavigation } from '~/components/PageNavigation';
@@ -6,7 +7,7 @@ import { Txt } from '~/components/Txt';
 import { readCodeFile } from '~/lib/code';
 import { getRouteMetadata } from '~/lib/utils';
 
-const PATH = '/type-definitions';
+const PATH: Route = '/type-definitions';
 export const metadata = getRouteMetadata(PATH);
 
 export default async function TypeDefinitionsPage() {

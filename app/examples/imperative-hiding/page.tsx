@@ -1,4 +1,5 @@
 import { Code } from '@mantine/core';
+import type { Route } from 'next';
 import { CodeBlock } from '~/components/CodeBlock';
 import { PageNavigation } from '~/components/PageNavigation';
 import { PageTitle } from '~/components/PageTitle';
@@ -7,7 +8,7 @@ import { readCodeFile } from '~/lib/code';
 import { getRouteMetadata } from '~/lib/utils';
 import { ImperativeHidingExample } from './ImperativeHidingExample';
 
-const PATH = '/examples/imperative-hiding';
+const PATH: Route = '/examples/imperative-hiding';
 
 export const metadata = getRouteMetadata(PATH);
 

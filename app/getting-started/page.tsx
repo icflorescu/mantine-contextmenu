@@ -1,4 +1,5 @@
 import { Code } from '@mantine/core';
+import type { Route } from 'next';
 import { MANTINE_LINK, PRODUCT_NAME } from '~/app/config';
 import { CodeBlock } from '~/components/CodeBlock';
 import { ExternalLink } from '~/components/ExternalLink';
@@ -11,7 +12,7 @@ import { readCodeFile } from '~/lib/code';
 import { allPromiseProps, getFirstExampleRoute, getRouteMetadata } from '~/lib/utils';
 import { SimpleExample } from './examples/SimpleExample';
 
-const PATH = '/getting-started';
+const PATH: Route = '/getting-started';
 
 export const metadata = getRouteMetadata(PATH);
 

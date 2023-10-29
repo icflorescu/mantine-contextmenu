@@ -1,3 +1,4 @@
+import type { Route } from 'next';
 import { CodeBlock } from '~/components/CodeBlock';
 import { PageNavigation } from '~/components/PageNavigation';
 import { PageTitle } from '~/components/PageTitle';
@@ -6,7 +7,7 @@ import { readCodeFile } from '~/lib/code';
 import { getRouteMetadata } from '~/lib/utils';
 import { ActionColorsExample } from './ActionColorsExample';
 
-const PATH = '/examples/action-colors';
+const PATH: Route = '/examples/action-colors';
 
 export const metadata = getRouteMetadata(PATH);
 

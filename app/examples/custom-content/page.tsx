@@ -1,4 +1,5 @@
 import { Code } from '@mantine/core';
+import type { Route } from 'next';
 import { CodeBlock } from '~/components/CodeBlock';
 import { PageNavigation } from '~/components/PageNavigation';
 import { PageTitle } from '~/components/PageTitle';
@@ -7,7 +8,7 @@ import { readCodeFile } from '~/lib/code';
 import { allPromiseProps, getRouteMetadata } from '~/lib/utils';
 import { CustomContentExample } from './CustomContentExample';
 
-const PATH = '/examples/custom-content';
+const PATH: Route = '/examples/custom-content';
 
 export const metadata = getRouteMetadata(PATH);
 
