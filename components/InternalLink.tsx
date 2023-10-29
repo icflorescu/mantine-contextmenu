@@ -6,12 +6,12 @@ import Link from 'next/link';
 export type InternalLinkProps = React.PropsWithChildren<{
   className?: string;
   to: Route;
-  subtitle?: string;
+  scrollTo?: string;
 }>;
 
-export function InternalLink({ className, to, subtitle, children }: InternalLinkProps) {
+export function InternalLink({ className, to, scrollTo, children }: InternalLinkProps) {
   let href = to;
-  if (subtitle) href += `/#${kebabCase(subtitle)}`;
+  if (scrollTo) href += `/#${kebabCase(scrollTo)}`;
   return (
     <Anchor className={className} inherit component={Link} href={href as Route}>
       {children}
