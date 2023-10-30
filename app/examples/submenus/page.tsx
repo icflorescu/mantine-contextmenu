@@ -1,4 +1,5 @@
 import { Code } from '@mantine/core';
+import type { Route } from 'next';
 import { CodeBlock } from '~/components/CodeBlock';
 import { PageNavigation } from '~/components/PageNavigation';
 import { PageSubtitle } from '~/components/PageSubtitle';
@@ -9,7 +10,7 @@ import { allPromiseProps, getRouteMetadata } from '~/lib/utils';
 import { SubmenuDelayExample } from './SubmenuDelayExample';
 import { NestedSubmenuExample, SubmenuExample } from './SubmenuExamples';
 
-const PATH = '/examples/submenus';
+const PATH: Route = '/examples/submenus';
 
 export const metadata = getRouteMetadata(PATH);
 

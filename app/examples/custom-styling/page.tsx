@@ -1,4 +1,5 @@
 import { Code } from '@mantine/core';
+import type { Route } from 'next';
 import { MANTINE_LINK } from '~/app/config';
 import { CodeBlock } from '~/components/CodeBlock';
 import { ExternalLink } from '~/components/ExternalLink';
@@ -17,7 +18,7 @@ import { StylingWithStyleObjectExample } from './StylingWithStyleObjectExample';
 import { StylingWithStylesFunctionsExample } from './StylingWithStylesFunctionsExample';
 import { StylingWithStylesObjectExample } from './StylingWithStylesObjectExample';
 
-const PATH = '/examples/custom-styling';
+const PATH: Route = '/examples/custom-styling';
 
 export const metadata = getRouteMetadata(PATH);
 

@@ -1,4 +1,5 @@
 import { Code } from '@mantine/core';
+import type { Route } from 'next';
 import { CodeBlock } from '~/components/CodeBlock';
 import { PageNavigation } from '~/components/PageNavigation';
 import { PageTitle } from '~/components/PageTitle';
@@ -7,7 +8,7 @@ import { readCodeFile } from '~/lib/code';
 import { getRouteMetadata } from '~/lib/utils';
 import { ConditionallyDisablingItemsExample } from './ConditionallyDisablingItemsExample';
 
-const PATH = '/examples/conditionally-disabling-items';
+const PATH: Route = '/examples/conditionally-disabling-items';
 
 export const metadata = getRouteMetadata(PATH);
 
