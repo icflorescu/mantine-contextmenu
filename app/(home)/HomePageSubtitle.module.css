@@ -1,11 +1,15 @@
-.icon {
+.leftIcon {
   flex-shrink: 0;
   margin-top: rem(1px);
   width: rem(18px);
   height: auto;
 }
 
-.iconCheck {
+.iconTrust {
+  color: var(--mantine-color-green-filled);
+}
+
+.iconCompat {
   color: var(--mantine-color-blue-filled);
 }
 
