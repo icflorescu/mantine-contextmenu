@@ -3,14 +3,17 @@
   text-indent: -0.1em;
   margin: 0.25em 0 0 0.1em;
   line-height: 1.15;
-  font-size: 9.5vw;
+  font-size: 8vw;
   @media (min-width: $mantine-breakpoint-sm) {
     margin-top: 0.125em;
-    font-size: rem(54px);
+    font-size: rem(42px);
   }
   @media (min-width: $mantine-breakpoint-md) {
-    font-size: rem(72px);
+    font-size: rem(64px);
     margin-top: 0.5em;
+  }
+  @media (min-width: $mantine-breakpoint-lg) {
+    font-size: rem(80px);
   }
 }
 

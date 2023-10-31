@@ -30,7 +30,7 @@ const { href: firstExampleHref, title: firstExampleTitle } = getFirstExampleRout
 
 export default function HomePage() {
   return (
-    <Stack gap="xl" maw={642} mx="auto">
+    <Stack gap="xl">
       <HomePageTitle />
       <HomePageSubtitle />
       <HeroImage />
@@ -40,7 +40,12 @@ export default function HomePage() {
         <ExternalLink to="https://bundlephobia.com/package/mantine-contextmenu">lightweight</ExternalLink> yet
         fully-featured context menus that respect the Mantine color scheme out of the box.
       </Text>
-      <Flex direction={{ base: 'column', xs: 'row' }} gap="xl" wrap={{ base: 'nowrap', xs: 'wrap' }}>
+      <Flex
+        direction={{ base: 'column', xs: 'row' }}
+        gap="xl"
+        wrap={{ base: 'nowrap', xs: 'wrap' }}
+        mb={{ base: 0, md: 'sm' }}
+      >
         <Feature icon={IconSettings} title="Lightweight yet customizable">
           Features a <InternalLink to="/examples/basic-usage">succinct API</InternalLink>, respects the Mantine dark
           mode and can be{' '}
@@ -84,7 +89,7 @@ export default function HomePage() {
           variant="gradient"
           gradient={{ from: 'gray.6', to: 'gray.5' }}
           component="a"
-          href="/get-started"
+          href={REPO_LINK}
           target="_blank"
           aria-label={`View the source code of ${PRODUCT_NAME} on GitHub`}
           leftSection={<IconBrandGithub />}
