@@ -9,7 +9,7 @@ export function HomePageSubtitle() {
   return (
     <Stack gap={4}>
       <Group gap={8} align="flex-start" wrap="nowrap">
-        <IconDiscountCheck className={clsx(classes.leftIcon, classes.iconCheck)} />
+        <IconDiscountCheck className={clsx(classes.leftIcon, classes.iconAuthor)} />
         <Text size="sm">
           built by the author of{' '}
           <ExternalLink className="nowrap" to={MANTINE_DATATABLE_LINK}>

@@ -35,8 +35,10 @@ export default function HomePage() {
       <HomePageSubtitle />
       <HeroImage />
       <Text component="div">
-        Design your applications for productivity and meet your users’ expectations by enhancing your UIs with
-        desktop-grade context menus.
+        Craft your applications for productivity and meet your users’ expectations by enhancing your UIs with
+        desktop-grade,{' '}
+        <ExternalLink to="https://bundlephobia.com/package/mantine-contextmenu">lightweight</ExternalLink> yet
+        fully-featured context menus that respect the Mantine color scheme out of the box.
       </Text>
       <Flex direction={{ base: 'column', xs: 'row' }} gap="xl" wrap={{ base: 'nowrap', xs: 'wrap' }}>
         <Feature icon={IconSettings} title="Lightweight yet customizable">
