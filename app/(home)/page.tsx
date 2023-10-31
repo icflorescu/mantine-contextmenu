@@ -35,7 +35,7 @@ export default function HomePage() {
       <HomePageSubtitle />
       <HeroImage />
       <Text component="div">
-        Build your applications for productivity and meet your users’ expectations by enhancing your UIs with
+        Craft your applications for productivity and meet your users’ expectations by enhancing your UIs with
         desktop-grade,{' '}
         <ExternalLink to="https://bundlephobia.com/package/mantine-contextmenu">lightweight</ExternalLink> yet
         fully-featured context menus that respect the Mantine color scheme out of the box.
