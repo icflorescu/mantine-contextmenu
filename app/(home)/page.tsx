@@ -40,7 +40,12 @@ export default function HomePage() {
         <ExternalLink to="https://bundlephobia.com/package/mantine-contextmenu">lightweight</ExternalLink> yet
         fully-featured context menus that respect the Mantine color scheme out of the box.
       </Text>
-      <Flex direction={{ base: 'column', xs: 'row' }} gap="xl" wrap={{ base: 'nowrap', xs: 'wrap' }}>
+      <Flex
+        direction={{ base: 'column', xs: 'row' }}
+        gap="xl"
+        wrap={{ base: 'nowrap', xs: 'wrap' }}
+        mb={{ base: 0, md: 'sm' }}
+      >
         <Feature icon={IconSettings} title="Lightweight yet customizable">
           Features a <InternalLink to="/examples/basic-usage">succinct API</InternalLink>, respects the Mantine dark
           mode and can be{' '}
