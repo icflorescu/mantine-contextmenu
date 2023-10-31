@@ -10,7 +10,7 @@
 [![Language][language-image]][repo-url]
 [![Sponsor the author][sponsor-image]][sponsor-url]
 
-The "dark-theme aware" [**context-menu**](https://icflorescu.github.io/mantine-contextmenu/) for your Mantine UI applications, built by the creator of [Mantine DataTable](https://icflorescu.github.io/mantine-datatable/).
+Build your applications for productivity and meet your users’ expectations by enhancing your Mantine-based UIs with a desktop-grade, [lightweight](https://bundlephobia.com/package/mantine-contextmenu) yet fully-featured **dark-theme aware** context-menu component, built by the creator of [Mantine DataTable](https://icflorescu.github.io/mantine-datatable/).
 
 [![Mantine ContextMenu](https://user-images.githubusercontent.com/581999/231230506-3278ea99-dfb3-4edc-ad67-d47f1626a298.png)](https://icflorescu.github.io/mantine-contextmenu/)
 
