@@ -64,9 +64,9 @@ export function HomePageTitle() {
         context menu
       </Text>
       <br />
-      for your Mantine
+      for your enhanced
       <br />
-      applications
+      Mantine applications
     </Title>
   );
 }
