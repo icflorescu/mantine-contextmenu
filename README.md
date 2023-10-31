@@ -10,7 +10,7 @@
 [![Language][language-image]][repo-url]
 [![Sponsor the author][sponsor-image]][sponsor-url]
 
-The "dark-theme aware" **context-menu** for your Mantine UI applications, built by the creator of [Mantine DataTable](https://icflorescu.github.io/mantine-datatable/).
+The "dark-theme aware" [**context-menu**](https://icflorescu.github.io/mantine-contextmenu/) for your Mantine UI applications, built by the creator of [Mantine DataTable](https://icflorescu.github.io/mantine-datatable/).
 
 [![Mantine ContextMenu](https://user-images.githubusercontent.com/581999/231230506-3278ea99-dfb3-4edc-ad67-d47f1626a298.png)](https://icflorescu.github.io/mantine-contextmenu/)
 
@@ -20,7 +20,7 @@ The "dark-theme aware" **context-menu** for your Mantine UI applications, built 
 ## Features
 
 - **Lightweight** - no external dependencies, [no bloat](https://bundlephobia.com/package/mantine-contextmenu)
-- **Dark-theme aware** - automatically adapts to the current Mantine theme
+- **Dark-theme aware** - automatically adapts to the current [Mantine color scheme](https://mantine.dev/theming/color-schemes/)
 - **[Simple API](https://icflorescu.github.io/mantine-contextmenu/getting-started)** - just wrap your application in the `ContextMenuProvider` component and use the hook-generated function in your code
 - **[Custom content support](https://icflorescu.github.io/mantine-contextmenu/examples/custom-content)** - use any Mantine component as context menu content
 - **[Highly customizable styling](https://icflorescu.github.io/mantine-contextmenu/examples/styling)** - use the `className`/`classNames` and `style`/`styles` props to customize the context menu appearance
@@ -33,18 +33,29 @@ Visit [icflorescu.github.io/mantine-contextmenu](https://icflorescu.github.io/ma
 ## Quickstart
 
 Create a new [Mantine application](https://mantine.dev/pages/getting-started/), make sure to have the `clsx` peer dependency installed,
-then install the package with `npm i mantine-contextmenu` or `yarn add mantine-contextmenu`:
+then install the package with `npm i mantine-contextmenu` or `yarn add mantine-contextmenu`.
 
-Wrap your application in a `ContextMenuProvider` **inside** the `MantineProvider` and don't forget to import the necessary CSS files [in the correct order](https://mantine.dev/styles/mantine-styles/) (you [might need to use CSS layers](https://icflorescu.github.io/mantine-contextmenu/styling/#controlling-the-order-of-styles-with-css-layers)):
+Import the necessary CSS files:
+
+```ts
+import '@mantine/core/styles.layer.css';
+import 'mantine-contextmenu/styles.layer.css';
+import './layout.css';
+```
+
+Make sure to [apply the styles in the correct order](https://mantine.dev/styles/mantine-styles/):
+
+```css
+/* layout.css */
+/* 👇 Apply Mantine core styles first, ContextMenu styles second */
+@layer mantine, mantine-contextmenu;
+```
+
+Wrap your application in a `ContextMenuProvider` **inside** the `MantineProvider`:
 
 ```tsx
 import { MantineProvider } from '@mantine/core';
 import { ContextMenuProvider } from 'mantine-contextmenu';
-
-// 👇 Mantine core first
-import '@mantine/core/styles.css';
-// 👇 Mantine context menu second
-import 'mantine-contextmenu/styles.css';
 
 function App() {
   return (
@@ -58,6 +69,8 @@ function App() {
 Use the `showContextMenu` function geenrated by the `useContextMenu` in your code:
 
 ```tsx
+'use client';
+
 import { IconCopy, IconDownload } from '@tabler/icons-react';
 import { useContextMenu } from 'mantine-contextmenu';
 import Picture from '~/components/Picture';
