@@ -3,17 +3,13 @@ import { Notifications } from '@mantine/notifications';
 import { ContextMenuProvider } from '__PACKAGE__';
 import type { Metadata } from 'next';
 import { AppWrapper } from '~/components/AppWrapper';
-import { AUTHOR_LINK, AUTHOR_NAME, PRODUCT_NAME, WEBSITE_LINK } from './config';
+import { AUTHOR_LINK, AUTHOR_NAME, WEBSITE_LINK } from './config';
 import './layout.css';
 import classes from './layout.module.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.GITHUB_PAGES === 'TRUE' ? 'https://icflorescu.github.io' : 'http://localhost:3000'),
-  alternates: { canonical: process.env.GITHUB_PAGES === 'TRUE' ? `/${process.env.PACKAGE_NAME}/` : '/' },
   manifest: `${process.env.GITHUB_PAGES === 'TRUE' ? WEBSITE_LINK : ''}/manifest.webmanifest`,
-  title: `${PRODUCT_NAME}: enhance your users’ experience`,
-  description:
-    'Design your Mantine applications for productivity and meet your users’ expectations by enhancing your UIs with desktop-grade context menus',
   authors: [{ name: AUTHOR_NAME, url: AUTHOR_LINK }],
 };
 
