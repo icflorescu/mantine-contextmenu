@@ -14,7 +14,16 @@ module.exports = async () => {
     output: 'export',
     trailingSlash: true,
     images: { unoptimized: true },
-    experimental: { typedRoutes: true },
+    experimental: {
+      typedRoutes: true,
+      optimizePackageImports: [
+        '@mantine/code-highlight',
+        '@mantine/core',
+        '@mantine/hooks',
+        '@mantine/notifications',
+        '@tabler/icons-react',
+      ],
+    },
     env: {
       GITHUB_PAGES: String(process.env.GITHUB_PAGES === 'TRUE' || false).toUpperCase(),
       PACKAGE_NAME,
