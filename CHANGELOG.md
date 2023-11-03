@@ -3,6 +3,10 @@
 The following is a list of notable changes to the Mantine ContextMenu component.  
 Minor versions that are not listed in the changelog are minor bug fixes and small internal improvements or refactorings.
 
+## 7.1.8 (2023-11-03)
+
+- Fix package exports
+
 ## 7.1.7 (2023-11-03)
 
 - Switch to `esm` export only, to fix this issue: https://github.com/icflorescu/mantine-datatable/issues/451  
