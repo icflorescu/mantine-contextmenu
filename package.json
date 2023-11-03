@@ -1,6 +1,6 @@
 {
   "name": "mantine-contextmenu",
-  "version": "7.1.6",
+  "version": "7.1.7",
   "description": "Craft your applications for productivity and meet your users’ expectations by enhancing your Mantine-based UIs with a desktop-grade, lightweight yet fully-featured, dark-theme aware context-menu component, built by the creator of Mantine DataTable",
   "keywords": [
     "ui",
@@ -38,19 +38,10 @@
     "type": "github",
     "url": "https://github.com/sponsors/icflorescu"
   },
-  "main": "./dist/cjs/index.js",
-  "module": "./dist/esm/index.js",
   "types": "./dist/types/index.d.ts",
   "exports": {
     ".": {
-      "import": {
-        "types": "./dist/types/index.d.ts",
-        "default": "./dist/esm/index.js"
-      },
-      "require": {
-        "types": "./dist/types/index.d.ts",
-        "default": "./dist/cjs/index.js"
-      }
+      "import": "./dist/esm/index.js"
     },
     "./styles.css": "./dist/css/styles.css",
     "./styles.layer.css": "./dist/css/styles.layer.css"
@@ -62,7 +53,7 @@
   ],
   "scripts": {
     "dev": "next dev",
-    "build:package": "rm -rf dist; tsc -p package/tsconfig.esm.json; tsc -p package/tsconfig.cjs.json; postcss package/styles*.css --dir dist/css",
+    "build:package": "rm -rf dist; tsc -p package/tsconfig.build.json; postcss package/styles*.css --dir dist/css",
     "build:docs": "next build",
     "build": "yarn build:package && yarn build:docs",
     "lint": "eslint . && tsc --noEmit --pretty",

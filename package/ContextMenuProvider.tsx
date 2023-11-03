@@ -1,6 +1,5 @@
 'use client';
 
-import { MantineProvider } from '@mantine/core';
 import { createContext, useContext, useState } from 'react';
 import type { ContextMenuInstanceOptions } from './ContextMenu';
 import { ContextMenuPortal } from './ContextMenuPortal';
@@ -74,7 +73,7 @@ export function ContextMenuProvider({
     <ContextMenuSettingsCtx.Provider value={{ shadow, borderRadius, submenuDelay }}>
       <ContextMenuCtx.Provider value={{ showContextMenu, hideContextMenu, isContextMenuVisible: !!data }}>
         {children}
-        <MantineProvider>{data && <ContextMenuPortal onHide={hideContextMenu} {...data} />}</MantineProvider>
+        {data && <ContextMenuPortal onHide={hideContextMenu} {...data} />}
       </ContextMenuCtx.Provider>
     </ContextMenuSettingsCtx.Provider>
   );
