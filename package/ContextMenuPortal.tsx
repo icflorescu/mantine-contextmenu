@@ -3,6 +3,7 @@
 import { Portal } from '@mantine/core';
 import { useClickOutside, useHotkeys, useWindowEvent } from '@mantine/hooks';
 import { ContextMenu, type ContextMenuProps } from './ContextMenu';
+import { DummyOverlay } from './DummyOverlay';
 
 export function ContextMenuPortal({ onHide, ...otherProps }: ContextMenuProps) {
   useWindowEvent('resize', onHide);
@@ -12,7 +13,9 @@ export function ContextMenuPortal({ onHide, ...otherProps }: ContextMenuProps) {
 
   return (
     <Portal ref={ref}>
-      <ContextMenu {...otherProps} onHide={onHide} />
+      <DummyOverlay zIndex={otherProps.zIndex} onClick={onHide}>
+        <ContextMenu {...otherProps} onHide={onHide} />
+      </DummyOverlay>
     </Portal>
   );
 }
