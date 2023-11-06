@@ -1,5 +1,3 @@
-'use client';
-
 import { Portal } from '@mantine/core';
 import { useHotkeys, useWindowEvent } from '@mantine/hooks';
 import { ContextMenu, type ContextMenuProps } from './ContextMenu';
