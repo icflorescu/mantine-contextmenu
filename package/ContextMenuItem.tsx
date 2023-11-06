@@ -1,5 +1,3 @@
-'use client';
-
 import { Box, UnstyledButton, parseThemeColor, rgba } from '@mantine/core';
 import { useTimeout } from '@mantine/hooks';
 import clsx from 'clsx';
