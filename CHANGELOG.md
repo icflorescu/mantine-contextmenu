@@ -6,6 +6,7 @@ Minor versions that are not listed in the changelog are minor bug fixes and smal
 ## 7.1.9 (2023-11-06)
 
 - Switch to `tsup` building, to fix usage issues with Remix & Next.js
+- Switch to using an overlay instead of `useClickOutside` hook, to fix [this issue](https://github.com/icflorescu/mantine-contextmenu/issues/120)
 
 ## 7.1.8 (2023-11-03)
 
