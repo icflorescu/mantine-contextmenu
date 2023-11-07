@@ -1,6 +1,6 @@
 {
   "name": "mantine-contextmenu",
-  "version": "7.1.9",
+  "version": "7.1.10",
   "description": "Craft your applications for productivity and meet your users’ expectations by enhancing your Mantine-based UIs with a desktop-grade, lightweight yet fully-featured, dark-theme aware context-menu component, built by the creator of Mantine DataTable",
   "keywords": [
     "ui",
@@ -38,6 +38,13 @@
     "type": "github",
     "url": "https://github.com/sponsors/icflorescu"
   },
+  "files": [
+    "./dist",
+    "./README.md",
+    "./LICENSE"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
@@ -53,10 +60,8 @@
     "./styles.css": "./dist/styles.css",
     "./styles.layer.css": "./dist/styles.layer.css"
   },
-  "files": [
-    "./dist",
-    "./README.md",
-    "./LICENSE"
+  "sideEffects": [
+    "*.css"
   ],
   "scripts": {
     "dev": "next dev",
@@ -68,17 +73,17 @@
   },
   "devDependencies": {
     "@ducanh2912/next-pwa": "^9.7.2",
-    "@mantine/code-highlight": "^7.1.7",
-    "@mantine/core": "^7.1.7",
-    "@mantine/hooks": "^7.1.7",
-    "@mantine/notifications": "^7.1.7",
+    "@mantine/code-highlight": "^7.2.0",
+    "@mantine/core": "^7.2.0",
+    "@mantine/hooks": "^7.2.0",
+    "@mantine/notifications": "^7.2.0",
     "@tabler/icons-react": "^2.40.0",
     "@types/lodash": "^4.14.200",
     "@types/node": "^20.8.10",
-    "@types/react": "^18.2.35",
+    "@types/react": "^18.2.36",
     "@types/react-dom": "^18.2.14",
-    "@typescript-eslint/eslint-plugin": "^6.9.1",
-    "@typescript-eslint/parser": "^6.9.1",
+    "@typescript-eslint/eslint-plugin": "^6.10.0",
+    "@typescript-eslint/parser": "^6.10.0",
     "clsx": "^2.0.0",
     "cssnano": "^6.0.1",
     "eslint": "^8.53.0",
@@ -101,9 +106,9 @@
     "webpack": "^5.89.0"
   },
   "peerDependencies": {
-    "@mantine/core": ">=7.1",
-    "@mantine/hooks": ">=7.1",
+    "@mantine/core": ">=7",
+    "@mantine/hooks": ">=7",
     "clsx": ">=2",
-    "react": ">=18"
+    "react": ">=18.2"
   }
 }
