@@ -38,6 +38,13 @@
     "type": "github",
     "url": "https://github.com/sponsors/icflorescu"
   },
+  "files": [
+    "./dist",
+    "./README.md",
+    "./LICENSE"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
@@ -53,10 +60,8 @@
     "./styles.css": "./dist/styles.css",
     "./styles.layer.css": "./dist/styles.layer.css"
   },
-  "files": [
-    "./dist",
-    "./README.md",
-    "./LICENSE"
+  "sideEffects": [
+    "*.css"
   ],
   "scripts": {
     "dev": "next dev",
@@ -101,9 +106,9 @@
     "webpack": "^5.89.0"
   },
   "peerDependencies": {
-    "@mantine/core": ">=7.1",
-    "@mantine/hooks": ">=7.1",
+    "@mantine/core": ">=7",
+    "@mantine/hooks": ">=7",
     "clsx": ">=2",
-    "react": ">=18"
+    "react": ">=18.2"
   }
 }
