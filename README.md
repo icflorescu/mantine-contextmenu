@@ -110,7 +110,9 @@ Make sure to browse the list of [usage examples](https://icflorescu.github.io/ma
 
 ## Other useful resources
 
-💡 [Mantine DataTable](https://icflorescu.github.io/mantine-datatable/) - The "dark-theme aware" **data-table component** for your Mantine UI applications, built by the creator of Mantine ContextMenu.
+💡 [Mantine DataTable](https://icflorescu.github.io/mantine-datatable/) - The lightweight, dependency-free, dark-theme aware table component for your Mantine UI data-rich applications, featuring asynchronous data loading support, pagination, intuitive Gmail-style additive batch rows selection, column sorting, custom cell data rendering, row expansion, nesting, context menus, and much more. Built by the creator of Mantine ContextMenu.
+
+[![Mantine DataTable](https://user-images.githubusercontent.com/581999/279479387-525bb797-cb15-4739-85c6-94ceded94bc1.png)](https://icflorescu.github.io/mantine-datatable/)
 
 ## Contributing
 
@@ -122,11 +124,11 @@ Here's the list of people who have already contributed to Mantine ContextMenu:
 
 Want to [become a code contributor](https://icflorescu.github.io/mantine-contextmenu/contribute-and-support)?
 
-## Sponsor the project
+## Support the project
 
 If you find this package useful, please consider ❤️ [sponsoring my work](https://github.com/sponsors/icflorescu).  
 Your sponsorship will help me dedicate more time to maintaining the project and will encourage me to add new features and fix existing bugs.  
-If you're a company using Mantine ContextMenu in a commercial project, you can also [hire my services](https://github.com/icflorescu).
+If you're a company using Mantine, Mantine ContextMenu or [Mantine DataTable](https://icflorescu.github.io/mantine-datatable/) in a commercial project, you can also [hire my services](https://github.com/icflorescu).
 
 ## Other means of support
 
