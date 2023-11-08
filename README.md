@@ -110,7 +110,9 @@ Make sure to browse the list of [usage examples](https://icflorescu.github.io/ma
 
 ## Other useful resources
 
-💡 [Mantine DataTable](https://icflorescu.github.io/mantine-datatable/) - The "dark-theme aware" **data-table component** for your Mantine UI applications, built by the creator of Mantine ContextMenu.
+💡 [Mantine DataTable](https://icflorescu.github.io/mantine-datatable/) - The lightweight, dependency-free, dark-theme aware table component for your Mantine UI data-rich applications, featuring asynchronous data loading support, pagination, intuitive Gmail-style additive batch rows selection, column sorting, custom cell data rendering, row expansion, nesting, context menus, and much more. Built by the creator of Mantine ContextMenu.
+
+[![Mantine DataTable](https://user-images.githubusercontent.com/581999/279479387-525bb797-cb15-4739-85c6-94ceded94bc1.png)](https://icflorescu.github.io/mantine-datatable/)
 
 ## Contributing
 
