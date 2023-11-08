@@ -128,7 +128,7 @@ Want to [become a code contributor](https://icflorescu.github.io/mantine-context
 
 If you find this package useful, please consider ❤️ [sponsoring my work](https://github.com/sponsors/icflorescu).  
 Your sponsorship will help me dedicate more time to maintaining the project and will encourage me to add new features and fix existing bugs.  
-If you're a company using Mantine, Mantine ContextMenu or Mantine DataTable in a commercial project, you can also [hire my services](https://github.com/icflorescu).
+If you're a company using Mantine, Mantine ContextMenu or [Mantine DataTable](https://icflorescu.github.io/mantine-datatable/) in a commercial project, you can also [hire my services](https://github.com/icflorescu).
 
 ## Other means of support
 
