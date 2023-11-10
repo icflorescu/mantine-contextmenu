@@ -46,6 +46,11 @@ Minor versions that are not listed in the changelog are minor bug fixes and smal
   - Streamline the build process - switch from `esbuild` to plain `tsc` and `postcss` commands
   - Rewrite the entire documentation website to make use of Next.js app router and React Server Components; this should also ensure the package will work properly in such an environment
 
+## 6.1.0 (2023-11-10)
+
+- Allow imperative hiding by using the `hideContextMenu` function that is exposed via `useContextMenu()`;
+- `useContextMenu()` is now also an object that can be destructured into 3 properties: `showContextMenu`, `hideContextMenu`, and `isContextMenuVisible `.
+
 ## 6.0.0 (2023-10-01)
 
 - Bump version to `6.0.0` to match the compatible versions of `@mantine/hooks` and `@mantine/core`. From now on, we'll make sure to keep the major version of `mantine-contextmenu` in sync with the major version of Mantine core
