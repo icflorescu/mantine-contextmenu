@@ -15,14 +15,15 @@ export const getRouteMetadata = memoize((href: Route): Metadata => {
   const { title: rawTitle, description } = route;
   const title = href === '/' ? PRODUCT_NAME : `${addExamplesPrefix({ title: rawTitle, href })} | ${PRODUCT_NAME}`;
   const hrefWithTrailingSlash = href === '/' ? href : `${href}/`;
-  const url =
-    process.env.GITHUB_PAGES === 'TRUE'
-      ? `/${process.env.PACKAGE_NAME}${hrefWithTrailingSlash}`
-      : hrefWithTrailingSlash;
 
   return {
     title,
-    alternates: { canonical: url },
+    alternates: {
+      canonical:
+        process.env.GITHUB_PAGES === 'TRUE'
+          ? `/${process.env.PACKAGE_NAME}${hrefWithTrailingSlash}`
+          : hrefWithTrailingSlash,
+    },
     description,
   };
 });
