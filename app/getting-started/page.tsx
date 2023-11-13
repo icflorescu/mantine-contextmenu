@@ -32,8 +32,9 @@ export default async function GettingStartedPage() {
         {PRODUCT_NAME} depends on <Code>@mantine/core</Code>, <Code>@mantine/hooks</Code> and <Code>clsx</Code>.
       </Txt>
       <Txt>
-        Create a new <ExternalLink to={`${MANTINE_LINK}/getting-started/`}>application with Mantine</ExternalLink> and
-        install the package:
+        Create a new <ExternalLink to={`${MANTINE_LINK}/getting-started/`}>application with Mantine</ExternalLink>,
+        install <Code>{process.env.PACKAGE_NAME}</Code> and make sure you have the <Code>clsx</Code> dependency
+        installed as well:
       </Txt>
       <CodeBlock
         tabs={[
@@ -51,8 +52,12 @@ export default async function GettingStartedPage() {
         <Code>MantineProvider</Code> and don’t forget to import the necessary CSS files{' '}
         <strong>in the correct order</strong>.
       </Txt>
-      <Txt idea title="Important">
+      <Txt warning title="Very important">
         The <Code>@mantine/core</Code> package styles must be applied before {PRODUCT_NAME} styles.
+        <br />
+        Make sure to go through and <strong>understand</strong> the information in the{' '}
+        <InternalLink to="/styling">styling guide</InternalLink> before jumping into examples or starting your own
+        project.
       </Txt>
       <Txt>
         For example, if you’re using a <ExternalLink to={`${MANTINE_LINK}/guides/next/`}></ExternalLink>Next.js
