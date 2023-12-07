@@ -3,6 +3,11 @@
 The following is a list of notable changes to the Mantine ContextMenu component.  
 Minor versions that are not listed in the changelog are minor bug fixes and small internal improvements or refactorings.
 
+## 7.3.0 (2023-12-07)
+
+- Update deps to ensure compatibility with Mantine 7.3
+- Update fine-grained styling example to ensure compatibility with Mantine 7.3
+
 ## 7.1.9 (2023-11-06)
 
 - Switch to `tsup` building, to fix usage issues with Remix & Next.js
