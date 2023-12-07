@@ -1,5 +1,5 @@
 import { Box, UnstyledButton, parseThemeColor, rgba } from '@mantine/core';
-import { useTimeout } from '@mantine/hooks';
+import { useMediaQuery, useTimeout } from '@mantine/hooks';
 import clsx from 'clsx';
 import { useContext, useRef, useState, type MouseEventHandler } from 'react';
 import { ContextMenu } from './ContextMenu';
@@ -20,19 +20,16 @@ export function ContextMenuItem({
   const ref = useRef<HTMLButtonElement>(null);
   const { submenuDelay } = useContext(ContextMenuSettingsCtx);
 
+  const hoverAvailable = useMediaQuery(`(hover: hover)`);
+
   const [submenuPosition, setSubmenuPosition] = useState<{ x: number; y: number } | null>(null);
 
-  const handleClick: MouseEventHandler<HTMLButtonElement> | undefined = onClick
-    ? (e) => {
-        onHide();
-        onClick!(e);
-      }
-    : undefined;
-
-  const { start: startShowingSubmenu, clear: stopShowingSubmenu } = useTimeout(() => {
+  const doShowSubmenu = () => {
     const { top: y, right: x } = ref.current!.getBoundingClientRect();
     setSubmenuPosition({ x, y });
-  }, submenuDelay);
+  };
+
+  const { start: startShowingSubmenu, clear: stopShowingSubmenu } = useTimeout(doShowSubmenu, submenuDelay);
 
   const { start: startHidingSubmenu, clear: stopHidingSubmenu } = useTimeout(() => {
     setSubmenuPosition(null);
@@ -43,17 +40,35 @@ export function ContextMenuItem({
     startShowingSubmenu();
   };
 
+  const instantlyShowSubmenu = () => {
+    stopHidingSubmenu();
+    doShowSubmenu();
+  };
+
   const hideSubmenu = () => {
     stopShowingSubmenu();
     startHidingSubmenu();
   };
 
-  const hasItemsAndIsNotDisabled = items && !disabled;
+  const hasSubmenu = items && !disabled;
+  const showSubmenuOnHover = hasSubmenu && hoverAvailable;
+
+  const handleClick: MouseEventHandler<HTMLButtonElement> | undefined = onClick
+    ? (e) => {
+        onHide();
+        onClick!(e);
+      }
+    : hasSubmenu && !hoverAvailable
+      ? (e) => {
+          e.stopPropagation();
+          instantlyShowSubmenu();
+        }
+      : undefined;
 
   return (
     <div
-      onMouseEnter={hasItemsAndIsNotDisabled ? showSubmenu : undefined}
-      onMouseLeave={hasItemsAndIsNotDisabled ? hideSubmenu : undefined}
+      onMouseEnter={showSubmenuOnHover ? showSubmenu : undefined}
+      onMouseLeave={showSubmenuOnHover ? hideSubmenu : undefined}
     >
       <UnstyledButton
         ref={ref}
