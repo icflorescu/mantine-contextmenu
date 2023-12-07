@@ -1,6 +1,6 @@
-@import '@mantine/core/esm/index.css' layer(mantine-core);
-@import '@mantine/notifications/esm/index.css' layer(mantine-notifications);
-@import '@mantine/code-highlight/esm/index.css' layer(mantine-code-highlight);
+@import '@mantine/core/styles.css' layer(mantine-core);
+@import '@mantine/notifications/styles.css' layer(mantine-notifications);
+@import '@mantine/code-highlight/styles.css' layer(mantine-code-highlight);
 @import '../package/styles.css' layer(mantine-contextmenu);
 
 @layer mantine-core, mantine-notifications, mantine-code-highlight, mantine-contextmenu;
