@@ -3,6 +3,9 @@
 The following is a list of notable changes to the Mantine ContextMenu component.  
 Minor versions that are not listed in the changelog are minor bug fixes and small internal improvements or refactorings.
 
+## 7.3.2 (2023-12-08)
+- Improve submenu showing logic
+
 ## 7.3.1 (2023-12-07)
 - Fix a bug that prevented the submenus from being opened on mobile devices (see [#129](https://github.com/icflorescu/mantine-contextmenu/issues/129))
 
