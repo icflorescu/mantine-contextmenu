@@ -24,12 +24,10 @@ export function ContextMenuItem({
 
   const [submenuPosition, setSubmenuPosition] = useState<{ x: number; y: number } | null>(null);
 
-  const doShowSubmenu = () => {
+  const { start: startShowingSubmenu, clear: stopShowingSubmenu } = useTimeout(() => {
     const { top: y, right: x } = ref.current!.getBoundingClientRect();
     setSubmenuPosition({ x, y });
-  };
-
-  const { start: startShowingSubmenu, clear: stopShowingSubmenu } = useTimeout(doShowSubmenu, submenuDelay);
+  }, submenuDelay);
 
   const { start: startHidingSubmenu, clear: stopHidingSubmenu } = useTimeout(() => {
     setSubmenuPosition(null);
@@ -40,11 +38,6 @@ export function ContextMenuItem({
     startShowingSubmenu();
   };
 
-  const instantlyShowSubmenu = () => {
-    stopHidingSubmenu();
-    doShowSubmenu();
-  };
-
   const hideSubmenu = () => {
     stopShowingSubmenu();
     startHidingSubmenu();
@@ -53,15 +46,15 @@ export function ContextMenuItem({
   const hasSubmenu = items && !disabled;
   const showSubmenuOnHover = hasSubmenu && hoverAvailable;
 
-  const handleClick: MouseEventHandler<HTMLButtonElement> | undefined = onClick
+  const handleClick: MouseEventHandler<HTMLButtonElement> | undefined = hasSubmenu
     ? (e) => {
-        onHide();
-        onClick!(e);
+        e.stopPropagation();
+        showSubmenu();
       }
-    : hasSubmenu && !hoverAvailable
+    : onClick
       ? (e) => {
-          e.stopPropagation();
-          instantlyShowSubmenu();
+          onHide();
+          onClick!(e);
         }
       : undefined;
 

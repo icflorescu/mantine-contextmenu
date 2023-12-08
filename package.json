@@ -1,6 +1,6 @@
 {
   "name": "mantine-contextmenu",
-  "version": "7.3.1",
+  "version": "7.3.2",
   "description": "Craft your applications for productivity and meet your users’ expectations by enhancing your Mantine-based UIs with a desktop-grade, lightweight yet fully-featured, dark-theme aware context-menu component, built by the creator of Mantine DataTable",
   "keywords": [
     "ui",
@@ -87,10 +87,10 @@
     "clsx": "^2.0.0",
     "cssnano": "^6.0.1",
     "eslint": "^8.55.0",
-    "eslint-config-next": "^14.0.3",
+    "eslint-config-next": "^14.0.4",
     "eslint-config-prettier": "^9.1.0",
     "lodash": "^4.17.21",
-    "next": "14.0.3",
+    "next": "14.0.4",
     "postcss": "^8.4.32",
     "postcss-cli": "^11.0.0",
     "postcss-import": "^15.1.0",
