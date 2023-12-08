@@ -2,12 +2,12 @@ import { MantineColor } from '@mantine/core';
 import {
   IconAdjustments,
   IconBrandCss3,
-  IconHeartFilled,
   IconHeartHandshake,
   IconHome,
   IconList,
   IconQuestionMark,
   IconRocket,
+  IconThumbUpFilled,
   TablerIconsProps,
 } from '@tabler/icons-react';
 import type { Route } from 'next';
@@ -150,7 +150,7 @@ export const ROUTES: RouteInfo[] = [
     href: '/contribute-and-support',
     title: 'Contribute and support',
     description: `Contribute and support the development of ${PRODUCT_NAME} by sponsoring or hiring its author, starring the repo, raising issues, bringing up new ideas and coming up with pull-requests`,
-    icon: IconHeartFilled,
+    icon: IconThumbUpFilled,
     color: 'red',
   },
   {
