@@ -32,9 +32,9 @@ export default async function StylingPage() {
     <>
       <PageTitle of={PATH} />
       <Txt>
-        {PRODUCT_NAME} V7.1 is a major release with{' '}
+        {PRODUCT_NAME} V7 is a major release with{' '}
         <ExternalLink to={`${REPO_LINK}/blob/main/CHANGELOG.md`}>breaking changes</ExternalLink> and is compatible with{' '}
-        <ExternalLink to={MANTINE_LINK}>Mantine V7.1</ExternalLink>.
+        <ExternalLink to={MANTINE_LINK}>Mantine V7</ExternalLink>.
         <br />
         One of the breaking changes in Mantine V7 was the{' '}
         <ExternalLink to={`${MANTINE_LINK}/changelog/7-0-0/#migration-to-native-css`}>
