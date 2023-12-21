@@ -18,9 +18,9 @@ export default function MantineV6SupportPage() {
         <ExternalLink to={V6_WEBSITE_LINK}>{PRODUCT_NAME} V6</ExternalLink>.
       </Txt>
       <Txt>
-        {PRODUCT_NAME} V7.1 is a major release with{' '}
+        {PRODUCT_NAME} V7 is a major release with{' '}
         <ExternalLink to={`${REPO_LINK}/blob/main/CHANGELOG.md`}>breaking changes</ExternalLink> and is compatible with{' '}
-        <ExternalLink to={MANTINE_LINK}>Mantine V7.1</ExternalLink>.
+        <ExternalLink to={MANTINE_LINK}>Mantine V7</ExternalLink>.
       </Txt>
       <Txt>
         One of the breaking changes in Mantine V7 was the migration to native CSS.

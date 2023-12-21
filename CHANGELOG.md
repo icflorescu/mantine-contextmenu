@@ -3,6 +3,9 @@
 The following is a list of notable changes to the Mantine ContextMenu component.  
 Minor versions that are not listed in the changelog are minor bug fixes and small internal improvements or refactorings.
 
+## 7.3.3 (2023-12-21)
+- Minor docs improvements
+
 ## 7.3.2 (2023-12-08)
 - Improve submenu showing logic
 
