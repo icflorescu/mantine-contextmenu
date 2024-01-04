@@ -25,7 +25,7 @@ export default function MantineV6SupportPage() {
       <Txt>One of the breaking changes in Mantine V7 was the migration to native CSS.</Txt>
       <Txt>
         In Mantine V6, the styling was done with CSS-in-JS (<ExternalLink to="https://emotion.sh">Emotion</ExternalLink>
-        ); in Mantine V7, it is done with native CSS.
+        ), while in Mantine V7 it is done with native CSS.
         <br />
         Hence, you won’t be able to use {PRODUCT_NAME} V7 with Mantine V6.
       </Txt>
