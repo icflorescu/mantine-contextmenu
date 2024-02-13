@@ -102,8 +102,21 @@ export type ContextMenuItemOptions = {
   | ({
       /**
        * Optional context menu item icon.
+       * Same as "leftIcon".
        */
       icon?: React.ReactNode;
+
+      /**
+       * Optional context menu item icon for the left side of the title.
+       * Same as "icon".
+       */
+      iconLeft?: React.ReactNode;
+
+      /**
+       * Optional context menu item icon for the right side of the title.
+       * If provided this will overwrite the submenu's ▶ icon
+       */
+      iconRight?: React.ReactNode;
 
       /**
        * Optional context menu item title.
@@ -143,6 +156,8 @@ export type ContextMenuItemOptions = {
     ))
   | {
       icon?: never;
+      iconLeft?: never;
+      iconRight?: never;
       title?: never;
       color?: never;
       disabled?: never;

@@ -10,6 +10,8 @@ export function ContextMenuItem({
   className,
   style,
   icon,
+  iconLeft,
+  iconRight,
   title,
   color,
   disabled,
@@ -91,13 +93,17 @@ export function ContextMenuItem({
         disabled={disabled}
         onClick={handleClick}
       >
-        {icon && (
+        {(icon||iconLeft) && (
           <Box fz={0} mr="xs" mt={-2}>
-            {icon}
+            {icon ?? iconLeft}
           </Box>
         )}
         <div className="mantine-contextmenu-item-button-title">{title}</div>
-        {items && (
+        { iconRight ? (
+          <Box fz={0} mr="xs" mt={-2}>
+            {iconRight}
+          </Box>
+        ) : items && (
           <Box fz={10} mt={-2} ml="xs">
             ▶
           </Box>
