@@ -100,7 +100,7 @@ export function ContextMenuItem({
         )}
         <div className="mantine-contextmenu-item-button-title">{title}</div>
         { iconRight ? (
-          <Box fz={0} mr="xs" mt={-2}>
+          <Box fz={0} ml="xs" mt={-2}>
             {iconRight}
           </Box>
         ) : items && (
