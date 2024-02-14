@@ -102,15 +102,8 @@ export type ContextMenuItemOptions = {
   | ({
       /**
        * Optional context menu item icon.
-       * Same as "leftIcon".
        */
       icon?: React.ReactNode;
-
-      /**
-       * Optional context menu item icon for the left side of the title.
-       * Same as "icon".
-       */
-      iconLeft?: React.ReactNode;
 
       /**
        * Optional context menu item icon for the right side of the title.
@@ -156,7 +149,6 @@ export type ContextMenuItemOptions = {
     ))
   | {
       icon?: never;
-      iconLeft?: never;
       iconRight?: never;
       title?: never;
       color?: never;
