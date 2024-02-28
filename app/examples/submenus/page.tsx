@@ -8,7 +8,7 @@ import { Txt } from '~/components/Txt';
 import { readCodeFile } from '~/lib/code';
 import { allPromiseProps, getRouteMetadata } from '~/lib/utils';
 import { SubmenuDelayExample } from './SubmenuDelayExample';
-import { NestedSubmenuExample, SubmenuExample } from './SubmenuExamples';
+import { NestedSubmenuExample, SubmenuExample, SubmenuExampleCustomArrowIcon } from './SubmenuExamples';
 
 const PATH: Route = '/examples/submenus';
 
@@ -16,7 +16,9 @@ export const metadata = getRouteMetadata(PATH);
 
 export default async function ActionColorsExamplePage() {
   const code = await allPromiseProps({
-    default: readCodeFile<Record<'submenu' | 'nested-submenu', string>>(`${PATH}/SubmenuExamples.tsx`),
+    default: readCodeFile<Record<'submenu' | 'nested-submenu' | 'submenu-custom-arrow-icon', string>>(
+      `${PATH}/SubmenuExamples.tsx`
+    ),
     submenuDelayProviderProp: readCodeFile<string>(`${PATH}/SubmenuDelayProviderPropExample.tsx`),
   });
 
@@ -47,6 +49,14 @@ export default async function ActionColorsExamplePage() {
       <CodeBlock code={code['submenuDelayProviderProp']} />
       <Txt>Right-click on the image to trigger the context menu:</Txt>
       <SubmenuDelayExample />
+      <PageSubtitle value="Using a custom arrow icon" />
+      <Txt>
+        You can customize the submenu arrow icon by setting the <Code>iconRight</Code> property like in the following
+        example:
+      </Txt>
+      <CodeBlock code={code['default']['submenu-custom-arrow-icon']} />
+      <Txt>Right-click on the image to trigger the context menu:</Txt>
+      <SubmenuExampleCustomArrowIcon />
       <Txt>Head over to the next example to discover other features.</Txt>
       <PageNavigation of={PATH} />
     </>

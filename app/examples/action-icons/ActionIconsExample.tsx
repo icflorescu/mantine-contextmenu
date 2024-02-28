@@ -1,10 +1,10 @@
 'use client';
 
-import { IconCopy, IconDownload, IconPhoto, IconTrash } from '@tabler/icons-react';
+import { notifications } from '@mantine/notifications';
+import { IconCopy, IconDownload, IconExclamationCircle, IconTrash } from '@tabler/icons-react';
 import { useContextMenu } from '__PACKAGE__';
 import { Picture } from '~/components/Picture';
 import { copyImageToClipboard, downloadImage, unsplashImages } from '~/lib/images';
-import { notifications } from '@mantine/notifications';
 
 export function ActionIconsExample() {
   // example-start
@@ -37,8 +37,8 @@ export function ActionIconsExample() {
         },
         {
           key: 'delete',
-          icon: <IconPhoto size={16} />,
-          iconRight: <IconTrash size={16} />,
+          icon: <IconTrash size={16} />,
+          iconRight: <IconExclamationCircle size={16} />,
           onClick: () => handleDelete,
         },
       ])}
