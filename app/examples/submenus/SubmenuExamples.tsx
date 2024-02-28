@@ -1,13 +1,24 @@
 'use client';
 
-import { IconCopy, IconDownload, IconUser } from '@tabler/icons-react';
+import {
+  IconCaretRightFilled,
+  IconCopy,
+  IconDownload,
+  IconFlipHorizontal,
+  IconFlipVertical,
+  IconUser,
+} from '@tabler/icons-react';
 import { useContextMenu } from '__PACKAGE__';
+import { useState } from 'react';
 import { Picture } from '~/components/Picture';
 import { copyImageToClipboard, downloadImage, unsplashImages } from '~/lib/images';
 
 export function SubmenuExample() {
   // example-start submenu
   const { showContextMenu } = useContextMenu();
+
+  const [flipVertical, setFlipVertical] = useState(false);
+  const [flipHorizontal, setFlipHorizontal] = useState(false);
   // example-skip
   const image = unsplashImages[1];
   const { src } = image.file;
@@ -15,6 +26,8 @@ export function SubmenuExample() {
   return (
     <Picture
       image={image}
+      flipVertical={flipVertical}
+      flipHorizontal={flipHorizontal}
       onContextMenu={showContextMenu([
         {
           icon: <IconCopy size={16} />,
@@ -37,6 +50,22 @@ export function SubmenuExample() {
             {
               key: 'another-item',
               onClick: () => console.log('another item clicked'),
+            },
+          ],
+        },
+        {
+          key: 'flip',
+          iconRight: <IconCaretRightFilled size={16} />,
+          items: [
+            {
+              key: 'flipVertical',
+              icon: <IconFlipVertical size={16} />,
+              onClick: () => setFlipVertical((v) => !v),
+            },
+            {
+              key: 'flipHorizontal',
+              icon: <IconFlipHorizontal size={16} />,
+              onClick: () => setFlipHorizontal((v) => !v),
             },
           ],
         },
