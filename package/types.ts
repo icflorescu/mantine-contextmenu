@@ -106,6 +106,12 @@ export type ContextMenuItemOptions = {
       icon?: React.ReactNode;
 
       /**
+       * Optional context menu item icon for the right side of the title.
+       * If provided this will overwrite the submenu's ▶ icon
+       */
+      iconRight?: React.ReactNode;
+
+      /**
        * Optional context menu item title.
        * If not provided, one will be generated automatically by "humanizing" the key.
        * @default humanize(key)
@@ -143,6 +149,7 @@ export type ContextMenuItemOptions = {
     ))
   | {
       icon?: never;
+      iconRight?: never;
       title?: never;
       color?: never;
       disabled?: never;

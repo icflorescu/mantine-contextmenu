@@ -1,3 +1,4 @@
+import { Code } from '@mantine/core';
 import type { Route } from 'next';
 import { CodeBlock } from '~/components/CodeBlock';
 import { PageNavigation } from '~/components/PageNavigation';
@@ -17,7 +18,10 @@ export default async function ActionIconsExamplePage() {
   return (
     <>
       <PageTitle of={PATH} />
-      <Txt>You can provide action icons to the context menu items, like so:</Txt>
+      <Txt>
+        You can provide action icons to the context menu items by setting the <Code>icon</Code> and{' '}
+        <Code>iconRight</Code> properties, like so:
+      </Txt>
       <CodeBlock code={code} />
       <Txt>Right-click on the image to trigger the context menu:</Txt>
       <ActionIconsExample />
