@@ -3,6 +3,10 @@
 The following is a list of notable changes to the Mantine ContextMenu component.  
 Minor versions that are not listed in the changelog are minor bug fixes and small internal improvements or refactorings.
 
+## 7.6.2 (2024-03-05)
+
+- Update dev dependencies to ensure compatibility with Mantine 7.6.1
+
 ## 7.6.1 (2024-02-28)
 
 - Implement `iconRight` property (see [#147](https://github.com/icflorescu/mantine-contextmenu/pull/147) by [@JTson8](https://github.com/JTson8))
