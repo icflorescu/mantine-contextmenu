@@ -3,6 +3,11 @@
 The following is a list of notable changes to the Mantine ContextMenu component.  
 Minor versions that are not listed in the changelog are minor bug fixes and small internal improvements or refactorings.
 
+## 7.7.0 (2024-04-04)
+
+- Implement iOS touch events (thanks to [Juno Nguyen](https://github.com/JunoNgx), see [#152](https://github.com/icflorescu/mantine-contextmenu/pull/152))
+- Update dev dependencies to ensure compatibility with Mantine 7.7.x
+
 ## 7.6.2 (2024-03-05)
 
 - Update dev dependencies to ensure compatibility with Mantine 7.6.1
