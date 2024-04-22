@@ -64,7 +64,7 @@
     "*.css"
   ],
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbo",
     "build:package": "rm -rf dist; tsup --config scripts/tsup.esm.ts; tsup --config scripts/tsup.cjs.ts; tsup --config scripts/tsup.dts.ts; postcss package/styles*.css -d dist -m",
     "build:docs": "next build",
     "build": "yarn build:package && yarn build:docs",
