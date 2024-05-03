@@ -19,7 +19,7 @@ Craft your applications for productivity and meet your users’ expectations by 
 
 ## Features
 
-- **Lightweight** - no external dependencies, [no bloat](https://bundlephobia.com/package/mantine-contextmenu)
+- **[Lightweight](https://bundlephobia.com/package/mantine-contextmenu)** - no external dependencies, no bloat
 - **Dark-theme aware** - automatically adapts to the current [Mantine color scheme](https://mantine.dev/theming/color-schemes/)
 - **[Simple API](https://icflorescu.github.io/mantine-contextmenu/getting-started)** - just wrap your application in the `ContextMenuProvider` component and use the hook-generated function in your code
 - **[Custom content support](https://icflorescu.github.io/mantine-contextmenu/examples/custom-content)** - use any Mantine component as context menu content
