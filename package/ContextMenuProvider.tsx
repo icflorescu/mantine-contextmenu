@@ -52,12 +52,16 @@ export function ContextMenuProvider({
     setData(null);
   };
 
-  const showContextMenu: ShowContextMenuFunction = (content, options) => (e) => {
+  const showContextMenu: ShowContextMenuFunction = (content, options) => (e: React.MouseEvent | React.TouchEvent) => {
     e.preventDefault();
     e.stopPropagation();
+
+    const { x, y } =
+      'touches' in e ? { x: e.touches.item(0).clientX, y: e.touches.item(0).clientY } : { x: e.clientX, y: e.clientY };
+
     setData({
-      x: e.clientX,
-      y: e.clientY,
+      x,
+      y,
       content,
       zIndex: options?.zIndex || zIndex,
       className: options?.className,

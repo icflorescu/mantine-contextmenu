@@ -178,7 +178,7 @@ export type ShowContextMenuFunction = (
    * Context menu options (overrides provider props).
    */
   options?: ContextMenuOptions
-) => React.MouseEventHandler;
+) => React.MouseEventHandler & React.TouchEventHandler;
 
 /**
  * Hide context menu function
