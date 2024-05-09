@@ -6,6 +6,7 @@ Minor versions that are not listed in the changelog are minor bug fixes and smal
 ## 7.9.1 (2024-05-09)
 
 - Update dev dependencies to ensure compatibility with Mantine 7.9.1
+- Fix iOS touch events
 
 ## 7.9.0 (2024-05-03)
 
