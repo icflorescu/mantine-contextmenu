@@ -7,6 +7,8 @@
   transition: filter 0.5s;
   filter: sepia(0) grayscale(0);
   cursor: context-menu;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
 }
 
 .sepia {

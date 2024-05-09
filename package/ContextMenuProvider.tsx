@@ -56,12 +56,8 @@ export function ContextMenuProvider({
     e.preventDefault();
     e.stopPropagation();
 
-    const x = "touches" in e
-      ? e.touches[0].clientX
-      : e.clientX;
-    const y = "touches" in e
-      ? e.touches[0].clientY
-      : e.clientY;
+    const { x, y } =
+      'touches' in e ? { x: e.touches.item(0).clientX, y: e.touches.item(0).clientY } : { x: e.clientX, y: e.clientY };
 
     setData({
       x,
