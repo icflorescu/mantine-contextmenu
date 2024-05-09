@@ -28,6 +28,8 @@
   border-radius: var(--mantine-radius-sm);
   overflow: hidden;
   cursor: context-menu;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
 }
 
 .image {

@@ -19,6 +19,7 @@
 
 .gradientText {
   cursor: context-menu;
+  -webkit-user-select: none;
 }
 
 .mantineDataTableIcon {
