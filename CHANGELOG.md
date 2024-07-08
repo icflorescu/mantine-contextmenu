@@ -3,6 +3,10 @@
 The following is a list of notable changes to the Mantine ContextMenu component.  
 Minor versions that are not listed in the changelog are minor bug fixes and small internal improvements or refactorings.
 
+## 7.11.1 (2024-07-08)
+
+- Update dev dependencies to ensure compatibility with Mantine 7.11.1
+
 ## 7.11.0 (2024-06-29)
 
 - Update dev dependencies to ensure compatibility with Mantine 7.11.0
