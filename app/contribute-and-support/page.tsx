@@ -51,12 +51,13 @@ export default function ContributeAndSupportPage() {
       <Txt>
         I built these projects out of passion, but the constand effort of spending so many hours on open-source
         development and maintenance takes its toll, and passion alone doesn’t pay the bills. So, if you find{' '}
-        {PRODUCT_NAME} useful and you want to support its future development, please consider{' '}
+        {PRODUCT_NAME} or <ExternalLink to={MANTINE_DATATABLE_LINK}>{MANTINE_DATATABLE_PRODUCT_NAME}</ExternalLink>{' '}
+        useful and want to support their future development, please consider{' '}
         <ExternalLink to="https://github.com/sponsors/icflorescu">sponsoring my work</ExternalLink> ❤️.
       </Txt>
       <PageSubtitle value="Raise issues and discuss new features" />
       <Txt>
-        If you find a bug please don’t hesitate to{' '}
+        If you find a bug, please don’t hesitate to{' '}
         <ExternalLink to={`${REPO_LINK}/issues`}>raise an issue</ExternalLink>.
         <br />
         If you have an idea about a new or missing feature, let’s discuss it{' '}

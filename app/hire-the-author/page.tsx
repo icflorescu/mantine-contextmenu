@@ -44,9 +44,8 @@ export default function HireTheAuthorPage() {
       <Txt>
         That’s why I decided to package the functionality into a separate component, so people can use it anywhere in
         their applications.
-        <br />
-        Hence the birth of {PRODUCT_NAME}.
       </Txt>
+      <Txt>Hence the birth of {PRODUCT_NAME}.</Txt>
       <Txt>
         You can learn more about who I am, what I do, what my current top skills are and how I like to put them to use
         by visiting my profiles on <ExternalLink to={AUTHOR_LINK}>GitHub</ExternalLink>{' '}

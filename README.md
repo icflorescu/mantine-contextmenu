@@ -118,6 +118,8 @@ Make sure to browse the list of [usage examples](https://icflorescu.github.io/ma
 
 See the [contributing guide in the documentation website](https://icflorescu.github.io/mantine-contextmenu/contribute-and-support) or the repo [CONTRIBUTING.md](https://github.com/icflorescu/mantine-contextmenu/blob/master/CONTRIBUTING.md) file for details.
 
+💡 Most importantly, **please make sure to target your PRs to the `next` branch!**
+
 Here's the list of people who have already contributed to Mantine ContextMenu:
 
 [![Contributors list](https://contrib.rocks/image?repo=icflorescu/mantine-contextmenu)](https://github.com/icflorescu/mantine-contextmenu/graphs/contributors)
