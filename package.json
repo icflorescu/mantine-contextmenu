@@ -106,8 +106,8 @@
     "webpack": "^5.94.0"
   },
   "peerDependencies": {
-    "@mantine/core": ">=7",
-    "@mantine/hooks": ">=7",
+    "@mantine/core": ">=7.12",
+    "@mantine/hooks": ">=7.12",
     "clsx": ">=2",
     "react": ">=18.2"
   }
