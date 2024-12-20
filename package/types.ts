@@ -1,4 +1,5 @@
 import type { MantineColor, MantineRadius, MantineShadow, MantineStyleProp, StylesRecord } from '@mantine/core';
+import type { JSX } from 'react';
 
 /**
  * Utility type that makes a property required
