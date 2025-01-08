@@ -6,6 +6,7 @@ Minor versions that are not listed in the changelog are minor bug fixes and smal
 ## 7.15.3 (2025-01-08)
 
 - Update dev dependencies to ensure compatibility with Mantine 7.15.3.
+- Remove unnecessary menu overlay CSS background-color property
 
 ## 7.15.1 (2024-12-20)
 
