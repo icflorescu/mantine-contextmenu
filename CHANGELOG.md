@@ -3,7 +3,11 @@
 The following is a list of notable changes to the Mantine ContextMenu component.  
 Minor versions that are not listed in the changelog are minor bug fixes and small internal improvements or refactorings.
 
-## 7.15.3 (2025-01-08)
+## 7.16.0 (2025-01-10)
+
+- Implement `repositionOnRepeat` option
+
+## 7.15.3 (2025-01-09)
 
 - Update dev dependencies to ensure compatibility with Mantine 7.15.3.
 - Remove unnecessary menu overlay CSS background-color property
