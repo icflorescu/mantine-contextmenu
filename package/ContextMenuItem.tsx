@@ -1,7 +1,7 @@
 import { Box, UnstyledButton, parseThemeColor, rgba } from '@mantine/core';
 import { useMediaQuery, useTimeout } from '@mantine/hooks';
 import clsx from 'clsx';
-import { useContext, useRef, useState, type MouseEventHandler } from 'react';
+import { type MouseEventHandler, useContext, useRef, useState } from 'react';
 import { ContextMenu } from './ContextMenu';
 import { ContextMenuSettingsCtx } from './ContextMenuProvider';
 import type { ContextMenuContent, ContextMenuItemOptions, WithRequiredProperty } from './types';
@@ -21,7 +21,7 @@ export function ContextMenuItem({
   const ref = useRef<HTMLButtonElement>(null);
   const { submenuDelay } = useContext(ContextMenuSettingsCtx);
 
-  const hoverAvailable = useMediaQuery(`(hover: hover)`);
+  const hoverAvailable = useMediaQuery('(hover: hover)');
 
   const [submenuPosition, setSubmenuPosition] = useState<{ x: number; y: number } | null>(null);
 
@@ -98,14 +98,16 @@ export function ContextMenuItem({
           </Box>
         )}
         <div className="mantine-contextmenu-item-button-title">{title}</div>
-        { iconRight ? (
+        {iconRight ? (
           <Box fz={0} ml="xs" mt={-2}>
             {iconRight}
           </Box>
-        ) : items && (
-          <Box fz={10} mt={-2} ml="xs">
-            ▶
-          </Box>
+        ) : (
+          items && (
+            <Box fz={10} mt={-2} ml="xs">
+              ▶
+            </Box>
+          )
         )}
       </UnstyledButton>
       {submenuPosition && <ContextMenu content={items as ContextMenuContent} onHide={onHide} {...submenuPosition} />}

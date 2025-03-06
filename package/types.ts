@@ -67,6 +67,14 @@ export type ContextMenuSettings = {
    * @default 500
    */
   submenuDelay?: number;
+
+  /**
+   * Whether to reposition the context menu when the triggering event repeats. If set to true, the context menu will
+   * reposition itself to the position of the triggering event. If set to false, the context menu will hide
+   * automatically when the triggering event repeats.
+   * @default false
+   */
+  repositionOnRepeat?: boolean;
 };
 
 /**
