@@ -39,6 +39,15 @@ export default async function BasicConfigurationExamplePage() {
           <Code>borderRadius: MantineSize</Code> → defaults to <Code>xs</Code> (see{' '}
           <ExternalLink to={`${MANTINE_LINK}/core/paper/`}>Mantine Paper</ExternalLink> docs)
         </li>
+        <li>
+          <Code>repositionOnRepeat: boolean</Code> → defaults to <Code>false</Code>
+          <br />
+          Whether to reposition the context menu when the triggering event repeats.
+          <br />
+          If set to true, the context menu will reposition itself to the position of the triggering event.
+          <br />
+          If unset or set to false, the context menu will hide automatically when the triggering event repeats.
+        </li>
       </ul>
       <CodeBlock code={code['ProviderPropsExample.tsx']} />
       <Txt>
