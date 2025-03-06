@@ -14,6 +14,7 @@ const DEFAULT_SETTINGS: WithRequiredProperty<ContextMenuSettings, 'shadow' | 'bo
   shadow: 'sm',
   borderRadius: 'xs',
   submenuDelay: 500,
+  repositionOnRepeat: false,
 };
 
 export const ContextMenuSettingsCtx = createContext(DEFAULT_SETTINGS);
@@ -44,6 +45,7 @@ export function ContextMenuProvider({
   shadow = DEFAULT_SETTINGS.shadow,
   borderRadius = DEFAULT_SETTINGS.borderRadius,
   submenuDelay = DEFAULT_SETTINGS.submenuDelay,
+  repositionOnRepeat = DEFAULT_SETTINGS.repositionOnRepeat,
   children,
 }: ContextMenuProviderProps) {
   const [data, setData] = useState<(ContextMenuInstanceOptions & ContextMenuOptions) | null>(null);
@@ -72,7 +74,7 @@ export function ContextMenuProvider({
   };
 
   return (
-    <ContextMenuSettingsCtx.Provider value={{ shadow, borderRadius, submenuDelay }}>
+    <ContextMenuSettingsCtx.Provider value={{ shadow, borderRadius, submenuDelay, repositionOnRepeat }}>
       <ContextMenuCtx.Provider value={{ showContextMenu, hideContextMenu, isContextMenuVisible: !!data }}>
         {children}
         {data && <ContextMenuPortal onHide={hideContextMenu} {...data} />}
