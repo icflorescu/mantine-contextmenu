@@ -28,10 +28,13 @@ export function VersionBadge() {
             <IconAlertSquareRoundedFilled />
           </Box>
           <br />
-          This version works with Mantine V7.
+          This version works with Mantine V8
           <br />
-          If you’re still using <ExternalLink to="https://v6.mantine.dev">Mantine V6</ExternalLink>, check the old
-          version{' '}
+          (and probably V7).
+          <br />
+          If you’re using
+          <br />
+          <ExternalLink to="https://v6.mantine.dev">Mantine V6</ExternalLink>, check the old version{' '}
           <ExternalLink to={V6_WEBSITE_LINK}>
             here
             <IconExternalLink className={classes.linkIcon} size={14} />
