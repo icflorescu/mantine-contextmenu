@@ -14,8 +14,8 @@ Craft your applications for productivity and meet your users’ expectations by 
 
 [![Mantine ContextMenu](https://user-images.githubusercontent.com/581999/294179957-e5b07f1f-701b-49a9-a518-4e42afb8b70a.png)](https://icflorescu.github.io/mantine-contextmenu/)
 
-**⚠️ NOTE: Mantine ContextMenu V7 is compatible with Mantine V7.**  
-**💡 If you're looking for the old version that works with [Mantine V6](https://v6.mantine.dev), head over to [Mantine ContextMenu V6](https://icflorescu.github.io/mantine-contextmenu-v6).**  
+**⚠️ NOTE: Mantine ContextMenu V8.1 is compatible with Mantine V8.1 (and probably V7).**  
+**💡 If you're looking for the old version that works with [Mantine V6](https://v6.mantine.dev), head over to [Mantine ContextMenu V6](https://icflorescu.github.io/mantine-contextmenu-v6).**
 
 ## Features
 
@@ -134,7 +134,7 @@ If you're a company using Mantine, Mantine ContextMenu or [Mantine DataTable](ht
 
 ## Other means of support
 
-If you can't afford to sponsor the project or hire my services, there are other ways you can support my work:  
+If you can't afford to sponsor the project or hire my services, there are other ways you can support my work:
 
 - 🙏 star the repository;
 - 💕 [tweet about it](https://twitter.com/share?text=Check%20out%20the%20missing%20context-menu%20for%20Mantine%20UI%20applications!&url=https%3A%2F%2Fgithub.com%2Ficflorescu%2Fmantine-contextmenu&hashtags=react%2Cmantine%2Cui%2Ccontextmenu%2Cfrontend%2Copensource&via=icflorescu);

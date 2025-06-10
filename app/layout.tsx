@@ -2,7 +2,9 @@ import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import { Notifications } from '@mantine/notifications';
 import { ContextMenuProvider } from '__PACKAGE__';
 import type { Metadata, Viewport } from 'next';
+import type { PropsWithChildren } from 'react';
 import { AppWrapper } from '~/components/AppWrapper';
+import { ShikiCodeHighlightProvider } from '~/components/ShikiCodeHighlightProvider';
 import { AUTHOR_LINK, AUTHOR_NAME, WEBSITE_LINK } from './config';
 import './layout.css';
 import classes from './layout.module.css';
@@ -20,7 +22,7 @@ export const metadata: Metadata = {
   authors: [{ name: AUTHOR_NAME, url: AUTHOR_LINK }],
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -38,10 +40,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             },
           }}
         >
-          <Notifications />
-          <ContextMenuProvider>
-            <AppWrapper>{children}</AppWrapper>
-          </ContextMenuProvider>
+          <ShikiCodeHighlightProvider>
+            <Notifications />
+            <ContextMenuProvider>
+              <AppWrapper>{children}</AppWrapper>
+            </ContextMenuProvider>
+          </ShikiCodeHighlightProvider>
         </MantineProvider>
       </body>
     </html>

@@ -3,6 +3,12 @@
 The following is a list of notable changes to the Mantine ContextMenu component.  
 Minor versions that are not listed in the changelog are minor bug fixes and small internal improvements or refactorings.
 
+## 8.1.0 (2025-06-10)
+
+- Update to Mantine v8.1
+- Update eslint to ^9
+- Update dev dependencies, including Next.js to 15.3.3
+
 ## 7.17.1 (2025-03-06)
 
 - Implement `repositionOnRepeat` option

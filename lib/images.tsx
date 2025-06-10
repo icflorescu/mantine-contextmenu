@@ -1,5 +1,5 @@
 import { notifications } from '@mantine/notifications';
-import { StaticImageData } from 'next/image';
+import type { StaticImageData } from 'next/image';
 import img0 from '~/assets/0.webp';
 import img1 from '~/assets/1.webp';
 import img2 from '~/assets/2.webp';
