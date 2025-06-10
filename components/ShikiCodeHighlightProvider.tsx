@@ -6,7 +6,7 @@ import type { PropsWithChildren } from 'react';
 async function loadShiki() {
   const { createHighlighter } = await import('shiki');
   const shiki = await createHighlighter({
-    langs: ['tsx', 'scss', 'html', 'bash', 'json'],
+    langs: ['ts', 'tsx', 'css', 'shell'],
     themes: [],
   });
 
