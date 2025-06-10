@@ -1,0 +1,5 @@
+.root {
+  overflow: hidden;
+  border-radius: var(--mantine-radius-sm);
+  border: rem(1px) solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-5));
+}
