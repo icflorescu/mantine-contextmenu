@@ -20,6 +20,6 @@
     right: 0;
     height: rem(6px);
     bottom: rem(-7px);
-    background: linear-gradient(light-dark(rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.3)), rgba(0, 0, 0, 0));
+    background: linear-gradient(light-dark(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.5)), rgba(0, 0, 0, 0));
   }
 }
