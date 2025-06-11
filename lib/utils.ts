@@ -16,7 +16,7 @@ export const getRouteMetadata = memoize((href: Route): Metadata => {
   const { title: rawTitle, description } = route;
   const title =
     href === '/'
-      ? `${PRODUCT_NAME} - enhance your Mantine-based UIs with desktop-grade context menus`
+      ? `${PRODUCT_NAME} - enhance your web applications with desktop-grade context menus`
       : `${addExamplesPrefix({ title: rawTitle, href })} | ${PRODUCT_NAME}`;
   const hrefWithTrailingSlash = href === '/' ? href : `${href}/`;
 
