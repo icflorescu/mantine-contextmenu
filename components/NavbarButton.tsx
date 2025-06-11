@@ -21,7 +21,7 @@ export function NavbarButton({ color, icon, title, href, onClick, expanded }: Na
   const isExternal = !!href?.startsWith('http');
   const Icon = onClick ? IconChevronRight : icon;
   const pathname = usePathname();
-  // this is to make sure for works for trailing slashes
+  // make sure it works with trailing slashes
   const isCurrent = pathname === `${href}/` || pathname === href;
 
   const content = (
