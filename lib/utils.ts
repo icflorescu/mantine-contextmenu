@@ -14,7 +14,10 @@ export const getRouteMetadata = memoize((href: Route): Metadata => {
   if (!route) throw new Error(`Route ${href} not found`);
 
   const { title: rawTitle, description } = route;
-  const title = href === '/' ? PRODUCT_NAME : `${addExamplesPrefix({ title: rawTitle, href })} | ${PRODUCT_NAME}`;
+  const title =
+    href === '/'
+      ? `${PRODUCT_NAME} - enhance your Mantine-based UIs with desktop-grade context menus`
+      : `${addExamplesPrefix({ title: rawTitle, href })} | ${PRODUCT_NAME}`;
   const hrefWithTrailingSlash = href === '/' ? href : `${href}/`;
 
   return {
