@@ -29,6 +29,7 @@ export function ContextMenu({ x, y, content, zIndex, onHide, className, style, c
   if (typeof window !== 'undefined') ({ innerWidth: windowWidth, innerHeight: windowHeight } = window);
 
   const { dir } = useDirection();
+  const submenuProps = { className, classNames, style, styles };
 
   return (
     <Paper
@@ -65,6 +66,7 @@ export function ContextMenu({ x, y, content, zIndex, onHide, className, style, c
                 onClick={onClick}
                 onHide={onHide}
                 items={items}
+                submenuProps={submenuProps}
                 {...otherOptions}
               />
             ) : (

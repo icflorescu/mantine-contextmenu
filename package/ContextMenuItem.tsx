@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import { type MouseEventHandler, useContext, useRef, useState } from 'react';
 import { ContextMenu } from './ContextMenu';
 import { ContextMenuSettingsCtx } from './ContextMenuProvider';
-import type { ContextMenuContent, ContextMenuItemOptions, WithRequiredProperty } from './types';
+import type { ContextMenuContent, ContextMenuItemOptions, ContextMenuOptions, WithRequiredProperty } from './types';
 
 export function ContextMenuItem({
   className,
@@ -17,7 +17,11 @@ export function ContextMenuItem({
   onClick,
   onHide,
   items,
-}: WithRequiredProperty<Omit<ContextMenuItemOptions, 'key'>, 'title'> & { onHide: () => void }) {
+  submenuProps,
+}: WithRequiredProperty<Omit<ContextMenuItemOptions, 'key'>, 'title'> & {
+  onHide: () => void;
+  submenuProps: Pick<ContextMenuOptions, 'className' | 'classNames' | 'style' | 'styles'>;
+}) {
   const ref = useRef<HTMLButtonElement>(null);
   const { submenuDelay } = useContext(ContextMenuSettingsCtx);
 
@@ -104,13 +108,15 @@ export function ContextMenuItem({
           </Box>
         ) : (
           items && (
-            <Box fz={10} mt={-2} ml="xs">
-              ▶
+            <Box mt={-1} ml="xs">
+              ›
             </Box>
           )
         )}
       </UnstyledButton>
-      {submenuPosition && <ContextMenu content={items as ContextMenuContent} onHide={onHide} {...submenuPosition} />}
+      {submenuPosition && (
+        <ContextMenu content={items as ContextMenuContent} onHide={onHide} {...submenuProps} {...submenuPosition} />
+      )}
     </div>
   );
 }
