@@ -14,7 +14,6 @@ permissions:
   pages: write
   id-token: write
 
-# Allow one concurrent deployment
 concurrency:
   group: 'pages'
   cancel-in-progress: true
@@ -29,13 +28,15 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '24.2'
+          node-version: 24.2
           cache: pnpm
+
       - name: Install pnpm
         uses: pnpm/action-setup@v2
         with:
           version: 10
           run_install: false
+
       - name: Restore pnpm store
         uses: actions/cache@v4
         with:
@@ -43,16 +44,20 @@ jobs:
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
+
       - name: Install dependencies
         run: pnpm install
+
       - name: Build
         env:
           GITHUB_PAGES: 'TRUE'
         run: pnpm build
+
       - name: Upload pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
+
       - name: Upload package artifact
         uses: actions/upload-artifact@v4
         with:
@@ -72,6 +77,7 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: package
+
       - uses: JS-DevTools/npm-publish@v3
         with:
           token: ${{ secrets.NPM_TOKEN }}
