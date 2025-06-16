@@ -14,7 +14,7 @@ Craft your applications for productivity and meet your users’ expectations by 
 
 [![Mantine ContextMenu](https://user-images.githubusercontent.com/581999/294179957-e5b07f1f-701b-49a9-a518-4e42afb8b70a.png)](https://icflorescu.github.io/mantine-contextmenu/)
 
-**⚠️ NOTE: Mantine ContextMenu V8.1 is compatible with Mantine V8.1 (and probably V7).**  
+**⚠️ NOTE: Mantine ContextMenu V8.x is compatible with Mantine V8.x (and probably V7).**  
 **💡 If you're looking for the old version that works with [Mantine V6](https://v6.mantine.dev), head over to [Mantine ContextMenu V6](https://icflorescu.github.io/mantine-contextmenu-v6).**
 
 ## Features

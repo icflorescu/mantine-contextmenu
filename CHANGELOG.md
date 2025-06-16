@@ -3,6 +3,10 @@
 The following is a list of notable changes to the Mantine ContextMenu component.  
 Minor versions that are not listed in the changelog are minor bug fixes and small internal improvements or refactorings.
 
+## 8.1.2 (2025-06-16)
+
+- Update dependencies to ensure compatibility with Mantine 8.1.1
+
 ## 8.1.1 (2025-06-11)
 
 - Fix issue [#183](https://github.com/icflorescu/mantine-contextmenu/issues/183) - classes and styles provided to `showContextMenu` are now properly applied to submenus
