@@ -3,6 +3,10 @@
 The following is a list of notable changes to the Mantine ContextMenu component.  
 Minor versions that are not listed in the changelog are minor bug fixes and small internal improvements or refactorings.
 
+## 8.2.0 (2025-07-23)
+
+- Update dev dependencies to ensure compatibility with Mantine 8.2
+
 ## 8.1.3 (2025-07-21)
 
 - Update dev dependencies to ensure compatibility with Mantine 8.1.3 & Next.js 15.4.x
