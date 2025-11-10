@@ -1,6 +1,6 @@
 {
   "name": "mantine-contextmenu",
-  "version": "8.3.6",
+  "version": "8.3.7",
   "description": "Craft your applications for productivity and meet your users’ expectations by enhancing your Mantine-based UIs with a desktop-grade, lightweight yet fully-featured, dark-theme aware context-menu component, built by the creator of Mantine DataTable",
   "keywords": [
     "ui",
@@ -73,10 +73,11 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
-    "@mantine/code-highlight": "^8.3.6",
-    "@mantine/core": "^8.3.6",
-    "@mantine/hooks": "^8.3.6",
-    "@mantine/notifications": "^8.3.6",
+    "@mantine/code-highlight": "^8.3.7",
+    "@mantine/core": "^8.3.7",
+    "@mantine/hooks": "^8.3.7",
+    "@mantine/notifications": "^8.3.7",
+    "@next/eslint-plugin-next": "^15.5.6",
     "@tabler/icons-react": "^3.35.0",
     "@types/lodash": "^4.17.20",
     "@types/node": "^24.10.0",
@@ -88,7 +89,7 @@
     "cssnano": "^7.1.2",
     "eslint": "^9.39.1",
     "eslint-config-next": "^15.5.6",
-    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-hooks": "^7.0.1",
     "lodash": "^4.17.21",
     "next": "^15.5.6",
     "postcss": "^8.5.6",
