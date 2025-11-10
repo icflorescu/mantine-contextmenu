@@ -3,6 +3,11 @@
 The following is a list of notable changes to the Mantine ContextMenu component.  
 Minor versions that are not listed in the changelog are minor bug fixes and small internal improvements or refactorings.
 
+## 8.3.7 (2025-11-10)
+
+- Update dev dependencies to ensure compatibility with Mantine 8.3.7
+- Fix linting & linting errors
+
 ## 8.3.6 (2025-11-07)
 
 - Update dev dependencies to ensure compatibility with Mantine 8.3.6

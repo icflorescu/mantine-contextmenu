@@ -22,6 +22,7 @@ export type ContextMenuProps = ContextMenuOptions &
 export function ContextMenu({ x, y, content, zIndex, onHide, className, style, classNames, styles }: ContextMenuProps) {
   const { shadow, borderRadius } = useContext(ContextMenuSettingsCtx);
   const [paperRef] = useResizeObserver<HTMLDivElement>();
+  // eslint-disable-next-line react-hooks/refs
   const { width, height } = paperRef.current?.getBoundingClientRect() || { width: 0, height: 0 };
 
   let windowWidth = 0;
