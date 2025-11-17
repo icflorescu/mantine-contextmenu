@@ -75,8 +75,8 @@ export default function ContributeAndSupportPage() {
       </Txt>
       <PageSubtitle value="Become a code contributor" />
       <Txt>
-        If you’re willing to put your effort into it, <strong>coming up with a pull-request would be fantastic!</strong>{' '}
-        🙌
+        If you’re willing to put your effort into it,{' '}
+        <strong>coming up with a meaningful pull-request would be fantastic!</strong> 🙌
         <br />
         It would mean{' '}
         <strong>
