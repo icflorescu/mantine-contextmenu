@@ -133,6 +133,11 @@ export const ROUTES: RouteInfo[] = [
     description: `Example: ${PRODUCT_NAME} hides itself automatically when the user scrolls the page or clicks outside of it, but you can also hide it imperatively`,
   },
   {
+    href: '/examples/rtl-support',
+    title: 'RTL support',
+    description: `Example: ${PRODUCT_NAME} fully supports RTL (right-to-left) layouts with proper positioning, icon spacing, and submenu behavior`,
+  },
+  {
     href: '/type-definitions',
     title: 'Type definitions',
     description: `${PRODUCT_NAME} is written in TypeScript and its options are well documented with additional JSDoc annotations`,
