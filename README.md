@@ -25,7 +25,7 @@ Craft your applications for productivity and meet your users’ expectations by 
 - **[Custom content support](https://icflorescu.github.io/mantine-contextmenu/examples/custom-content)** - use any Mantine component as context menu content
 - **[Highly customizable styling](https://icflorescu.github.io/mantine-contextmenu/examples/styling)** - use the `className`/`classNames` and `style`/`styles` props to customize the context menu appearance
 - **[Written in Typescript and well-documented](https://icflorescu.github.io/mantine-contextmenu/type-definitions)** - with detailed JSDoc annotations for each exported function and component
-- **[Comprehensive RTL support](https://icflorescu.github.io/mantine-contextmenu/examples/rtl-support)** - the context menu adjusts automatically to [Mantine `DirectionProvider`](https://mantine.dev/styles/rtl/)
+- **[Comprehensive RTL support](https://icflorescu.github.io/mantine-contextmenu/examples/rtl-support)** - the context menu adjusts automatically to [Mantine `DirectionProvider`](https://mantine.dev/styles/rtl/)'s settings
 
 ## Full documentation and examples
 
