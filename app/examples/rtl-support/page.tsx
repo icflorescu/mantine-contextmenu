@@ -67,9 +67,9 @@ export default async function RtlSupportExamplePage() {
         edges of the image) to see how the menu intelligently positions itself. Notice how submenus open in the correct
         direction and all text, icons, and indicators are properly aligned:
       </Txt>
-      <CodeBlock code={code['RtlSupportExampleContent.tsx']} />
       <RtlSupportExample />
-      <Txt>Head over to the next example to discover other features.</Txt>
+      <Txt>Here's the code for the above example:</Txt>
+      <CodeBlock code={code['RtlSupportExampleContent.tsx']} />
       <PageNavigation of={PATH} />
     </>
   );

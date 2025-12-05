@@ -21,6 +21,7 @@ const eslintConfig = [
       'no-useless-rename': 'error',
       '@typescript-eslint/consistent-type-imports': 'error',
       '@next/next/no-img-element': 'off',
+      'react/no-unescaped-entities': 'off',
     },
   },
 ];
