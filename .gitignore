@@ -19,4 +19,4 @@ public/workbox-*.js
 public/workbox-*.js.map
 
 # build output
-/dist/
+# /dist/  # Included for GitHub-based package installation

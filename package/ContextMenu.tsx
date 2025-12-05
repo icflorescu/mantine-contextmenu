@@ -1,7 +1,7 @@
-import { Paper, px, useDirection } from '@mantine/core';
+import { Paper, px } from '@mantine/core';
 import { useResizeObserver } from '@mantine/hooks';
 import clsx from 'clsx';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { ContextMenuDivider } from './ContextMenuDivider';
 import { ContextMenuItem } from './ContextMenuItem';
 import { ContextMenuSettingsCtx } from './ContextMenuProvider';
@@ -17,11 +17,25 @@ export type ContextMenuInstanceOptions = {
 export type ContextMenuProps = ContextMenuOptions &
   ContextMenuInstanceOptions & {
     onHide: () => void;
+    dir?: 'ltr' | 'rtl';
   };
 
-export function ContextMenu({ x, y, content, zIndex, onHide, className, style, classNames, styles }: ContextMenuProps) {
+export function ContextMenu({
+  x,
+  y,
+  content,
+  zIndex,
+  onHide,
+  className,
+  style,
+  classNames,
+  styles,
+  dir = 'ltr',
+}: ContextMenuProps) {
   const { shadow, borderRadius } = useContext(ContextMenuSettingsCtx);
   const [paperRef] = useResizeObserver<HTMLDivElement>();
+  const [isMounted, setIsMounted] = useState(false);
+
   // eslint-disable-next-line react-hooks/refs
   const { width, height } = paperRef.current?.getBoundingClientRect() || { width: 0, height: 0 };
 
@@ -29,15 +43,23 @@ export function ContextMenu({ x, y, content, zIndex, onHide, className, style, c
   let windowHeight = 0;
   if (typeof window !== 'undefined') ({ innerWidth: windowWidth, innerHeight: windowHeight } = window);
 
-  const { dir } = useDirection();
-  const submenuProps = { className, classNames, style, styles };
+  const submenuProps = { className, classNames, style, styles, dir };
+
+  // Wait for dimensions to be measured before showing to prevent visible repositioning
+  const hasSize = width > 0 && height > 0;
+
+  useEffect(() => {
+    if (hasSize) {
+      requestAnimationFrame(() => setIsMounted(true));
+    }
+  }, [hasSize]);
 
   return (
     <Paper
       ref={paperRef}
       shadow={shadow}
       radius={borderRadius}
-      className={clsx('mantine-contextmenu', className, classNames?.root)}
+      className={clsx('mantine-contextmenu', isMounted && 'mantine-contextmenu-mounted', className, classNames?.root)}
       style={[
         ({ spacing: { md } }) => {
           const mdSpacing = px(md) as number;
@@ -49,7 +71,9 @@ export function ContextMenu({ x, y, content, zIndex, onHide, className, style, c
                 ? x + width + mdSpacing > windowWidth
                   ? windowWidth - width - mdSpacing
                   : x
-                : windowWidth - mdSpacing - (x - width - mdSpacing < 0 ? width + mdSpacing : x),
+                : x - width < mdSpacing
+                  ? mdSpacing
+                  : x - width,
           };
         },
         style,

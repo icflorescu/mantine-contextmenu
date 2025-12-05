@@ -20,18 +20,20 @@ export function ContextMenuItem({
   submenuProps,
 }: WithRequiredProperty<Omit<ContextMenuItemOptions, 'key'>, 'title'> & {
   onHide: () => void;
-  submenuProps: Pick<ContextMenuOptions, 'className' | 'classNames' | 'style' | 'styles'>;
+  submenuProps: Pick<ContextMenuOptions, 'className' | 'classNames' | 'style' | 'styles'> & { dir?: 'ltr' | 'rtl' };
 }) {
   const ref = useRef<HTMLButtonElement>(null);
   const { submenuDelay } = useContext(ContextMenuSettingsCtx);
+  const dir = submenuProps.dir || 'ltr';
 
   const hoverAvailable = useMediaQuery('(hover: hover)');
 
   const [submenuPosition, setSubmenuPosition] = useState<{ x: number; y: number } | null>(null);
 
   const { start: startShowingSubmenu, clear: stopShowingSubmenu } = useTimeout(() => {
-    const { top: y, right: x } = ref.current!.getBoundingClientRect();
-    setSubmenuPosition({ x, y });
+    const rect = ref.current!.getBoundingClientRect();
+    const x = dir === 'ltr' ? rect.right : rect.left;
+    setSubmenuPosition({ x, y: rect.top });
   }, submenuDelay);
 
   const { start: startHidingSubmenu, clear: stopHidingSubmenu } = useTimeout(() => {
@@ -70,6 +72,7 @@ export function ContextMenuItem({
     >
       <UnstyledButton
         ref={ref}
+        dir={dir}
         style={[
           (theme) => {
             const { colors } = theme;
@@ -97,18 +100,18 @@ export function ContextMenuItem({
         onClick={handleClick}
       >
         {icon && (
-          <Box fz={0} mr="xs" mt={-2}>
+          <Box fz={0} me="xs" mt={-2}>
             {icon}
           </Box>
         )}
         <div className="mantine-contextmenu-item-button-title">{title}</div>
         {iconRight ? (
-          <Box fz={0} ml="xs" mt={-2}>
+          <Box fz={0} ms="xs" mt={-2}>
             {iconRight}
           </Box>
         ) : (
           items && (
-            <Box mt={-1} ml="xs">
+            <Box mt={-1} ms="xs">
               ›
             </Box>
           )

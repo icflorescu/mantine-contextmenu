@@ -8,6 +8,7 @@
   padding-right: var(--mantine-spacing-sm);
   color: var(--mantine-contextmenu-item-button-color);
   transition: background 0.2s;
+  text-align: start;
   &[disabled] {
     cursor: not-allowed;
     color: light-dark(var(--mantine-color-gray-5), var(--mantine-color-dark-3));
@@ -30,4 +31,5 @@
   font-size: var(--mantine-font-size-sm);
   white-space: nowrap;
   flex-grow: 1;
+  text-align: inherit;
 }
