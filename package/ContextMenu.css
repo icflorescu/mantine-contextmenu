@@ -2,5 +2,10 @@
   position: fixed;
   border: 1px solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
   overflow: hidden;
-  transition: all 0.2s;
+  visibility: hidden;
+}
+
+.mantine-contextmenu-mounted {
+  visibility: visible;
+  transition: top 0.2s, left 0.2s;
 }
