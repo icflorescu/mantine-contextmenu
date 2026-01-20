@@ -3,6 +3,11 @@
 The following is a list of notable changes to the Mantine ContextMenu component.  
 Minor versions that are not listed in the changelog are minor bug fixes and small internal improvements or refactorings.
 
+## 8.3.13 (2026-01-20)
+
+- Update dev dependencies to ensure compatibility with Mantine 8.3.13
+- Update GitHub actions workflow job versions
+
 ## 8.3.10 (2025-12-05)
 
 - Comprehensive RTL-support added, huge thanks to [Reem Assaf](https://github.com/ReemX), see [PR210](https://github.com/icflorescu/mantine-contextmenu/pull/210)
