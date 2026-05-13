@@ -23,7 +23,10 @@
     "usability",
     "component"
   ],
-  "repository": "icflorescu/mantine-contextmenu",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/icflorescu/mantine-contextmenu.git"
+  },
   "homepage": "https://icflorescu.github.io/mantine-contextmenu/",
   "bugs": {
     "url": "https://github.com/icflorescu/mantine-contextmenu/issues"
