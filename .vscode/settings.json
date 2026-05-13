@@ -1,4 +1,6 @@
 {
+  "eslint.enable": false,
+  "prettier.enable": false,
   "editor.codeActionsOnSave": {
     "source.organizeImports.biome": "explicit",
     "source.removeUnusedImports": "explicit",
@@ -10,6 +12,15 @@
   "postcss.validate": false,
   "cssVariables.lookupFiles": ["node_modules/@mantine/core/esm/index.css"],
   "editor.unicodeHighlight.ambiguousCharacters": false,
+  "[json]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
   "[typescript]": {
     "editor.defaultFormatter": "biomejs.biome"
   },
