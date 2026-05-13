@@ -73,10 +73,10 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.3",
-    "@mantine/code-highlight": "^8.3.13",
-    "@mantine/core": "^8.3.13",
-    "@mantine/hooks": "^8.3.13",
-    "@mantine/notifications": "^8.3.13",
+    "@mantine/code-highlight": "^9.0.1",
+    "@mantine/core": "^9.0.1",
+    "@mantine/hooks": "^9.0.1",
+    "@mantine/notifications": "^9.0.1",
     "@next/eslint-plugin-next": "^15.5.9",
     "@tabler/icons-react": "^3.36.1",
     "@types/lodash": "^4.17.23",
@@ -107,8 +107,8 @@
     "typescript": "^5.9.3"
   },
   "peerDependencies": {
-    "@mantine/core": ">=8.3",
-    "@mantine/hooks": ">=8.3",
+    "@mantine/core": ">=9",
+    "@mantine/hooks": ">=9",
     "clsx": ">=2",
     "react": ">=19",
     "react-dom": ">=19"
