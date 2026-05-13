@@ -72,7 +72,7 @@
     "build:docs": "next build",
     "build": "pnpm build:package && pnpm build:docs",
     "lint": "biome check . && tsc --noEmit --pretty",
-    "format": "biome format --write ."
+    "format": "biome format --write . && prettier --write \"**/*.css\""
   },
   "devDependencies": {
     "@biomejs/biome": "^2.4.15",
@@ -94,6 +94,7 @@
     "postcss-import": "^16.1.1",
     "postcss-preset-mantine": "^1.18.0",
     "postcss-simple-vars": "^7.0.1",
+    "prettier": "^3.8.3",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
     "sharp": "^0.34.5",

@@ -1,4 +1,7 @@
 .mantine-contextmenu-divider {
   height: rem(1px);
-  background: light-dark(var(--mantine-color-gray-1), var(--mantine-color-dark-5));
+  background: light-dark(
+    var(--mantine-color-gray-1),
+    var(--mantine-color-dark-5)
+  );
 }

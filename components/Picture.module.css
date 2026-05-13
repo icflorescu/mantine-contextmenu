@@ -1,9 +1,13 @@
 .root {
   position: relative;
   border-radius: var(--mantine-radius-sm);
-  border: rem(1px) solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-5));
+  border: rem(1px) solid
+    light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-5));
   padding: var(--mantine-spacing-xs);
-  background: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-8));
+  background: light-dark(
+    var(--mantine-color-gray-0),
+    var(--mantine-color-dark-8)
+  );
 }
 
 .background {
