@@ -3,6 +3,12 @@
 The following is a list of notable changes to the Mantine ContextMenu component.  
 Minor versions that are not listed in the changelog are minor bug fixes and small internal improvements or refactorings.
 
+## 9.2.0 (2026-05-13)
+
+- Upgrade to Mantine 9.2
+- Upgrade documentation website to Mantine 9.2 & Next.js 16, fix issues
+- Switch code formatting and linting to Biome
+
 ## 8.3.13 (2026-01-20)
 
 - Update dev dependencies to ensure compatibility with Mantine 8.3.13

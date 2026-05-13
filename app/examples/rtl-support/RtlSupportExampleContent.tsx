@@ -1,5 +1,6 @@
 'use client';
 
+import { useContextMenu } from '__PACKAGE__';
 import {
   IconClipboard,
   IconCopy,
@@ -10,7 +11,6 @@ import {
   IconShare,
   IconTrash,
 } from '@tabler/icons-react';
-import { useContextMenu } from '__PACKAGE__';
 import { Picture } from '~/components/Picture';
 import { unsplashImages } from '~/lib/images';
 

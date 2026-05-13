@@ -86,13 +86,13 @@ export default async function StylingPage() {
         For example, in a Next.js application you could ensure the correct order of styles either by importing the{' '}
         <Code>styles.layer.css</Code> files and using the <Code>@layer</Code> directive, like so:
       </Txt>
-      <CodeBlock tabs={{ code: code['simple'], keys: ['RootLayout.tsx', 'layout.css'] }} />
+      <CodeBlock tabs={{ code: code.simple, keys: ['RootLayout.tsx', 'layout.css'] }} />
       <Txt>
         Or, if you want to have even more control over the order of styles, you can make use of the{' '}
         <Code>postcss-import</Code> plugin to control the layer names when importing the <Code>styles.css</Code> files,
         and then use the <Code>@layer</Code> directive, like so:
       </Txt>
-      <CodeBlock tabs={{ code: code['fineGrained'], keys: ['RootLayout.tsx', 'postcss.config.js', 'layout.css'] }} />
+      <CodeBlock tabs={{ code: code.fineGrained, keys: ['RootLayout.tsx', 'postcss.config.js', 'layout.css'] }} />
       <Txt>
         Now that you understand how styling works, feel free to browse the{' '}
         <InternalLink to={firstExampleHref}>code examples</InternalLink> to see the context menu in action and learn how

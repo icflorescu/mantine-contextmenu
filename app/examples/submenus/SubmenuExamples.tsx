@@ -1,7 +1,8 @@
-/* eslint-disable no-console */
+// biome-ignore-all lint/suspicious/noConsole: example demo handlers
 
 'use client';
 
+import { useContextMenu } from '__PACKAGE__';
 import {
   IconArrowRight,
   IconChevronRight,
@@ -12,7 +13,6 @@ import {
   IconUser,
   IconView360,
 } from '@tabler/icons-react';
-import { useContextMenu } from '__PACKAGE__';
 import { useState } from 'react';
 import { Picture } from '~/components/Picture';
 import { copyImageToClipboard, downloadImage, unsplashImages } from '~/lib/images';

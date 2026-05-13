@@ -1,5 +1,5 @@
-import { MantineProvider } from '@mantine/core';
 import { ContextMenuProvider } from '__PACKAGE__';
+import { MantineProvider } from '@mantine/core';
 import classes from './ProviderPropsExample.module.css';
 
 export default function ProviderPropsExample({ children }: React.PropsWithChildren) {

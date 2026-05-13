@@ -29,7 +29,7 @@ export default async function ActionColorsExamplePage() {
         An item with an <Code>items</Code> property will render a submenu, available when hovering over the given
         option.
       </Txt>
-      <CodeBlock code={code['default']['submenu']} />
+      <CodeBlock code={code.default.submenu} />
       <Txt>Right-click on the image to trigger the context menu:</Txt>
       <SubmenuExample />
       <PageSubtitle value="Nesting" />
@@ -37,7 +37,7 @@ export default async function ActionColorsExamplePage() {
         You can nest as many submenus as you want. Don’t abuse this feature, though, as it might be confusing for the
         user.
       </Txt>
-      <CodeBlock code={code['default']['nested-submenu']} />
+      <CodeBlock code={code.default['nested-submenu']} />
       <Txt>Right-click on the image to trigger the context menu:</Txt>
       <NestedSubmenuExample />
       <PageSubtitle value="Controlling the show/hide delay" />
@@ -46,7 +46,7 @@ export default async function ActionColorsExamplePage() {
         appearing or disappearing by setting the <Code>submenuDelay</Code> property of the{' '}
         <Code>ContextMenuProvider</Code> component.
       </Txt>
-      <CodeBlock code={code['submenuDelayProviderProp']} />
+      <CodeBlock code={code.submenuDelayProviderProp} />
       <Txt>Right-click on the image to trigger the context menu:</Txt>
       <SubmenuDelayExample />
       <PageSubtitle value="Using a custom arrow icon" />
@@ -54,7 +54,7 @@ export default async function ActionColorsExamplePage() {
         You can customize the submenu arrow icon by setting the <Code>iconRight</Code> property like in the following
         example:
       </Txt>
-      <CodeBlock code={code['default']['submenu-custom-arrow-icon']} />
+      <CodeBlock code={code.default['submenu-custom-arrow-icon']} />
       <Txt>Right-click on the image to trigger the context menu:</Txt>
       <SubmenuExampleCustomArrowIcon />
       <Txt>Head over to the next example to discover other features.</Txt>
