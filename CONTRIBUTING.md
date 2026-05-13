@@ -10,10 +10,10 @@ If you're here though, you're probably one of the fewer ones.
 ## Things to keep in mind
 
 The repository is holding the code for both Mantine ContextMenu package and its documentation website.  
-Since the repo root contains a `yarn.lock` file, it **should be obvious** that you have to use [Yarn](https://yarnpkg.com/) to install dependencies and run scripts.  
-Use `yarn dev` to start the development server, `yarn lint` to check the code for linting errors, and `yarn build` to check that the code compiles.  
-Running `yarn format` will automatically format your code with [Prettier](https://prettier.io/), so that it adheres to the project’s coding style.  
-This is a [Next.js](https://nextjs.org/) project with an [app router](https://nextjs.org/docs/app/building-your-application/routing) and makes use of [React Server Components]().  
+Since the repo root contains a `pnpm-lock.yaml` file, it **should be obvious** that you have to use [pnpm](https://pnpm.io) to install dependencies and run scripts.  
+Use `pnpm dev` to start the development server, `pnpm lint` to check the code for linting errors, and `pnpm build` to check that the code compiles.  
+Running `pnpm format` will automatically format your code with [Biome](https://biomejs.dev/), so that it adheres to the project’s coding style.  
+This is a [Next.js](https://nextjs.org/) project with an [app router](https://nextjs.org/docs/app/building-your-application/routing) and makes use of [React Server Components](https://react.dev/reference/rsc/server-components).  
 **Make sure you have a good grasp of the above before attempting to contribute.**
 
 The Mantine ContextMenu package code is located in the `package` folder, while the documentation website code is located in the `app` folder.  
