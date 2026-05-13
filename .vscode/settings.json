@@ -1,6 +1,5 @@
 {
   "eslint.enable": false,
-  "prettier.enable": false,
   "editor.codeActionsOnSave": {
     "source.organizeImports.biome": "explicit",
     "source.removeUnusedImports": "explicit",
@@ -12,6 +11,9 @@
   "postcss.validate": false,
   "cssVariables.lookupFiles": ["node_modules/@mantine/core/esm/index.css"],
   "editor.unicodeHighlight.ambiguousCharacters": false,
+  "[postcss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[json]": {
     "editor.defaultFormatter": "biomejs.biome"
   },

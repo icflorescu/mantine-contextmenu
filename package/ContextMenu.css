@@ -1,6 +1,7 @@
 .mantine-contextmenu {
   position: fixed;
-  border: 1px solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+  border: 1px solid
+    light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
   overflow: hidden;
   visibility: hidden;
 }

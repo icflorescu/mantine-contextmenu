@@ -6,11 +6,14 @@
 }
 
 .content {
-  min-height: calc(100dvh - var(--app-wrapper-footer-height) - var(--app-shell-header-height));
+  min-height: calc(
+    100dvh - var(--app-wrapper-footer-height) - var(--app-shell-header-height)
+  );
   margin-bottom: var(--app-wrapper-footer-height);
   padding: var(--mantine-spacing-xs) 0 var(--mantine-spacing-xl);
   background: var(--mantine-color-body);
-  border-bottom: 1px solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
+  border-bottom: 1px solid
+    light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
   position: relative;
   pointer-events: all;
   &::after {
@@ -20,6 +23,9 @@
     right: 0;
     height: rem(6px);
     bottom: rem(-7px);
-    background: linear-gradient(light-dark(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.5)), rgba(0, 0, 0, 0));
+    background: linear-gradient(
+      light-dark(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.5)),
+      rgba(0, 0, 0, 0)
+    );
   }
 }

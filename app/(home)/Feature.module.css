@@ -6,7 +6,11 @@
 
 .iconContainer {
   color: white;
-  background: linear-gradient(45deg, var(--mantine-color-blue-6), var(--mantine-color-cyan-6));
+  background: linear-gradient(
+    45deg,
+    var(--mantine-color-blue-6),
+    var(--mantine-color-cyan-6)
+  );
   flex-shrink: 0;
   border-radius: var(--mantine-radius-md);
 }
