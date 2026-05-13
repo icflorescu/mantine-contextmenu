@@ -1,12 +1,19 @@
 {
   "editor.codeActionsOnSave": {
-    "source.organizeImports": "explicit",
-    "source.fixAll.eslint": "explicit"
+    "source.organizeImports.biome": "explicit",
+    "source.removeUnusedImports": "explicit",
+    "source.fixAll.biome": "explicit"
   },
   "files.associations": {
     "*.css": "postcss"
   },
   "postcss.validate": false,
   "cssVariables.lookupFiles": ["node_modules/@mantine/core/esm/index.css"],
-  "editor.unicodeHighlight.ambiguousCharacters": false
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "[typescript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  }
 }

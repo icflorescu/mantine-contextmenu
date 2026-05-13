@@ -81,7 +81,7 @@ export const getPageNavigationInfo = memoize((href: string) => {
 });
 
 export const getFirstExampleRoute = memoize(
-  () => ROUTES.find((route) => (route.href as string).startsWith('/examples'))!
+  () => ROUTES.find((route) => (route.href as string).startsWith('/examples')) as RouteInfo
 );
 
 export const getNextRoute = memoize((href: string) => {

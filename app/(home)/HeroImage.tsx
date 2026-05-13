@@ -1,7 +1,7 @@
 'use client';
 
-import { IconEyeglass, IconSunglasses, IconX } from '@tabler/icons-react';
 import { useContextMenu } from '__PACKAGE__';
+import { IconEyeglass, IconSunglasses, IconX } from '@tabler/icons-react';
 import clsx from 'clsx';
 import { useState } from 'react';
 import { PRODUCT_NAME } from '~/app/config';

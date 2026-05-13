@@ -1,8 +1,8 @@
 'use client';
 
+import { useContextMenu } from '__PACKAGE__';
 // example-start
 import { useHotkeys, usePageLeave, useTimeout } from '@mantine/hooks';
-import { useContextMenu } from '__PACKAGE__';
 import { useEffect } from 'react';
 import { Picture } from '~/components/Picture';
 import { copyImageToClipboard, downloadImage, unsplashImages } from '~/lib/images';

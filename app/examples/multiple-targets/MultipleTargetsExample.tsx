@@ -1,8 +1,8 @@
 'use client';
 
+import { useContextMenu } from '__PACKAGE__';
 import { Grid, GridCol } from '@mantine/core';
 import { IconCopy, IconDownload, IconLink } from '@tabler/icons-react';
-import { useContextMenu } from '__PACKAGE__';
 import { Picture } from '~/components/Picture';
 import { copyImageToClipboard, downloadImage, unsplashImages } from '~/lib/images';
 

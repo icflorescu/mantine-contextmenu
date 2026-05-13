@@ -1,4 +1,4 @@
-import { Box, UnstyledButton, parseThemeColor, rgba } from '@mantine/core';
+import { Box, parseThemeColor, rgba, UnstyledButton } from '@mantine/core';
 import { useMediaQuery, useTimeout } from '@mantine/hooks';
 import clsx from 'clsx';
 import { type MouseEventHandler, useContext, useRef, useState } from 'react';
@@ -31,7 +31,7 @@ export function ContextMenuItem({
   const [submenuPosition, setSubmenuPosition] = useState<{ x: number; y: number } | null>(null);
 
   const { start: startShowingSubmenu, clear: stopShowingSubmenu } = useTimeout(() => {
-    const rect = ref.current!.getBoundingClientRect();
+    const rect = (ref.current as HTMLButtonElement).getBoundingClientRect();
     const x = dir === 'ltr' ? rect.right : rect.left;
     setSubmenuPosition({ x, y: rect.top });
   }, submenuDelay);
@@ -61,7 +61,7 @@ export function ContextMenuItem({
     : onClick
       ? (e) => {
           onHide();
-          onClick!(e);
+          onClick?.(e);
         }
       : undefined;
 

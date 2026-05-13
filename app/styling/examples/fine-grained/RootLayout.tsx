@@ -1,5 +1,5 @@
-import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import { ContextMenuProvider } from '__PACKAGE__';
+import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 
 import './layout.css';
 

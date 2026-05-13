@@ -1,7 +1,7 @@
 'use client';
 
-import { DirectionProvider, Group, Paper, Switch, Text } from '@mantine/core';
 import { ContextMenuProvider } from '__PACKAGE__';
+import { DirectionProvider, Group, Paper, Switch, Text } from '@mantine/core';
 import { useState } from 'react';
 
 export function RtlProviderExample({ children }: { children: React.ReactNode }) {

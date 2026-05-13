@@ -70,7 +70,7 @@ export function copyImageToClipboard(src: string) {
     return;
   }
   const canvas = document.createElement('canvas');
-  const ctx = canvas.getContext('2d')!;
+  const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
   const img = document.createElement('img');
   img.src = src;
   img.onload = () => {
@@ -78,7 +78,7 @@ export function copyImageToClipboard(src: string) {
     canvas.height = img.height;
     ctx.drawImage(img, 0, 0);
     canvas.toBlob((blob) => {
-      const item = new ClipboardItem({ 'image/png': blob! });
+      const item = new ClipboardItem({ 'image/png': blob as Blob });
       navigator.clipboard.write([item]);
     });
   };

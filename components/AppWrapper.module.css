@@ -15,7 +15,7 @@
   pointer-events: all;
   &::after {
     position: absolute;
-    content: '';
+    content: "";
     left: 0;
     right: 0;
     height: rem(6px);

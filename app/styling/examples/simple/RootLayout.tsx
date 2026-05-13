@@ -1,5 +1,5 @@
-import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 import { ContextMenuProvider } from '__PACKAGE__';
+import { ColorSchemeScript, MantineProvider } from '@mantine/core';
 
 // 👇 Import the mantine-core layer CSS file;
 //    this will automatically place it in a `mantine` layer

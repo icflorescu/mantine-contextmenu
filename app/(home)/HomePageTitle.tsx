@@ -1,8 +1,8 @@
 'use client';
 
+import { useContextMenu } from '__PACKAGE__';
 import { Text, Title } from '@mantine/core';
 import { IconBrandGithub, IconHeartFilled, IconPackage, IconTable, IconUser } from '@tabler/icons-react';
-import { useContextMenu } from '__PACKAGE__';
 import clsx from 'clsx';
 import {
   AUTHOR_LINK,
