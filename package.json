@@ -1,6 +1,6 @@
 {
   "name": "mantine-contextmenu",
-  "version": "9.2.0",
+  "version": "9.2.1",
   "description": "Craft your applications for productivity and meet your users’ expectations by enhancing your Mantine-based UIs with a desktop-grade, lightweight yet fully-featured, dark-theme aware context-menu component, built by the creator of Mantine DataTable",
   "keywords": [
     "ui",
@@ -86,7 +86,7 @@
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "clsx": "^2.1.1",
-    "cssnano": "^7.1.2",
+    "cssnano": "^8.0.1",
     "lodash": "^4.18.1",
     "next": "^16.2.6",
     "postcss": "^8.5.14",
