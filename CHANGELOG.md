@@ -3,6 +3,12 @@
 The following is a list of notable changes to the Mantine ContextMenu component.  
 Minor versions that are not listed in the changelog are minor bug fixes and small internal improvements or refactorings.
 
+# 9.3.1 (2026-06-19)
+
+- Update dev dependencies to ensure compatibility with Mantine 9.3.2
+- Update GitHub actions workflow job & Node.js versions
+- Update Biome config
+
 # 9.3.0 (2026-06-12)
 
 - Upgrade to Mantine 9.3
