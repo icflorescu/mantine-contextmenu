@@ -3,6 +3,10 @@
 The following is a list of notable changes to the Mantine ContextMenu component.  
 Minor versions that are not listed in the changelog are minor bug fixes and small internal improvements or refactorings.
 
+# 9.4.0 (2026-07-15)
+
+- Update dev dependencies to ensure compatibility with Mantine 9.4
+
 # 9.3.1 (2026-06-19)
 
 - Update dev dependencies to ensure compatibility with Mantine 9.3.2
