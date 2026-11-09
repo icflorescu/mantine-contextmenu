@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { type JSX, useContext } from 'react';
 import { ContextMenuSettingsCtx } from './ContextMenuProvider';
 
 export type ContextMenuOverlayProps = React.PropsWithChildren<{
@@ -6,7 +6,7 @@ export type ContextMenuOverlayProps = React.PropsWithChildren<{
   onHide: () => void;
 }>;
 
-export function ContextMenuOverlay({ zIndex, children, onHide }: ContextMenuOverlayProps) {
+export function ContextMenuOverlay({ zIndex, children, onHide }: ContextMenuOverlayProps): JSX.Element {
   const { repositionOnRepeat } = useContext(ContextMenuSettingsCtx);
 
   const handleHide = (e: React.MouseEvent) => {
