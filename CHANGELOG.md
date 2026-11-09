@@ -3,6 +3,14 @@
 The following is a list of notable changes to the Mantine ContextMenu component.  
 Minor versions that are not listed in the changelog are minor bug fixes and small internal improvements or refactorings.
 
+## 9.7.5 (2026-11-09)
+
+- Update dev dependencies to ensure compatibility with Mantine 9.7.5
+- Switch package build from tsup to tsdown; type declarations are now generated with Oxc via `isolatedDeclarations`
+- Upgrade to TypeScript 7
+- Make the package build fail properly when any of its steps fail
+- Update GitHub actions workflow job versions & Biome config
+
 # 9.4.0 (2026-07-15)
 
 - Update dev dependencies to ensure compatibility with Mantine 9.4
