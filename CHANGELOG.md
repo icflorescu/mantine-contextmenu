@@ -11,17 +11,17 @@ Minor versions that are not listed in the changelog are minor bug fixes and smal
 - Make the package build fail properly when any of its steps fail
 - Update GitHub actions workflow job versions & Biome config
 
-# 9.4.0 (2026-07-15)
+## 9.4.0 (2026-07-15)
 
 - Update dev dependencies to ensure compatibility with Mantine 9.4
 
-# 9.3.1 (2026-06-19)
+## 9.3.1 (2026-06-19)
 
 - Update dev dependencies to ensure compatibility with Mantine 9.3.2
 - Update GitHub actions workflow job & Node.js versions
 - Update Biome config
 
-# 9.3.0 (2026-06-12)
+## 9.3.0 (2026-06-12)
 
 - Upgrade to Mantine 9.3
 - Upgrade documentation website to Mantine 9.3
