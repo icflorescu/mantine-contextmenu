@@ -1,5 +1,6 @@
 import { Portal } from '@mantine/core';
 import { useHotkeys, useWindowEvent } from '@mantine/hooks';
+import type { JSX } from 'react';
 import { ContextMenu, type ContextMenuProps } from './ContextMenu';
 import { ContextMenuOverlay } from './ContextMenuOverlay';
 
@@ -8,7 +9,7 @@ export type ContextMenuPortalProps = ContextMenuProps & {
   dir: 'ltr' | 'rtl';
 };
 
-export function ContextMenuPortal({ onHide, zIndex, dir, ...otherProps }: ContextMenuPortalProps) {
+export function ContextMenuPortal({ onHide, zIndex, dir, ...otherProps }: ContextMenuPortalProps): JSX.Element {
   useWindowEvent('resize', onHide);
   useWindowEvent('scroll', onHide);
   useHotkeys([['Escape', onHide]]);

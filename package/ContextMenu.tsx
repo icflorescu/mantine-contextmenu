@@ -1,7 +1,7 @@
 import { Paper, px } from '@mantine/core';
 import { useResizeObserver } from '@mantine/hooks';
 import clsx from 'clsx';
-import { useContext, useEffect, useState } from 'react';
+import { type JSX, useContext, useEffect, useState } from 'react';
 import { ContextMenuDivider } from './ContextMenuDivider';
 import { ContextMenuItem } from './ContextMenuItem';
 import { ContextMenuSettingsCtx } from './ContextMenuProvider';
@@ -31,7 +31,7 @@ export function ContextMenu({
   classNames,
   styles,
   dir = 'ltr',
-}: ContextMenuProps) {
+}: ContextMenuProps): JSX.Element {
   const { shadow, borderRadius } = useContext(ContextMenuSettingsCtx);
   const [paperRef, { width, height }] = useResizeObserver<HTMLDivElement>();
   const [isMounted, setIsMounted] = useState(false);
@@ -68,9 +68,7 @@ export function ContextMenu({
                 ? x + width + mdSpacing > windowWidth
                   ? windowWidth - width - mdSpacing
                   : x
-                : x - width < mdSpacing
-                  ? mdSpacing
-                  : x - width,
+                : Math.max(x - width, mdSpacing),
           };
         },
         style,

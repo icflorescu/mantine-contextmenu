@@ -1,5 +1,5 @@
 import { useDirection } from '@mantine/core';
-import { createContext, useContext, useState } from 'react';
+import { type Context, createContext, type JSX, useContext, useState } from 'react';
 import type { ContextMenuInstanceOptions } from './ContextMenu';
 import { ContextMenuPortal } from './ContextMenuPortal';
 import type {
@@ -11,15 +11,21 @@ import type {
   WithRequiredProperty,
 } from './types';
 
-const DEFAULT_SETTINGS: WithRequiredProperty<ContextMenuSettings, 'shadow' | 'borderRadius' | 'submenuDelay'> = {
+type ResolvedContextMenuSettings = WithRequiredProperty<
+  ContextMenuSettings,
+  'shadow' | 'borderRadius' | 'submenuDelay'
+>;
+
+const DEFAULT_SETTINGS: ResolvedContextMenuSettings = {
   shadow: 'sm',
   borderRadius: 'xs',
   submenuDelay: 500,
   repositionOnRepeat: false,
 };
 
-export const ContextMenuSettingsCtx = createContext(DEFAULT_SETTINGS);
-export const ContextMenuCtx = createContext<{
+export const ContextMenuSettingsCtx: Context<ResolvedContextMenuSettings> = createContext(DEFAULT_SETTINGS);
+
+type ContextMenuContextValue = {
   /**
    * Function that shows the context menu.
    */
@@ -34,7 +40,13 @@ export const ContextMenuCtx = createContext<{
    * Boolean indicating whether the context menu is currently visible.
    */
   isContextMenuVisible: boolean;
-}>({ showContextMenu: () => () => undefined, hideContextMenu: () => undefined, isContextMenuVisible: false });
+};
+
+export const ContextMenuCtx: Context<ContextMenuContextValue> = createContext<ContextMenuContextValue>({
+  showContextMenu: () => () => undefined,
+  hideContextMenu: () => undefined,
+  isContextMenuVisible: false,
+});
 
 /**
  * Provider that allows to show a context menu anywhere in your application.
@@ -48,7 +60,7 @@ export function ContextMenuProvider({
   submenuDelay = DEFAULT_SETTINGS.submenuDelay,
   repositionOnRepeat = DEFAULT_SETTINGS.repositionOnRepeat,
   children,
-}: ContextMenuProviderProps) {
+}: ContextMenuProviderProps): JSX.Element {
   const [data, setData] = useState<(ContextMenuInstanceOptions & ContextMenuOptions) | null>(null);
   const { dir } = useDirection();
 
@@ -88,6 +100,6 @@ export function ContextMenuProvider({
 /**
  * Hook returning functions that show and hide the context menu.
  */
-export function useContextMenu() {
+export function useContextMenu(): ContextMenuContextValue {
   return useContext(ContextMenuCtx);
 }

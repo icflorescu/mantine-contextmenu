@@ -1,7 +1,7 @@
 import { Box, parseThemeColor, rgba, UnstyledButton } from '@mantine/core';
 import { useMediaQuery, useTimeout } from '@mantine/hooks';
 import clsx from 'clsx';
-import { type MouseEventHandler, useContext, useRef, useState } from 'react';
+import { type JSX, type MouseEventHandler, useContext, useRef, useState } from 'react';
 import { ContextMenu } from './ContextMenu';
 import { ContextMenuSettingsCtx } from './ContextMenuProvider';
 import type { ContextMenuContent, ContextMenuItemOptions, ContextMenuOptions, WithRequiredProperty } from './types';
@@ -21,7 +21,7 @@ export function ContextMenuItem({
 }: WithRequiredProperty<Omit<ContextMenuItemOptions, 'key'>, 'title'> & {
   onHide: () => void;
   submenuProps: Pick<ContextMenuOptions, 'className' | 'classNames' | 'style' | 'styles'> & { dir?: 'ltr' | 'rtl' };
-}) {
+}): JSX.Element {
   const ref = useRef<HTMLButtonElement>(null);
   const { submenuDelay } = useContext(ContextMenuSettingsCtx);
   const dir = submenuProps.dir || 'ltr';
