@@ -6,5 +6,5 @@ import type { ContextMenuItemOptions } from './types';
 export type ContextMenuDividerProps = Pick<ContextMenuItemOptions, 'className' | 'style'>;
 
 export function ContextMenuDivider({ className, style }: ContextMenuDividerProps): JSX.Element {
-  return <Box className={clsx('mantine-contextmenu-divider', className)} style={style} />;
+  return <Box role="separator" className={clsx('mantine-contextmenu-divider', className)} style={style} />;
 }

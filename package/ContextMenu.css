@@ -4,6 +4,9 @@
     light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4));
   overflow: hidden;
   visibility: hidden;
+  &:focus {
+    outline: none;
+  }
 }
 
 .mantine-contextmenu-mounted {
