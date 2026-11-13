@@ -14,7 +14,12 @@ export function HeroImage() {
   const { showContextMenu } = useContextMenu();
 
   return (
+    // Focusable, so the context menu can be opened with the keyboard (Shift+F10 or the context menu key)
+    // biome-ignore lint/a11y/useSemanticElements: a <button> may only contain phrasing content, not the shadow <div>
     <div
+      role="button"
+      aria-haspopup="menu"
+      tabIndex={0}
       className={clsx(classes.root, {
         [classes.sepia]: filter === 'sepia',
         [classes.grayscale]: filter === 'grayscale',
