@@ -34,6 +34,10 @@
   cursor: context-menu;
   -webkit-user-select: none;
   -webkit-touch-callout: none;
+  &:focus-visible {
+    outline: rem(2px) solid var(--mantine-primary-color-filled);
+    outline-offset: rem(2px);
+  }
 }
 
 .image {
