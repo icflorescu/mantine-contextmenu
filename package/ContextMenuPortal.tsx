@@ -1,6 +1,6 @@
 import { Portal } from '@mantine/core';
 import { useHotkeys, useWindowEvent } from '@mantine/hooks';
-import type { JSX } from 'react';
+import { type JSX, useEffect } from 'react';
 import { ContextMenu, type ContextMenuProps } from './ContextMenu';
 import { ContextMenuOverlay } from './ContextMenuOverlay';
 
@@ -13,6 +13,18 @@ export function ContextMenuPortal({ onHide, zIndex, dir, ...otherProps }: Contex
   useWindowEvent('resize', onHide);
   useWindowEvent('scroll', onHide);
   useHotkeys([['Escape', onHide]]);
+
+  // Return focus to the element that had it before the menu opened, unless something else has taken it since
+  useEffect(() => {
+    const previouslyFocused = document.activeElement;
+    return () => {
+      const { activeElement } = document;
+      const focusWasLost = !activeElement || activeElement === document.body;
+      if (focusWasLost && previouslyFocused instanceof HTMLElement && previouslyFocused.isConnected) {
+        previouslyFocused.focus();
+      }
+    };
+  }, []);
 
   return (
     <Portal>

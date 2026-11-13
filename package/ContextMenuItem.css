@@ -13,11 +13,15 @@
     cursor: not-allowed;
     color: light-dark(var(--mantine-color-gray-5), var(--mantine-color-dark-3));
   }
-  &:hover:not([disabled]) {
+  &:hover:not([disabled]),
+  &:focus-visible:not([disabled]) {
     background: light-dark(
       var(--mantine-contextmenu-item-button-hover-bg-color-light),
       var(--mantine-contextmenu-item-button-hover-bg-color-dark)
     );
+  }
+  &:focus-visible {
+    outline: none;
   }
   &:active:not([disabled]) {
     background: light-dark(

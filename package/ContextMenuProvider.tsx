@@ -49,6 +49,16 @@ export const ContextMenuCtx: Context<ContextMenuContextValue> = createContext<Co
 });
 
 /**
+ * Detects a `contextmenu` event triggered with the keyboard (Shift+F10 or the context menu key)
+ * rather than with a pointing device: those don't report the secondary (right) mouse button.
+ */
+function isKeyboardEvent({ nativeEvent }: React.MouseEvent) {
+  if (nativeEvent.type !== 'contextmenu' || nativeEvent.button === 2 || nativeEvent.ctrlKey) return false;
+  const pointerType = 'pointerType' in nativeEvent ? nativeEvent.pointerType : undefined;
+  return pointerType !== 'touch' && pointerType !== 'pen';
+}
+
+/**
  * Provider that allows to show a context menu anywhere in your application.
  * If you wrap your application with this provider, you can use the `useContextMenu` hook
  * anywhere in the component tree to access a function that shows the context menu.
@@ -61,7 +71,9 @@ export function ContextMenuProvider({
   repositionOnRepeat = DEFAULT_SETTINGS.repositionOnRepeat,
   children,
 }: ContextMenuProviderProps): JSX.Element {
-  const [data, setData] = useState<(ContextMenuInstanceOptions & ContextMenuOptions) | null>(null);
+  const [data, setData] = useState<
+    (ContextMenuInstanceOptions & ContextMenuOptions & { focusFirstItem?: boolean }) | null
+  >(null);
   const { dir } = useDirection();
 
   const hideContextMenu = () => {
@@ -72,12 +84,28 @@ export function ContextMenuProvider({
     e.preventDefault();
     e.stopPropagation();
 
-    const { x, y } =
-      'touches' in e ? { x: e.touches.item(0).clientX, y: e.touches.item(0).clientY } : { x: e.clientX, y: e.clientY };
+    let x: number;
+    let y: number;
+    let focusFirstItem = false;
+    if ('touches' in e) {
+      ({ clientX: x, clientY: y } = e.touches.item(0));
+    } else {
+      ({ clientX: x, clientY: y } = e);
+      if (isKeyboardEvent(e)) {
+        focusFirstItem = true;
+        // Some browsers report (0, 0) for keyboard-triggered events; show the menu below the focused element instead
+        if (x === 0 && y === 0 && e.target instanceof Element) {
+          const rect = e.target.getBoundingClientRect();
+          x = dir === 'rtl' ? rect.right : rect.left;
+          y = rect.bottom;
+        }
+      }
+    }
 
     setData({
       x,
       y,
+      focusFirstItem,
       content,
       zIndex: options?.zIndex || zIndex,
       className: options?.className,

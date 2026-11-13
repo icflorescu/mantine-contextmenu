@@ -10,6 +10,7 @@ export type PictureProps = {
   image: UnsplashImage;
   flipVertical?: boolean;
   flipHorizontal?: boolean;
+  filter?: string;
   onContextMenu?: React.MouseEventHandler<HTMLDivElement>;
 };
 
@@ -20,11 +21,14 @@ export function Picture({
   },
   flipVertical,
   flipHorizontal,
+  filter,
   onContextMenu,
 }: PictureProps) {
   return (
     <div className={classes.root}>
-      <div className={classes.container} onContextMenu={onContextMenu}>
+      {/* Focusable, so the context menu can be opened with the keyboard (Shift+F10 or the context menu key) */}
+      {/* biome-ignore lint/a11y/useSemanticElements: a <button> can't contain the attribution link */}
+      <div className={classes.container} role="button" aria-haspopup="menu" tabIndex={0} onContextMenu={onContextMenu}>
         <Image
           onContextMenu={onContextMenu}
           className={clsx(classes.image, {
@@ -32,6 +36,7 @@ export function Picture({
             [classes.flipVertical]: flipVertical,
           })}
           src={src}
+          style={filter ? { filter } : undefined}
           alt={`Picture by ${name} | ${PRODUCT_NAME}`}
           fill
           priority
@@ -39,7 +44,7 @@ export function Picture({
         <div className={classes.attribution}>
           <Text className={classes.attributionText}>
             Picture by{' '}
-            <ExternalLink className="nowrap" to={`https://unsplash.com/@${profile}`}>
+            <ExternalLink className="nowrap" to={`https://unsplash.com/@${profile}`} tabIndex={-1}>
               {name}
             </ExternalLink>
           </Text>

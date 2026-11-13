@@ -3,6 +3,17 @@
 The following is a list of notable changes to the Mantine ContextMenu component.  
 Minor versions that are not listed in the changelog are minor bug fixes and small internal improvements or refactorings.
 
+## 9.8.0 (2026-11-13)
+
+- Update dev dependencies to ensure compatibility with Mantine 9.8.0
+- Improve keyboard accessibility (see [#204](https://github.com/icflorescu/mantine-contextmenu/issues/204)): the context menu now receives focus when shown, and when opened with the keyboard (Shift+F10 or the context menu key) its first item is focused; items can be navigated with the arrow keys, Home & End, submenus can be opened with ArrowRight/Enter/Space and closed with ArrowLeft/Escape (reversed in RTL), and focus is returned to the triggering element when the menu closes
+- Add `menu`, `menuitem` and `separator` ARIA roles to the context menu elements
+- **Behavior change:** clicking inside the context menu no longer closes it automatically, so custom content can now contain interactive elements such as inputs, checkboxes or sliders; regular items still close the menu when clicked, while custom content should call the `close` function it receives (as already documented)
+- Add an interactive custom content example to the docs website
+- Make the docs website example images keyboard-focusable, so the context menu can be opened with the keyboard
+- Add component tests running in a real browser with Vitest & Playwright (run locally with `pnpm test`)
+- Update GitHub actions workflow job versions
+
 ## 9.7.5 (2026-11-09)
 
 - Update dev dependencies to ensure compatibility with Mantine 9.7.5
