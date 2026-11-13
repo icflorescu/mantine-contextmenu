@@ -5,7 +5,7 @@ import type { Metadata, Viewport } from 'next';
 import type { PropsWithChildren } from 'react';
 import { AppWrapper } from '~/components/AppWrapper';
 import { ShikiCodeHighlightProvider } from '~/components/ShikiCodeHighlightProvider';
-import { AUTHOR_LINK, AUTHOR_NAME, WEB_ROOT, WEBSITE_LINK } from './config';
+import { AUTHOR_LINK, AUTHOR_NAME, PRODUCT_DESCRIPTION, PRODUCT_NAME, WEB_ROOT, WEBSITE_LINK } from './config';
 import './layout.css';
 import classes from './layout.module.css';
 
@@ -19,7 +19,23 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.GITHUB_PAGES === 'TRUE' ? WEB_ROOT : 'http://localhost:3000'),
   manifest: `${process.env.GITHUB_PAGES === 'TRUE' ? WEBSITE_LINK : ''}/manifest.webmanifest`,
+  applicationName: PRODUCT_NAME,
+  title: PRODUCT_NAME,
+  description: PRODUCT_DESCRIPTION,
   authors: [{ name: AUTHOR_NAME, url: AUTHOR_LINK }],
+  creator: AUTHOR_NAME,
+  publisher: AUTHOR_NAME,
+  keywords: [
+    'mantine',
+    'mantine context menu',
+    'mantine contextmenu',
+    'react context menu',
+    'right-click menu',
+    'context menu',
+    'react',
+    'typescript',
+    'ui component',
+  ],
 };
 
 export default function RootLayout({ children }: PropsWithChildren) {

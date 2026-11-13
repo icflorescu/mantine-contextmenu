@@ -80,7 +80,7 @@ export const ROUTES: RouteInfo[] = [
   {
     href: '/examples/action-titles',
     title: 'Action titles',
-    description: `Example: ${PRODUCT_NAME} automatically generates item titles based on the action IDs, but you can provide your own if you're not happy with the default ones`,
+    description: `Example: ${PRODUCT_NAME} automatically generates item titles based on the action IDs, but you can provide your own if you don't like the defaults`,
   },
   {
     href: '/examples/action-icons',
@@ -105,7 +105,7 @@ export const ROUTES: RouteInfo[] = [
   {
     href: '/examples/conditionally-hiding-items',
     title: 'Conditionally hiding items',
-    description: `Example: how to conditionally hide ${PRODUCT_NAME} items, instead of hiding them, if they're not applicable in certain situations`,
+    description: `Example: how to conditionally hide ${PRODUCT_NAME} items, instead of disabling them, if they're not applicable in certain situations`,
   },
   {
     href: '/examples/multiple-targets',
@@ -125,7 +125,7 @@ export const ROUTES: RouteInfo[] = [
   {
     href: '/examples/submenus',
     title: 'Submenus',
-    description: `Example: How to nest multiple ${PRODUCT_NAME}s to create submenus, if you need to group actions together`,
+    description: `Example: how to nest multiple ${PRODUCT_NAME}s to create submenus, if you need to group actions together`,
   },
   {
     href: '/examples/imperative-hiding',
@@ -147,21 +147,21 @@ export const ROUTES: RouteInfo[] = [
   {
     href: '/mantine-v6-support',
     title: 'Mantine V6 support',
-    description: `${PRODUCT_NAME} is compatible with Mantine V7; if you're using Mantine V6, please check the old documentation website`,
+    description: `${PRODUCT_NAME} V7+ requires Mantine V7 or newer; if you're still using Mantine V6, please check the old documentation website`,
     icon: IconQuestionMark,
     color: 'orange',
   },
   {
     href: '/contribute-and-support',
     title: 'Contribute and support',
-    description: `Contribute and support the development of ${PRODUCT_NAME} by sponsoring or hiring its author, starring the repo, raising issues, bringing up new ideas and coming up with pull-requests`,
+    description: `Support ${PRODUCT_NAME} by sponsoring or hiring its author, starring the repo, reporting issues, suggesting ideas or opening pull requests`,
     icon: IconThumbUpFilled,
     color: 'red',
   },
   {
     href: '/hire-the-author',
     title: 'Hire the author',
-    description: `Hire ${AUTHOR_NAME}, the author of ${PRODUCT_NAME}, a full-stack developer with 20+ years of experience`,
+    description: `Hire ${AUTHOR_NAME}, the author of ${PRODUCT_NAME}, a hands-on fractional CTO and product builder with 25+ years of experience`,
     icon: IconHeartHandshake,
     color: 'teal',
   },

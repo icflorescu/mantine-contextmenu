@@ -18,7 +18,7 @@ export function HomePageTitle() {
   const { showContextMenu } = useContextMenu();
 
   return (
-    <Title className={classes.root} order={2}>
+    <Title className={classes.root} order={1}>
       The{' '}
       <Text
         className={clsx(classes.gradientText, 'nowrap')}
