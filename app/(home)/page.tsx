@@ -2,17 +2,24 @@ import { Flex, Stack, Text } from '@mantine/core';
 import { IconLifebuoy, IconRocket, IconScale, IconSettings } from '@tabler/icons-react';
 import type { Route } from 'next';
 import {
+  AUTHOR_LINK,
+  AUTHOR_NAME,
   CRA_LINK,
   GATSBY_LINK,
   LICENSE_LINK,
   MANTINE_LINK,
   NEXTJS_LINK,
+  NPM_LINK,
+  PRODUCT_DESCRIPTION,
+  PRODUCT_NAME,
   REMIX_LINK,
   REPO_LINK,
   VITE_LINK,
+  WEBSITE_LINK,
 } from '~/app/config';
 import { ExternalLink } from '~/components/ExternalLink';
 import { InternalLink } from '~/components/InternalLink';
+import { JsonLd } from '~/components/JsonLd';
 import { getFirstExampleRoute, getRouteMetadata } from '~/lib/utils';
 import { Feature } from './Feature';
 import { HeroImage } from './HeroImage';
@@ -25,9 +32,38 @@ export const metadata = getRouteMetadata(PATH);
 
 const { href: firstExampleHref } = getFirstExampleRoute();
 
+const author = { '@type': 'Person', name: AUTHOR_NAME, url: AUTHOR_LINK };
+
+const structuredData = {
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      name: PRODUCT_NAME,
+      url: `${WEBSITE_LINK}/`,
+      description: PRODUCT_DESCRIPTION,
+      inLanguage: 'en',
+      author,
+    },
+    {
+      '@type': 'SoftwareSourceCode',
+      name: PRODUCT_NAME,
+      description: PRODUCT_DESCRIPTION,
+      url: `${WEBSITE_LINK}/`,
+      codeRepository: REPO_LINK,
+      programmingLanguage: ['TypeScript', 'React'],
+      runtimePlatform: 'Web browser',
+      license: 'https://opensource.org/licenses/MIT',
+      version: process.env.PACKAGE_VERSION,
+      author,
+      sameAs: [REPO_LINK, NPM_LINK],
+    },
+  ],
+};
+
 export default function HomePage() {
   return (
     <Stack gap="xl">
+      <JsonLd data={structuredData} />
       <HomePageTitle />
       <HomePageSubtitle />
       <HeroImage />
