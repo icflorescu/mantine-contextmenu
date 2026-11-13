@@ -23,11 +23,10 @@ export default async function CustomContentExamplePage() {
     <>
       <PageTitle of={PATH} />
       <Txt>
-        You can also display custom content in the context menu by providing a render callback to the
+        You can also display custom content in the context menu by providing a render callback to the{' '}
         <Code>showContextMenu</Code> function instead of an array of items.
         <br />
-        The render callback will receive a <Code>close</Code>
-        function that you can use to close the menu.
+        The render callback will receive a <Code>close</Code> function that you can use to close the menu.
         <br />
         Have a look at the example below to see how it works:
       </Txt>

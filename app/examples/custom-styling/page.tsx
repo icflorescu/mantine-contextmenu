@@ -75,9 +75,9 @@ export default async function CustomStylingExamplePage() {
       </Txt>
       <Txt>
         The <Code>ContextMenuProvider</Code> styling values can be overriden by setting the similarly-named properties
-        of an <em>options</em> object passed as the second argument to the <Code>showContextMenu</Code>
-        function returned by <Code>useContextMenu</Code> hook to target the individual context menu instances, in which
-        case they will override the initial provider properties.
+        of an <em>options</em> object passed as the second argument to the <Code>showContextMenu</Code> function
+        returned by <Code>useContextMenu</Code> hook to target the individual context menu instances, in which case they
+        will override the initial provider properties.
         <br />
         The examples below will use this approach.
       </Txt>
