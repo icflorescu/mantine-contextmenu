@@ -10,6 +10,7 @@ export type PictureProps = {
   image: UnsplashImage;
   flipVertical?: boolean;
   flipHorizontal?: boolean;
+  filter?: string;
   onContextMenu?: React.MouseEventHandler<HTMLDivElement>;
 };
 
@@ -20,6 +21,7 @@ export function Picture({
   },
   flipVertical,
   flipHorizontal,
+  filter,
   onContextMenu,
 }: PictureProps) {
   return (
@@ -34,6 +36,7 @@ export function Picture({
             [classes.flipVertical]: flipVertical,
           })}
           src={src}
+          style={filter ? { filter } : undefined}
           alt={`Picture by ${name} | ${PRODUCT_NAME}`}
           fill
           priority
