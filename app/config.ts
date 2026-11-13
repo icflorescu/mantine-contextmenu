@@ -161,7 +161,7 @@ export const ROUTES: RouteInfo[] = [
   {
     href: '/hire-the-author',
     title: 'Hire the author',
-    description: `Hire ${AUTHOR_NAME}, the author of ${PRODUCT_NAME}, a full-stack developer with 20+ years of experience`,
+    description: `Hire ${AUTHOR_NAME}, the author of ${PRODUCT_NAME}, a hands-on fractional CTO and product builder with 25+ years of experience`,
     icon: IconHeartHandshake,
     color: 'teal',
   },
