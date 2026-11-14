@@ -7,6 +7,7 @@ import {
   IconHome,
   IconList,
   IconQuestionMark,
+  IconRobot,
   IconRocket,
   IconThumbUpFilled,
 } from '@tabler/icons-react';
@@ -143,6 +144,13 @@ export const ROUTES: RouteInfo[] = [
     description: `${PRODUCT_NAME} is written in TypeScript and its options are well documented with additional JSDoc annotations`,
     icon: IconAdjustments,
     color: 'grape',
+  },
+  {
+    href: '/llms-txt',
+    title: 'LLMs.txt',
+    description: `${PRODUCT_NAME} documentation in LLM-friendly formats, so AI assistants and coding agents can help you use it`,
+    icon: IconRobot,
+    color: 'cyan',
   },
   {
     href: '/mantine-v6-support',

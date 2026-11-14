@@ -31,6 +31,8 @@ Craft your applications for productivity and meet your users’ expectations by 
 
 Visit [icflorescu.github.io/mantine-contextmenu](https://icflorescu.github.io/mantine-contextmenu/) to view the full documentation and learn how to use it by browsing the list of usage examples.
 
+🤖 Using an AI assistant or coding agent? Point it to [`llms.txt`](https://icflorescu.github.io/mantine-contextmenu/llms.txt) or [`llms-full.txt`](https://icflorescu.github.io/mantine-contextmenu/llms-full.txt) for LLM-friendly documentation (see [how to use them](https://icflorescu.github.io/mantine-contextmenu/llms-txt/)).
+
 ## Quickstart
 
 Create a new [Mantine application](https://mantine.dev/pages/getting-started/), make sure to have the `clsx` peer dependency installed,

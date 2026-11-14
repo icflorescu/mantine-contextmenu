@@ -3,6 +3,11 @@
 The following is a list of notable changes to the Mantine ContextMenu component.  
 Minor versions that are not listed in the changelog are minor bug fixes and small internal improvements or refactorings.
 
+## 9.8.1 (2026-11-14)
+
+- Revise package keywords to improve discoverability on npm
+- Publish LLM-friendly documentation ([`llms.txt`](https://icflorescu.github.io/mantine-contextmenu/llms.txt) and [`llms-full.txt`](https://icflorescu.github.io/mantine-contextmenu/llms-full.txt)), generated from the docs website content, and add a corresponding [docs page](https://icflorescu.github.io/mantine-contextmenu/llms-txt/) explaining how to use them with AI assistants and coding agents
+
 ## 9.8.0 (2026-11-13)
 
 - Update dev dependencies to ensure compatibility with Mantine 9.8.0
