@@ -79,10 +79,10 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^2.6.8",
-    "@mantine/code-highlight": "^9.8.1",
+    "@mantine/code-highlight": "^9.8.2",
     "@mantine/core": "^9.8.1",
-    "@mantine/hooks": "^9.8.1",
-    "@mantine/notifications": "^9.8.1",
+    "@mantine/hooks": "^9.8.2",
+    "@mantine/notifications": "^9.8.2",
     "@tabler/icons-react": "^3.52.0",
     "@types/lodash": "^4.17.27",
     "@types/node": "^26.6.6",
