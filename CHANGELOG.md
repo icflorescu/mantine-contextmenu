@@ -3,6 +3,10 @@
 The following is a list of notable changes to the Mantine ContextMenu component.  
 Minor versions that are not listed in the changelog are minor bug fixes and small internal improvements or refactorings.
 
+## 9.8.3 (2026-11-21)
+
+- Fix menu items losing their padding, colors and hover styles when using `styles.layer.css`, if the bundler happened to load the ContextMenu layered stylesheet before the Mantine core one (the `mantine` layer then took precedence over `mantine-contextmenu`); `styles.layer.css` now declares the `mantine, mantine-contextmenu` layer order itself (same issue as [mantine-datatable#826](https://github.com/icflorescu/mantine-datatable/issues/826))
+
 ## 9.8.2 (2026-11-21)
 
 - Update dev dependencies to ensure compatibility with Mantine 9.8.2
