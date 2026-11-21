@@ -49,12 +49,19 @@ export const ContextMenuCtx: Context<ContextMenuContextValue> = createContext<Co
 });
 
 /**
+ * Checks whenever an event is a synthetic React event, or a native DOM event.
+ */
+function isReactEvent(event: any): event is React.SyntheticEvent {
+  return 'nativeEvent' in event;
+}
+
+/**
  * Detects a `contextmenu` event triggered with the keyboard (Shift+F10 or the context menu key)
  * rather than with a pointing device: those don't report the secondary (right) mouse button.
  */
-function isKeyboardEvent({ nativeEvent }: React.MouseEvent) {
-  if (nativeEvent.type !== 'contextmenu' || nativeEvent.button === 2 || nativeEvent.ctrlKey) return false;
-  const pointerType = 'pointerType' in nativeEvent ? nativeEvent.pointerType : undefined;
+function isKeyboardEvent(e: MouseEvent) {
+  if (e.type !== 'contextmenu' || e.button === 2 || e.ctrlKey) return false;
+  const pointerType = 'pointerType' in e ? e.pointerType : undefined;
   return pointerType !== 'touch' && pointerType !== 'pen';
 }
 
@@ -80,7 +87,7 @@ export function ContextMenuProvider({
     setData(null);
   };
 
-  const showContextMenu: ShowContextMenuFunction = (content, options) => (e: React.MouseEvent | React.TouchEvent) => {
+  const showContextMenu: ShowContextMenuFunction = (content, options) => (e: React.MouseEvent | React.TouchEvent | MouseEvent | TouchEvent) => {
     e.preventDefault();
     e.stopPropagation();
 
@@ -98,11 +105,14 @@ export function ContextMenuProvider({
 
     if ('touches' in e) {
       // For touch events, use the coordinates of the first touch point
-      const { clientX, clientY } = e.touches.item(0);
-      setDataFromEvent(clientX, clientY);
+      const touched = e.touches.item(0);
+      if (touched) { // This should always exist, but we check just in case
+        const { clientX, clientY } = touched;
+        setDataFromEvent(clientX, clientY);
+      }
     } else {
       const { clientX, clientY } = e;
-      if (!isKeyboardEvent(e)) {
+      if (!isKeyboardEvent(isReactEvent(e) ? e.nativeEvent : e)) {
         // For mouse events, use the coordinates of the mouse pointer directly
         setDataFromEvent(clientX, clientY);
       } else if (clientX === 0 && clientY === 0 && e.target instanceof Element) {
