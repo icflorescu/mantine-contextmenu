@@ -1,6 +1,6 @@
 {
   "name": "mantine-contextmenu",
-  "version": "9.8.1",
+  "version": "9.8.2",
   "description": "Craft your applications for productivity and meet your users’ expectations by enhancing your Mantine-based UIs with a desktop-grade, lightweight yet fully-featured, dark-theme aware context-menu component, built by the creator of Mantine DataTable",
   "keywords": [
     "mantine",
@@ -80,7 +80,7 @@
   "devDependencies": {
     "@biomejs/biome": "^2.6.8",
     "@mantine/code-highlight": "^9.8.2",
-    "@mantine/core": "^9.8.1",
+    "@mantine/core": "^9.8.2",
     "@mantine/hooks": "^9.8.2",
     "@mantine/notifications": "^9.8.2",
     "@tabler/icons-react": "^3.52.0",
