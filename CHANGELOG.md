@@ -3,6 +3,11 @@
 The following is a list of notable changes to the Mantine ContextMenu component.  
 Minor versions that are not listed in the changelog are minor bug fixes and small internal improvements or refactorings.
 
+## 9.8.2 (2026-11-21)
+
+- Update dev dependencies to ensure compatibility with Mantine 9.8.2
+- Update GitHub actions workflow job versions
+
 ## 9.8.1 (2026-11-14)
 
 - Revise package keywords to improve discoverability on npm
