@@ -84,25 +84,7 @@ export function ContextMenuProvider({
     e.preventDefault();
     e.stopPropagation();
 
-    let x: number;
-    let y: number;
-    let focusFirstItem = false;
-    if ('touches' in e) {
-      ({ clientX: x, clientY: y } = e.touches.item(0));
-    } else {
-      ({ clientX: x, clientY: y } = e);
-      if (isKeyboardEvent(e)) {
-        focusFirstItem = true;
-        // Some browsers report (0, 0) for keyboard-triggered events; show the menu below the focused element instead
-        if (x === 0 && y === 0 && e.target instanceof Element) {
-          const rect = e.target.getBoundingClientRect();
-          x = dir === 'rtl' ? rect.right : rect.left;
-          y = rect.bottom;
-        }
-      }
-    }
-
-    setData({
+    const setDataFromEvent = (x: number, y: number, focusFirstItem: boolean = false) => setData({
       x,
       y,
       focusFirstItem,
@@ -113,6 +95,31 @@ export function ContextMenuProvider({
       classNames: options?.classNames,
       styles: options?.styles,
     });
+
+    if ('touches' in e) {
+      // For touch events, use the coordinates of the first touch point
+      const { clientX, clientY } = e.touches.item(0);
+      setDataFromEvent(clientX, clientY);
+    } else {
+      const { clientX, clientY } = e;
+      if (!isKeyboardEvent(e)) {
+        // For mouse events, use the coordinates of the mouse pointer directly
+        setDataFromEvent(clientX, clientY);
+      } else if (clientX === 0 && clientY === 0 && e.target instanceof Element) {
+        // Some browsers report (0, 0) for keyboard-triggered events; 
+        // show the menu below the focused element instead
+        const rect = e.target.getBoundingClientRect();
+        setDataFromEvent(
+          dir === 'rtl' ? rect.right : rect.left,
+          rect.bottom,
+          true
+        );
+    }  else {
+        // For all other keyboard-triggered events use the reported coordinates, 
+        // and focus the first item in the menu
+        setDataFromEvent(clientX, clientY, true);
+      }
+    }
   };
 
   return (
