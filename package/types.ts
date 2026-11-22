@@ -174,6 +174,15 @@ export type ContextMenuItemOptions = {
 export type ContextMenuContent = ContextMenuItemOptions[] | ((close: () => void) => JSX.Element);
 
 /**
+ * Event handler returned by `showContextMenu`.
+ * Accepts both React synthetic events and native DOM events, since not every integration
+ * (for example, react-leaflet) dispatches events through React's event system.
+ */
+export type ShowContextMenuEvent = React.MouseEvent | MouseEvent | React.TouchEvent | TouchEvent;
+
+export type ShowContextMenuEventHandler = (event: ShowContextMenuEvent) => void;
+
+/**
  * Show context menu function
  */
 export type ShowContextMenuFunction = (
@@ -187,7 +196,7 @@ export type ShowContextMenuFunction = (
    * Context menu options (overrides provider props).
    */
   options?: ContextMenuOptions
-) => React.MouseEventHandler & React.TouchEventHandler;
+) => ShowContextMenuEventHandler;
 
 /**
  * Hide context menu function

@@ -3,6 +3,10 @@
 The following is a list of notable changes to the Mantine ContextMenu component.  
 Minor versions that are not listed in the changelog are minor bug fixes and small internal improvements or refactorings.
 
+## 9.8.4 (2026-11-22)
+
+- The handler returned by `showContextMenu` now accepts native DOM `MouseEvent` and `TouchEvent` in addition to React synthetic events, so integrations that bypass React's event system (for example, react-leaflet) no longer need an unsafe cast ([#253](https://github.com/icflorescu/mantine-contextmenu/issues/253), [#254](https://github.com/icflorescu/mantine-contextmenu/pull/254))
+
 ## 9.8.3 (2026-11-21)
 
 - Fix menu items losing their padding, colors and hover styles when using `styles.layer.css`, if the bundler happened to load the ContextMenu layered stylesheet before the Mantine core one (the `mantine` layer then took precedence over `mantine-contextmenu`); `styles.layer.css` now declares the `mantine, mantine-contextmenu` layer order itself (same issue as [mantine-datatable#826](https://github.com/icflorescu/mantine-datatable/issues/826))

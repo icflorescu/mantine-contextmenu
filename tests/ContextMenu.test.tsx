@@ -130,6 +130,47 @@ describe('with the mouse', () => {
   });
 });
 
+describe('with native DOM events', () => {
+  const dispatchContextMenu = (init: MouseEventInit = {}) => {
+    const event = new MouseEvent('contextmenu', { bubbles: true, cancelable: true, button: 2, ...init });
+    trigger().element().dispatchEvent(event);
+    return event;
+  };
+
+  test('shows the menu at the event coordinates and prevents the default', async () => {
+    await renderContextMenu(createItems().items, { nativeEvents: true });
+    const event = dispatchContextMenu({ clientX: 70, clientY: 80 });
+    expect(event.defaultPrevented).toBe(true);
+    await expect.element(menus()).toBeVisible();
+    const { left, top } = rect(menus());
+    expect(left).toBeCloseTo(70, 0);
+    expect(top).toBeCloseTo(80, 0);
+  });
+
+  test('focuses the first item for keyboard-triggered events', async () => {
+    await renderContextMenu(createItems().items, { nativeEvents: true });
+    trigger().element().focus();
+    dispatchContextMenu({ button: 0, clientX: 120, clientY: 140 });
+    await expect.element(menus()).toBeVisible();
+    await expect.element(item('Copy')).toHaveFocus();
+    const { left, top } = rect(menus());
+    expect(left).toBeCloseTo(120, 0);
+    expect(top).toBeCloseTo(140, 0);
+  });
+
+  test('falls back to the trigger position for keyboard-triggered events reported at 0,0', async () => {
+    await renderContextMenu(createItems().items, { nativeEvents: true });
+    trigger().element().focus();
+    dispatchContextMenu({ button: 0, clientX: 0, clientY: 0 });
+    await expect.element(menus()).toBeVisible();
+    const { left, bottom } = trigger().element().getBoundingClientRect();
+    const { left: menuLeft, top: menuTop } = rect(menus());
+    expect(menuLeft).toBeCloseTo(left, 0);
+    expect(menuTop).toBeCloseTo(bottom, 0);
+    await expect.element(item('Copy')).toHaveFocus();
+  });
+});
+
 describe('with the keyboard', () => {
   test('Shift+F10 opens the menu with its first item focused', async () => {
     await renderContextMenu(createItems().items);
