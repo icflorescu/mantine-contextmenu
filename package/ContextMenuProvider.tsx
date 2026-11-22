@@ -7,6 +7,7 @@ import type {
   ContextMenuProviderProps,
   ContextMenuSettings,
   HideContextMenuFunction,
+  ShowContextMenuEvent,
   ShowContextMenuFunction,
   WithRequiredProperty,
 } from './types';
@@ -49,9 +50,9 @@ export const ContextMenuCtx: Context<ContextMenuContextValue> = createContext<Co
 });
 
 /**
- * Checks whenever an event is a synthetic React event, or a native DOM event.
+ * Detects whether a mouse event came from React's synthetic event system rather than from the DOM directly.
  */
-function isReactEvent(event: any): event is React.SyntheticEvent {
+function isReactMouseEvent(event: React.MouseEvent | MouseEvent): event is React.MouseEvent {
   return 'nativeEvent' in event;
 }
 
@@ -87,46 +88,42 @@ export function ContextMenuProvider({
     setData(null);
   };
 
-  const showContextMenu: ShowContextMenuFunction = (content, options) => (e: React.MouseEvent | React.TouchEvent | MouseEvent | TouchEvent) => {
+  const showContextMenu: ShowContextMenuFunction = (content, options) => (e: ShowContextMenuEvent) => {
     e.preventDefault();
     e.stopPropagation();
 
-    const setDataFromEvent = (x: number, y: number, focusFirstItem: boolean = false) => setData({
-      x,
-      y,
-      focusFirstItem,
-      content,
-      zIndex: options?.zIndex || zIndex,
-      className: options?.className,
-      style: options?.style,
-      classNames: options?.classNames,
-      styles: options?.styles,
-    });
+    const setDataFromEvent = (x: number, y: number, focusFirstItem = false) =>
+      setData({
+        x,
+        y,
+        focusFirstItem,
+        content,
+        zIndex: options?.zIndex || zIndex,
+        className: options?.className,
+        style: options?.style,
+        classNames: options?.classNames,
+        styles: options?.styles,
+      });
 
     if ('touches' in e) {
       // For touch events, use the coordinates of the first touch point
       const touched = e.touches.item(0);
-      if (touched) { // This should always exist, but we check just in case
-        const { clientX, clientY } = touched;
-        setDataFromEvent(clientX, clientY);
+      // This should always exist, but we check just in case
+      if (touched) {
+        setDataFromEvent(touched.clientX, touched.clientY);
       }
     } else {
       const { clientX, clientY } = e;
-      if (!isKeyboardEvent(isReactEvent(e) ? e.nativeEvent : e)) {
+      const nativeEvent = isReactMouseEvent(e) ? e.nativeEvent : e;
+      if (!isKeyboardEvent(nativeEvent)) {
         // For mouse events, use the coordinates of the mouse pointer directly
         setDataFromEvent(clientX, clientY);
       } else if (clientX === 0 && clientY === 0 && e.target instanceof Element) {
-        // Some browsers report (0, 0) for keyboard-triggered events; 
-        // show the menu below the focused element instead
+        // Some browsers report (0, 0) for keyboard-triggered events; show the menu below the focused element instead
         const rect = e.target.getBoundingClientRect();
-        setDataFromEvent(
-          dir === 'rtl' ? rect.right : rect.left,
-          rect.bottom,
-          true
-        );
-    }  else {
-        // For all other keyboard-triggered events use the reported coordinates, 
-        // and focus the first item in the menu
+        setDataFromEvent(dir === 'rtl' ? rect.right : rect.left, rect.bottom, true);
+      } else {
+        // For all other keyboard-triggered events use the reported coordinates and focus the first item in the menu
         setDataFromEvent(clientX, clientY, true);
       }
     }
