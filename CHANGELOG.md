@@ -3,7 +3,7 @@
 The following is a list of notable changes to the Mantine ContextMenu component.  
 Minor versions that are not listed in the changelog are minor bug fixes and small internal improvements or refactorings.
 
-## Unreleased
+## 9.8.4 (2026-11-22)
 
 - The handler returned by `showContextMenu` now accepts native DOM `MouseEvent` and `TouchEvent` in addition to React synthetic events, so integrations that bypass React's event system (for example, react-leaflet) no longer need an unsafe cast ([#253](https://github.com/icflorescu/mantine-contextmenu/issues/253), [#254](https://github.com/icflorescu/mantine-contextmenu/pull/254))
 
